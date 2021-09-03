@@ -1,0 +1,5 @@
+{
+	"trailingComma": "none",
+	"printWidth": 100,
+	"svelteSortOrder": "options-scripts-markup-styles"
+}
