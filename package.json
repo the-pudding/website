@@ -4,6 +4,7 @@
 	"scripts": {
 		"gdoc": "node tasks/fetch-google.cjs",
 		"style": "node tasks/style-dictionary.cjs",
+		"thumbnails": "node tasks/thumbnails.cjs",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"start": "svelte-kit start",
@@ -18,7 +19,9 @@
 		"autoprefixer": "10.3.4",
 		"d3": "7.0.1",
 		"feather-icons": "4.28.0",
+		"jimp": "^0.16.1",
 		"lodash.debounce": "4.0.8",
+		"mkdirp": "^1.0.4",
 		"node-fetch": "3.0.0",
 		"postcss": "8.3.6",
 		"prettier": "2.3.2",
