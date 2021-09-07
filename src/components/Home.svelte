@@ -1,5 +1,6 @@
 <script>
   export let stories;
+  console.log(stories[0]);
 </script>
 
 <h1>The Pudding</h1>
