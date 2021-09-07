@@ -1,14 +1,16 @@
-const strToArray = (str) => str.split(',').map(d => d.trim());
-const makeSlug = (str) => str.toLowerCase().replace(/\//g, '_');
+import { timeParse, timeFormat } from "d3";
+const strToArray = (str) => str.split(",").map(d => d.trim());
+const makeSlug = (str) => str.toLowerCase().replace(/\//g, "_");
 
 export default function parseStories({ data, keys }) {
 
-	// const formatDate = d3.timeParse('%m/%d/%Y');
+	const parseDate = timeParse("%m/%d/%Y");
+	const formatMonth = timeFormat("%B %Y");
 
 	const clean = data.map(d => ({
 		...d,
-		// date: formatDate(d.date),
-		// time: d3.timeFormat('%B %Y')(date),
+		date: parseDate(d.date),
+		month: formatMonth(parseDate(d.date)),
 		slug: makeSlug(d.url),
 		path: `https://pudding.cool/${d.url}`,
 		img: makeSlug(d.url),

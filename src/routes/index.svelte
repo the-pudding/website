@@ -5,7 +5,7 @@
   export const prerender = true;
 
   export async function load({ page, fetch, session, context }) {
-    const keys = ["url", "date", "hed", "dek", "topic", "author", "keyword", "img"];
+    const keys = ["url", "date", "month", "hed", "dek", "topic", "author", "keyword", "img"];
 
     const stories = parseStories({ data: storiesData, keys });
 
