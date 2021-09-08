@@ -4,7 +4,7 @@ const mkdirp = require("mkdirp");
 
 const CWD = process.cwd();
 const PATH_IN = `${CWD}/thumbnails`;
-const PATH_OUT = `${CWD}/static/assets/thumbnails`;
+const PATH_OUT = `${CWD}/static/common/assets/thumbnails`;
 const SIZES = [1920, 1280, 640];
 
 function getNewImages() {

@@ -5,9 +5,17 @@
 </script>
 
 <h1>The Pudding</h1>
-{#each stories as { hed, dek, slug }}
-  <h1>{hed}</h1>
-  <p>{dek}</p>
-  <p>{slug}</p>
+{#each stories as { hed, dek, url }}
+  <a href="https://pudding.cool/{url}" rel="external">
+    <h1>{hed}</h1>
+    <p>{dek}</p>
+  </a>
 {/each}
+
 <a href="/about">About</a>
+
+<style>
+  a {
+    display: block;
+  }
+</style>
