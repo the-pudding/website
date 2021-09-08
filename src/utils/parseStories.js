@@ -13,7 +13,6 @@ export default function parseStories({ data, keys }) {
 		month: formatMonth(parseDate(d.date)),
 		slug: makeSlug(d.url),
 		path: `https://pudding.cool/${d.url}`,
-		img: makeSlug(d.url),
 		author: strToArray(d.author),
 		topic: strToArray(d.topic),
 		chart: strToArray(d.chart),
