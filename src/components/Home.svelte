@@ -2,7 +2,6 @@
   import { ascending } from "d3";
   export let stories;
   stories.sort((a, b) => ascending(a.hed, b.hed));
-  console.log(stories);
 </script>
 
 <h1>The Pudding</h1>
