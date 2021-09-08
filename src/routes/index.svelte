@@ -1,17 +1,20 @@
 <script context="module">
   import storiesData from "$data/stories.csv";
-  import parseStories from "$utils/parseStories.js";
+  import filterStoryProps from "$utils/filterStoryProps.js";
 
   export const prerender = true;
 
   export async function load({ page, fetch, session, context }) {
     const keys = ["url", "date", "month", "hed", "dek", "topic", "author", "keyword"];
 
-    const stories = parseStories({ data: storiesData, keys });
-
-    return {
-      props: { stories }
-    };
+    const url = "/api/stories?keys=test";
+    const res = await fetch(url);
+    if (res.ok) {
+      const stories = await res.json();
+      return {
+        props: { stories }
+      };
+    }
 
     return {
       status: res.status,
