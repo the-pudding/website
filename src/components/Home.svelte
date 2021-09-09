@@ -13,9 +13,9 @@
   </a>
 {/each}
 
-<a href="/about">About</a>
-<a href="/author/russell-goldenberg">Russell</a>
-<a href="/author/jan-diehm">Jan</a>
+<a href="about">About</a>
+<a href="author/russell-goldenberg">Russell</a>
+<a href="author/jan-diehm">Jan</a>
 
 <style>
   a {
