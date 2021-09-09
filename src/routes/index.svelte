@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({ page, fetch, session, context }) {
-    const url = "/api/home";
+  export async function load({ fetch }) {
+    const url = "index.json";
     const res = await fetch(url);
     if (res.ok) {
       const stories = await res.json();

@@ -2,7 +2,7 @@ import stories from "$data/stories.js";
 import authors from "$data/authors.js";
 import filterStoryProps from "$utils/filterStoryProps.js";
 
-export async function get({ params }) {
+export const get = async ({ params }) => {
 	const { name } = params;
 
 	const keys = ["hed", "author"];
