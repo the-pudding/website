@@ -34,9 +34,6 @@ const config = {
 				dsv(),
 				svg()
 			]
-		},
-		paths: {
-			base: dev ? "" : "/website2"
 		}
 	}
 };

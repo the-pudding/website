@@ -5,6 +5,10 @@
 </script>
 
 <h1>The Pudding</h1>
+<a href="about">About</a>
+<a href="author/russell-goldenberg">Russell</a>
+<a href="author/jan-diehm">Jan</a>
+
 {#each stories as { hed, dek, url, slug }}
   <a href="https://pudding.cool/{url}" rel="external">
     <!-- <img src="common/assets/thumbnails/640/{slug}.jpg" /> -->
@@ -12,10 +16,6 @@
     <p>{dek}</p>
   </a>
 {/each}
-
-<a href="about">About</a>
-<a href="author/russell-goldenberg">Russell</a>
-<a href="author/jan-diehm">Jan</a>
 
 <style>
   a {
