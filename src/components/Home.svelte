@@ -19,4 +19,8 @@
   a {
     display: block;
   }
+
+  h1 {
+    font-family: var(--serif);
+  }
 </style>
