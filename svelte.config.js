@@ -37,8 +37,7 @@ const config = {
 		},
 		paths: {
 			base: dev ? "" : "/website2"
-		},
-		appDir: "internal"
+		}
 	}
 };
 
