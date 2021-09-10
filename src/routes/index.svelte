@@ -1,6 +1,6 @@
 <script context="module">
   export async function load({ fetch }) {
-    const url = "index.json";
+    const url = "/api/home.json";
     const res = await fetch(url);
     if (res.ok) {
       const stories = await res.json();
