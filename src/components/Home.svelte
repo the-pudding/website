@@ -8,6 +8,7 @@
 <a href="about">About</a>
 <a href="author/russell-goldenberg">Russell</a>
 <a href="author/jan-diehm">Jan</a>
+<!-- <a href="rss.xml">RSS</a> -->
 
 {#each stories as { hed, dek, url, slug }}
   <a href="https://pudding.cool/{url}" rel="external">
