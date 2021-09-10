@@ -7,6 +7,7 @@
 		"thumbnails": "node tasks/thumbnails.cjs",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
+		"postbuild": "svelte-sitemap --domain https://pudding.cool",
 		"preview": "svelte-kit preview",
 		"start": "svelte-kit start",
 		"lint": "prettier --check .",
@@ -31,6 +32,7 @@
 		"style-dictionary": "3.0.2",
 		"svelte": "3.42.4",
 		"svelte-preprocess": "4.9.4",
+		"svelte-sitemap": "^2.0.2",
 		"vite-plugin-svgstring": "1.0.0"
 	},
 	"type": "module",
