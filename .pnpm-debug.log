@@ -12,6 +12,7 @@
         "thumbnails": "node tasks/thumbnails.cjs",
         "dev": "svelte-kit dev",
         "build": "svelte-kit build",
+        "postbuild": "svelte-sitemap --domain https://pudding.cool",
         "preview": "svelte-kit preview",
         "start": "svelte-kit start",
         "lint": "prettier --check .",
@@ -30,12 +31,13 @@
         "mkdirp": "^1.0.4",
         "node-fetch": "3.0.0",
         "postcss": "8.3.6",
-        "prettier": "2.3.2",
+        "prettier": "2.4.0",
         "prettier-plugin-svelte": "2.4.0",
         "rollup-plugin-svg": "2.0.0",
         "style-dictionary": "3.0.2",
         "svelte": "3.42.4",
-        "svelte-preprocess": "4.9.1",
+        "svelte-preprocess": "4.9.4",
+        "svelte-sitemap": "^2.0.2",
         "vite-plugin-svgstring": "1.0.0"
       },
       "type": "module",
@@ -144,11 +146,11 @@
     }
   },
   "15 debug pnpm:_dependency_resolved": {
-    "resolution": "registry.npmjs.org/prettier/2.3.2",
+    "resolution": "registry.npmjs.org/prettier/2.4.0",
     "wanted": {
       "dependentId": ".",
       "name": "prettier",
-      "rawSpec": "2.3.2"
+      "rawSpec": "2.4.0"
     }
   },
   "16 debug pnpm:_dependency_resolved": {
@@ -184,14 +186,22 @@
     }
   },
   "20 debug pnpm:_dependency_resolved": {
-    "resolution": "registry.npmjs.org/svelte-preprocess/4.9.1",
+    "resolution": "registry.npmjs.org/svelte-preprocess/4.9.4",
     "wanted": {
       "dependentId": ".",
       "name": "svelte-preprocess",
-      "rawSpec": "4.9.1"
+      "rawSpec": "4.9.4"
     }
   },
   "21 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/svelte-sitemap/2.0.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "svelte-sitemap",
+      "rawSpec": "^2.0.2"
+    }
+  },
+  "22 debug pnpm:_dependency_resolved": {
     "resolution": "registry.npmjs.org/vite-plugin-svgstring/1.0.0",
     "wanted": {
       "dependentId": ".",
@@ -199,187 +209,197 @@
       "rawSpec": "1.0.0"
     }
   },
-  "22 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/@sveltejs/adapter-static/1.0.0-next.18",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
-  },
   "23 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/@sveltejs/adapter-static/1.0.0-next.18",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "24 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/@rollup/plugin-dsv/2.0.2",
+    "packageId": "registry.npmjs.org/@sveltejs/adapter-static/1.0.0-next.18",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "25 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/@rollup/plugin-dsv/2.0.2",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "26 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/autoprefixer/10.3.4",
+    "packageId": "registry.npmjs.org/@rollup/plugin-dsv/2.0.2",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "27 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/autoprefixer/10.3.4",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
-  },
-  "28 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/archieml/0.4.2",
-    "requester": "/Users/russell/Pudding/website2",
     "status": "resolved"
   },
-  "29 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/archieml/0.4.2",
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/autoprefixer/10.3.4",
     "requester": "/Users/russell/Pudding/website2",
     "status": "found_in_store"
+  },
+  "29 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/d3/7.0.1",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
   },
   "30 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/d3/7.0.1",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "31 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/d3/7.0.1",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
-  },
-  "32 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/mkdirp/1.0.4",
+    "packageId": "registry.npmjs.org/archieml/0.4.2",
     "requester": "/Users/russell/Pudding/website2",
     "status": "resolved"
   },
-  "33 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/mkdirp/1.0.4",
+  "32 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/archieml/0.4.2",
     "requester": "/Users/russell/Pudding/website2",
     "status": "found_in_store"
+  },
+  "33 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/feather-icons/4.28.0",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
   },
   "34 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/feather-icons/4.28.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "35 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/feather-icons/4.28.0",
+    "packageId": "registry.npmjs.org/jimp/0.16.1",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "36 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/jimp/0.16.1",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "37 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/jimp/0.16.1",
+    "packageId": "registry.npmjs.org/lodash.debounce/4.0.8",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "38 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/lodash.debounce/4.0.8",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "39 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/lodash.debounce/4.0.8",
+    "packageId": "registry.npmjs.org/node-fetch/3.0.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "40 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/postcss/8.3.6",
+    "packageId": "registry.npmjs.org/node-fetch/3.0.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "41 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mkdirp/1.0.4",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/mkdirp/1.0.4",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "found_in_store"
+  },
+  "43 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.4.0",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
+  },
+  "44 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.4.0",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "found_in_store"
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/postcss/8.3.6",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
+  },
+  "46 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/postcss/8.3.6",
     "requester": "/Users/russell/Pudding/website2",
     "status": "found_in_store"
   },
-  "42 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.4.0",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
-  },
-  "43 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.4.0",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
-  },
-  "44 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/node-fetch/3.0.0",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
-  },
-  "45 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/node-fetch/3.0.0",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
-  },
-  "46 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/prettier/2.3.2",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
-  },
   "47 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/prettier/2.3.2",
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.4.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "48 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/rollup-plugin-svg/2.0.0",
+    "packageId": "registry.npmjs.org/prettier-plugin-svelte/2.4.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "49 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/rollup-plugin-svg/2.0.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "50 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/svelte/3.42.4",
+    "packageId": "registry.npmjs.org/rollup-plugin-svg/2.0.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "51 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-preprocess/4.9.4",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
+  },
+  "52 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-preprocess/4.9.4",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "found_in_store"
+  },
+  "53 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte/3.42.4",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
+  },
+  "54 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/svelte/3.42.4",
     "requester": "/Users/russell/Pudding/website2",
     "status": "found_in_store"
   },
-  "52 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/svelte-preprocess/4.9.1",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
-  },
-  "53 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/svelte-preprocess/4.9.1",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
-  },
-  "54 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/style-dictionary/3.0.2",
-    "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
-  },
   "55 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/style-dictionary/3.0.2",
+    "packageId": "registry.npmjs.org/vite-plugin-svgstring/1.0.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "found_in_store"
+    "status": "resolved"
   },
   "56 debug pnpm:progress": {
     "packageId": "registry.npmjs.org/vite-plugin-svgstring/1.0.0",
     "requester": "/Users/russell/Pudding/website2",
-    "status": "resolved"
+    "status": "found_in_store"
   },
   "57 debug pnpm:progress": {
-    "packageId": "registry.npmjs.org/vite-plugin-svgstring/1.0.0",
+    "packageId": "registry.npmjs.org/style-dictionary/3.0.2",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
+  },
+  "58 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/style-dictionary/3.0.2",
     "requester": "/Users/russell/Pudding/website2",
     "status": "found_in_store"
   },
-  "58 error pnpm": {
+  "59 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-sitemap/2.0.2",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "resolved"
+  },
+  "60 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/svelte-sitemap/2.0.2",
+    "requester": "/Users/russell/Pudding/website2",
+    "status": "found_in_store"
+  },
+  "61 error pnpm": {
     "code": "ERR_PNPM_NO_MATCHING_VERSION",
     "packageMeta": {
       "name": "@sveltejs/kit",
@@ -9876,7 +9896,7 @@
         }
       },
       "modified": "2021-09-08T17:31:21.395Z",
-      "cachedAt": 1631282530582
+      "cachedAt": 1631544925652
     },
     "pkgsStack": [],
     "err": {

@@ -53,7 +53,7 @@ function makeThumbnail(file) {
 		console.error(err);
 	}
 
-	console.log('DONE: resize-thumbnails.js');
+	console.log('DONE: resizing thumbnails');
 	process.exit();
 })();
 
