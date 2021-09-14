@@ -1,9 +1,11 @@
 const CWD = process.cwd();
 
 const fs = require("fs");
-const dsv = require("d3-dsv");
+const papa = require("papaparse");
 
-const stories = dsv.csvParse(fs.readFileSync(`${CWD}/src/data/stories.csv`, "utf8"));
+const csv = fs.readFileSync(`${CWD}/src/data/stories.csv`, "utf8");
+
+const stories = papa.parse(csv, { header: true }).data;
 
 stories.sort((a, b) => new Date(b.date) - new Date(a.date));
 
