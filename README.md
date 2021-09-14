@@ -1,4 +1,25 @@
-# Svelte Starter
+# The Pudding Website
+## Documentatation
+
+### Installation
+
+### Updating Site Content
+#### Tasks
+* Generating thumbnail images
+	* Resize and optimize
+	* Extracting color palette
+* Fetching copy
+* Generating project footer stories data 
+
+### Feature and Design Development
+#### Routes
+* Endpoints
+* Metadata
+* Components
+* Dynamic pages (authors)
+
+
+## Svelte Starter Documentation
 
 This [starter template](https://github.com/the-pudding/svelte-starter) aims for fast and easy web development speficially for data-driven and visual stories. It is an opinionated template built on top of [SvelteKit](https://kit.svelte.dev/).
 
