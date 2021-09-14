@@ -6,7 +6,7 @@
 
   const lookupColor = (slug) => {
     const match = colors.find((d) => d.slug === slug);
-    return match ? match.rgb : "rgb(255,255,255)";
+    return match && match.colors.length ? match.colors : ["rgb(255,255,255)"];
   };
 </script>
 
@@ -18,7 +18,12 @@
 
 {#each stories as { hed, dek, url, slug }}
   <!-- <a href="https://pudding.cool/{url}" rel="external"> -->
-  <div style="background-color: {lookupColor(slug)};">
+  <div>
+    <div class="palette">
+      {#each lookupColor(slug) as rgb}
+        <p style="background: {rgb};" />
+      {/each}
+    </div>
     <img src="common/assets/thumbnails/640/{slug}.jpg" alt="" />
     <!-- <h1>{hed}</h1> -->
     <!-- <p>{dek}</p> -->
@@ -28,8 +33,8 @@
 
 <style>
   div {
-    /* height: 1em; */
-    padding: 2em;
+    /* height: 2em; */
+    /* padding: 4em; */
   }
 
   a {
@@ -39,7 +44,13 @@
   h1 {
     font-family: var(--serif);
   }
-  img {
-    border: 1px solid white;
+
+  .palette {
+    display: flex;
+  }
+
+  .palette p {
+    width: 4em;
+    height: 4em;
   }
 </style>

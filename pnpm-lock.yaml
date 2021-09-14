@@ -13,6 +13,7 @@ specifiers:
   lodash.debounce: 4.0.8
   mkdirp: ^1.0.4
   node-fetch: 3.0.0
+  node-vibrant: ^3.2.1-alpha.1
   postcss: 8.3.6
   prettier: 2.4.0
   prettier-plugin-svelte: 2.4.0
@@ -36,6 +37,7 @@ devDependencies:
   lodash.debounce: 4.0.8
   mkdirp: 1.0.4
   node-fetch: 3.0.0
+  node-vibrant: 3.2.1-alpha.1
   postcss: 8.3.6
   prettier: 2.4.0
   prettier-plugin-svelte: 2.4.0_prettier@2.4.0+svelte@3.42.4
@@ -562,6 +564,10 @@ packages:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
 
+  /@types/node/10.17.60:
+    resolution: {integrity: sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==}
+    dev: true
+
   /@types/node/16.7.10:
     resolution: {integrity: sha512-S63Dlv4zIPb8x6MMTgDq5WWRJQe56iBEY0O3SOFA9JrRienkOVDXSXBjjJw6HTNQYSE2JI6GMCR6LVbIMHJVvA==}
     dev: true
@@ -574,6 +580,83 @@ packages:
     resolution: {integrity: sha512-iZUcRrGuz/Tbg3loODpW7vrQJkUtpY2fFSf4ELqqkApcS2TkZ1msk7ie8iZPB86lDOP8QOTTmuvWjc5S0R9OjQ==}
     dependencies:
       '@types/node': 16.7.10
+    dev: true
+
+  /@vibrant/color/3.2.1-alpha.1:
+    resolution: {integrity: sha512-cvm+jAPwao2NerTr3d1JttYyLhp3eD/AQBeevxF7KT6HctToWZCwr2AeTr003/wKgbjzdOV1qySnbyOeu+R+Jw==}
+    dev: true
+
+  /@vibrant/core/3.2.1-alpha.1:
+    resolution: {integrity: sha512-X9Oa9WfPEQnZ6L+5dLRlh+IlsxJkYTw9b/g3stFKoNXbVRKCeXHmH48l7jIBBOg3VcXOGUdsYBqsTwPNkIveaA==}
+    dependencies:
+      '@vibrant/color': 3.2.1-alpha.1
+      '@vibrant/generator': 3.2.1-alpha.1
+      '@vibrant/image': 3.2.1-alpha.1
+      '@vibrant/quantizer': 3.2.1-alpha.1
+      '@vibrant/types': 3.2.1-alpha.1
+      '@vibrant/worker': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/generator-default/3.2.1-alpha.1:
+    resolution: {integrity: sha512-BWnQhDaz92UhyHnpdAzKXHQecY+jvyMXtzjKYbveFxThm6+HVoLjwONlbck7oyOpFzV2OM7V11XuR85BxaHvjw==}
+    dependencies:
+      '@vibrant/color': 3.2.1-alpha.1
+      '@vibrant/generator': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/generator/3.2.1-alpha.1:
+    resolution: {integrity: sha512-luS5YvMhwMqG01YTj1dJ+cmkuIw1VCByOR6zIaCOwQqI/mcOs88JBWcA1r2TywJTOPlVpjfnDvAlyaKBKh4dMA==}
+    dependencies:
+      '@vibrant/color': 3.2.1-alpha.1
+      '@vibrant/types': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/image-browser/3.2.1-alpha.1:
+    resolution: {integrity: sha512-6xWvQfB20sE6YtCWylgEAHuee3iD8h3aFIDbCS2yj7jIelKcYTrrp5jg2d2BhOOB6pC5JzF+QfpCrm0DmAIlgQ==}
+    dependencies:
+      '@vibrant/image': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/image-node/3.2.1-alpha.1:
+    resolution: {integrity: sha512-/Io/Rpo4EkO6AhaXdcxUXkbOFhSFtjm0LSAM4c0AyGA5EbC8PyZqjk8b11bQAEMCaYaweFQfTdGD7oVbXe21CQ==}
+    dependencies:
+      '@jimp/custom': 0.16.1
+      '@jimp/plugin-resize': 0.16.1_@jimp+custom@0.16.1
+      '@jimp/types': 0.16.1_@jimp+custom@0.16.1
+      '@vibrant/image': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/image/3.2.1-alpha.1:
+    resolution: {integrity: sha512-4aF5k79QfyhZOqRovJpbnIjWfe3uuWhY8voqVdd4/qgu4o70/AwVlM+pYmCaJVzI45VWNWWHYA5QlYuKsXnBqQ==}
+    dependencies:
+      '@vibrant/color': 3.2.1-alpha.1
+      '@vibrant/types': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/quantizer-mmcq/3.2.1-alpha.1:
+    resolution: {integrity: sha512-Wuk9PTZtxr8qsWTcgP6lcrrmrq36syVwxf+BUxdgQYntBcQ053SaN34lVGOJ0WPdK5vABoxbYljhceCgiILtZw==}
+    dependencies:
+      '@vibrant/color': 3.2.1-alpha.1
+      '@vibrant/image': 3.2.1-alpha.1
+      '@vibrant/quantizer': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/quantizer/3.2.1-alpha.1:
+    resolution: {integrity: sha512-iHnPx/+n4iLtYLm1GClSfyg2fFbMatFG0ipCyp9M6tXNIPAg+pSvUJSGBnVnH7Nl/bR8Gkkj1h0pJ4RsKcdIrQ==}
+    dependencies:
+      '@vibrant/color': 3.2.1-alpha.1
+      '@vibrant/image': 3.2.1-alpha.1
+      '@vibrant/types': 3.2.1-alpha.1
+    dev: true
+
+  /@vibrant/types/3.2.1-alpha.1:
+    resolution: {integrity: sha512-ts9u7nsrENoYI5s0MmPOeY5kCLFKvQndKVDOPFCbTA0z493uhDp8mpiQhjFYTf3kPbS04z9zbHLE2luFC7x4KQ==}
+    dev: true
+
+  /@vibrant/worker/3.2.1-alpha.1:
+    resolution: {integrity: sha512-mtSlBdHkFNr4FOnMtqtHJxy9z5AsUcZzGlpiHzvWOoaoN9lNTDPwxOBd0q4VTYWuGPrIm6Fuq5m7aRbLv7KqiQ==}
+    dependencies:
+      '@vibrant/types': 3.2.1-alpha.1
     dev: true
 
   /ajv/6.12.6:
@@ -1693,6 +1776,18 @@ packages:
     resolution: {integrity: sha512-Qe5OUajvqrqDSy6wrWFmMwfJ0jVgwiw4T3KqmbTcZ62qW0gQkheXYhcFM1+lOVcGUoRxcEcfyvFMAnDgaF1VWw==}
     dev: true
 
+  /node-vibrant/3.2.1-alpha.1:
+    resolution: {integrity: sha512-EQergCp7fvbvUCE0VMCBnvaAV0lGWSP8SXLmuWQIBzQK5M5pIwcd9fIOXuzFkJx/8hUiiiLvAzzGDS/bIy2ikA==}
+    dependencies:
+      '@types/node': 10.17.60
+      '@vibrant/core': 3.2.1-alpha.1
+      '@vibrant/generator-default': 3.2.1-alpha.1
+      '@vibrant/image-browser': 3.2.1-alpha.1
+      '@vibrant/image-node': 3.2.1-alpha.1
+      '@vibrant/quantizer-mmcq': 3.2.1-alpha.1
+      url: 0.11.0
+    dev: true
+
   /normalize-range/0.1.2:
     resolution: {integrity: sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=}
     engines: {node: '>=0.10.0'}
@@ -1834,6 +1929,10 @@ packages:
     resolution: {integrity: sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==}
     dev: true
 
+  /punycode/1.3.2:
+    resolution: {integrity: sha1-llOgNvt8HuQjQvIyXM7v6jkmxI0=}
+    dev: true
+
   /punycode/2.1.1:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
@@ -1842,6 +1941,12 @@ packages:
   /qs/6.5.2:
     resolution: {integrity: sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==}
     engines: {node: '>=0.6'}
+    dev: true
+
+  /querystring/0.2.0:
+    resolution: {integrity: sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=}
+    engines: {node: '>=0.4.x'}
+    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
     dev: true
 
   /queue-microtask/1.2.3:
@@ -2193,6 +2298,13 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
+    dev: true
+
+  /url/0.11.0:
+    resolution: {integrity: sha1-ODjpfPxgUh63PFJajlW/3Z4uKPE=}
+    dependencies:
+      punycode: 1.3.2
+      querystring: 0.2.0
     dev: true
 
   /utif/2.0.1:
