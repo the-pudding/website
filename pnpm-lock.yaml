@@ -12,7 +12,7 @@ specifiers:
   jimp: ^0.16.1
   lodash.debounce: 4.0.8
   mkdirp: ^1.0.4
-  node-fetch: 3.0.0
+  node-fetch: 2.6.2
   node-vibrant: ^3.2.1-alpha.1
   papaparse: ^5.3.1
   postcss: 8.3.6
@@ -37,7 +37,7 @@ devDependencies:
   jimp: 0.16.1
   lodash.debounce: 4.0.8
   mkdirp: 1.0.4
-  node-fetch: 3.0.0
+  node-fetch: 2.6.2
   node-vibrant: 3.2.1-alpha.1
   papaparse: 5.3.1
   postcss: 8.3.6
@@ -1185,11 +1185,6 @@ packages:
     resolution: {integrity: sha1-GK6XmmoMqZSwYlhTkW0mYruuCxo=}
     dev: true
 
-  /data-uri-to-buffer/3.0.1:
-    resolution: {integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==}
-    engines: {node: '>= 6'}
-    dev: true
-
   /debug/4.3.2:
     resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
     engines: {node: '>=6.0'}
@@ -1316,13 +1311,6 @@ packages:
     dependencies:
       classnames: 2.3.1
       core-js: 3.17.2
-    dev: true
-
-  /fetch-blob/3.1.2:
-    resolution: {integrity: sha512-hunJbvy/6OLjCD0uuhLdp0mMPzP/yd2ssd1t2FCJsaA7wkWhpbp9xfuNVpv7Ll4jFhzp6T4LAupSiV9uOeg0VQ==}
-    engines: {node: ^12.20 || >= 14.13}
-    dependencies:
-      web-streams-polyfill: 3.1.1
     dev: true
 
   /file-type/9.0.0:
@@ -1766,12 +1754,9 @@ packages:
     engines: {node: '>=v0.6.5'}
     dev: true
 
-  /node-fetch/3.0.0:
-    resolution: {integrity: sha512-bKMI+C7/T/SPU1lKnbQbwxptpCrG9ashG+VkytmXCPZyuM9jB6VU+hY0oi4lC8LxTtAeWdckNCTa3nrGsAdA3Q==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    dependencies:
-      data-uri-to-buffer: 3.0.1
-      fetch-blob: 3.1.2
+  /node-fetch/2.6.2:
+    resolution: {integrity: sha512-aLoxToI6RfZ+0NOjmWAgn9+LEd30YCkJKFSyWacNZdEKTit/ZMcKjGkTRo8uWEsnIb/hfKecNPEbln02PdWbcA==}
+    engines: {node: 4.x || >=6.0.0}
     dev: true
 
   /node-releases/1.1.75:
@@ -2349,11 +2334,6 @@ packages:
       rollup: 2.56.3
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
-
-  /web-streams-polyfill/3.1.1:
-    resolution: {integrity: sha512-Czi3fG883e96T4DLEPRvufrF2ydhOOW1+1a6c3gNjH2aIh50DNFBdfwh2AKoOf1rXvpvavAoA11Qdq9+BKjE0Q==}
-    engines: {node: '>= 8'}
     dev: true
 
   /wrappy/1.0.2:

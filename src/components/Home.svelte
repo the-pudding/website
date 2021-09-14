@@ -1,6 +1,8 @@
 <script>
   import { ascending } from "d3";
   import colors from "$data/thumbnail-colors.json";
+  import copy from "$data/home.json";
+
   export let stories;
   stories.sort((a, b) => ascending(a.slug, b.slug));
 
@@ -10,8 +12,11 @@
   };
 </script>
 
-<h1>The Pudding</h1>
+<h1>{copy.title}</h1>
 <a href="about">About</a>
+<a href="pitch">Pitch</a>
+<a href="privacy">Privacy</a>
+<a href="faq">FAQ</a>
 <a href="author/russell-goldenberg">Russell</a>
 <a href="author/jan-diehm">Jan</a>
 <!-- <a href="rss.xml">RSS</a> -->

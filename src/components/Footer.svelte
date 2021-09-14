@@ -1,12 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import wordmark from "$svg/wordmark.svg";
-
-  let localURL;
-  let stories = [];
-
-  const v = Date.now();
-  const url = `https://pudding.cool/assets/data/stories.json?v=${v}`;
+  import copy from "$data/misc.json";
 
   const links = [
     { name: "about", url: "https://pudding.cool/about" },
@@ -21,48 +16,14 @@
     { name: "newsletter", url: "http://eepurl.com/czym6f" },
     { name: "rss", url: "https://pudding.cool/feed/index.xml" }
   ];
-
-  onMount(async () => {
-    localURL = window.location.href;
-    const response = await fetch(url);
-    const data = await response.json();
-    const story = data.find((d) => localURL.includes(d.url));
-    const topic = story ? story.topic : "culture";
-    const others = data.filter((d) => !localURL.includes(d.url));
-
-    const diff = others.filter((d) => d.topic !== topic);
-    const same = others.filter((d) => d.topic === topic);
-
-    stories.push(...diff.slice(0, 2));
-    stories.push(same[0]);
-    stories.push(same[Math.ceil(Math.random() * (same.length - 1))]);
-    stories = stories;
-  });
 </script>
 
 <footer>
-  <section class="stories">
-    {#each stories as { hed, url, image }}
-      <div class="story">
-        <a href="https://pudding.cool/{url}">
-          <img
-            src="https://pudding.cool/common/assets/thumbnails/640/{image}.jpg"
-            alt="thumbnail"
-          />
-          <span>{hed}</span>
-        </a>
-      </div>
-    {/each}
-  </section>
-
   <section class="about">
     <div class="wordmark">
       {@html wordmark}
     </div>
-    <p>
-      <a href="https://pudding.cool">The Pudding</a>
-      is a digital publication that explains ideas debated in culture with visual essays.
-    </p>
+    <p>{copy.tagline}</p>
   </section>
 
   <section class="links">
@@ -85,39 +46,6 @@
     font-family: var(--sans);
     padding: 3em 1em;
     margin-top: 3em;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: var(--background-body);
-  }
-
-  .stories {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 70em;
-  }
-
-  .story {
-    display: block;
-    width: 100%;
-    border: none;
-    margin-bottom: 3rem;
-  }
-
-  .story a {
-    display: block;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .story span {
-    display: block;
-    margin-top: 1em;
-    line-height: 1.2;
   }
 
   .wordmark {
@@ -151,19 +79,5 @@
 
   .links span {
     margin-left: 0.5em;
-  }
-
-  @media only screen and (min-width: 30em) {
-    .story {
-      width: 50%;
-      padding: 0 1em;
-    }
-  }
-
-  @media only screen and (min-width: 50em) {
-    .story {
-      width: 25%;
-      padding: 0 1em;
-    }
   }
 </style>
