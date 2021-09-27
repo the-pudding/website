@@ -1,9 +1,11 @@
 <script>
   import { ascending } from "d3";
+  import Intro from "$components/Home.Intro.svelte";
   import colors from "$data/thumbnail-colors.json";
   import copy from "$data/home.json";
 
   export let stories;
+  export let staff;
   stories.sort((a, b) => ascending(a.slug, b.slug));
 
   const lookupColor = (slug) => {
@@ -12,7 +14,8 @@
   };
 </script>
 
-<h1>{copy.title}</h1>
+<Intro {stories} {staff} />
+
 <a href="about">About</a>
 <a href="pitch">Pitch</a>
 <a href="privacy">Privacy</a>
@@ -37,17 +40,8 @@
 {/each}
 
 <style>
-  div {
-    /* height: 2em; */
-    /* padding: 4em; */
-  }
-
   a {
     display: block;
-  }
-
-  h1 {
-    font-family: var(--serif);
   }
 
   .palette {

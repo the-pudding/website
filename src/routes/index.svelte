@@ -3,9 +3,9 @@
     const url = "/api/home.json";
     const res = await fetch(url);
     if (res.ok) {
-      const stories = await res.json();
+      const { stories, staff } = await res.json();
       return {
-        props: { stories }
+        props: { stories, staff }
       };
     }
 
@@ -21,7 +21,8 @@
   import Home from "$components/Home.svelte";
 
   export let stories;
+  export let staff;
 </script>
 
 <Meta />
-<Home {stories} />
+<Home {stories} {staff} />
