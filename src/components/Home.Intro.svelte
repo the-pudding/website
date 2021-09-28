@@ -10,28 +10,44 @@
   let personalHTML = "";
   let signatureHTML = "";
 
-  const popularStories = stories.filter((d) => d.home_popular);
-  shuffle(popularStories);
+  const madlibToHTML = ({ category, filterFunction }) => {
+    filterFunction = filterFunction || (() => true);
 
-  const popularHTML = copy.popular.replace(/\[popular\]/g, () => {
-    const { url, home_popular } = popularStories.pop();
-    return `<a href="https://pudding.cool/${url}" rel="external">${home_popular}</a>`;
-  });
+    const textProp = `home_${category}`;
 
-  onMount(() => {
-    const { id, name } = staff[Math.floor(Math.random() * staff.length)];
+    const filteredStories = stories.filter((d) => d[textProp]).filter(filterFunction);
 
-    const personalStories = stories
-      .filter((d) => d.home_personal)
-      .filter((d) => d.personal_pick.includes(id));
-    shuffle(personalStories);
+    if (!filteredStories.length) return "";
 
-    personalHTML = copy.personal.replace(/\[personal\]/g, () => {
-      const { url, home_personal } = personalStories.pop();
-      return `<a href="https://pudding.cool/${url}" rel="external">${home_personal}</a>`;
+    shuffle(filteredStories);
+
+    const regex = new RegExp(`\\[${category}\\]`, "g");
+
+    const html = copy[category].replace(regex, () => {
+      const story = filteredStories.pop();
+      return `
+    		<a href="https://pudding.cool/${story.url}" rel="external">
+    			${story[textProp]}
+    			<img src="common/assets/thumbnails/320/${story.slug}.jpg" alt="" />
+    		</a>
+    	`;
     });
 
-    signatureHTML = name;
+    return html;
+  };
+
+  const popularHTML = madlibToHTML({ category: "popular" });
+
+  const renderPersonal = () => {
+    // const { id, name } = staff[Math.floor(Math.random() * staff.length)];
+    const filterFunction = (d) => d.personal_pick.includes("jan");
+
+    personalHTML = madlibToHTML({ category: "personal", filterFunction });
+    signatureHTML = "jan";
+  };
+
+  onMount(() => {
+    renderPersonal();
   });
 </script>
 
@@ -49,5 +65,10 @@
 <style>
   .wordmark {
     max-width: 8em;
+  }
+
+  :global(.letter img) {
+    display: inline-block;
+    max-width: 10em;
   }
 </style>
