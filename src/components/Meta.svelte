@@ -1,4 +1,5 @@
 <script>
+  import { base } from "$app/paths";
   export let title = "Title TK";
   export let description = "Description TK";
   export let url = "https://pudding.cool";
@@ -32,10 +33,10 @@
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image:src" content="{url}/assets/social-twitter.jpg" />
 
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" href="icon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="{base}/favicon.ico" sizes="any" />
+  <link rel="icon" href="{base}/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="{base}/apple-touch-icon.png" />
+  <link rel="manifest" href="{base}/manifest.webmanifest" />
 
   <meta name="robots" content="max-image-preview:large" />
 
