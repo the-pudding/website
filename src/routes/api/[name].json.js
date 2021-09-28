@@ -10,7 +10,7 @@ export const get = async ({ params }) => {
 
 	const author = authorsData.find(d => d.slug === name);
 
-	const stories = storiesFiltered.filter(d => d.author.includes(match.id));
+	const stories = storiesFiltered.filter(d => d.author.includes(author.id));
 
 	const body = {
 		stories,
