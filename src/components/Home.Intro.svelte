@@ -1,14 +1,15 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, getContext } from "svelte";
   import { shuffle } from "d3";
-  import wordmark from "$svg/wordmark.svg";
-  import copy from "$data/home.json";
 
-  export let stories;
-  export let staff;
+  import wordmark from "$svg/wordmark.svg";
+
+  const { stories, staff, copy } = getContext("Home");
 
   let personalHTML = "";
-  let signatureHTML = "";
+  let personalName = "";
+
+  $: personalVisible = !!personalHTML;
 
   const madlibToHTML = ({ category, filterFunction }) => {
     filterFunction = filterFunction || (() => true);
@@ -39,11 +40,11 @@
   const popularHTML = madlibToHTML({ category: "popular" });
 
   const renderPersonal = () => {
-    // const { id, name } = staff[Math.floor(Math.random() * staff.length)];
-    const filterFunction = (d) => d.personal_pick.includes("jan");
+    const { id, name } = staff[Math.floor(Math.random() * staff.length)];
+    const filterFunction = (d) => d.personal_pick.includes(id);
 
     personalHTML = madlibToHTML({ category: "personal", filterFunction });
-    signatureHTML = "jan";
+    personalName = name;
   };
 
   onMount(() => {
@@ -58,13 +59,24 @@
     {@html popularHTML}
     <span class="personal">{@html personalHTML}</span>
     {copy.welcome}
-    <span class="signature">{@html signatureHTML}</span>
+  </p>
+  <p class="signature" class:is-visible={personalVisible}>
+    <span class="name">{personalName}</span>
+    <span class="tk">Pudding team member</span>
   </p>
 </div>
 
 <style>
   .wordmark {
     max-width: 8em;
+  }
+
+  .signature {
+    display: none;
+  }
+
+  .signature.is-visible {
+    display: block;
   }
 
   :global(.letter img) {

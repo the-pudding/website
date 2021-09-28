@@ -1,17 +1,21 @@
-import stories from "$data/stories.js";
-import authors from "$data/authors.js";
+import storiesData from "$data/stories.js";
+import authorsData from "$data/authors.js";
 import filterStoryProps from "$utils/filterStoryProps.js";
 
 export const get = async () => {
-	const keys = ["url", "date", "month", "hed", "dek", "topic", "author", "keyword", "slug", "home_popular", "home_personal", "personal_pick"];
+	const keys = ["url", "date", "month", "hed", "dek", "tease", "topic", "author", "keyword", "slug", "home_popular", "home_personal", "personal_pick"];
 
-	const staff = authors.filter(d => d.position === "Staff").map(d => ({
+	const excludeTopics = ["how", "awards"]
+	const storiesFiltered = storiesData.filter(d => !excludeTopics.includes(d.topic));
+	const stories = filterStoryProps({ data: storiesFiltered, keys });
+
+	const staff = authorsData.filter(d => d.position === "Staff").map(d => ({
 		id: d.id,
 		name: d.name
 	}));
 
 	const body = {
-		stories: filterStoryProps({ data: stories, keys }),
+		stories,
 		staff
 	};
 
