@@ -3,18 +3,26 @@
   import wordmark from "$svg/wordmark.svg";
   import copy from "$data/misc.json";
 
-  const links = [
-    { name: "about", url: "https://pudding.cool/about" },
-    { name: "facebook", url: "https://facebook.com/pudding.viz/" },
-    { name: "twitter", url: "https://twitter.com/puddingviz/" },
+  const linksAbout = [
+    { name: "Our Team", url: "https://pudding.cool/about" },
+    { name: "FAQ", url: "https://pudding.cool/faq" },
+    { name: "Pitch a Story", url: "https://pudding.cool/pitch" },
+    { name: "Data Viz Resources", url: "https://pudding.cool/resources" },
+    { name: "Privacy", url: "https://pudding.cool/privacy" },
+    { name: "Polygraph Studio", url: "https://polygraph.cool" }
+  ];
+
+  const linksFollow = [
+    { name: "Twitter", url: "https://twitter.com/puddingviz" },
     {
-      name: "instagram",
+      name: "Instagram",
       url: "https://www.instagram.com/the.pudding"
     },
-    { name: "patreon", url: "https://patreon.com/thepudding/" },
-    { name: "privacy", url: "https://pudding.cool/privacy/" },
-    { name: "newsletter", url: "http://eepurl.com/czym6f" },
-    { name: "rss", url: "https://pudding.cool/feed/index.xml" }
+    { name: "Patreon", url: "https://patreon.com/thepudding" },
+    { name: "Facebook", url: "https://facebook.com/pudding.viz" },
+    { name: "YouTube", url: "https://www.youtube.com/channel/UCFuV9vMFVluW9CAOdS4Oluw" },
+    { name: "Newsletter", url: "http://eepurl.com/czym6f" },
+    { name: "RSS", url: "https://pudding.cool/feed/index.xml" }
   ];
 </script>
 
@@ -23,19 +31,35 @@
     <div class="wordmark">
       {@html wordmark}
     </div>
-    <p>{copy.tagline}</p>
+    <p>{copy.patreon}</p>
   </section>
 
   <section class="links">
-    <ul>
-      {#each links as link}
-        <li>
-          <a href={link.url}>
-            <span>{link.name.toUpperCase()}</span>
-          </a>
-        </li>
-      {/each}
-    </ul>
+    <div>
+      <h4>About Us</h4>
+      <ul>
+        {#each linksAbout as link}
+          <li>
+            <a href={link.url}>
+              <span>{link.name.toUpperCase()}</span>
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+
+    <div>
+      <h4>Follow Us</h4>
+      <ul>
+        {#each linksFollow as link}
+          <li>
+            <a href={link.url}>
+              <span>{link.name.toUpperCase()}</span>
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
   </section>
 </footer>
 

@@ -32,5 +32,9 @@ module.exports = [
 	{
 		"id": "1AVZ-jcoXCKZHIbMN-aCSsb7YA-r3N5goxyeGnzHX108",
 		"filepath": "src/data/misc.json"
+	},
+	{
+		"id": "1kj_np3CIaO8rmRswvgLipH1DUvr1JF-wAQ2flo6apgU",
+		"filepath": "src/data/resources.json"
 	}
 ]

@@ -13,8 +13,8 @@
   let value = "";
 
   $: query = value.toLowerCase().trim();
-  $: results = query.length > 2 ? data.filter((d) => d.search.includes(query)) : [];
-  $: highlight = results.length ? results.map((d) => d.slug) : data.map((d) => d.slug);
+  $: results = query.length > 2 ? data.filter((d) => d.search.includes(query)) : data;
+  $: highlight = results.map((d) => d.slug);
 </script>
 
 <div class="search">

@@ -1,5 +1,5 @@
 <script>
-  import copy from "$data/about.json";
+  export let copy;
 </script>
 
 <h1>About page</h1>

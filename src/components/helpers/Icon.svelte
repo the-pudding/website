@@ -4,10 +4,10 @@
 
   export let name;
   export let direction = "n";
-  export let strokeWidth;
-  export let stroke;
   export let width = "1em";
   export let height = "1em";
+  export let strokeWidth = undefined;
+  export let stroke = undefined;
 
   $: icon = feather.icons[name];
   $: rotation = directions.indexOf(direction) * 45;
@@ -18,10 +18,7 @@
 </script>
 
 {#if icon}
-  <svg
-    {...icon.attrs}
-    style="width: {width}; height: {height}; transform: rotate({rotation}deg);"
-  >
+  <svg {...icon.attrs} style="width: {width}; height: {height}; transform: rotate({rotation}deg);">
     <g>
       {@html icon.contents}
     </g>

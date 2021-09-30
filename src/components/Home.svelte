@@ -4,12 +4,12 @@
   import Intro from "$components/Home.Intro.svelte";
   import Search from "$components/Home.Search.svelte";
   import Stories from "$components/Home.Stories.svelte";
-  import copy from "$data/home.json";
 
+  export let copy;
   export let stories;
   export let staff;
 
-  let highlight = [];
+  let highlight = stories.map((d) => d.slug);
 
   setContext("Home", { stories, staff, copy });
 </script>

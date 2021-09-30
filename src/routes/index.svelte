@@ -19,10 +19,11 @@
 <script>
   import Meta from "$components/Meta.svelte";
   import Home from "$components/Home.svelte";
+  import copy from "$data/home.json";
 
   export let stories;
   export let staff;
 </script>
 
-<Meta />
-<Home {stories} {staff} />
+<Meta {copy} />
+<Home {copy} {stories} {staff} />
