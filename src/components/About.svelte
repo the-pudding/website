@@ -1,5 +1,10 @@
 <script>
+  import { ascending } from "d3";
+  import awards from "$data/awards.csv";
+  import staff from "$data/staff.js";
+
   export let copy;
+  staff.sort((a, b) => ascending(a.name, b.name));
 
   const { sections } = copy;
 </script>
@@ -13,9 +18,31 @@
     {/if}
 
     {#if id === "awards"}
-      <p>awards</p>
+      <table>
+        <thead>
+          <th>Award</th>
+          <th>Story</th>
+          <th>Year</th>
+        </thead>
+        <tbody>
+          {#each awards as { awardText, awardUrl, storyHed, storyUrl, year }}
+            <tr>
+              <td><a href={awardUrl} rel="external">{awardText}</a></td>
+              <td><a href={storyUrl} rel="external">{storyHed}</a></td>
+              <td>{year}</td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
     {:else if id === "team"}
-      <p>team</p>
+      {#each staff as { id, name, slug }}
+        <li>
+          <a href="author/{slug}">
+            <img src="common/assets/authors/{id}.jpg" alt={name} />
+            <span>{name}</span>
+          </a>
+        </li>
+      {/each}
     {:else}
       {#each copy[id] as { value }}
         <p>{@html value}</p>
