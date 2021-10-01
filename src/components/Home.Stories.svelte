@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { descending } from "d3";
+  import { ascending, descending } from "d3";
   import colors from "$data/thumbnail-colors.json";
 
   export let highlight;
@@ -8,6 +8,8 @@
   const { stories, copy } = getContext("Home");
 
   stories.sort((a, b) => descending(a.date, b.date));
+
+  let sortedStories = stories.map((d) => ({ ...d }));
 
   const lookupColors = (slug) => {
     const match = colors.find((d) => d.slug === slug);
@@ -20,12 +22,24 @@
     const match = colors.find((d) => d.slug === slug);
     return match && match.colors.length ? match.colors[0] : ["rgb(0,0,0)"];
   };
+
+  const reSort = () => {
+    sortedStories.sort(
+      (a, b) =>
+        descending(highlight.includes(a.slug), highlight.includes(b.slug)) ||
+        descending(a.date, b.date)
+    );
+
+    sortedStories = sortedStories;
+  };
+
+  $: highlight, reSort();
 </script>
 
 <section id="stories">
   <h2>{copy.storiesHed}</h2>
   <ul>
-    {#each stories as { tease, url, slug }}
+    {#each sortedStories as { tease, url, slug }}
       <div class="palette">
         {#each lookupColors(slug) as rgb}
           <p style="background: {rgb};" />
