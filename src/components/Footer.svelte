@@ -4,25 +4,25 @@
   import copy from "$data/misc.json";
 
   const linksAbout = [
-    { name: "Our Team", url: "https://pudding.cool/about" },
-    { name: "FAQ", url: "https://pudding.cool/faq" },
-    { name: "Pitch a Story", url: "https://pudding.cool/pitch" },
-    { name: "Data Viz Resources", url: "https://pudding.cool/resources" },
-    { name: "Privacy", url: "https://pudding.cool/privacy" },
-    { name: "Polygraph Studio", url: "https://polygraph.cool" }
+    { text: "Our Team", url: "https://pudding.cool/about" },
+    { text: "FAQ", url: "https://pudding.cool/faq" },
+    { text: "Pitch a Story", url: "https://pudding.cool/pitch" },
+    { text: "Data Viz Resources", url: "https://pudding.cool/resources" },
+    { text: "Privacy", url: "https://pudding.cool/privacy" },
+    { text: "Polygraph Studio", url: "https://polygraph.cool", rel: "external" }
   ];
 
   const linksFollow = [
-    { name: "Twitter", url: "https://twitter.com/puddingviz" },
+    { text: "Twitter", url: "https://twitter.com/puddingviz" },
     {
-      name: "Instagram",
+      text: "Instagram",
       url: "https://www.instagram.com/the.pudding"
     },
-    { name: "Patreon", url: "https://patreon.com/thepudding" },
-    { name: "Facebook", url: "https://facebook.com/pudding.viz" },
-    { name: "YouTube", url: "https://www.youtube.com/channel/UCFuV9vMFVluW9CAOdS4Oluw" },
-    { name: "Newsletter", url: "http://eepurl.com/czym6f" },
-    { name: "RSS", url: "https://pudding.cool/feed/index.xml" }
+    { text: "Patreon", url: "https://patreon.com/thepudding" },
+    { text: "Facebook", url: "https://facebook.com/pudding.viz" },
+    { text: "YouTube", url: "https://www.youtube.com/channel/UCFuV9vMFVluW9CAOdS4Oluw" },
+    { text: "Newsletter", url: "http://eepurl.com/czym6f" },
+    { text: "RSS", url: "https://pudding.cool/feed/index.xml" }
   ];
 </script>
 
@@ -38,10 +38,10 @@
     <div>
       <h4>About Us</h4>
       <ul>
-        {#each linksAbout as link}
+        {#each linksAbout as { url, text, rel }}
           <li>
-            <a href={link.url}>
-              <span>{link.name.toUpperCase()}</span>
+            <a href={url} {rel}>
+              <span>{text.toUpperCase()}</span>
             </a>
           </li>
         {/each}
@@ -51,10 +51,10 @@
     <div>
       <h4>Follow Us</h4>
       <ul>
-        {#each linksFollow as link}
+        {#each linksFollow as { url, text }}
           <li>
-            <a href={link.url}>
-              <span>{link.name.toUpperCase()}</span>
+            <a href={url}>
+              <span>{text.toUpperCase()}</span>
             </a>
           </li>
         {/each}

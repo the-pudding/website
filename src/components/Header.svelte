@@ -14,8 +14,8 @@
   ];
 
   const cta = [
-    { name: "Support The Pudding", url: "https://patreon.com/thepudding/" },
-    { name: "Join our newsletter", url: "http://eepurl.com/czym6f" }
+    { text: "Support The Pudding", url: "https://patreon.com/thepudding/" },
+    { text: "Join our newsletter", url: "http://eepurl.com/czym6f" }
   ];
 </script>
 
@@ -31,8 +31,8 @@
   </div>
 
   <div class="cta">
-    {#each cta as { name, url }}
-      <a class="btn" href={url}>{name}</a>
+    {#each cta as { text, url }}
+      <a class="btn" href={url}>{text}</a>
     {/each}
   </div>
 

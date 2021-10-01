@@ -2,7 +2,6 @@
   export let copy;
 
   const { sections } = copy;
-  const lists = ["principles", "send"];
 </script>
 
 <h1>{copy.title}</h1>
@@ -17,7 +16,7 @@
       <p>{@html value}</p>
     {/each}
 
-    {#if lists.includes(id)}
+    {#if copy[`${id}List`]}
       <ul>
         {#each copy[`${id}List`] as { lead, description }}
           <li><strong>{@html lead}</strong> {@html description}</li>
