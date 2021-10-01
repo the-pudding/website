@@ -9,7 +9,7 @@ const stories = papa.parse(csv, { header: true }).data;
 
 stories.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-const output = stories.filter(d => d.footer === "TRUE").map(d => ({
+const output = stories.filter(d => !d.hide_footer === "TRUE").map(d => ({
 	image: d.url.replace(/\//g, "_"),
 	url: d.url,
 	hed: d.hed,

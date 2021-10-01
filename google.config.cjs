@@ -1,20 +1,30 @@
 module.exports = [
 	{
-		"id": "1rlOAKk1j4cSl6BYgzJ4bIUQ5PREOo6xASHX8JOrI-c4",
+		"id": "1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ",
 		"gid": "0",
 		"filepath": "src/data/stories.csv"
 	},
 	{
-		"id": "1rlOAKk1j4cSl6BYgzJ4bIUQ5PREOo6xASHX8JOrI-c4",
+		"id": "1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ",
 		"gid": "2040210797",
 		"filepath": "src/data/authors.csv"
+	},
+	{
+		"id": "1a6xuXb41YuelXLEs80cdJBf_a0OU1PIBB3-cNhPBoOA",
+		"gid": "0",
+		"filepath": "src/data/resources.csv"
+	},
+	{
+		"id": "1hOPQTl3OOpZu926GEzEXWhXFiqUgva42WZAHlV9lSzc",
+		"gid": "0",
+		"filepath": "src/data/awards.csv"
 	},
 	{
 		"id": "13hhthZl_Clk9w1kOmBECaOV28Jqx33P0WzfhivwN_X8",
 		"filepath": "src/data/home.json"
 	},
 	{
-		"id": "1nzzqdS9KGNg2XE1DjHqvy5w2WreFydd8O9YLVQaFInA",
+		"id": "1juSetAFxdhhsaPEjzGhONqAYyPmGAcJ73SPWimddkOg",
 		"filepath": "src/data/about.json"
 	},
 	{

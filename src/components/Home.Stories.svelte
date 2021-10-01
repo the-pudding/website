@@ -38,7 +38,7 @@
         style="background-color: {lookupColor(slug)};"
       >
         <a href="https://pudding.cool/{url}" rel="external">
-          <img src="common/assets/thumbnails/640/{slug}.jpg" alt="" />
+          <img src="common/assets/thumbnails/32/{slug}.jpg" alt="" />
           <h3 class="tease">{tease}</h3>
         </a>
       </li>
@@ -61,6 +61,7 @@
 
   img {
     max-width: 20em;
+    width: 10em;
   }
 
   .palette {

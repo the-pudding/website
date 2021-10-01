@@ -1,47 +1,28 @@
 <script>
   export let copy;
+
+  const { sections } = copy;
+  const lists = ["principles", "send"];
 </script>
 
 <h1>{copy.title}</h1>
 
-<section class="intro">
-  {#each copy.intro as { value }}
-    <p>{@html value}</p>
-  {/each}
-</section>
+{#each sections as { hed, id }}
+  <section {id}>
+    {#if hed}
+      <h2>{hed}</h2>
+    {/if}
 
-<section class="principles">
-  <ul>
-    {#each copy.principles as { lead, description }}
-      <li><strong>{@html lead}</strong> {@html description}</li>
+    {#each copy[id] as { value }}
+      <p>{@html value}</p>
     {/each}
-  </ul>
-</section>
 
-<section class="send">
-  <h2>{copy.sendHed}</h2>
-  <p>{copy.sendDek}</p>
-  <ul>
-    {#each copy.sendList as { lead, description }}
-      <li><strong>{@html lead}:</strong> {@html description}</li>
-    {/each}
-  </ul>
-</section>
-
-<section class="misc">
-  {#each copy.misc as { value }}
-    <p>{@html value}</p>
-  {/each}
-</section>
-
-<section class="compensation">
-  <h2>{copy.compensationHed}</h2>
-  <p>{@html copy.compensationDek}</p>
-</section>
-
-<section class="time">
-  <h2>
-    {copy.timeHed}
-  </h2>
-  <p>{@html copy.timeDek}</p>
-</section>
+    {#if lists.includes(id)}
+      <ul>
+        {#each copy[`${id}List`] as { lead, description }}
+          <li><strong>{@html lead}</strong> {@html description}</li>
+        {/each}
+      </ul>
+    {/if}
+  </section>
+{/each}

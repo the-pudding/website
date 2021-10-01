@@ -5,8 +5,8 @@ const archieml = require("archieml");
 const fetch = require("node-fetch");
 const docs = require(`${CWD}/google.config.cjs`);
 
-const fetchGoogle = async ({ id, gid }) => {
-	console.log(`fetching...${id}`);
+const fetchGoogle = async ({ id, gid, filepath }) => {
+	console.log(`fetching: ${filepath}`);
 
 	const base = "https://docs.google.com";
 	const post = gid ? `spreadsheets/u/1/d/${id}/export?format=csv&id=${id}&gid=${gid}` : `document/d/${id}/export?format=txt`;

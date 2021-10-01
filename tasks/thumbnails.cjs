@@ -5,7 +5,7 @@ const mkdirp = require("mkdirp");
 const CWD = process.cwd();
 const PATH_IN = `${CWD}/thumbnails`;
 const PATH_OUT = `${CWD}/static/common/assets/thumbnails`;
-const SIZES = [320, 640, 1280, 1920];
+const SIZES = [32, 320, 640, 1280, 1920];
 
 function getNewImages() {
 	const filesIn = fs.readdirSync(PATH_IN).filter(d => d.includes('.jpg'));
@@ -19,7 +19,12 @@ function resize({ file, size }) {
 	return new Promise((resolve, reject) => {
 		jimp.read(`${PATH_IN}/${file}`)
 			.then(img => {
-				return img
+				if (size === SIZES[0]) img
+					.resize(size, jimp.AUTO)
+					.blur(1)
+					.quality(100)
+					.write(`${PATH_OUT}/${size}/${file}`, resolve);
+				else img
 					.resize(size, jimp.AUTO)
 					.quality(70)
 					.write(`${PATH_OUT}/${size}/${file}`, resolve);
