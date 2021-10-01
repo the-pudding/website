@@ -22,6 +22,7 @@
 <a href="pitch">Pitch</a>
 <a href="privacy">Privacy</a>
 <a href="faq">FAQ</a>
+<a href="resources">Resources</a>
 <a href="author/russell-goldenberg">Russell</a>
 <a href="author/jan-diehm">Jan</a>
 
