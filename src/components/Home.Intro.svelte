@@ -1,6 +1,6 @@
 <script>
   import { onMount, getContext } from "svelte";
-  import { shuffle } from "d3";
+  import madlibToHtml from "$utils/madlibToHtml";
 
   import wordmark from "$svg/wordmark.svg";
 
@@ -8,46 +8,21 @@
 
   let personalHTML = "";
   let personalName = "";
+  let popularHTML = madlibToHtml({ stories, copy, category: "popular" });
 
   $: personalVisible = !!personalHTML;
-
-  const madlibToHTML = ({ category, filterFunction }) => {
-    filterFunction = filterFunction || (() => true);
-
-    const textProp = `home_${category}`;
-
-    const filteredStories = stories.filter((d) => d[textProp]).filter(filterFunction);
-
-    if (!filteredStories.length) return "";
-
-    shuffle(filteredStories);
-
-    const regex = new RegExp(`\\[${category}\\]`, "g");
-
-    const html = copy[category].replace(regex, () => {
-      const story = filteredStories.pop();
-      return `
-    		<a href="https://pudding.cool/${story.url}" rel="external">
-    			${story[textProp]}
-    			<img src="common/assets/thumbnails/320/${story.slug}.jpg" alt="" />
-    		</a>
-    	`;
-    });
-
-    return html;
-  };
-
-  const popularHTML = madlibToHTML({ category: "popular" });
 
   const renderPersonal = () => {
     const { id, name } = staff[Math.floor(Math.random() * staff.length)];
     const filterFunction = (d) => d.personal_pick.includes(id);
 
-    personalHTML = madlibToHTML({ category: "personal", filterFunction });
+    const unused = stories.filter((d) => !popularHTML.includes(d.url));
+    personalHTML = madlibToHtml({ stories: unused, copy, category: "personal", filterFunction });
     personalName = name;
   };
 
   onMount(() => {
+    popularHTML = madlibToHtml({ stories, copy, category: "popular" });
     renderPersonal();
   });
 </script>

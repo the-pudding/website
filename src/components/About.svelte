@@ -1,9 +1,10 @@
 <script>
   import { ascending } from "d3";
   import awards from "$data/awards.csv";
-  import staff from "$data/staff.js";
 
   export let copy;
+  export let staff;
+
   staff.sort((a, b) => ascending(a.name, b.name));
 
   const { sections } = copy;
