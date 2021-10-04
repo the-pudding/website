@@ -11,6 +11,7 @@ specifiers:
   feather-icons: 4.28.0
   jimp: ^0.16.1
   lodash.debounce: 4.0.8
+  lodash.deburr: ^4.1.0
   mkdirp: ^1.0.4
   node-fetch: 2.6.2
   node-vibrant: ^3.2.1-alpha.1
@@ -36,6 +37,7 @@ devDependencies:
   feather-icons: 4.28.0
   jimp: 0.16.1
   lodash.debounce: 4.0.8
+  lodash.deburr: 4.1.0
   mkdirp: 1.0.4
   node-fetch: 2.6.2
   node-vibrant: 3.2.1-alpha.1
@@ -1777,6 +1779,10 @@ packages:
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
+    dev: true
+
+  /lodash.deburr/4.1.0:
+    resolution: {integrity: sha1-3bG7s+8HRYwBd7oH3hRCLLAz/5s=}
     dev: true
 
   /lodash/4.17.21:

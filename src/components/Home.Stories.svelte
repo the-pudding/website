@@ -17,7 +17,7 @@
   };
 
   const lookupColor = (slug) => {
-    if (!highlight.includes(slug)) return "rgb(0, 0, 0)";
+    if (!highlight.includes(slug)) return "rgb(150, 150, 150)";
 
     const match = colors.find((d) => d.slug === slug);
     return match && match.colors.length ? match.colors[0] : ["rgb(0,0,0)"];
@@ -26,13 +26,14 @@
   const reSort = () => {
     sortedStories.sort(
       (a, b) =>
-        descending(highlight.includes(a.slug), highlight.includes(b.slug)) ||
+        descending(highlight.indexOf(a.slug), highlight.indexOf(b.slug)) ||
         descending(a.date, b.date)
     );
 
     sortedStories = sortedStories;
   };
 
+  $: console.log(highlight);
   $: highlight, reSort();
 </script>
 
@@ -40,12 +41,6 @@
   <h2>{copy.storiesHed}</h2>
   <ul>
     {#each sortedStories as { tease, url, slug }}
-      <div class="palette">
-        {#each lookupColors(slug) as rgb}
-          <p style="background: {rgb};" />
-        {/each}
-      </div>
-
       <li
         class="story"
         class:is-collapsed={!highlight.includes(slug)}
@@ -53,7 +48,7 @@
       >
         <a href="https://pudding.cool/{url}" rel="external">
           <img src="common/assets/thumbnails/32/{slug}.jpg" alt="" />
-          <h3 class="tease">{tease}</h3>
+          <h3 class="tease">{@html tease}</h3>
         </a>
       </li>
     {/each}
@@ -71,6 +66,8 @@
   .story a {
     display: flex;
     padding: 2em;
+    text-decoration: none;
+    font-size: 4vh;
   }
 
   img {
@@ -78,18 +75,8 @@
     width: 10em;
   }
 
-  .palette {
-    display: flex;
-    display: none;
-  }
-
-  .palette p {
-    width: 4em;
-    height: 4em;
-  }
-
   .tease {
     margin: 0;
-    color: white;
+    color: #000;
   }
 </style>
