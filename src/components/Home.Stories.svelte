@@ -33,7 +33,6 @@
     sortedStories = sortedStories;
   };
 
-  $: console.log(highlight);
   $: highlight, reSort();
 </script>
 

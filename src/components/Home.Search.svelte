@@ -76,7 +76,7 @@
       .filter((d) => d.score > 0);
 
     results.sort((a, b) => ascending(a.score, b.score));
-    console.log(results);
+
     return results;
   };
 
