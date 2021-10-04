@@ -1,6 +1,8 @@
 <script>
   import logo from "$svg/logo.svg";
   import Icon from "$components/helpers/Icon.svelte";
+  import copy from "$data/misc.json";
+  import { linksAbout, linksFollow } from "$data/links.js";
 
   let menuVisible = false;
 
@@ -36,13 +38,50 @@
     {/each}
   </div>
 
-  <div class="menu-toggle">
-    <button on:click={() => (menuVisible = !menuVisible)}><Icon name="menu" /></button>
-  </div>
+  <nav>
+    <button
+      type="button"
+      class="nav-btn-open"
+      aria-label="open navigation"
+      aria-controls="slide-nav"
+      aria-expanded="false">&#9776;</button
+    >
+    <div id="slide-nav" class="slide-content">
+      <button type="button" class="nav-btn-close" aria-label="close navigation">&times;</button>
+      <p>{copy.tagline}</p>
+      <div class="nav-cta">
+        {#each cta as { text, url }}
+          <a class="btn" href={url}>{text}</a>
+        {/each}
+      </div>
 
-  <div class="menu" class:is-visible={menuVisible}>
-    <p>I am the menu</p>
-  </div>
+      <div>
+        <h4>About Us</h4>
+        <ul>
+          {#each linksAbout as { url, text, rel }}
+            <li>
+              <a href={url} {rel}>
+                <span>{text.toUpperCase()}</span>
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          {#each linksFollow as { url, text }}
+            <li>
+              <a href={url}>
+                <span>{text.toUpperCase()}</span>
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <style>

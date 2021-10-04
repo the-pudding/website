@@ -31,6 +31,7 @@
 
 <div class="letter">
   <p>
+    <span class="sr-only">The Pudding</span>
     {@html popularHTML}
     <span class="personal">{@html personalHTML}</span>
     {copy.welcome}

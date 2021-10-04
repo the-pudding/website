@@ -15,9 +15,6 @@
       {#each data.filter((d) => d.category === id) as { url, slug, title, overline, description }}
         <li>
           <a href={url} rel="external">
-            {#if overline}
-              <p>{overline}</p>
-            {/if}
             <h3>{title}</h3>
             {#if description}
               <p>{description}</p>
