@@ -11,16 +11,11 @@
 
   let sortedStories = stories.map((d) => ({ ...d }));
 
-  const lookupColors = (slug) => {
-    const match = colors.find((d) => d.slug === slug);
-    return match && match.colors.length ? match.colors : ["rgb(255,255,255)"];
-  };
-
   const lookupColor = (slug) => {
     if (!highlight.includes(slug)) return "rgb(150, 150, 150)";
 
     const match = colors.find((d) => d.slug === slug);
-    return match && match.colors.length ? match.colors[0] : ["rgb(0,0,0)"];
+    return match ? match.color : ["rgb(0,0,0)"];
   };
 
   const reSort = () => {
@@ -46,7 +41,15 @@
         style="background-color: {lookupColor(slug)};"
       >
         <a href="https://pudding.cool/{url}" rel="external">
-          <img src="common/assets/thumbnails/32/{slug}.jpg" alt="" />
+          <img
+            src="common/assets/thumbnails/32/{slug}.jpg"
+            alt="teaser for story"
+            srcset="common/assets/thumbnails/1280/{slug}.jpg 1280w,
+						common/assets/thumbnails/640/{slug}.jpg 640w,
+						common/assets/thumbnails/480/{slug}.jpg 480w"
+            sizes="(max-width: 320px) 640px, (max-width: 480px) 960px, 1280px"
+            loading="lazy"
+          />
           <h3 class="tease">{@html tease}</h3>
         </a>
       </li>

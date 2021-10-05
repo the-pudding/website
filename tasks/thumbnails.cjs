@@ -5,7 +5,7 @@ const mkdirp = require("mkdirp");
 const CWD = process.cwd();
 const PATH_IN = `${CWD}/thumbnails`;
 const PATH_OUT = `${CWD}/static/common/assets/thumbnails`;
-const SIZES = [32, 320, 640, 1280, 1920];
+const SIZES = [32, 640, 960, 1280];
 
 function getNewImages() {
 	const filesIn = fs.readdirSync(PATH_IN).filter(d => d.includes('.jpg'));
