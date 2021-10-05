@@ -6,11 +6,16 @@
 
   const { stories, staff, copy } = getContext("Home");
 
+  let altTagline = "";
+  let popularHTML = "";
   let personalHTML = "";
   let personalName = "";
-  let popularHTML = madlibToHtml({ stories, copy, category: "popular" });
+  let welcome = "";
+  let position = "";
 
-  $: personalVisible = !!personalHTML;
+  const renderPopular = () => {
+    popularHTML = madlibToHtml({ stories, copy, category: "popular" });
+  };
 
   const renderPersonal = () => {
     const { id, name } = staff[Math.floor(Math.random() * staff.length)];
@@ -21,9 +26,22 @@
     personalName = name;
   };
 
+  const renderAltTagline = () => {
+    const r = Math.floor(Math.random() * copy.altTaglines.length);
+    altTagline = copy.altTaglines[r];
+  };
+
+  const renderSignature = () => {
+    if (!personalHTML) return;
+    welcome = copy.welcome;
+    position = "Pudding team member";
+  };
+
   onMount(() => {
-    popularHTML = madlibToHtml({ stories, copy, category: "popular" });
+    renderAltTagline();
+    renderPopular();
     renderPersonal();
+    renderSignature();
   });
 </script>
 
@@ -32,13 +50,24 @@
 <div class="letter">
   <p>
     <span class="sr-only">The Pudding</span>
-    {@html popularHTML}
-    <span class="personal">{@html personalHTML}</span>
-    {copy.welcome}
+
+    <span class="tagline" class:is-del={altTagline}>
+      {@html copy.tagline}<span class="tagline-alt" class:is-visible={altTagline}
+        >&nbsp;{altTagline}.</span
+      >
+    </span>
+
+    <span class="popular" class:is-visible={popularHTML}>{@html popularHTML}</span>
+
+    <span class="personal">
+      <strong>{@html personalHTML}</strong>
+    </span>
+
+    <span class="welcome" class:is-visible={personalHTML}>{@html welcome}</span>
   </p>
-  <p class="signature" class:is-visible={personalVisible}>
+  <p class="signature" class:is-visible={personalHTML}>
     <span class="name">{personalName}</span>
-    <span class="tk">Pudding team member</span>
+    <span class="position">{position}</span>
   </p>
 </div>
 
@@ -47,16 +76,73 @@
     max-width: 8em;
   }
 
+  .letter {
+    font-size: 5vw;
+    min-height: 480px;
+  }
+
+  :global(del) {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0 0.1em;
+    background-position: 0 50%;
+    transition: background-size 1s ease-in;
+  }
+
+  :global(.is-del del) {
+    background-size: 100% 0.1em;
+  }
+
+  .tagline-alt {
+    opacity: 0;
+    display: inline-block;
+    transition: opacity 1s ease-in 1s;
+  }
+
+  .tagline-alt.is-visible {
+    opacity: 1;
+  }
+
+  .popular {
+    opacity: 0;
+    transition: opacity 1s ease-in 2s;
+  }
+
+  .popular.is-visible {
+    opacity: 1;
+  }
+
+  .personal {
+    opacity: 0;
+    transition: opacity 1s ease-in 3s;
+  }
+
+  .personal.is-visible {
+    opacity: 1;
+  }
+
+  .welcome {
+    opacity: 0;
+    transition: opacity 1s ease-in 3s;
+  }
+
+  .welcome.is-visible {
+    opacity: 1;
+  }
+
   .signature {
-    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in 4s;
   }
 
   .signature.is-visible {
-    display: block;
+    opacity: 1;
   }
 
   :global(.letter img) {
     display: inline-block;
-    max-width: 10em;
+    width: 20vw;
+    max-width: 5em;
   }
 </style>

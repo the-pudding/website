@@ -69,16 +69,27 @@
     display: flex;
     padding: 2em;
     text-decoration: none;
-    font-size: 4vh;
+    font-size: 2vw;
+    max-width: 1920px;
+    margin: 0 auto;
+    align-items: flex-start;
+  }
+
+  .story a:hover .tease,
+  .story a:focus .tease {
+    text-decoration: underline;
   }
 
   img {
-    max-width: 20em;
-    width: 10em;
+    max-width: 640px;
+    width: 40%;
+    padding: 0 1em;
   }
 
   .tease {
     margin: 0;
-    color: #000;
+    padding: 0 1em;
+    width: 60%;
+    color: var(--color-body);
   }
 </style>

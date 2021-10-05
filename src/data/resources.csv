@@ -1,6 +1,46 @@
 url,slug,category,title,description
-https://pudding.cool/process/how-to-make-dope-shit-part-1,dope-shit-part-1,how,Working with Data,Part 1 | How to Make Dope Shit
+https://pudding.cool/process/how-to-make-dope-shit-part-1,dope-shit-part-1,how,Working with Data,Part 1: How to Make Dope Shit
+https://pudding.cool/process/how-to-make-dope-shit-part-2/,dope-shit-part-2,how,Design,Part 2: How to Make Dope Shit
+https://pudding.cool/process/how-to-make-dope-shit-part-3/,dope-shit-part-3,how,Storytelling,Part 3: How to Make Dope Shit
 https://pudding.cool/process/speaker-rider,speaker-rider,how,We created a speaker rider. Journalism didn't have one.,
-https://www.youtube.com/watch?v=7y6MIXZumd8&list=PLsuhXm2zs07LgUWm2AehKSaCKtC_3-Vld&t=0s,live-coding-site,vlog,Live Coding our Site in SvelteKit,
-https://changelog.com/jsparty/193,js-paryt-193,podcast,Puddin' together cool data-driven essays,JS Party | Sept. 2021
-https://www.youtube.com/watch?v=J3Awc4HxDK0,shaping-ideas,talks,Shaping Ideas into Data Stories,Data Stories Speaker Series | Nov. 20
+https://pudding.cool/process/pivot-continue-down/,pivot-continue-down,how,"Continue, Pivot, or Put It Down",
+https://pudding.cool/process/pitching-gendered-descriptions/,pitching-gendered-descriptions,how,The Courage (and Disappointment) of Pitching a Visual Essay,
+https://pudding.cool/process/flexbox-layout/,flexbox-layout,how,Making Data Viz Without SVG Using D3 and Flexbox,
+https://pudding.cool/process/scrollytelling-sticky/,scrollytelling-sticky,how,Easier Scrollytelling with Position Sticky,
+https://pudding.cool/process/introducing-scrollama/,introducing-scrollama,how,An Introduction to Scrollama.js,
+https://pudding.cool/process/resize/,resize,how,How Many Users Resize Their Browser?,
+https://pudding.cool/process/weighted-pivot-scatter-plot/,weighted-pivot-scatter-plot,how,The Making of the Weighted Pivot Scatter Plot,
+https://pudding.cool/process/regional_smoothing/,regional_smoothing,how,Regional Smoothing in R,
+https://pudding.cool/process/responsive-scrollytelling/,responsive-scrollytelling,how,Responsive Scrollytelling Best Practices,
+https://pudding.cool/process/how-to-implement-scrollytelling/,how-to-implement-scrollytelling,how,How to Implement Scrollytelling with Six Different Libraries,
+https://pudding.cool/process/pudding-cup-2020/,pudding-cup-2020,cup,The Pudding Cup 2020,
+https://pudding.cool/process/pudding-cup-2019/,pudding-cup-2019,cup,The Pudding Cup 2019,
+https://pudding.cool/process/pudding-awards-2018/,pudding-awards-2018,cup,The Pudding Cup,
+https://pudding.cool/process/pudding-awards-2017/,pudding-awards-2017,cup,The Pudding Awards,
+https://www.youtube.com/playlist?list=PLsuhXm2zs07LgUWm2AehKSaCKtC_3-Vld,live-coding-site,vlog,Live Coding our Site in SvelteKit,X Episodes
+https://www.youtube.com/playlist?list=PLsuhXm2zs07I41WG3CReawQhTNNAsZiG-,svelte-way,vlog,The Svelte Way,3 Episodes
+https://www.youtube.com/watch?v=lvgzS0fWtJU&list=PLsuhXm2zs07JuSfrNentA3DxAbaFO7ay2,live-coding-wikideath,vlog,Living Coding an Article from Start to Finish,50 Episodes
+https://www.youtube.com/watch?v=DEmeT6gX674,live-coding-responsive-graphic,vlog,Live coding a Responsive Graphic with d3,
+https://www.youtube.com/watch?v=tANYk2nerCo,pudding-process-one-hit-wonders,vlog,One-Hit Wonders in Sports,The Pudding Process
+https://www.youtube.com/watch?v=3EsLmmYv_IM,live-coding-html5-video,vlog,Live Coding with html5 Wideo,
+https://www.youtube.com/watch?v=L9ThW0OQHoY,live-coding-matt,vlog,Live Coding with Matt,
+https://www.youtube.com/watch?v=auVlIHvdOkU,live-coding-amber,vlog,Live Coding with Amber,
+https://www.youtube.com/watch?v=3qx8r7vM2Qg,live-coding-russell,vlog,Live Coding with Russell,
+https://www.youtube.com/watch?v=SQ7DiSW-C4k,pudding-process-stand-up,vlog,The Structure of Stand-Up Comedy,The Pudding Process
+https://www.youtube.com/watch?v=J3Awc4HxDK0,shaping-ideas,talks,Shaping Ideas into Data Stories,"Data Stories Speaker Series, Nov. 20"
+https://www.youtube.com/watch?v=e_AJmlmFkdM,mooc-1,talks,"Data Journalism and Visualization with Free Tools, Module 6","Knight Center for Journalism in the Americas, Oct. 2019"
+https://vimeo.com/375238181,fun-stories,talks,"Things We've Learned From Telling the ""Fun"" Data Stories","VIS in Practice 2019, Nov. 2019 "
+https://www.youtube.com/watch?v=yQp3Y7nf6Hc,storytelling-chops,talks,Develop Your Data-Driven Storytelling Chops with Four Simple Principles,"Google Cloud Next, July 2018"
+https://changelog.com/jsparty/193,js-party-193,podcast,Puddin' together cool data-driven essays,"JS Party, Sept. 2021"
+https://designobserver.com/article.php?id=40464,db-bd,podcast,S9E8: Jan Diehm,"The Design of Business | The Business of Design, Aug. 2021"
+https://soundcloud.com/datajournalism/episode-28-conversation-with-jan-diehm-the-pudding,conversations-with-data,podcast,Episode 28: Conversation with Jan Diehm (The Pudding),"Conversations With Data, May 2021"
+https://datastori.es/the-pudding-with-matt-daniels/,data-stories-2,podcast,143  |  The Pudding with Matt Daniels,"Data Stories, July 2019"
+https://datastori.es/77-polygraph-and-the-journalist-engineer-matt-daniels/,data-stories-1,podcast,077  |  Polygraph and The Journalist Engineer Matt Daniels,"Data Stories, July 2016"
+https://www.storybench.org/jan-diehm-of-the-pudding-brings-human-centered-design-to-storytelling/,storybench-gayborhoods,press,Jan Diehm of the Pudding brings human-centered design to storytelling,"Storybench, April 2021"
+https://www.storybench.org/how-the-pudding-analyzed-youtube-vlogpologies/,storybench-youtube,press,How the Pudding analyzed YouTube “vlogpologies”,"Storybench, April 2020"
+https://www.storybench.org/how-the-pudding-visualized-the-prevalence-of-hyphenated-names-in-sports/,storybench-hyphens,press,How The Pudding visualized the prevalence of hyphenated names in sports,"Storybench, Nov. 2019"
+https://www.storybench.org/how-the-pudding-visualized-the-structure-of-ali-wongs-stand-up-comedy/,storybench-stand-up,press,How The Pudding visualized the structure of Ali Wong’s stand-up comedy,"Storybench, Feb. 2019"
+https://www.storybench.org/pudding-visualized-gender-breakdown-speakers-american-life/,storybench-this-american-life,press,How The Pudding visualized the gender breakdown of speakers on This American Life,"Storybench, March 2018"
+https://www.storybench.org/how-the-pudding-visualized-the-representation-and-treatment-of-female-superheroes/,storybench-comics,press,How The Pudding visualized the representation and treatment of female superheroes,"Storybench, March 2018"
+https://www.storybench.org/pudding-structures-stories-visual-essays/,storybench-structure,press,How The Pudding structures stories as visual essays,"Storybench, March 2018"
+https://www.storybench.org/how-the-pudding-discovered-swing-states-will-suffer-most-from-job-automation/,storybench-automation,press,How The Pudding discovered swing states will suffer most from job automation,"Storybench, Feb. 2018"

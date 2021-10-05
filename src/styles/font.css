@@ -1,26 +1,8 @@
-/*
-			This font software is the property of Commercial Type.
-
-			You may not modify the font software, use it on another website, or install it on a computer.
-
-			License information is available at http://commercialtype.com/eula
-			For more information please visit Commercial Type at http://commercialtype.com or email us at info[at]commercialtype.com
-
-			Copyright (C) 2017 Schwartzco Inc.
-			License: 1704-GNCLGK
-*/
-
-/*
-********************
-	National
-********************
-*/
-
 @font-face {
 	font-family: 'Metropolis';
-	src: url('assets/fonts/metropolis/Metropolis-Regular.woff2') format('woff2'),
-	url('assets/fonts/metropolis/Metropolis-Regular.woff') format('woff');
-	font-weight: 400;
+	src: url('assets/fonts/metropolis/Metropolis-Medium.woff2') format('woff2'),
+	url('assets/fonts/metropolis/Metropolis-Medium.woff') format('woff');
+	font-weight: 500;
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
@@ -28,9 +10,9 @@
 
 @font-face {
 	font-family: 'Metropolis';
-	src: url('assets/fonts/metropolis/Metroois-ExtraBold.woff2') format('woff2'),
-	url('assets/fonts/metropolis/Metroois-ExtraBold.woff') format('woff');
-	font-weight: 800;
+	src: url('assets/fonts/metropolis/Metropolis-Black.woff2') format('woff2'),
+	url('assets/fonts/metropolis/Metropolis-Black.woff') format('woff');
+	font-weight: 900;
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
