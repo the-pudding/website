@@ -17,14 +17,14 @@
 	--z-overlay: 1000;
 
 	/* presets */
-	--border-radius: 4px;
+	--border-radius: 0px;
 	--font-body: var(--sans);
 	--font-form: var(--sans);
 	--background-body: var(--color-white);
   --background-form: var(--color-off-white);
 	--color-body: var(--color-off-black);
 	--color-placeholder: var(--color-gray-dark);
-  --color-link: var(--color-purple);
+  --color-link: var(--color-off-black);
   --color-focus: var(--color-red);
 	--color-form: var(--color-off-black);
 	--color-border: var(--color-gray-light);
@@ -33,5 +33,12 @@
 }
 
 body {
-	font-size: 18px;
+	font-size: 16px;
+}
+
+button, .btn {
+	background: var(--color-body);
+	color: var(--background-body);
+	padding: 0.5em;
+	border-radius: var(--border-radius);
 }

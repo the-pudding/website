@@ -3,7 +3,7 @@ import authorsData from "$data/authors.js";
 import filterStoryProps from "$utils/filterStoryProps.js";
 
 export const get = async () => {
-	const keys = ["url", "date", "month", "hed", "dek", "tease", "topic", "author", "keyword", "slug", "home_popular", "home_personal", "personal_pick"];
+	const keys = ["url", "date", "month", "hed", "dek", "tease", "author", "keyword", "slug", "home_popular", "home_personal", "personal_pick"];
 
 	const stories = filterStoryProps({ data: storiesData, keys });
 

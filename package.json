@@ -21,6 +21,7 @@
 		"@sveltejs/kit": "1.0.0-next.180",
 		"archieml": "0.4.2",
 		"autoprefixer": "10.3.5",
+		"color": "^4.0.1",
 		"colorthief": "^2.3.2",
 		"d3": "7.0.3",
 		"feather-icons": "4.28.0",

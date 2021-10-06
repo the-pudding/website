@@ -6,6 +6,7 @@ specifiers:
   '@sveltejs/kit': 1.0.0-next.180
   archieml: 0.4.2
   autoprefixer: 10.3.5
+  color: ^4.0.1
   colorthief: ^2.3.2
   d3: 7.0.3
   feather-icons: 4.28.0
@@ -32,6 +33,7 @@ devDependencies:
   '@sveltejs/kit': 1.0.0-next.180_svelte@3.43.0
   archieml: 0.4.2
   autoprefixer: 10.3.5_postcss@8.3.7
+  color: 4.0.1
   colorthief: 2.3.2
   d3: 7.0.3
   feather-icons: 4.28.0
@@ -865,6 +867,20 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
+  /color-string/1.6.0:
+    resolution: {integrity: sha512-c/hGS+kRWJutUBEngKKmk4iH3sD59MBkoxVapS/0wgpCz2u7XsNloxknyvBhzwEs1IbV36D9PwqLPJ2DTu3vMA==}
+    dependencies:
+      color-name: 1.1.4
+      simple-swizzle: 0.2.2
+    dev: true
+
+  /color/4.0.1:
+    resolution: {integrity: sha512-rpZjOKN5O7naJxkH2Rx1sZzzBgaiWECc6BYXjeCE6kF0kcASJYbUq02u7JqIHwCb/j3NhV+QhRL2683aICeGZA==}
+    dependencies:
+      color-convert: 2.0.1
+      color-string: 1.6.0
+    dev: true
+
   /colorthief/2.3.2:
     resolution: {integrity: sha512-1r4nPW553JviRcFRvN3fS2V9nUSQGjRIws8UfEeFLIxk8j1tvtaX+AAYTkH3A4B5Muiys8SA1WJxf+00xVTXyg==}
     dependencies:
@@ -1658,6 +1674,10 @@ packages:
     resolution: {integrity: sha1-ge9X/l0FgUzVjCSDYyqZwwoOgIc=}
     dev: true
 
+  /is-arrayish/0.3.2:
+    resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==}
+    dev: true
+
   /is-buffer/1.1.6:
     resolution: {integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==}
     dev: true
@@ -2237,6 +2257,12 @@ packages:
       no-case: 3.0.4
       tslib: 2.3.1
       upper-case-first: 2.0.2
+    dev: true
+
+  /simple-swizzle/0.2.2:
+    resolution: {integrity: sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=}
+    dependencies:
+      is-arrayish: 0.3.2
     dev: true
 
   /snake-case/3.0.4:

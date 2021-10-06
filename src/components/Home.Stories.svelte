@@ -5,17 +5,19 @@
 
   export let highlight;
 
+  const DEFAULT_COLOR = "hsl(0, 50%, 50%)";
+
   const { stories, copy } = getContext("Home");
 
   stories.sort((a, b) => descending(a.date, b.date));
 
   let sortedStories = stories.map((d) => ({ ...d }));
 
-  const lookupColor = (slug) => {
-    if (!highlight.includes(slug)) return "rgb(150, 150, 150)";
+  const lookupColor = ({ slug, version }) => {
+    if (!highlight.includes(slug)) return DEFAULT_COLOR;
 
     const match = colors.find((d) => d.slug === slug);
-    return match ? match.color : ["rgb(0,0,0)"];
+    return match ? match[version] : DEFAULT_COLOR;
   };
 
   const reSort = () => {
@@ -38,7 +40,7 @@
       <li
         class="story"
         class:is-collapsed={!highlight.includes(slug)}
-        style="background-color: {lookupColor(slug)};"
+        style="background-color: {lookupColor({ slug, version: 'light' })};"
       >
         <a href="https://pudding.cool/{url}" rel="external">
           <img
@@ -73,6 +75,7 @@
     max-width: 1920px;
     margin: 0 auto;
     align-items: flex-start;
+    color: currentColor;
   }
 
   .story a:hover .tease,
@@ -90,6 +93,6 @@
     margin: 0;
     padding: 0 1em;
     width: 60%;
-    color: var(--color-body);
+    color: currentColor;
   }
 </style>

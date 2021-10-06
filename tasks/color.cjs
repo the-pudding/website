@@ -1,13 +1,13 @@
 const fs = require("fs");
 const vibrant = require("node-vibrant");
-
+const color = require("color");
 
 const CWD = process.cwd();
 const PATH_IN = `${CWD}/static/common/assets/thumbnails/640`;
 const PATH_OUT = `${CWD}/src/data`;
 const FILES = fs.readdirSync(PATH_IN).filter(d => d.includes(".jpg"));
 const QUALITY = 2;
-const ALPHA = 0.2;
+const SCORE_MIN = 4.5; // AA
 
 const rgbaToString = (rgba) => `rgba(${rgba.join(",")})`;
 
@@ -15,14 +15,43 @@ const roundRGB = (rgb) => rgb.map(d => Math.round(d));
 
 const getVibrant = (palette) => roundRGB(palette.Vibrant._rgb);
 
-const addAlpha = (rgb) => ([...rgb, ALPHA]);
+const getAccessiblePair = (c) => {
+	const l = c.lightness(80);
+
+	const inc = 0.01;
+	let delta = 0.01;
+	let valid = false;
+	let dark;
+
+	while (!valid) {
+		const d = l.darken(delta);
+		const score = l.contrast(d);
+		if (score >= SCORE_MIN) {
+			valid = true;
+			light = l.hsl().round().string();
+			dark = d.hsl().round().string();
+		} else delta += inc;
+	}
+
+	// console.log(attempts);
+	return { light, dark };
+}
+
+const createPalette = (rgb) => {
+	const c = color(rgb);
+	// const base = c.hsl().round().string();
+	const { light, dark } = getAccessiblePair(c);
+	return { light, dark };
+};
+
+// const addAlpha = (rgb) => ([...rgb, ALPHA]);
 
 const getColor = (path) => {
 	return new Promise((resolve, reject) => {
 		vibrant.from(path).quality(QUALITY).getPalette()
 			.then(getVibrant)
-			.then(addAlpha)
-			.then(rgbaToString)
+			.then(createPalette)
+			// .then(rgbaToString)
 			.then(resolve)
 			.catch(reject);
 	});
@@ -34,9 +63,9 @@ const getColor = (path) => {
 		for (let file of FILES) {
 			console.log(`- extracting ${file}`);
 			const path = `${PATH_IN}/${file}`;
-			const color = await getColor(path);
+			const { light, dark } = await getColor(path);
 			const slug = file.replace(".jpg", "");
-			output.push({ slug, color });
+			output.push({ slug, light, dark });
 		}
 	} catch (err) {
 		console.error(err);

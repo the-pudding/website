@@ -14,7 +14,6 @@ const clean = data.map(d => ({
 	slug: makeSlug(d.url),
 	path: `https://pudding.cool/${d.url}`,
 	author: strToArray(d.author),
-	topic: strToArray(d.topic),
 	keyword: strToArray(d.keyword),
 }));
 

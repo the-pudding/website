@@ -2,6 +2,7 @@
   import { ascending } from "d3";
   import { setContext } from "svelte";
   import Intro from "$components/Home.Intro.svelte";
+  import Promo from "$components/Home.Promo.svelte";
   import Search from "$components/Home.Search.svelte";
   import Stories from "$components/Home.Stories.svelte";
 
@@ -15,6 +16,9 @@
 </script>
 
 <Intro />
+{#if copy.promo}
+  <Promo content={copy.promo} />
+{/if}
 <Search bind:highlight />
 <Stories {highlight} />
 

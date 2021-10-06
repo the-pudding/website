@@ -63,7 +63,7 @@
 <nav>
   <button
     type="button"
-    class="nav-btn-open"
+    class="btn-open"
     aria-label="open navigation"
     aria-controls="slide-nav"
     aria-expanded="false"
@@ -82,13 +82,15 @@
   >
     <button
       type="button"
-      class="nav-btn-close"
+      class="btn-close"
       aria-label="close navigation"
       bind:this={closeBtn}
       on:click={onClose}>&times;</button
     >
+
     <p>{copy.tagline}</p>
-    <div class="nav-cta">
+
+    <div class="cta">
       {#each cta as { text, url }}
         <a class="btn" href={url}>{text}</a>
       {/each}
@@ -123,10 +125,11 @@
 </nav>
 
 <style>
-  .nav-btn-open {
+  .btn-open {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50%;
+    right: 0.5em;
+    transform: translate(0, -50%);
   }
 
   #slide-nav {
@@ -150,11 +153,7 @@
     transform: translate(0, 0);
   }
 
-  a:focus {
-    background: blue;
-  }
-
   a {
-    text-decoration: underline;
+    color: var(--background-body);
   }
 </style>

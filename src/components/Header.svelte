@@ -25,7 +25,6 @@
 <style>
   header {
     box-shadow: 0 2px red;
-    display: flex;
     position: relative;
   }
 </style>
