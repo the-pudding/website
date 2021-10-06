@@ -5,6 +5,10 @@ const archieml = require("archieml");
 const fetch = require("node-fetch");
 const docs = require(`${CWD}/google.config.cjs`);
 
+const injectExternalMarkup = (str) => {
+	return str.replace(/<a href/g, "<a rel=external href");
+};
+
 const fetchGoogle = async ({ id, gid, filepath }) => {
 	console.log(`fetching: ${filepath}`);
 
@@ -31,8 +35,9 @@ const fetchGoogle = async ({ id, gid, filepath }) => {
 	for (let d of docs) {
 		try {
 			const str = await fetchGoogle(d);
+			const relExternal = injectExternalMarkup(str);
 			const file = `${CWD}/${d.filepath}`;
-			fs.writeFileSync(file, str);
+			fs.writeFileSync(file, relExternal);
 		} catch (err) {
 			console.log(err);
 		}

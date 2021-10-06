@@ -1,5 +1,5 @@
 <script>
-  import { getContext } from "svelte";
+  import { getContext, createEventDispatcher } from "svelte";
   import deburr from "lodash.deburr";
   import { sum, ascending } from "d3";
 
@@ -26,6 +26,8 @@
       weight: 2
     }
   ];
+  const dispatch = createEventDispatcher();
+  let value = "";
 
   const tokenize = (d) => {
     return WEIGHTS.map(({ prop }) => {
@@ -85,11 +87,10 @@
     search: tokenize(d)
   }));
 
-  let value = "";
-
   $: query = value.toLowerCase().trim();
   $: results = query.length >= MIN_CHARS ? sortResults(query) : data;
   $: highlight = results.map((d) => d.slug);
+  $: if (query.length >= MIN_CHARS) dispatch("focus");
 </script>
 
 <div class="search">

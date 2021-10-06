@@ -11,16 +11,19 @@
   export let staff;
 
   let highlight = stories.map((d) => d.slug);
+  let jump;
 
   setContext("Home", { stories, staff, copy });
+
+  const onSearchFocus = () => jump();
 </script>
 
 <Intro />
 {#if copy.promo}
   <Promo content={copy.promo} />
 {/if}
-<Search bind:highlight />
-<Stories {highlight} />
+<Search bind:highlight on:focus={onSearchFocus} />
+<Stories {highlight} bind:jump />
 
 <a href="about">About</a>
 <a href="pitch">Pitch</a>

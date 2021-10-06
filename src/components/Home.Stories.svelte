@@ -3,11 +3,17 @@
   import { ascending, descending } from "d3";
   import colors from "$data/thumbnail-colors.json";
 
+  export const jump = () => {
+    const { top } = sectionEl.getBoundingClientRect();
+    const y = window.scrollY + top - 64;
+    window.scrollTo(0, y);
+  };
+
   export let highlight;
 
   const DEFAULT_COLOR = "hsl(0, 50%, 50%)";
-
   const { stories, copy } = getContext("Home");
+  let sectionEl;
 
   stories.sort((a, b) => descending(a.date, b.date));
 
@@ -33,7 +39,7 @@
   $: highlight, reSort();
 </script>
 
-<section id="stories">
+<section id="stories" bind:this={sectionEl}>
   <h2>{copy.storiesHed}</h2>
   <ul>
     {#each sortedStories as { tease, url, slug }}

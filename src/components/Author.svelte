@@ -15,12 +15,12 @@
   <ul class="links">
     {#if author.twitter}
       <li>
-        <a href={author.twitter}>Twitter</a>
+        <a href={author.twitter} rel="external">Twitter</a>
       </li>
     {/if}
 
     {#if author.url}
-      <a href={author.url}>Website</a>
+      <a href={author.url} rel="external">Website</a>
     {/if}
   </ul>
 </section>
