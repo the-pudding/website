@@ -140,9 +140,12 @@
     opacity: 1;
   }
 
+  :global(a) {
+    text-decoration: none;
+  }
+
   :global(.letter img) {
     display: inline-block;
-    width: 20vw;
-    max-width: 5em;
+    width: 8vw;
   }
 </style>
