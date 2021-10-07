@@ -1,8 +1,11 @@
 <script>
   import Icon from "$components/helpers/Icon.svelte";
   import logo from "$svg/logo.svg";
-  export let cta;
-  export let platforms;
+  import { follow } from "$data/links.js";
+
+  const names = ["Twitter", "Instagram", "Facebook"];
+  const platforms = follow.filter((d) => names.includes(d.name));
+  const ctas = follow.filter((d) => d.cta);
 </script>
 
 <div class="container">
@@ -13,13 +16,13 @@
   <div class="links">
     <div class="platforms">
       {#each platforms as { name, url }}
-        <a href={url} aria-label={name}><Icon {name} /></a>
+        <a href={url} aria-label={name}><Icon name={name.toLowerCase()} /></a>
       {/each}
     </div>
 
     <div class="cta">
-      {#each cta as { text, url }}
-        <a class="btn" href={url}>{text}</a>
+      {#each ctas as { cta, url }}
+        <a class="btn" href={url}>{cta}</a>
       {/each}
     </div>
   </div>

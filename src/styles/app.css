@@ -30,6 +30,8 @@
 	--color-border: var(--color-gray-light);
 	--color-selection: var(--color-gray-light);
   --color-highlight: var(--color-yellow);
+	
+	--font-size-big: clamp(1.5em, 3.5vw, 4em);
 }
 
 body {

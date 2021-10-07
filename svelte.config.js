@@ -41,8 +41,7 @@ const config = {
 			]
 		},
 		paths: {
-			base,
-			assets: "https://the-pudding.github.io/website2"
+			base
 		},
 	}
 };

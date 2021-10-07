@@ -87,7 +87,7 @@
   }
 
   .letter {
-    font-size: clamp(1.5em, 4vw, 4em);
+    font-size: var(--font-size-big);
     min-height: 80vh;
     line-height: 1.65;
   }

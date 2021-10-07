@@ -1,14 +1,21 @@
-awardText,awardUrl,storyHed,storyUrl,year
-Emmy nominee,https://theemmys.tv/news-42nd-nominations/,Reconstructing seven days of protests in Minneapolis after George Floyd’s death  (Washington Post collaboration),https://www.washingtonpost.com/graphics/2020/national/live-stream-george-floyd-protests/,2021
-World Press Photo Interactive of the Year,https://www.worldpressphoto.org/news/2021/contests-winners,Reconstructing seven days of protests in Minneapolis after George Floyd’s death (Washington Post collaboration),https://www.washingtonpost.com/graphics/2020/national/live-stream-george-floyd-protests/,2021
-Society of News Design Silver Medal,https://snd.org/2020-medal-winners/,Combination Portfolio,https://pudding.cool/,2020
-,https://www.snd.org/bodd/2021/02/25/2020-results/,,,
-Product Hunt’s Golden Kitty,https://www.producthunt.com/stories/announcing-the-2020-golden-kitty-award-winners,How Bad is Your Spotify?,https://pudding.cool/2020/12/judge-my-spotify/,2020
-Emmy nominee,https://theemmys.tv/wp-content/uploads/2020/08/news-41st-nominations-v01.pdf, We measured pop music’s falsetto obsession,https://www.youtube.com/watch?v=qJT2h5uGAC0,2020
-General Excellence in Online Journalism,https://awards.journalists.org/winners/2019/,The Pudding,https://pudding.cool/,2019
-Data journalism website of the year,https://datajournalismawards.org/2019-winners/,The Pudding,https://pudding.cool/,2019
-Breakthroughs in Storytelling Award,http://digitaldozen.io/projects/the-structure-of-comedy/,The Structure of Stand-Up Comedy,https://pudding.cool/2018/02/stand-up/,2018
-,https://www.informationisbeautifulawards.com/,,,
-Stats Excellence in Journalism award,https://rss.org.uk/RSS/media/File-library/Events/Awards/RSS_Journalism_Awards_2018_Winners.pdf,The Words That Are “Most Hip Hop”,https://pudding.cool/2017/09/hip-hop-words/,2018
-,https://www.snd.org/2019/02/2019-best-of-digital-medal-winners/,,,
-Peabody Award for Digital Journalism,http://www.peabodyawards.com/award-profile/the-pudding,The Pudding,https://pudding.cool/,2017
+awardText,awardOrg,awardUrl,storyHed,storyUrl,year
+Interactive of the Year,World Press Photo,https://www.worldpressphoto.org/news/2021/contests-winners,Reconstructing seven days of protests in Minneapolis after George Floyd’s death (Washington Post collaboration),https://www.washingtonpost.com/graphics/2020/national/live-stream-george-floyd-protests/,2021
+Emmy Nominee,Academy of Television Arts & Sciences,https://theemmys.tv/news-42nd-nominations/,Reconstructing seven days of protests in Minneapolis after George Floyd’s death  (Washington Post collaboration),https://www.washingtonpost.com/graphics/2020/national/live-stream-george-floyd-protests/,2021
+Golden Kitty,Product Hunt,https://www.producthunt.com/stories/announcing-the-2020-golden-kitty-award-winners,How Bad is Your Spotify?,https://pudding.cool/2020/12/judge-my-spotify/,2020
+Emmy Nominee,Academy of Television Arts & Sciences,https://theemmys.tv/wp-content/uploads/2020/08/news-41st-nominations-v01.pdf, We measured pop music’s falsetto obsession,https://www.youtube.com/watch?v=qJT2h5uGAC0,2020
+Silver Medal,Society for News Design,https://snd.org/2020-medal-winners/,Combination Portfolio,https://pudding.cool/,2020
+General Excellence in Online Journalism,Online News Association,https://awards.journalists.org/winners/2019/,The Pudding,https://pudding.cool/,2019
+Website of the Year,"Data Journalism Awards, Global Editors Network",https://datajournalismawards.org/2019-winners/,The Pudding,https://pudding.cool/,2019
+World's Best Designed Finalist,Society for News Design,https://snd.org/snd41-best-of-digital-design-live-updates/,The Pudding,https://pudding.cool/,2019
+Gold Medal,Society for News Design,https://snd.org/best-of-digital-bronze-medal-winners/,Organization Portfolio,https://pudding.cool/,2018
+Silver Medal,Society for News Design,https://www.snd.org/2019/02/2019-best-of-digital-medal-winners/,Information Graphics,https://pudding.cool/,2018
+Award of Excellence,Society for News Design,https://snd.org/snd41-best-of-digital-design-live-updates/,Organization Portfolio,https://pudding.cool/,2019
+Stats Excellence in Journalism award,Royal Statistical Society,https://rss.org.uk/RSS/media/File-library/Events/Awards/RSS_Journalism_Awards_2018_Winners.pdf,The Words That Are “Most Hip Hop”,https://pudding.cool/2017/09/hip-hop-words/,2018
+Breakthroughs in Storytelling Award,Columbia University School of the Arts' Digital Storytelling Lab,http://digitaldozen.io/projects/the-structure-of-comedy/,The Structure of Stand-Up Comedy,https://pudding.cool/2018/02/stand-up/,2018
+Silver,Information is Beautiful Awards,https://www.informationisbeautifulawards.com/showcase/3222-what-1-2-million-parliamentary-speeches-can-teach-us-about-gender-representation,What 1.2 Million Parliamentary Speeches can Teach us About Gender Representation,https://pudding.cool/2018/07/women-in-parliament/,2018
+Bronze,Information is Beautiful Awards,https://www.informationisbeautifulawards.com/showcase/3250,Women's Pockets are Inferior,https://pudding.cool/2018/08/pockets/,2018
+Peabody for Digital Journalism,Peabody Awards,http://www.peabodyawards.com/award-profile/the-pudding,The Pudding,https://pudding.cool/,2017
+Gold,Information is Beautiful Awards,https://www.informationisbeautifulawards.com/showcase/1915-the-unlikely-odds-of-making-it-big,The Unlikely Odds of Making it Big,https://pudding.cool/2017/01/making-it-big/,2017
+Bronze,Information is Beautiful Awards,https://www.informationisbeautifulawards.com/showcase/1914-what-city-is-the-microbrew-capital-of-the-us,What city is the microbrew capital of the US?,https://pudding.cool/2017/04/beer/,2017
+Silver,Information is Beautiful Awards,https://www.informationisbeautifulawards.com/showcase/1445-the-evolution-of-music-taste,The Evolution of Music Taste,,2016
+Bronze,Information is Beautiful Awards,https://www.informationisbeautifulawards.com/showcase/1729-film-dialogue,"The Largest Analysis of Film Dialogue by Gender, Ever",https://pudding.cool/2017/03/film-dialogue/,2016

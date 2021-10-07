@@ -79,7 +79,7 @@
   }
 
   h2 {
-    font-size: clamp(1.5em, 4vw, 4em);
+    font-size: var(--font-size-big);
     text-transform: uppercase;
     max-width: 90%;
     margin: 0 auto;

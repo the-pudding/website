@@ -1,8 +1,9 @@
 <script>
   import { onMount, tick } from "svelte";
   import copy from "$data/misc.json";
-  import { linksAbout, linksFollow } from "$data/links.js";
-  export let cta;
+  import { about, follow } from "$data/links.js";
+
+  const ctas = follow.filter((d) => d.cta);
 
   let main;
   let slideNav;
@@ -88,39 +89,42 @@
       on:click={onClose}>&times;</button
     >
 
-    <p>{copy.tagline}</p>
-
-    <div class="cta">
-      {#each cta as { text, url }}
-        <a class="btn" href={url}>{text}</a>
-      {/each}
-    </div>
-
-    <div>
-      <h4>About Us</h4>
-      <ul>
-        {#each linksAbout as { url, text, rel }}
-          <li>
-            <a href={url} {rel}>
-              <span>{text.toUpperCase()}</span>
-            </a>
-          </li>
+    <section class="about">
+      <p>{copy.patreon}</p>
+      <div>
+        {#each ctas as { cta, url }}
+          <a class="btn" href={url}>{cta}</a>
         {/each}
-      </ul>
-    </div>
+      </div>
+    </section>
 
-    <div>
-      <h4>Follow Us</h4>
-      <ul>
-        {#each linksFollow as { url, text }}
-          <li>
-            <a href={url}>
-              <span>{text.toUpperCase()}</span>
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
+    <section class="links">
+      <div>
+        <h4>About Us</h4>
+        <ul>
+          {#each about as { name, url, rel }}
+            <li>
+              <a href={url} {rel}>
+                <span>{name.toUpperCase()}</span>
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Follow Us</h4>
+        <ul>
+          {#each follow as { name, url }}
+            <li>
+              <a href={url}>
+                <span>{name.toUpperCase()}</span>
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    </section>
   </div>
 </nav>
 
