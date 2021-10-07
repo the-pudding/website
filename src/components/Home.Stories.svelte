@@ -40,13 +40,19 @@
 </script>
 
 <section id="stories" bind:this={sectionEl}>
-  <h2>{copy.storiesHed}</h2>
+  <h2><strong>{copy.storiesHed}</strong></h2>
   <ul>
     {#each sortedStories as { tease, url, slug }}
       <li
         class="story"
         class:is-collapsed={!highlight.includes(slug)}
-        style="background-color: {lookupColor({ slug, version: 'light' })};"
+        style="--light: {lookupColor({
+          slug,
+          version: 'light'
+        })}; --dark: {lookupColor({
+          slug,
+          version: 'dark'
+        })};"
       >
         <a href="https://pudding.cool/{url}" rel="external">
           <img
@@ -58,7 +64,9 @@
             sizes="(max-width: 320px) 640px, (max-width: 480px) 960px, 1280px"
             loading="lazy"
           />
-          <h3 class="tease">{@html tease}</h3>
+          <h3 class="tease">
+            <span>{@html tease}</span>
+          </h3>
         </a>
       </li>
     {/each}
@@ -66,6 +74,23 @@
 </section>
 
 <style>
+  section {
+    padding-top: 4em;
+  }
+
+  h2 {
+    font-size: clamp(1.5em, 4vw, 4em);
+    text-transform: uppercase;
+    max-width: 90%;
+    margin: 0 auto;
+    line-height: 1;
+    transform: translate(0.2em, 0.2em);
+  }
+
+  .story {
+    background: var(--light);
+  }
+
   .story.is-collapsed {
   }
 
@@ -81,12 +106,19 @@
     max-width: 1920px;
     margin: 0 auto;
     align-items: flex-start;
-    color: currentColor;
+    text-decoration: none;
   }
 
-  .story a:hover .tease,
-  .story a:focus .tease {
-    text-decoration: underline;
+  .story a .tease span {
+    background-image: linear-gradient(var(--dark), var(--dark));
+    background-repeat: no-repeat;
+    background-position: 0 90%;
+    background-size: 0% 0.1em;
+  }
+
+  .story a:hover .tease span,
+  .story a:focus .tease span {
+    background-size: 100% 0.1em;
   }
 
   img {

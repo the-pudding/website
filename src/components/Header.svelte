@@ -24,7 +24,7 @@
 
 <style>
   header {
-    box-shadow: 0 2px red;
+    box-shadow: 0 4px 4px var(--color-off-white);
     position: relative;
   }
 </style>

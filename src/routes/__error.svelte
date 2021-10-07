@@ -13,7 +13,6 @@
 <script>
   export let page;
   export let status;
-  export let message;
 </script>
 
 <h1>{status}</h1>

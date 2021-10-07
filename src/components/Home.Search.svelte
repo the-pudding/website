@@ -93,19 +93,36 @@
   $: if (query.length >= MIN_CHARS) dispatch("focus");
 </script>
 
-<div class="search">
-  <input placeholder="Search stories (e.g., Spotify)" bind:value />
+<div id="search">
+  <div class="inner">
+    <input placeholder="Search stories (e.g., Spotify)" bind:value />
+  </div>
 </div>
 
 <!-- {#each results as { hed }}
   <p>{hed}</p>
 {/each} -->
 <style>
-  .search {
-    border-bottom: 2px solid teal;
+  #search {
+    background: var(--background-body);
+    box-shadow: 0 4px 4px var(--color-off-white);
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 1em;
+    z-index: var(--z-top);
+  }
+
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  input {
+    width: 15em;
+    font-size: 1.25em;
+    padding: 0.5em;
+    line-height: 1;
   }
 </style>
