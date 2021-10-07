@@ -55,6 +55,7 @@
     display: flex;
     padding: 1em;
     margin: 0 auto;
+    max-width: 960px;
     justify-content: space-between;
   }
 

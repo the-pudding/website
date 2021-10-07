@@ -5,12 +5,14 @@ import filterStoryProps from "$utils/filterStoryProps.js";
 export const get = async ({ params }) => {
 	const { name } = params;
 
-	const keys = ["hed", "author"];
+	const keys = ["tease", "url", "slug", "author"];
 	const storiesFiltered = filterStoryProps({ data: storiesData, keys });
 
 	const author = authorsData.find(d => d.slug === name);
 
 	const stories = storiesFiltered.filter(d => d.author.includes(author.id));
+
+	stories.forEach(story => delete story.author);
 
 	const body = {
 		stories,
