@@ -1,8 +1,6 @@
 <script>
   export let stories;
   export let author;
-
-  $: console.log(author);
 </script>
 
 <section id="info">

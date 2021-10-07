@@ -28,7 +28,7 @@
 
   const renderAltTagline = () => {
     const r = Math.floor(Math.random() * copy.altTaglines.length);
-    altTagline = copy.altTaglines[r];
+    altTagline = ` ${copy.altTaglines[r]}`;
   };
 
   const renderSignature = () => {
@@ -53,13 +53,13 @@
 
     <span class="tagline" class:is-del={altTagline}>
       {@html copy.tagline}<span class="tagline-alt" class:is-visible={altTagline}
-        >&nbsp;{altTagline}.</span
+        >{altTagline}.</span
       >
     </span>
 
     <span class="popular" class:is-visible={popularHTML}>{@html popularHTML}</span>
 
-    <span class="personal">
+    <span class="personal" class:is-visible={popularHTML}>
       <strong>{@html personalHTML}</strong>
     </span>
 
@@ -96,7 +96,6 @@
 
   .tagline-alt {
     opacity: 0;
-    display: inline-block;
     transition: opacity 1s ease-in 1s;
   }
 
