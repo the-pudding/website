@@ -2,6 +2,7 @@
   import Story from "$components/Story.svelte";
   import HeroText from "$components/HeroText.svelte";
   import { descending } from "d3";
+  import numberAsText from "$utils/numberAsText.js";
 
   export let stories;
   export let author;
@@ -28,6 +29,9 @@
   };
 
   const link = getLinkHTML();
+  const count = numberAsText(stories.length);
+  const suffix = stories.length === 1 ? "y" : "ies";
+  const published = `They have worked on ${count} stor${suffix} to date. Explore them all below.`;
 </script>
 
 <section id="intro" class="column">
@@ -38,6 +42,7 @@
     <p>
       <span class="sr-only">{name} </span>{@html bio}
       {#if link}{@html link}{/if}
+      {published}
     </p>
   </HeroText>
 </section>

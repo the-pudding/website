@@ -150,7 +150,7 @@
   .signature {
     opacity: 0;
     transition: opacity 1s ease-in 6s;
-    font-size: 1.5em;
+    font-size: var(--font-size-small);
     margin-top: 2em;
   }
 

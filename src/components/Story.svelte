@@ -68,12 +68,13 @@
     background-size: 100% 0.1em;
   }
 
-  .story.is-collapsed a {
-    font-size: 1em;
+  .story.is-collapsed .tease {
+    /* font-size: var(--font-size-small); */
+    width: 80%;
   }
 
   .story.is-collapsed img {
-    max-width: 128px;
+    width: 20%;
     filter: grayscale(1);
   }
 

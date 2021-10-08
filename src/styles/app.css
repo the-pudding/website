@@ -34,6 +34,7 @@
 	--font-size-large: clamp(2em, 3.25vw, 3.25em);
 	--font-size-medium: clamp(1.5em, 2.25vw, 2.25em);
 	--font-size-small: clamp(1em, 1.25vw, 1.25em);
+	--font-size-tiny: 16px;
 	--width-max: 1500px;
 	--width-padded: 90vw;
 }
@@ -73,6 +74,17 @@ h4 {
 
 p {
 	font-size: var(--font-size-small);
+}
+
+
+details {
+	font-size: var(--font-size-small);
+	background-color: var(--color-off-white);
+	padding: 1em;
+}
+
+summary {
+	cursor: pointer;
 }
 
 .column {

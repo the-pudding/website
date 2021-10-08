@@ -96,6 +96,7 @@
 <div id="search">
   <div class="inner column">
     <input placeholder="Search stories (e.g., Spotify)" bind:value />
+    <p>{highlight.length} matches</p>
   </div>
 </div>
 
@@ -114,10 +115,22 @@
     padding: 1em 0;
   }
 
+  .inner {
+    display: flex;
+    align-items: center;
+  }
+
   input {
     width: 15em;
     font-size: 1.25em;
     padding: 0.5em;
     line-height: 1;
+  }
+
+  p {
+    margin: 0;
+    margin-left: 1em;
+    color: var(--color-gray-dark);
+    font-size: var(--font-size-tiny);
   }
 </style>
