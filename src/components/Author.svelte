@@ -8,35 +8,36 @@
 
   stories.sort((a, b) => descending(a.date, b.date));
 
-  const getLinkHTML = () => {
-    const twitter = author.twitter
-      ? `You can follow them on <a href=${author.twitter} rel="external">Twitter</a>`
-      : undefined;
-    const url = author.url
-      ? `out their <a href=${author.url} rel="external">website</a>`
-      : undefined;
+  const { name, url, twitter } = author;
+  const bio = author.bio || "is a contributor to The Pudding.";
 
-    if (twitter && url)
+  const getLinkHTML = () => {
+    const t = twitter
+      ? `You can follow them on <a href=${twitter} rel="external">Twitter</a>`
+      : undefined;
+    const u = url ? `out their <a href=${url} rel="external">website</a>` : undefined;
+
+    if (t && u)
       return `
-			${twitter} or check ${url}. 
+			${t} or check ${u}. 
 		`;
-    else if (twitter) return twitter;
-    else if (author) return `Check ${url}.`;
+    else if (t) return t;
+    else if (u) return `Check ${u}.`;
 
     return undefined;
   };
 
-  const linkHTML = getLinkHTML();
+  const link = getLinkHTML();
 </script>
 
 <section id="intro" class="column">
   <HeroText>
-    <!-- <img src="/common/assets/authors/{author.id}.jpg" alt={author.name} /> -->
-    <h1>{author.name}</h1>
+    <!-- <img src="/common/assets/authors/{id}.jpg" alt={author.name} /> -->
+    <h1>{name}</h1>
 
     <p>
-      <span class="sr-only">{author.name} </span>{@html author.bio}
-      {#if linkHTML}{@html linkHTML}{/if}
+      <span class="sr-only">{name} </span>{@html bio}
+      {#if link}{@html link}{/if}
     </p>
   </HeroText>
 </section>

@@ -21,7 +21,6 @@
   const renderPersonal = () => {
     const ran = Math.floor(Math.random() * staff.length);
     const { id, name, slug } = staff[1];
-    console.log(staff);
     const filterFunction = (d) => d.personal_pick.includes(id);
 
     const unused = stories.filter((d) => !popularHTML.includes(d.url));
