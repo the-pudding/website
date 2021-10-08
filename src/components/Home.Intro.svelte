@@ -73,7 +73,11 @@
     </div>
   </HeroText>
   <div class="signature" class:is-visible={personalHTML}>
-    <p class="name"><a href="/author/{personalSlug}">{personalName}</a></p>
+    <p class="name">
+      {#if personalSlug}
+        <a href="/author/{personalSlug}">{personalName}</a>
+      {/if}
+    </p>
     <p class="position">{position}</p>
   </div>
 </section>

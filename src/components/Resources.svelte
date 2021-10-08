@@ -47,8 +47,4 @@
   #intro {
     padding: 4em 0;
   }
-
-  .wordmark {
-    max-width: 3.5em;
-  }
 </style>
