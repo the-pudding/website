@@ -93,7 +93,7 @@
       <p>{copy.patreon}</p>
       <div>
         {#each ctas as { cta, url }}
-          <a class="btn" href={url}>{cta}</a>
+          <a class="btn" href={url} rel="external">{cta}</a>
         {/each}
       </div>
     </section>
@@ -117,7 +117,7 @@
         <ul>
           {#each follow as { name, url }}
             <li>
-              <a href={url}>
+              <a href={url} rel="external">
                 <span>{name.toUpperCase()}</span>
               </a>
             </li>

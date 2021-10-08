@@ -16,13 +16,13 @@
   <div class="links">
     <div class="platforms">
       {#each platforms as { name, url }}
-        <a href={url} aria-label={name}><Icon name={name.toLowerCase()} /></a>
+        <a href={url} rel="external" aria-label={name}><Icon name={name.toLowerCase()} /></a>
       {/each}
     </div>
 
     <div class="cta">
       {#each ctas as { cta, url }}
-        <a class="btn" href={url}>{cta}</a>
+        <a class="btn" href={url} rel="external">{cta}</a>
       {/each}
     </div>
   </div>
