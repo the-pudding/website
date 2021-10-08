@@ -3,7 +3,7 @@ const jimp = require("jimp");
 const mkdirp = require("mkdirp");
 
 const CWD = process.cwd();
-const PATH_IN = `${CWD}/thumbnails`;
+const PATH_IN = `${CWD}/thumbnails/stories`;
 const PATH_OUT = `${CWD}/static/common/assets/thumbnails`;
 const SIZES = [32, 640, 960, 1280];
 
