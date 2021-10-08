@@ -9,12 +9,16 @@ export const get = async () => {
 
 	const staff = authorsData.filter(d => d.position === "Staff").map(d => ({
 		id: d.id,
-		name: d.name
+		name: d.name,
+		slug: d.slug
 	}));
+
+	const authors = authorsData.map(d => d.slug);
 
 	const body = {
 		stories,
-		staff
+		staff,
+		authors
 	};
 
 	return { body };

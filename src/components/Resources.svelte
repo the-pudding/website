@@ -1,12 +1,19 @@
 <script>
+  import HeroText from "$components/HeroText.svelte";
   import data from "$data/resources.csv";
+  import wordmark from "$svg/wordmark.svg";
 
   export let copy;
 
   const { sections } = copy;
 </script>
 
-<h1>{copy.title}</h1>
+<section id="intro" class="column">
+  <HeroText>
+    <h1>The Pudding</h1>
+    <p>{copy.dek}</p>
+  </HeroText>
+</section>
 
 {#each sections as { hed, id }}
   <section {id}>
@@ -35,3 +42,13 @@
     </details>
   {/each}
 </section>
+
+<style>
+  #intro {
+    padding: 4em 0;
+  }
+
+  .wordmark {
+    max-width: 3.5em;
+  }
+</style>

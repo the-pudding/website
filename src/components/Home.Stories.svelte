@@ -32,7 +32,7 @@
 </script>
 
 <section id="stories" bind:this={sectionEl}>
-  <h2><strong>{copy.storiesHed}</strong></h2>
+  <h2 class="column">{copy.storiesHed}</h2>
   <ul>
     {#each sortedStories as { tease, url, slug }}
       <li>
@@ -48,11 +48,7 @@
   }
 
   h2 {
-    font-size: var(--font-size-big);
     text-transform: uppercase;
-    max-width: 90%;
-    margin: 0 auto;
-    line-height: 1;
-    transform: translate(0.2em, 0.2em);
+    transform: translate(0, 0.2em);
   }
 </style>

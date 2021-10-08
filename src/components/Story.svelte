@@ -26,7 +26,7 @@
     version: 'dark'
   })};"
 >
-  <a href="https://pudding.cool/{url}" rel="external">
+  <a class="column" href="https://pudding.cool/{url}" rel="external">
     <img
       src="/common/assets/thumbnails/32/{slug}.jpg"
       alt="teaser for story"
@@ -45,15 +45,13 @@
 <style>
   .story {
     background: var(--light);
+    border-bottom: 4px solid var(--background-body);
   }
 
   .story a {
     display: flex;
-    padding: 2em;
+    padding: 4rem 0;
     text-decoration: none;
-    font-size: 2vw;
-    max-width: 1920px;
-    margin: 0 auto;
     align-items: flex-start;
     text-decoration: none;
   }
@@ -75,7 +73,6 @@
   }
 
   .story.is-collapsed img {
-    /* display: none; */
     max-width: 128px;
     filter: grayscale(1);
   }
@@ -83,7 +80,7 @@
   img {
     max-width: 640px;
     width: 40%;
-    padding: 0 1em;
+    border: 1px solid var(--dark);
   }
 
   .tease {

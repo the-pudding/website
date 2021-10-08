@@ -94,7 +94,7 @@
 </script>
 
 <div id="search">
-  <div class="inner">
+  <div class="inner column">
     <input placeholder="Search stories (e.g., Spotify)" bind:value />
   </div>
 </div>
@@ -110,13 +110,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1em;
     z-index: var(--z-top);
-  }
-
-  .inner {
-    width: 90%;
-    margin: 0 auto;
+    padding: 1em 0;
   }
 
   input {

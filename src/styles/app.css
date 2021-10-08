@@ -31,7 +31,11 @@
 	--color-selection: var(--color-gray-light);
   --color-highlight: var(--color-yellow);
 	
-	--font-size-big: clamp(1.5em, 3.5vw, 4em);
+	--font-size-large: clamp(2em, 3.25vw, 3.25em);
+	--font-size-medium: clamp(1.5em, 2.25vw, 2.25em);
+	--font-size-small: clamp(1em, 1.25vw, 1.25em);
+	--width-max: 1500px;
+	--width-padded: 90vw;
 }
 
 body {
@@ -43,4 +47,36 @@ button, .btn {
 	color: var(--background-body);
 	border-radius: var(--border-radius);
 	padding: 0.5em;
+	text-decoration: none;
+	line-height: 1;
+}
+
+h1 {
+	font-size: var(--font-size-large);
+	line-height: 1;
+	font-weight: 900;
+}
+
+h2 {
+	font-size: var(--font-size-large);
+	line-height: 1;
+	font-weight: 900;
+}
+
+h3 {
+	font-size: var(--font-size-medium);
+}
+
+h4 {
+	font-size: var(--font-size-small);
+}
+
+p {
+	font-size: var(--font-size-small);
+}
+
+.column {
+	max-width: var(--width-max);
+	width: var(--width-padded);
+	margin: 0 auto;
 }

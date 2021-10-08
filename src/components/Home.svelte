@@ -24,13 +24,3 @@
 {/if}
 <Search bind:highlight on:focus={onSearchFocus} />
 <Stories {highlight} bind:jump />
-
-<a href="about">About</a>
-<a href="pitch">Pitch</a>
-<a href="privacy">Privacy</a>
-<a href="faq">FAQ</a>
-<a href="resources">Resources</a>
-<a href="author/russell-goldenberg">Russell</a>
-<a href="author/jan-diehm">Jan</a>
-
-<!-- <a href="rss.xml">RSS</a> -->

@@ -1,7 +1,7 @@
 <script>
   import { onMount, getContext } from "svelte";
-  import madlibToHtml from "$utils/madlibToHtml";
-
+  import madlibToHtml from "$utils/madlibToHtml.js";
+  import HeroText from "$components/HeroText.svelte";
   import wordmark from "$svg/wordmark.svg";
 
   const { stories, staff, copy } = getContext("Home");
@@ -10,6 +10,7 @@
   let popularHTML = "";
   let personalHTML = "";
   let personalName = "";
+  let personalSlug = "";
   let welcome = "";
   let position = "";
 
@@ -19,12 +20,14 @@
 
   const renderPersonal = () => {
     const ran = Math.floor(Math.random() * staff.length);
-    const { id, name } = staff[1];
+    const { id, name, slug } = staff[1];
+    console.log(staff);
     const filterFunction = (d) => d.personal_pick.includes(id);
 
     const unused = stories.filter((d) => !popularHTML.includes(d.url));
     personalHTML = madlibToHtml({ stories: unused, copy, category: "personal", filterFunction });
     personalName = name;
+    personalSlug = slug;
   };
 
   const renderAltTagline = () => {
@@ -46,50 +49,50 @@
   });
 </script>
 
-<section id="intro">
-  <h1 aria-label={copy.title}><div class="wordmark">{@html wordmark}</div></h1>
+<section id="intro" class="column">
+  <HeroText>
+    <h1 aria-label={copy.title}><div class="wordmark">{@html wordmark}</div></h1>
+    <div class="letter">
+      <p>
+        <span class="sr-only">The Pudding</span>
 
-  <div class="letter">
-    <p>
-      <span class="sr-only">The Pudding</span>
+        <span class="tagline" class:is-del={altTagline}>
+          {@html copy.tagline}<span class="tagline-alt" class:is-visible={altTagline}
+            >{altTagline}.</span
+          >
+        </span>
 
-      <span class="tagline" class:is-del={altTagline}>
-        {@html copy.tagline}<span class="tagline-alt" class:is-visible={altTagline}
-          >{altTagline}.</span
-        >
-      </span>
+        <span class="popular" class:is-visible={popularHTML}>{@html popularHTML}</span>
 
-      <span class="popular" class:is-visible={popularHTML}>{@html popularHTML}</span>
+        <span class="personal" class:is-visible={popularHTML}>
+          {@html personalHTML}
+        </span>
 
-      <span class="personal" class:is-visible={popularHTML}>
-        {@html personalHTML}
-      </span>
-
-      <span class="welcome" class:is-visible={personalHTML}>{@html welcome}</span>
-    </p>
-    <p class="signature" class:is-visible={personalHTML}>
-      <span class="name">{personalName}</span>
-      <span class="position">{position}</span>
-    </p>
+        <span class="welcome" class:is-visible={personalHTML}>{@html welcome}</span>
+      </p>
+    </div>
+  </HeroText>
+  <div class="signature" class:is-visible={personalHTML}>
+    <p class="name"><a href="/author/{personalSlug}">{personalName}</a></p>
+    <p class="position">{position}</p>
   </div>
 </section>
 
 <style>
   section {
-    padding: 4em 1em;
-    width: 90%;
-    max-width: 1600px;
-    margin: 0 auto;
+    padding: 4em 0;
   }
 
   .wordmark {
-    max-width: 8em;
+    max-width: 3.5em;
   }
 
   .letter {
-    font-size: var(--font-size-big);
-    min-height: 80vh;
-    line-height: 1.65;
+    min-height: 60vh;
+  }
+
+  .letter p {
+    margin: 0;
   }
 
   :global(.letter del) {
@@ -144,16 +147,12 @@
   .signature {
     opacity: 0;
     transition: opacity 1s ease-in 6s;
-    margin-top: 1em;
-    font-size: 0.5em;
+    font-size: 1.5em;
+    margin-top: 2em;
   }
 
   .signature.is-visible {
     opacity: 1;
-  }
-
-  .signature span {
-    display: block;
   }
 
   :global(.letter a) {
@@ -162,7 +161,7 @@
     background-repeat: no-repeat;
     background-size: calc(100% - 2.25em) 0.1em;
     background-position: 0 90%;
-    transition: background-size 0.25s ease-in;
+    transition: background-size 150ms ease-in;
   }
 
   :global(.letter a:hover, .letter a:focus) {
