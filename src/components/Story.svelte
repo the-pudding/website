@@ -29,7 +29,7 @@
   <a class="column" href="https://pudding.cool/{url}" rel="external">
     <img
       src="/common/assets/thumbnails/32/{slug}.jpg"
-      alt="teaser for story"
+      alt="thumbnail for story"
       srcset="/common/assets/thumbnails/1280/{slug}.jpg 1280w,
 			/common/assets/thumbnails/640/{slug}.jpg 640w,
 			/common/assets/thumbnails/480/{slug}.jpg 480w"
@@ -68,11 +68,6 @@
     background-size: 100% 0.1em;
   }
 
-  .story.is-collapsed .tease {
-    /* font-size: var(--font-size-small); */
-    width: 80%;
-  }
-
   .story.is-collapsed img {
     width: 20%;
     filter: grayscale(1);
@@ -87,7 +82,7 @@
   .tease {
     margin: 0;
     padding: 0 1em;
-    width: 60%;
+    flex-grow: 1;
     color: currentColor;
   }
 </style>

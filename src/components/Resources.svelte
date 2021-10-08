@@ -1,5 +1,6 @@
 <script>
   import HeroText from "$components/HeroText.svelte";
+  import Link from "$components/Resources.Link.svelte";
   import data from "$data/resources.csv";
   import wordmark from "$svg/wordmark.svg";
 
@@ -17,16 +18,11 @@
 
 {#each sections as { hed, id }}
   <section {id}>
-    <h2>{hed}</h2>
+    <h2 class="column">{hed}</h2>
     <ul>
-      {#each data.filter((d) => d.category === id) as { url, slug, title, overline, description }}
+      {#each data.filter((d) => d.category === id) as { url, slug, title, description }}
         <li>
-          <a href={url} rel="external">
-            <h3>{title}</h3>
-            {#if description}
-              <p>{description}</p>
-            {/if}
-          </a>
+          <Link {url} {slug} {title} {description} />
         </li>
       {/each}
     </ul>
@@ -34,9 +30,9 @@
 {/each}
 
 <section id="faq">
-  <h2>FAQ</h2>
+  <h2 class="column">FAQ</h2>
   {#each copy.faq as { question, answer }}
-    <details>
+    <details class="column">
       <summary>{question}</summary>
       {@html answer}
     </details>
@@ -46,5 +42,14 @@
 <style>
   #intro {
     padding: 4em 0;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    transform: translate(0, 0.2em);
+  }
+
+  section {
+    margin-bottom: 4em;
   }
 </style>
