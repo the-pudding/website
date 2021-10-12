@@ -15,16 +15,15 @@
   let position = "";
 
   const renderPopular = () => {
-    popularHTML = madlibToHtml({ stories, copy, category: "popular" });
+    popularHTML = madlibToHtml({ stories, copy, category: "popular", filter: "popular" });
   };
 
   const renderPersonal = () => {
     const ran = Math.floor(Math.random() * staff.length);
-    const { id, name, slug } = staff[1];
-    const filterFunction = (d) => d.personal_pick.includes(id);
+    const { id, name, slug } = staff[ran];
 
     const unused = stories.filter((d) => !popularHTML.includes(d.url));
-    personalHTML = madlibToHtml({ stories: unused, copy, category: "personal", filterFunction });
+    personalHTML = madlibToHtml({ stories: unused, copy, category: "personal", filter: id });
     personalName = name;
     personalSlug = slug;
   };
@@ -48,7 +47,7 @@
   });
 </script>
 
-<section id="intro" class="column">
+<section id="intro" class="column-wide">
   <HeroText>
     <h1 aria-label={copy.title}><div class="wordmark">{@html wordmark}</div></h1>
     <div class="letter">
@@ -82,12 +81,8 @@
 </section>
 
 <style>
-  section {
-    padding: 4em 0;
-  }
-
   .wordmark {
-    max-width: 3.5em;
+    max-width: calc(var(--font-size-giant) * 1.5);
   }
 
   .letter {
@@ -156,19 +151,6 @@
 
   .signature.is-visible {
     opacity: 1;
-  }
-
-  :global(.letter a) {
-    text-decoration: none;
-    background-image: linear-gradient(var(--color-border), var(--color-border));
-    background-repeat: no-repeat;
-    background-size: calc(100% - 2.25em) 0.1em;
-    background-position: 0 90%;
-    transition: background-size 150ms ease-in;
-  }
-
-  :global(.letter a:hover, .letter a:focus) {
-    background-size: calc(100% - 2.25em) 1em;
   }
 
   :global(.letter img) {

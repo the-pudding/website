@@ -8,8 +8,10 @@
   <div class="logo">
     <a href="https://pudding.cool" aria-label="The Pudding">{@html logo}</a>
   </div>
-  <Social />
-  <SlideOut />
+  <div class="links">
+    <Social />
+    <SlideOut />
+  </div>
 </header>
 
 <style>
@@ -19,8 +21,8 @@
     position: relative;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em;
-    padding-right: 3em;
+    padding: 0.25em 1em;
+    padding-right: 5em;
   }
 
   .logo {
@@ -41,5 +43,15 @@
 
   :global(.logo .st1) {
     fill: var(--color-gray-medium);
+  }
+
+  .links {
+    display: none;
+  }
+
+  @media (min-width: 720px) {
+    .links {
+      display: block;
+    }
   }
 </style>

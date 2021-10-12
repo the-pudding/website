@@ -93,7 +93,7 @@
       <p>{copy.patreon}</p>
       <div>
         {#each ctas as { cta, url }}
-          <a class="btn" href={url} rel="external">{cta}</a>
+          <a class="btn btn-light" href={url} rel="external">{cta}</a>
         {/each}
       </div>
     </section>
@@ -134,6 +134,8 @@
     top: 50%;
     right: 0.5em;
     transform: translate(0, -50%);
+    background: transparent;
+    color: var(--color-body);
   }
 
   #slide-nav {
@@ -147,6 +149,8 @@
     color: var(--background-body);
     transition: transform 0.5s;
     transform: translate(100%, 0);
+    max-width: var(--width-column-narrow);
+    padding: 0 1em;
   }
 
   #slide-nav.visible {
@@ -159,5 +163,9 @@
 
   a {
     color: var(--background-body);
+  }
+
+  li {
+    list-style-type: none;
   }
 </style>

@@ -32,7 +32,7 @@
 </script>
 
 <section id="stories" bind:this={sectionEl}>
-  <h2 class="column">{copy.storiesHed}</h2>
+  <h2 class="column-wide upper">{copy.storiesHed}</h2>
   <ul>
     {#each sortedStories as { tease, url, slug }}
       <li>

@@ -1,11 +1,7 @@
 import { shuffle } from "d3";
 
-export default function madlibToHTML({ stories, copy, category, filterFunction }) {
-	filterFunction = filterFunction || (() => true);
-
-	const textProp = `home_${category}`;
-
-	const filteredStories = stories.filter((d) => d[textProp]).filter(filterFunction);
+export default function madlibToHTML({ stories, category, copy, filter }) {
+	const filteredStories = stories.filter((d) => d.home_text).filter(d => d.home_pick.includes(filter));
 
 	if (!filteredStories.length) return "";
 
@@ -17,8 +13,8 @@ export default function madlibToHTML({ stories, copy, category, filterFunction }
 		const story = filteredStories.pop();
 		return `
     		<a href="https://pudding.cool/${story.url}" rel="external">
-    			<span>${story[textProp]}</span>
-    			<img src="common/assets/thumbnails/320/${story.slug}.jpg" alt="" /></a>`;
+    			<span>${story.home_text}</span></a>
+				<img src="common/assets/thumbnails/320/${story.slug}.jpg" alt="story thumbnail" />`;
 	});
 
 	return html;

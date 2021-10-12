@@ -34,7 +34,7 @@
   const published = `They have worked on ${count} stor${suffix} to date. Explore them all below.`;
 </script>
 
-<section id="intro" class="column">
+<section id="intro" class="column-wide">
   <HeroText>
     <!-- <img src="/common/assets/authors/{id}.jpg" alt={author.name} /> -->
     <h1>{name}</h1>
@@ -42,29 +42,19 @@
     <p>
       <span class="sr-only">{name} </span>{@html bio}
       {#if link}{@html link}{/if}
-      {published}
+      {#if stories.length}{published}{/if}
     </p>
   </HeroText>
 </section>
-
-<section id="stories">
-  <h2 class="column">Stories</h2>
-  <ul>
-    {#each stories as { tease, url, slug, date }}
-      <li>
-        <Story {tease} {url} {slug} />
-      </li>
-    {/each}
-  </ul>
-</section>
-
-<style>
-  #intro {
-    padding: 4em 0;
-  }
-
-  h2 {
-    text-transform: uppercase;
-    transform: translate(0, 0.2em);
-  }
-</style>
+{#if stories.length}
+  <section id="stories">
+    <h2 class="column-wide upper">Stories</h2>
+    <ul>
+      {#each stories as { tease, url, slug, date }}
+        <li>
+          <Story {tease} {url} {slug} />
+        </li>
+      {/each}
+    </ul>
+  </section>
+{/if}

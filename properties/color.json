@@ -1,13 +1,13 @@
 {
 	"color": {
 		"black": {
-			"value": "#000000"
+			"value": "#1a1a1a"
 		},
 		"off-black": {
 			"value": "#282828"
 		},
 		"gray-dark": {
-			"value": "#5b5b5b"
+			"value": "#6A6A6A"
 		},
 		"gray-medium": {
 			"value": "#949494"

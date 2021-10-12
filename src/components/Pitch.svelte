@@ -1,20 +1,28 @@
 <script>
+  import HeroText from "$components/HeroText.svelte";
   export let copy;
 
   const { sections } = copy;
 </script>
 
-<h1>{copy.title}</h1>
+<section id="intro" class="column-wide">
+  <HeroText>
+    <h1>{copy.title}</h1>
+    <p>{@html copy.dek}</p>
+  </HeroText>
+</section>
 
 {#each sections as { hed, id }}
-  <section {id}>
+  <section {id} class="column-regular">
     {#if hed}
       <h2>{hed}</h2>
     {/if}
 
-    {#each copy[id] as { value }}
-      <p>{@html value}</p>
-    {/each}
+    {#if copy[id]}
+      {#each copy[id] as { value }}
+        <p>{@html value}</p>
+      {/each}
+    {/if}
 
     {#if copy[`${id}List`]}
       <ul>

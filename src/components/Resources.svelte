@@ -9,16 +9,16 @@
   const { sections } = copy;
 </script>
 
-<section id="intro" class="column">
+<section id="intro" class="column-wide">
   <HeroText>
-    <h1>The Pudding</h1>
-    <p>{copy.dek}</p>
+    <h1>{copy.title}</h1>
+    <p>{@html copy.dek}</p>
   </HeroText>
 </section>
 
 {#each sections as { hed, id }}
   <section {id}>
-    <h2 class="column">{hed}</h2>
+    <h2 class="column-wide upper">{hed}</h2>
     <ul>
       {#each data.filter((d) => d.category === id) as { url, slug, title, description }}
         <li>
@@ -30,9 +30,9 @@
 {/each}
 
 <section id="faq">
-  <h2 class="column">FAQ</h2>
+  <h2 class="column-wide upper">FAQ</h2>
   {#each copy.faq as { question, answer }}
-    <details class="column">
+    <details class="column-regular">
       <summary>{question}</summary>
       {@html answer}
     </details>
@@ -40,15 +40,6 @@
 </section>
 
 <style>
-  #intro {
-    padding: 4em 0;
-  }
-
-  h2 {
-    text-transform: uppercase;
-    transform: translate(0, 0.2em);
-  }
-
   section {
     margin-bottom: 4em;
   }

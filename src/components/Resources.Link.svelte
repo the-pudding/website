@@ -31,30 +31,36 @@
     border-bottom: 4px solid var(--background-body);
   }
 
-  .resource a {
+  a {
+    background: none;
     display: flex;
-    padding: 4rem 0;
+    padding: 4em;
     text-decoration: none;
     align-items: flex-start;
     text-decoration: none;
   }
 
-  .resource a .tease span {
-    background-image: linear-gradient(var(--dark), var(--dark));
+  .title {
+    font-weight: 400;
+  }
+
+  .title span {
+    color: var(--color-body);
+    background-image: linear-gradient(currentColor, currentColor);
     background-repeat: no-repeat;
     background-position: 0 90%;
     background-size: 0% 0.1em;
   }
 
-  .resource a:hover .tease span,
-  .resource a:focus .tease span {
+  a:hover .title span,
+  a:focus .title span {
     background-size: 100% 0.1em;
   }
 
   img {
     max-width: 240px;
     width: 40%;
-    border: 1px solid var(--dark);
+    border: 1px solid currentColor;
   }
 
   .info {

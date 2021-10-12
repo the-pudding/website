@@ -33,6 +33,8 @@
     display: inline-block;
     line-height: 1;
     margin: 0 0.5em;
+    background-image: none;
+    font-size: var(--font-size-small);
   }
 
   .platforms {

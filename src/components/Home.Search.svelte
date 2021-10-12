@@ -91,18 +91,16 @@
   $: results = query.length >= MIN_CHARS ? sortResults(query) : data;
   $: highlight = results.map((d) => d.slug);
   $: if (query.length >= MIN_CHARS) dispatch("focus");
+  $: matchSuffix = highlight.length === 1 ? "y" : "ies";
 </script>
 
 <div id="search">
-  <div class="inner column">
+  <div class="inner column-wide">
     <input placeholder="Search stories (e.g., Spotify)" bind:value />
-    <p>{highlight.length} matches</p>
+    <p>{highlight.length} stor{matchSuffix}</p>
   </div>
 </div>
 
-<!-- {#each results as { hed }}
-  <p>{hed}</p>
-{/each} -->
 <style>
   #search {
     background: var(--background-body);

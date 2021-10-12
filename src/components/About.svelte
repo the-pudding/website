@@ -11,11 +11,14 @@
   const { sections } = copy;
 </script>
 
-<section id="intro" class="column">
+<section id="intro" class="column-wide">
   <HeroText>
     <h1>{copy.title}</h1>
-    <p>{copy.dek}</p>
+    <p>{@html copy.dek}</p>
   </HeroText>
+</section>
+
+<section id="more" class="column-regular">
   <details>
     <summary>{copy.backgroundSummary}</summary>
     {#each copy.background as { value }}
@@ -25,7 +28,7 @@
 </section>
 
 {#each sections as { id, hed }}
-  <section {id} class="column below">
+  <section {id} class="column-regular below">
     {#if hed}
       <h2>{hed}</h2>
     {/if}
@@ -67,16 +70,6 @@
 {/each}
 
 <style>
-  #intro {
-    padding: 4em 0;
-  }
-
-  details p {
-    font-size: var(--font-size-medium);
-    padding: 0 2em;
-    margin: 1.5em 0;
-  }
-
   #team ul {
     display: flex;
     flex-wrap: wrap;

@@ -26,7 +26,7 @@
     version: 'dark'
   })};"
 >
-  <a class="column" href="https://pudding.cool/{url}" rel="external">
+  <a class="column-wide" href="https://pudding.cool/{url}" rel="external">
     <img
       src="/common/assets/thumbnails/32/{slug}.jpg"
       alt="thumbnail for story"
@@ -49,23 +49,22 @@
   }
 
   .story a {
+    background: none;
     display: flex;
     padding: 4rem 0;
-    text-decoration: none;
     align-items: flex-start;
-    text-decoration: none;
   }
 
   .story a .tease span {
-    background-image: linear-gradient(var(--dark), var(--dark));
-    background-repeat: no-repeat;
-    background-position: 0 90%;
-    background-size: 0% 0.1em;
+    color: var(--color-body);
   }
 
   .story a:hover .tease span,
-  .story a:focus .tease span {
+  .story a:hover .tease span {
+    background-image: linear-gradient(var(--dark), var(--dark));
     background-size: 100% 0.1em;
+    background-position: 0 90%;
+    background-repeat: no-repeat;
   }
 
   .story.is-collapsed img {
@@ -84,5 +83,6 @@
     padding: 0 1em;
     flex-grow: 1;
     color: currentColor;
+    font-weight: 400;
   }
 </style>
