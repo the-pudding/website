@@ -28,13 +28,13 @@
 <style>
   .resource {
     background: var(--color-off-white);
-    border-bottom: 4px solid var(--background-body);
+    margin-bottom: 4px;
   }
 
   a {
-    background: none;
+    background: var(--color-gray-bg);
     display: flex;
-    padding: 4em;
+    padding: 3em;
     text-decoration: none;
     align-items: flex-start;
     text-decoration: none;

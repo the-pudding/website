@@ -34,7 +34,7 @@
   {#each copy.faq as { question, answer }}
     <details class="column-regular">
       <summary>{question}</summary>
-      {@html answer}
+      <p>{@html answer}</p>
     </details>
   {/each}
 </section>
@@ -42,5 +42,9 @@
 <style>
   section {
     margin-bottom: 4em;
+  }
+
+  li:hover {
+    outline: 0.25rem solid var(--color-off-black);
   }
 </style>

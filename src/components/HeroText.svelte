@@ -5,7 +5,7 @@
 <style>
   div {
     line-height: 1.65;
-    padding: 4em 0;
+    padding: 4em 0 2em 0;
   }
 
   :global(.hero-text h1) {

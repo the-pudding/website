@@ -2,6 +2,7 @@
   import { getContext, createEventDispatcher } from "svelte";
   import deburr from "lodash.deburr";
   import { sum, ascending } from "d3";
+  import Icon from "$components/helpers/Icon.svelte";
 
   export let highlight;
 
@@ -96,6 +97,7 @@
 
 <div id="search">
   <div class="inner column-wide">
+    <Icon name="search" />
     <input placeholder="Search stories (e.g., Spotify)" bind:value />
     <p>{highlight.length} stor{matchSuffix}</p>
   </div>
@@ -103,8 +105,7 @@
 
 <style>
   #search {
-    background: var(--background-body);
-    box-shadow: 0 4px 4px var(--color-off-white);
+    background: rgba(248, 248, 248, 0.95);
     position: sticky;
     top: 0;
     left: 0;
@@ -123,6 +124,7 @@
     font-size: 1.25em;
     padding: 0.5em;
     line-height: 1;
+    margin-left: 0.5rem;
   }
 
   p {

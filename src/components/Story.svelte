@@ -45,7 +45,7 @@
 <style>
   .story {
     background: var(--light);
-    border-bottom: 4px solid var(--background-body);
+    margin-bottom: 0.25rem;
   }
 
   .story a {

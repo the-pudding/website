@@ -15,7 +15,7 @@
 {#each sections as { hed, id }}
   <section {id} class="column-regular">
     {#if hed}
-      <h2>{hed}</h2>
+      <h3>{hed}</h3>
     {/if}
 
     {#if copy[id]}
@@ -33,3 +33,9 @@
     {/if}
   </section>
 {/each}
+
+<style>
+  section:not(#intro) {
+    padding-bottom: 4rem;
+  }
+</style>

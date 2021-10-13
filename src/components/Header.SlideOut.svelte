@@ -105,7 +105,7 @@
           {#each about as { name, url, rel }}
             <li>
               <a href={url} {rel}>
-                <span>{name.toUpperCase()}</span>
+                <span>{name}</span>
               </a>
             </li>
           {/each}
@@ -118,7 +118,7 @@
           {#each follow as { name, url }}
             <li>
               <a href={url} rel="external">
-                <span>{name.toUpperCase()}</span>
+                <span>{name}</span>
               </a>
             </li>
           {/each}
@@ -150,7 +150,7 @@
     transition: transform 0.5s;
     transform: translate(100%, 0);
     max-width: var(--width-column-narrow);
-    padding: 0 1em;
+    padding: 1rem 2rem;
   }
 
   #slide-nav.visible {
@@ -161,11 +161,18 @@
     transform: translate(0, 0);
   }
 
+  .about div {
+    display: flex;
+    flex-direction: column;
+  }
+
   a {
     color: var(--background-body);
   }
 
   li {
     list-style-type: none;
+    font-size: var(--font-size-medium);
+    font-weight: 300;
   }
 </style>

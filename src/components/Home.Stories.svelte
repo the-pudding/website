@@ -51,4 +51,8 @@
     text-transform: uppercase;
     transform: translate(0, 0.2em);
   }
+
+  li:hover {
+    outline: 0.25rem solid var(--color-off-black);
+  }
 </style>

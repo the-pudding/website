@@ -61,6 +61,44 @@
           </li>
         {/each}
       </ul>
+      <details>
+        <summary>{copy.teamSummary}</summary>
+        {#each copy.teamDropdown as { value }}
+          <p>{@html value}</p>
+        {/each}
+      </details>
+      <details>
+        <summary>{copy.collabSummary}</summary>
+        {#each copy.collabDropdown as { value }}
+          <p>{@html value}</p>
+        {/each}
+      </details>
+      <details>
+        <summary>{copy.speakingSummary}</summary>
+        {#each copy.speakingDropdown as { value }}
+          <p>{@html value}</p>
+        {/each}
+      </details>
+    {:else if id === "positions"}
+      {#each copy[id] as { value }}
+        <p>{@html value}</p>
+      {/each}
+      <details>
+        <summary>{copy.positionsSummary}</summary>
+        {#each copy.positionsDropdown as { value }}
+          <p>{@html value}</p>
+        {/each}
+      </details>
+    {:else if id === "studio"}
+      {#each copy[id] as { value }}
+        <p>{@html value}</p>
+      {/each}
+      <details>
+        <summary>{copy.studioSummary}</summary>
+        {#each copy.studioDropdown as { value }}
+          <p>{@html value}</p>
+        {/each}
+      </details>
     {:else}
       {#each copy[id] as { value }}
         <p>{@html value}</p>
@@ -83,7 +121,25 @@
     margin-bottom: 2em;
   }
 
+  table {
+    width: 100%;
+    table-layout: auto;
+  }
+
+  tr {
+    border-bottom: 1px solid var(--color-border)
+  }
+
+  td, th {
+    padding: 0.75rem .25rem;
+  }
+
+  td:nth-child(3) {
+      width: 10%;
+  }
+
   .below {
+    padding-top: 2em;
     margin-bottom: 4em;
   }
 
