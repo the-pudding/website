@@ -34,7 +34,15 @@
   {#each copy.faq as { question, answer }}
     <details class="column-regular">
       <summary>{question}</summary>
-      <p>{@html answer}</p>
+      {#if Array.isArray(answer) }
+        <ul>
+          {#each answer as {lib}}
+            <li class="libs">{@html lib}</li>
+          {/each}
+        </ul>
+      {:else}
+        <p>{@html answer}</p>
+      {/if}
     </details>
   {/each}
 </section>
@@ -46,5 +54,9 @@
 
   li:hover {
     outline: 0.25rem solid var(--color-off-black);
+  }
+
+  details li:hover {
+    outline: none;
   }
 </style>

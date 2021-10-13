@@ -27,7 +27,7 @@
 
 <style>
   .resource {
-    background: var(--color-off-white);
+    background: var(--color-gray-bg);
     margin-bottom: 4px;
   }
 

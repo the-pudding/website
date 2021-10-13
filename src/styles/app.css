@@ -22,7 +22,7 @@
 	--font-form: var(--sans);
 	--background-body: var(--color-off-white);
   	--background-form: var(--color-off-white);
-	--color-accent: #E1FF8B
+	--color-accent: #E1FF8B;
   	--color-gray-bg: #f0f0f0;
 	--color-body: var(--color-off-black);
 	--color-placeholder: var(--color-gray-dark);
@@ -126,8 +126,12 @@ details {
 	padding: 1em 1em 1em 0em;
 }
 
-details p {
+details p, details ul {
 	padding: 1rem 0 0 1rem;
+}
+
+details ul {
+	width: 100%;
 }
 
 summary {
@@ -197,3 +201,7 @@ button.btn-light, .btn.btn-light {
 	text-transform: uppercase;
 	transform: translate(0, 0.2em);
 }
+
+.libs a {
+    font-weight: 700;
+  }

@@ -66,6 +66,11 @@
         {#each copy.teamDropdown as { value }}
           <p>{@html value}</p>
         {/each}
+        <ul id="background-list">
+          {#each copy.teamDropdownList as { lead, description }}
+            <li><strong>{@html lead}</strong> {@html description}</li>
+          {/each}
+        </ul>
       </details>
       <details>
         <summary>{copy.collabSummary}</summary>
@@ -119,6 +124,12 @@
     max-width: 12em;
     margin-right: 2em;
     margin-bottom: 2em;
+  }
+
+  #background-list li {
+    max-width: none;
+    list-style-type: disc;
+    margin: 0;
   }
 
   table {
