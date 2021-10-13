@@ -54,5 +54,6 @@
 
   li:hover {
     outline: 0.25rem solid var(--color-off-black);
+    outline-offset: -0.25rem;
   }
 </style>

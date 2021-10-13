@@ -29,7 +29,7 @@
 	--color-gray-text: #4A4A4A;
 	--color-link: var(--color-off-black);
   	--color-link-border: var(--color-off-black);
-  	--color-focus: var(--color-red);
+  	--color-focus: var(--color-accent);
 	--color-form: var(--color-black);
 	--color-border: var(--color-gray-light);
 	--color-selection: var(--color-gray-light);
@@ -153,8 +153,12 @@ button, .btn {
 	margin: 0.5rem 0;
 }
 
-button:hover, button:focus, .btn:hover, .btn:focus {
+button:hover, button:focus, .btn:hover, .btn:focus  {
 	color: var(--background-body);
+}
+
+#slide-nav .btn {
+	color: var(--color-off-black);
 }
 
 .cta .btn, footer .btn, #slide-nav .btn {
@@ -189,7 +193,6 @@ button.btn-light, .btn.btn-light {
 	margin-left: var(--margin-left);
 }
 
-
 .column-narrow {
 	max-width: var(--width-column-narrow);
 	width: var(--width-padded);
@@ -203,5 +206,14 @@ button.btn-light, .btn.btn-light {
 }
 
 .libs a {
-    font-weight: 700;
-  }
+ 	font-weight: 700;
+}
+
+.popular a + img, .personal a + img {
+	transition: transform 200ms ease-in, outline 200ms ease-in;
+}
+
+.popular a:hover + img, .personal a:hover + img {
+	transform: scale(1.2, 1.2) translate(0, 15%);
+	outline: 2px solid var(--color-off-black);
+}

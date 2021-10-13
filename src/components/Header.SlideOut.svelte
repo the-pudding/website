@@ -131,9 +131,9 @@
 <style>
   .btn-open {
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 0.5em;
-    transform: translate(0, -50%);
+    transform: translate(0, -40%);
     background: transparent;
     color: var(--color-body);
   }
@@ -166,6 +166,10 @@
     flex-direction: column;
   }
 
+  .links div {
+    padding: 2rem 0 0 0;
+  }
+
   a {
     color: var(--background-body);
   }
@@ -174,5 +178,10 @@
     list-style-type: none;
     font-size: var(--font-size-medium);
     font-weight: 300;
+  }
+
+  h4 {
+    color: var(--color-off-white);
+    border-bottom: 1px solid var(--color-gray-light);
   }
 </style>

@@ -85,4 +85,12 @@
     color: currentColor;
     font-weight: 400;
   }
+
+  .story a img {
+    transition: transform 200ms ease-in;
+  }
+
+  .story a:hover img {
+    transform: scale(1.05, 1.05);
+  }
 </style>

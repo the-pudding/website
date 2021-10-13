@@ -157,5 +157,6 @@
     display: inline-block;
     width: 2em;
     transform: translate(0, 25%);
+    outline: 1px solid var(--color-off-black);
   }
 </style>
