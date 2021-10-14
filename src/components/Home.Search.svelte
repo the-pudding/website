@@ -97,10 +97,7 @@
 
 <div id="search">
   <div class="inner column-wide">
-    <div class="search-input-container">
-      <Icon name="search" />
-      <input placeholder="Search stories (e.g., Spotify)" bind:value />
-    </div>
+    <input placeholder="Search stories (e.g., Spotify)" bind:value />
     <p>{highlight.length} stor{matchSuffix}</p>
   </div>
 </div>
@@ -118,12 +115,6 @@
     flex-direction: row;
   }
 
-  .search-input-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
   .inner {
     display: flex;
     flex-direction: row;
@@ -135,7 +126,6 @@
     font-size: var(--font-size-small);
     padding: 0.5em;
     line-height: 1;
-    margin-left: 0.5rem;
   }
 
   p {
@@ -143,17 +133,5 @@
     margin-left: 1em;
     color: var(--color-gray-dark);
     font-size: var(--font-size-tiny);
-  }
-
-  @media only screen and (max-width: 700px) {
-    .inner {
-      flex-direction: column;
-      align-items: start;
-    }
-
-    p {
-      margin-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
   }
 </style>

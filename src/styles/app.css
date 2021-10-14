@@ -21,7 +21,8 @@
 	--font-body: var(--sans);
 	--font-form: var(--sans);
 	
-	--color-accent: var(--color-green2);
+	--color-accent: var(--color-gray-medium);
+	--color-accent: #A973FF;
 	--background-body: var(--color-white);
 	--background-form: var(--color-off-white);
 	--color-body: var(--color-off-black);
@@ -32,7 +33,7 @@
 	--color-form: var(--color-black);
 	--color-border: var(--color-gray-light);
 	--color-selection: var(--color-gray-light);
-	--color-highlight: var(--color-yellow);
+	--color-highlight: var(--color-accent);
 	
 	--font-size-giant: clamp(3em, 5.25vw, 6.5em);
 	--font-size-large: clamp(2em, 3.25vw, 3.25em);
@@ -50,7 +51,7 @@
 	--width-padded: 90vw;
 	--margin-left: 5vw;
 
-	--transition-fast: 50ms;
+	--transition-fast: 100ms;
 	--transition-medium: 200ms;
 	--transition-slow: 500ms;
 	--transition-ease: ease-in;
@@ -100,48 +101,16 @@ a {
 	text-decoration: none;
 	color: var(--color-link);
 	background-image: linear-gradient(var(--color-accent), var(--color-accent));
-	background-size: 100% 0.25em;
-	background-position: 0 95%;
+	background-size: 100% 0.1em;
+	background-position: 0 90%;
 	background-repeat: no-repeat;
-	transition: background-size var(--transition-medium) var(--transition-ease);
+	transition: all var(--transition-fast) var(--transition-ease);
 	padding: 0 0.05em;
 }
 
 a:hover, a:focus {
-	background-size: 100% 1em;
-	color: var(--color-body);
-}
-
-th {
-	color: var(--color-off-black);
-}
-
-strong {
-	color: var(--color-off-black);
-}
-
-summary {
-	color: var(--color-off-black);
-	border-bottom: 1px solid var(--color-border);
-	padding-bottom: 0.75rem;
-}
-
-details {
-	font-size: var(--font-size-small);
-	padding: 1em 1em 1em 0em;
-}
-
-details p, details ul {
-	padding: 1rem 0 0 1rem;
-}
-
-details ul {
-	width: 100%;
-}
-
-summary {
-	font-size: var(--font-size-small);
-	cursor: pointer;
+	background-size: 100% 100%;
+	/* background-position: 0 100%; */
 }
 
 button, .btn {
@@ -153,30 +122,15 @@ button, .btn {
 	line-height: 1;
 	font-size: var(--font-size-small);
 	font-weight: var(--font-weight-bold);
-	max-width: 14rem;
 	text-align:  center;
 	margin: 0.5rem 0;
-}
-
-button:hover, button:focus, .btn:hover, .btn:focus  {
-	color: var(--background-body);
-}
-
-#slide-nav .btn {
-	color: var(--color-off-black);
-}
-
-.cta .btn, footer .btn, #slide-nav .btn {
-    background-size: 200% 100%;
-	background-position: -100% 0;
-	background-repeat: no-repeat;
-    background-image: linear-gradient(90deg, var(--color-accent) 50%, var(--off-black) 50%);
-    transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
-}
-
-.cta .btn:hover, footer .btn:hover, #slide-nav .btn:hover {
 	background-position: 0 0;
-	color: var(--color-off-black);
+	transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
+}
+
+button:hover, button:focus, a.btn:hover, a.btn:focus  {
+	background-image: linear-gradient(90deg, var(--color-accent) 50%, var(--color-accent) 50%);
+	
 }
 
 button.btn-light, .btn.btn-light {
@@ -193,14 +147,14 @@ button.btn-light, .btn.btn-light {
 
 .column-regular {
 	max-width: var(--width-column-regular);
-	width: var(--width-padded);
+	width: 50vw;
 	margin: 0;
 	margin-left: var(--margin-left);
 }
 
 .column-narrow {
 	max-width: var(--width-column-narrow);
-	width: var(--width-padded);
+	width: 25vw;
 	margin: 0;
 	margin-left: var(--margin-left);
 }
@@ -211,14 +165,5 @@ button.btn-light, .btn.btn-light {
 }
 
 .libs a {
- 	font-weight: var(--font-weight-bold);
-}
-
-.popular a + img, .personal a + img {
-	transition: transform var(--transition-medium) var(--transition-ease), outline var(--transition-medium) var(--transition-ease);
-}
-
-.popular a:hover + img, .personal a:hover + img {
-	transform: scale(1.2, 1.2) translate(0, 15%);
-	outline: 2px solid var(--color-off-black);
+ 	font-weight: v+ar(--font-weight-bold);
 }

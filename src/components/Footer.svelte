@@ -53,8 +53,8 @@
 <style>
   footer {
     display: flex;
-    padding: 0rem 0rem 10rem 0rem;
-    margin: 2rem 5vw 0 5vw;
+    padding: 0rem 0rem 4rem 0rem;
+    margin: 4rem 5vw 0 5vw;
     max-width: 960px;
     justify-content: space-between;
   }

@@ -87,7 +87,7 @@
   }
 
   .story a img {
-    transition: transform var(--transition-slow) var(--transition-ease);
+    transition: transform var(--transition-medium) var(--transition-ease);
   }
 
   .story a:hover img {

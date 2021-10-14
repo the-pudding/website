@@ -81,6 +81,10 @@
 </section>
 
 <style>
+  section {
+    margin-bottom: 4em;
+  }
+
   .wordmark {
     max-width: calc(var(--font-size-giant) * 1.5);
   }
@@ -158,5 +162,15 @@
     width: 2em;
     transform: translate(0, 25%);
     outline: 1px solid var(--color-off-black);
+  }
+
+  :global(.popular a + img, .personal a + img) {
+    transition: transform var(--transition-medium) var(--transition-ease),
+      outline var(--transition-medium) var(--transition-ease);
+  }
+
+  :global(.popular a:hover + img, .personal a:hover + img) {
+    transform: scale(1.2, 1.2) translate(0, 15%);
+    outline: 2px solid var(--color-off-black);
   }
 </style>

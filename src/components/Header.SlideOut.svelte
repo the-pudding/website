@@ -130,12 +130,14 @@
 
 <style>
   .btn-open {
+    margin: 0;
+    padding: 0;
     position: absolute;
-    top: 40%;
-    right: 0.5em;
-    transform: translate(0, -40%);
+    top: 50%;
+    right: 1em;
     background: transparent;
     color: var(--color-body);
+    transform: translate(-100%, -50%);
   }
 
   #slide-nav {
@@ -184,4 +186,17 @@
     color: var(--color-off-white);
     border-bottom: 1px solid var(--color-gray-light);
   }
+
+  /* .cta .btn, footer .btn, #slide-nav .btn {
+	background-size: 200% 100%;
+	background-position: -100% 0;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(90deg, var(--color-accent) 50%, var(--off-black) 50%);
+	transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
+}
+
+.cta .btn:hover, footer .btn:hover, #slide-nav .btn:hover {
+	background-position: 0 0;
+	color: var(--color-off-black);
+} */
 </style>
