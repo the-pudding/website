@@ -40,5 +40,29 @@
 
   <meta name="robots" content="max-image-preview:large" />
 
+  <link
+    rel="preload"
+    type="font/woff2"
+    as="font"
+    crossorigin
+    href="/assets/fonts/metropolis/Metropolis-Black.woff2"
+  />
+
+  <link
+    rel="preload"
+    type="font/woff2"
+    as="font"
+    crossorigin
+    href="/assets/fonts/metropolis/Metropolis-Thin.woff2"
+  />
+
+  <link
+    rel="preload"
+    type="font/woff2"
+    as="font"
+    crossorigin
+    href="/assets/fonts/metropolis/Metropolis-Regular.woff2"
+  />
+
   <link rel="canonical" href="{url}/" />
 </svelte:head>

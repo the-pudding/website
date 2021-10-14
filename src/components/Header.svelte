@@ -23,7 +23,7 @@
     position: relative;
     justify-content: space-between;
     align-items: center;
-    padding: 0.25em 1em;
+    padding: 0.25em 1.5em;
     padding-right: 4em;
   }
 

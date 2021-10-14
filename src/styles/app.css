@@ -20,35 +20,40 @@
 	--border-radius: 0px;
 	--font-body: var(--sans);
 	--font-form: var(--sans);
-	--background-body: var(--color-off-white);
-  	--background-form: var(--color-off-white);
-	--color-accent: #E1FF8B;
-  	--color-gray-bg: #f0f0f0;
+	
+	--color-accent: var(--color-green2);
+	--background-body: var(--color-white);
+	--background-form: var(--color-off-white);
 	--color-body: var(--color-off-black);
 	--color-placeholder: var(--color-gray-dark);
-	--color-gray-text: #4A4A4A;
 	--color-link: var(--color-off-black);
-  	--color-link-border: var(--color-off-black);
-  	--color-focus: var(--color-accent);
+	--color-link-border: var(--color-off-black);
+	--color-focus: var(--color-accent);
 	--color-form: var(--color-black);
 	--color-border: var(--color-gray-light);
 	--color-selection: var(--color-gray-light);
-  	--color-highlight: var(--color-yellow);
+	--color-highlight: var(--color-yellow);
 	
-	
-
 	--font-size-giant: clamp(3em, 5.25vw, 6.5em);
 	--font-size-large: clamp(2em, 3.25vw, 3.25em);
 	--font-size-medium: clamp(1.5em, 2.25vw, 2.25em);
 	--font-size-small: clamp(1em, 1.25vw, 1.25em);
 	--font-size-tiny: 16px;
+
+	--font-weight-bold: 900;
+	--font-weight-normal: 400;
+	--font-weight-thin: 300;
 	
 	--width-column-wide: 1500px;
 	--width-column-regular: 720px;
 	--width-column-narrow: 480px;
 	--width-padded: 90vw;
 	--margin-left: 5vw;
-	--mobile-breakpoint: 700px;
+
+	--transition-fast: 50ms;
+	--transition-medium: 200ms;
+	--transition-slow: 500ms;
+	--transition-ease: ease-in;
 }
 
 body {
@@ -58,26 +63,26 @@ body {
 h1 {
 	font-size: var(--font-size-large);
 	line-height: 1;
-	font-weight: 700;
+	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
 }
 
 h2 {
 	font-size: var(--font-size-large);
 	line-height: 1;
-	font-weight: 700;
+	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
 }
 
 h3 {
 	font-size: var(--font-size-medium);
-	font-weight: 700;
+	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
 }
 
 h4 {
 	font-size: var(--font-size-small);
-	font-weight: 700;
+	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
 }
 
@@ -87,18 +92,18 @@ p {
 }
 
 li {
-	line-height: 1.65;
 	font-size: var(--font-size-small);
+	line-height: 1.65;
 }
 
 a {
 	text-decoration: none;
 	color: var(--color-link);
-	background-image: linear-gradient(#E1FF8B, #E1FF8B);
+	background-image: linear-gradient(var(--color-accent), var(--color-accent));
 	background-size: 100% 0.25em;
 	background-position: 0 95%;
 	background-repeat: no-repeat;
-	transition: background-size 200ms ease-in;
+	transition: background-size var(--transition-medium) var(--transition-ease);
 	padding: 0 0.05em;
 }
 
@@ -147,7 +152,7 @@ button, .btn {
 	text-decoration: none;
 	line-height: 1;
 	font-size: var(--font-size-small);
-	font-weight: 700;
+	font-weight: var(--font-weight-bold);
 	max-width: 14rem;
 	text-align:  center;
 	margin: 0.5rem 0;
@@ -165,8 +170,8 @@ button:hover, button:focus, .btn:hover, .btn:focus  {
     background-size: 200% 100%;
 	background-position: -100% 0;
 	background-repeat: no-repeat;
-    background-image: linear-gradient(90deg, #E1FF8B 50%, #282828 50%);
-    transition: background-position 200ms ease-in, color 400ms ease-in;
+    background-image: linear-gradient(90deg, var(--color-accent) 50%, var(--off-black) 50%);
+    transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
 }
 
 .cta .btn:hover, footer .btn:hover, #slide-nav .btn:hover {
@@ -206,11 +211,11 @@ button.btn-light, .btn.btn-light {
 }
 
 .libs a {
- 	font-weight: 700;
+ 	font-weight: var(--font-weight-bold);
 }
 
 .popular a + img, .personal a + img {
-	transition: transform 200ms ease-in, outline 200ms ease-in;
+	transition: transform var(--transition-medium) var(--transition-ease), outline var(--transition-medium) var(--transition-ease);
 }
 
 .popular a:hover + img, .personal a:hover + img {

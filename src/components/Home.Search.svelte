@@ -107,7 +107,7 @@
 
 <style>
   #search {
-    background: rgba(248, 248, 248, 0.95);
+    background: var(--background-body);
     position: sticky;
     top: 0;
     left: 0;

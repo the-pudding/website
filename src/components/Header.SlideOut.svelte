@@ -104,7 +104,7 @@
         <ul>
           {#each about as { name, url, rel }}
             <li>
-              <a href={url} {rel}>
+              <a href={url} {rel} sveltekit:prefetch>
                 <span>{name}</span>
               </a>
             </li>
@@ -177,7 +177,7 @@
   li {
     list-style-type: none;
     font-size: var(--font-size-medium);
-    font-weight: 300;
+    font-weight: var(--font-weight-thin);
   }
 
   h4 {

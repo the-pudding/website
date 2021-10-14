@@ -1,26 +1,20 @@
 /**
  * Do not edit directly
- * Generated on Tue, 12 Oct 2021 18:00:22 GMT
+ * Generated on Thu, 14 Oct 2021 13:43:58 GMT
  */
 
 :root {
-  --category-blue: #4477AA;
-  --category-red: #EE6677;
-  --category-green: #228833;
-  --category-yellow: #CCBB44;
-  --category-cyan: #66CCEE;
-  --category-purple: #AA3377;
-  --category-gray: #BBBBBB;
   --color-black: #1a1a1a;
   --color-off-black: #282828;
   --color-gray-dark: #6a6a6a;
   --color-gray-medium: #949494;
   --color-gray-light: #c9c9c9;
-  --color-off-white: #f8f8f8;
+  --color-off-white: #f0f0f0;
   --color-white: #ffffff;
   --color-purple: #a239ca;
   --color-blue: #4717f6;
   --color-green: #34a29e;
   --color-red: #ff533d;
   --color-yellow: #e5e338;
+  --color-green2: #e1ff8b;
 }

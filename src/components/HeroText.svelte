@@ -14,7 +14,7 @@
   }
 
   :global(.hero-text p) {
-    font-weight: 300;
+    font-weight: var(--font-weight-thin);
     font-size: var(--font-size-large);
   }
 </style>

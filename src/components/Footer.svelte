@@ -27,7 +27,7 @@
       <ul>
         {#each about as { name, url, rel }}
           <li>
-            <a href={url} {rel}>
+            <a href={url} {rel} sveltekit:prefetch>
               <span>{name}</span>
             </a>
           </li>

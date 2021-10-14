@@ -34,9 +34,9 @@
   {#each copy.faq as { question, answer }}
     <details class="column-regular">
       <summary>{question}</summary>
-      {#if Array.isArray(answer) }
+      {#if Array.isArray(answer)}
         <ul>
-          {#each answer as {lib}}
+          {#each answer as { lib }}
             <li class="libs">{@html lib}</li>
           {/each}
         </ul>

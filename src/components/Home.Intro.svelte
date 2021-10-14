@@ -73,7 +73,7 @@
   <div class="signature" class:is-visible={personalHTML}>
     <p class="name">
       {#if personalSlug}
-        <a href="/author/{personalSlug}">{personalName}</a>
+        <a href="/author/{personalSlug}" sveltekit:prefetch>{personalName}</a>
       {/if}
     </p>
     <p class="position">{position}</p>
@@ -86,7 +86,7 @@
   }
 
   .letter {
-    min-height: 60vh;
+    min-height: 75vh;
   }
 
   .letter p {

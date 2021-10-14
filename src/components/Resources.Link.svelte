@@ -27,12 +27,12 @@
 
 <style>
   .resource {
-    background: var(--color-gray-bg);
+    background: var(--color-off-white);
     margin-bottom: 4px;
   }
 
   a {
-    background: var(--color-gray-bg);
+    background: var(--color-off-white);
     display: flex;
     padding: 3em;
     text-decoration: none;
@@ -41,7 +41,7 @@
   }
 
   .title {
-    font-weight: 400;
+    font-weight: var(--font-weight-normal);
   }
 
   .title span {

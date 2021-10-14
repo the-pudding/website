@@ -54,7 +54,7 @@
       <ul>
         {#each staff as { id, name, slug }}
           <li>
-            <a href="author/{slug}">
+            <a href="author/{slug}" sveltekit:prefetch>
               <img src="common/assets/authors/{id}.jpg" alt={name} />
               <span>{name}</span>
             </a>
@@ -138,15 +138,16 @@
   }
 
   tr {
-    border-bottom: 1px solid var(--color-border)
+    border-bottom: 1px solid var(--color-border);
   }
 
-  td, th {
-    padding: 0.75rem .25rem;
+  td,
+  th {
+    padding: 0.75rem 0.25rem;
   }
 
   td:nth-child(3) {
-      width: 10%;
+    width: 10%;
   }
 
   .below {

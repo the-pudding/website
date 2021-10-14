@@ -83,11 +83,11 @@
     padding: 0 1em;
     flex-grow: 1;
     color: currentColor;
-    font-weight: 400;
+    font-weight: var(--font-weight-normal);
   }
 
   .story a img {
-    transition: transform 200ms ease-in;
+    transition: transform var(--transition-slow) var(--transition-ease);
   }
 
   .story a:hover img {
