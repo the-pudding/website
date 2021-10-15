@@ -1,9 +1,31 @@
 # The Pudding Website
-## Documentatation
 
-### Installation
+## Docs
+### Table of Contents
+* Content
+	* Copy + Data
+	* Images
+	* Tasks
 
-### Updating Site Content
+
+### Content
+#### Copy + Data
+Each page has a copy doc in our [website folder]() on Google Drive.
+* [Home]()
+* [About]()
+* [Pitch]()
+* [Resources]()
+* [Privacy]()
+
+Additionally, there is a misc copy doc for a few items that can appear in multiple places.
+
+Stories
+* There is a [Google Sheet]() for all story data.
+* Fill out `home_text` to populate the intro letter copy (keep it to a few words). Fill out `home_pick` with a staff's slug (each staff should have six selections).
+
+Authors
+There is a [Google Sheet]() for all author data.
+
 #### Tasks
 * Generating thumbnail images
 	* Resize and optimize
@@ -19,7 +41,7 @@
 * Dynamic pages (authors)
 
 
-## Svelte Starter Documentation
+## Development
 
 This [starter template](https://github.com/the-pudding/svelte-starter) aims for fast and easy web development speficially for data-driven and visual stories. It is an opinionated template built on top of [SvelteKit](https://kit.svelte.dev/).
 
