@@ -3,9 +3,9 @@
     const url = "/api/about.json";
     const res = await fetch(url);
     if (res.ok) {
-      const { staff } = await res.json();
+      const { authors } = await res.json();
       return {
-        props: { staff }
+        props: { authors }
       };
     }
 
@@ -21,8 +21,8 @@
   import About from "$components/About.svelte";
   import copy from "$data/about.json";
 
-  export let staff;
+  export let authors;
 </script>
 
 <Meta {copy} />
-<About {copy} {staff} />
+<About {copy} {authors} />

@@ -24,6 +24,9 @@
   })}; --dark: {lookupColor({
     slug,
     version: 'dark'
+  })};  --darker: {lookupColor({
+    slug,
+    version: 'darker'
   })};"
 >
   <a class="column-wide" href="https://pudding.cool/{url}" rel="external">
@@ -57,14 +60,18 @@
 
   .tease span {
     color: var(--color-body);
+    background-size: 100% 0.05em;
+    background-position: 0 90%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(var(--dark), var(--dark));
+    transition: all var(--transition-fast) var(--transition-ease);
+    padding: 0 0.05em;
   }
 
   a:hover .tease span,
   a:hover .tease span {
-    background-image: linear-gradient(var(--dark), var(--dark));
     background-size: 100% 0.1em;
-    background-position: 0 90%;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(var(--darker), var(--darker));
   }
 
   .story.is-collapsed img {
@@ -75,8 +82,8 @@
   img {
     max-width: 640px;
     width: 40%;
-    border: 1px solid var(--dark);
-    transition: transform var(--transition-medium) var(--transition-ease);
+    border: 1px solid var(--darker);
+    transition: transform var(--transition-fast) var(--transition-ease);
   }
 
   .tease {
@@ -87,7 +94,7 @@
     font-weight: var(--font-weight-normal);
   }
 
-  .story a:hover img {
+  a:hover img {
     transform: scale(1.02);
   }
 

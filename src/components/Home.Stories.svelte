@@ -44,16 +44,6 @@
 
 <style>
   section {
-    padding-top: 4em;
-  }
-
-  h2 {
-    text-transform: uppercase;
-    transform: translate(0, 0.2em);
-  }
-
-  li:hover {
-    outline: 0.25rem solid var(--color-off-black);
-    outline-offset: -0.25rem;
+    margin-top: 4em;
   }
 </style>

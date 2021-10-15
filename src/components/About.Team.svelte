@@ -1,5 +1,7 @@
 <script>
+  import { ascending } from "d3";
   export let staff;
+  staff.sort((a, b) => ascending(a.name, b.name));
 </script>
 
 <ul>

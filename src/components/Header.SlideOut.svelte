@@ -189,6 +189,10 @@
     padding-top: 2em;
   }
 
+  .links div {
+    width: 50%;
+  }
+
   .links div:last-of-type {
     margin-left: 2em;
   }

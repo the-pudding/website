@@ -1,14 +1,15 @@
 import authorsData from "$data/authors.js";
 
 export const get = async () => {
-	const staff = authorsData.filter(d => d.position === "Staff").map(d => ({
+	const authors = authorsData.map(d => ({
 		id: d.id,
 		name: d.name,
 		slug: d.slug,
+		position: d.position
 	}));
 
 	const body = {
-		staff
+		authors
 	};
 
 	return { body };

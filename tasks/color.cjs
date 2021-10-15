@@ -7,7 +7,8 @@ const PATH_IN = `${CWD}/static/common/assets/thumbnails/640`;
 const PATH_OUT = `${CWD}/src/data`;
 const FILES = fs.readdirSync(PATH_IN).filter(d => d.includes(".jpg"));
 const QUALITY = 2;
-const SCORE_MIN = 4.5; // AA
+const SCORE_GRAPHIC = 3;
+const SCORE_TEXT = 4.5;
 
 const rgbaToString = (rgba) => `rgba(${rgba.join(",")})`;
 
@@ -18,30 +19,27 @@ const getVibrant = (palette) => roundRGB(palette.Vibrant._rgb);
 const getAccessiblePair = (c) => {
 	const l = c.lightness(80);
 
+	const light = l.hsl().round().string();
 	const inc = 0.01;
 	let delta = 0.01;
-	let valid = false;
 	let dark;
+	let darker;
 
-	while (!valid) {
+	while (!darker) {
 		const d = l.darken(delta);
 		const score = l.contrast(d);
-		if (score >= SCORE_MIN) {
-			valid = true;
-			light = l.hsl().round().string();
-			dark = d.hsl().round().string();
-		} else delta += inc;
+		if (!dark && score >= SCORE_GRAPHIC) dark = d.hsl().round().string();
+		if (!darker && score >= SCORE_TEXT) darker = d.hsl().round().string();
+		else delta += inc;
 	}
 
-	// console.log(attempts);
-	return { light, dark };
+	return { light, dark, darker };
 }
 
 const createPalette = (rgb) => {
 	const c = color(rgb);
-	// const base = c.hsl().round().string();
-	const { light, dark } = getAccessiblePair(c);
-	return { light, dark };
+	const { light, dark, darker } = getAccessiblePair(c);
+	return { light, dark, darker };
 };
 
 // const addAlpha = (rgb) => ([...rgb, ALPHA]);
@@ -63,9 +61,9 @@ const getColor = (path) => {
 		for (let file of FILES) {
 			console.log(`- extracting ${file}`);
 			const path = `${PATH_IN}/${file}`;
-			const { light, dark } = await getColor(path);
+			const { light, dark, darker } = await getColor(path);
 			const slug = file.replace(".jpg", "");
-			output.push({ slug, light, dark });
+			output.push({ slug, light, dark, darker });
 		}
 	} catch (err) {
 		console.error(err);

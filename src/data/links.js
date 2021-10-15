@@ -1,7 +1,7 @@
 export const about = [
 	{ name: "Our Team", url: "/about" },
 	{ name: "Pitch a Story", url: "/pitch" },
-	{ name: "Data Viz Resources", url: "/resources" },
+	{ name: "Our Resources", url: "/resources" },
 	{ name: "Privacy", url: "/privacy" },
 	{ name: "Polygraph", url: "https://polygraph.cool", rel: "external" }
 ];

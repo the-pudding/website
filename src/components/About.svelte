@@ -6,9 +6,17 @@
   import Awards from "$components/About.Awards.svelte";
 
   export let copy;
-  export let staff;
+  export let authors;
 
   const { sections } = copy;
+  const staff = authors.filter((d) => d.position === "Staff");
+
+  // hack to get contributors in details list form in copy
+  const contributors = authors.filter((d) => d.position !== "Staff" && d.id !== "pudding");
+  contributors.sort((a, b) => ascending(a.name, b.name));
+  copy.contributors.detailsList = contributors.map(({ slug, name }) => {
+    return `<a href="/author/${slug}" sveltekit:prefetch>${name}</a>`;
+  });
 </script>
 
 <section id="intro" class="column-wide">

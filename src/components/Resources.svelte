@@ -41,12 +41,4 @@
   section {
     margin-bottom: 4em;
   }
-
-  li:hover {
-    outline: 0.25rem solid var(--color-off-black);
-  }
-
-  details li:hover {
-    outline: none;
-  }
 </style>

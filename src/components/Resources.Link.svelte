@@ -46,15 +46,22 @@
 
   .title span {
     color: var(--color-body);
-    background-image: linear-gradient(currentColor, currentColor);
-    background-repeat: no-repeat;
+    background-size: 100% 0.05em;
     background-position: 0 90%;
-    background-size: 0% 0.1em;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(var(--color-gray-dark), var(--color-gray-dark));
+    transition: all var(--transition-fast) var(--transition-ease);
+    padding: 0 0.05em;
   }
 
   a:hover .title span,
   a:focus .title span {
     background-size: 100% 0.1em;
+    background-image: linear-gradient(var(--color-link), var(--color-link));
+  }
+
+  a:hover img {
+    transform: scale(1.02);
   }
 
   img {

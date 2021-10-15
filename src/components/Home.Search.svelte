@@ -132,6 +132,6 @@
     margin: 0;
     margin-left: 1em;
     color: var(--color-gray-dark);
-    font-size: var(--font-size-tiny);
+    font-size: var(--font-size-small);
   }
 </style>
