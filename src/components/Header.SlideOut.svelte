@@ -4,6 +4,7 @@
   import { about, follow } from "$data/links.js";
 
   const ctas = follow.filter((d) => d.cta);
+  const followNotCtas = follow.filter((d) => !d.cta);
 
   let main;
   let slideNav;
@@ -89,15 +90,6 @@
       on:click={onClose}>&times;</button
     >
 
-    <section class="about">
-      <p>{copy.patreon}</p>
-      <div>
-        {#each ctas as { cta, url }}
-          <a class="btn btn-light" href={url} rel="external">{cta}</a>
-        {/each}
-      </div>
-    </section>
-
     <section class="links">
       <div>
         <h4>About Us</h4>
@@ -115,7 +107,7 @@
       <div>
         <h4>Follow Us</h4>
         <ul>
-          {#each follow as { name, url }}
+          {#each followNotCtas as { name, url }}
             <li>
               <a href={url} rel="external">
                 <span>{name}</span>
@@ -123,6 +115,14 @@
             </li>
           {/each}
         </ul>
+      </div>
+    </section>
+
+    <section class="about">
+      <div>
+        {#each ctas as { cta, url }}
+          <a class="btn" href={url} rel="external">{cta}</a>
+        {/each}
       </div>
     </section>
   </div>
@@ -140,6 +140,11 @@
     transform: translate(-100%, -50%);
   }
 
+  .btn-close {
+    background: var(--background-body);
+    color: var(--color-link);
+  }
+
   #slide-nav {
     position: fixed;
     top: 0;
@@ -151,6 +156,7 @@
     color: var(--background-body);
     transition: transform 0.5s;
     transform: translate(100%, 0);
+    width: 100%;
     max-width: var(--width-column-narrow);
     padding: 1rem 2rem;
   }
@@ -163,40 +169,43 @@
     transform: translate(0, 0);
   }
 
+  .links {
+    display: flex;
+  }
+
+  .links div {
+    padding-top: 2em;
+  }
+
+  .links div:last-of-type {
+    margin-left: 2em;
+  }
+
+  .about {
+    margin-top: 2em;
+  }
+
   .about div {
     display: flex;
     flex-direction: column;
   }
 
-  .links div {
-    padding: 2rem 0 0 0;
-  }
-
   a {
     color: var(--background-body);
+    font-size: var(--font-size-small);
+  }
+
+  a.btn {
+    background: var(--background-body);
+    color: var(--color-link);
   }
 
   li {
     list-style-type: none;
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-thin);
   }
 
   h4 {
-    color: var(--color-off-white);
+    color: var(--background-body);
     border-bottom: 1px solid var(--color-gray-light);
   }
-
-  /* .cta .btn, footer .btn, #slide-nav .btn {
-	background-size: 200% 100%;
-	background-position: -100% 0;
-	background-repeat: no-repeat;
-	background-image: linear-gradient(90deg, var(--color-accent) 50%, var(--off-black) 50%);
-	transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
-}
-
-.cta .btn:hover, footer .btn:hover, #slide-nav .btn:hover {
-	background-position: 0 0;
-	color: var(--color-off-black);
-} */
 </style>

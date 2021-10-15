@@ -64,5 +64,12 @@
     href="/assets/fonts/metropolis/Metropolis-Regular.woff2"
   />
 
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Latest from The Pudding"
+    href="https://feeds.feedburner.com/pudding/feed"
+  />
+
   <link rel="canonical" href="{url}/" />
 </svelte:head>

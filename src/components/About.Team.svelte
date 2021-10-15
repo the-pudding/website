@@ -27,6 +27,10 @@
     line-height: 1.25;
   }
 
+  a {
+    padding: 0;
+  }
+
   img {
     margin-bottom: 0.25em;
   }

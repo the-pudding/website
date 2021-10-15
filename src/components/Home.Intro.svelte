@@ -6,7 +6,7 @@
 
   const { stories, staff, copy } = getContext("Home");
 
-  let altTagline = "";
+  let taglineIns = "";
   let popularHTML = "";
   let personalHTML = "";
   let personalName = "";
@@ -28,9 +28,9 @@
     personalSlug = slug;
   };
 
-  const renderAltTagline = () => {
-    const r = Math.floor(Math.random() * copy.altTaglines.length);
-    altTagline = ` ${copy.altTaglines[r]}`;
+  const renderTaglineIns = () => {
+    const r = Math.floor(Math.random() * copy.taglines.length);
+    taglineIns = ` ${copy.taglines[r]}`;
   };
 
   const renderSignature = () => {
@@ -40,7 +40,7 @@
   };
 
   onMount(() => {
-    renderAltTagline();
+    renderTaglineIns();
     renderPopular();
     renderPersonal();
     renderSignature();
@@ -54,10 +54,8 @@
       <p>
         <span class="sr-only">The Pudding</span>
 
-        <span class="tagline" class:is-del={altTagline}>
-          {@html copy.tagline}<span class="tagline-alt" class:is-visible={altTagline}
-            >{altTagline}.</span
-          >
+        <span class="tagline" class:is-del={taglineIns}>
+          {@html copy.tagline}<ins class:is-visible={taglineIns}>{taglineIns}.</ins>
         </span>
 
         <span class="popular" class:is-visible={popularHTML}>{@html popularHTML}</span>
@@ -110,12 +108,21 @@
     background-size: 100% 0.1em;
   }
 
-  .tagline-alt {
+  :global(.letter del::before) {
+    content: " [deletion start] ";
+  }
+
+  :global(.letter del::after) {
+    content: " [deletion end] ";
+  }
+
+  ins {
+    text-decoration: none;
     opacity: 0;
     transition: opacity 1s ease-in 1s;
   }
 
-  .tagline-alt.is-visible {
+  ins.is-visible {
     opacity: 1;
   }
 
@@ -165,8 +172,8 @@
   }
 
   :global(.popular a + img, .personal a + img) {
-    transition: transform var(--transition-medium) var(--transition-ease),
-      outline var(--transition-medium) var(--transition-ease);
+    transition: transform var(--transition-fast) var(--transition-ease),
+      outline var(--transition-fast) var(--transition-ease);
   }
 
   :global(.popular a:hover + img, .personal a:hover + img) {

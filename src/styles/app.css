@@ -21,8 +21,7 @@
 	--font-body: var(--sans);
 	--font-form: var(--sans);
 	
-	--color-accent: var(--color-gray-medium);
-	--color-accent: #A973FF;
+	--color-accent: var(--color-purple);
 	--background-body: var(--color-white);
 	--background-form: var(--color-off-white);
 	--color-body: var(--color-off-black);
@@ -43,11 +42,11 @@
 
 	--font-weight-bold: 900;
 	--font-weight-normal: 400;
-	--font-weight-thin: 300;
+	--font-weight-thin: 100;
 	
 	--width-column-wide: 1500px;
 	--width-column-regular: 720px;
-	--width-column-narrow: 480px;
+	--width-column-narrow: 400px;
 	--width-padded: 90vw;
 	--margin-left: 5vw;
 
@@ -73,6 +72,7 @@ h2 {
 	line-height: 1;
 	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
+	margin-top: 2em;
 }
 
 h3 {
@@ -110,7 +110,7 @@ a {
 
 a:hover, a:focus {
 	background-size: 100% 100%;
-	/* background-position: 0 100%; */
+	outline: none;
 }
 
 button, .btn {
@@ -131,11 +131,6 @@ button, .btn {
 button:hover, button:focus, a.btn:hover, a.btn:focus  {
 	background-image: linear-gradient(90deg, var(--color-accent) 50%, var(--color-accent) 50%);
 	
-}
-
-button.btn-light, .btn.btn-light {
-	background: var(--background-body);
-	color: var(--color-body);
 }
 
 .column-wide {

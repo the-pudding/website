@@ -5,9 +5,10 @@
   import { about, follow } from "$data/links.js";
 
   const ctas = follow.filter((d) => d.cta);
+  const followNotCtas = follow.filter((d) => !d.cta);
 </script>
 
-<footer>
+<footer class="column-wide">
   <section class="about">
     <div class="wordmark">
       {@html wordmark}
@@ -38,7 +39,7 @@
     <div>
       <h4>Follow Us</h4>
       <ul>
-        {#each follow as { name, url }}
+        {#each followNotCtas as { name, url }}
           <li>
             <a href={url} rel="external">
               <span>{name}</span>
@@ -53,9 +54,7 @@
 <style>
   footer {
     display: flex;
-    padding: 0rem 0rem 4rem 0rem;
-    margin: 4rem 5vw 0 5vw;
-    max-width: 960px;
+    padding: 8em 0 4em 0;
     justify-content: space-between;
   }
 
@@ -74,39 +73,28 @@
 
   .about {
     max-width: 30em;
-    padding: 0 2rem 0 0;
   }
 
   .links {
     display: flex;
   }
 
-  .links div {
-    padding: 0 0 0 2rem;
-    width: 10rem;
+  .links div:last-of-type {
+    margin-left: 2em;
   }
 
   .links ul {
-    display: flex;
-    flex-direction: column;
     list-style: none;
   }
 
   @media only screen and (max-width: 700px) {
     footer {
       flex-direction: column;
-      padding: 2rem 2rem 10rem 2rem;
     }
 
     .about {
       max-width: 100%;
-      padding: 0;
-      margin: 0 0 3rem 0;
-    }
-
-    .links div {
-      padding: 0 2rem 0 0;
-      width: 50%;
+      margin-bottom: 2em;
     }
   }
 </style>

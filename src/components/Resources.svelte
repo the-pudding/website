@@ -1,6 +1,7 @@
 <script>
   import HeroText from "$components/HeroText.svelte";
   import Link from "$components/Resources.Link.svelte";
+  import Details from "$components/Details.svelte";
   import data from "$data/resources.csv";
   import wordmark from "$svg/wordmark.svg";
 
@@ -18,7 +19,7 @@
 
 {#each sections as { hed, id }}
   <section {id}>
-    <h2 class="column-wide upper">{hed}</h2>
+    <h2 class="upper column-wide">{hed}</h2>
     <ul>
       {#each data.filter((d) => d.category === id) as { url, slug, title, description }}
         <li>
@@ -29,21 +30,10 @@
   </section>
 {/each}
 
-<section id="faq">
-  <h2 class="column-wide upper">FAQ</h2>
+<section id="faq" class="column-regular">
+  <h2 class="upper">FAQ</h2>
   {#each copy.faq as { question, answer }}
-    <details class="column-regular">
-      <summary>{question}</summary>
-      {#if Array.isArray(answer)}
-        <ul>
-          {#each answer as { lib }}
-            <li class="libs">{@html lib}</li>
-          {/each}
-        </ul>
-      {:else}
-        <p>{@html answer}</p>
-      {/if}
-    </details>
+    <Details summary={question} text={answer} />
   {/each}
 </section>
 

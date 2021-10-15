@@ -48,19 +48,19 @@
     margin-bottom: 0.25rem;
   }
 
-  .story a {
+  a {
     background: none;
     display: flex;
     padding: 4rem 0;
     align-items: flex-start;
   }
 
-  .story a .tease span {
+  .tease span {
     color: var(--color-body);
   }
 
-  .story a:hover .tease span,
-  .story a:hover .tease span {
+  a:hover .tease span,
+  a:hover .tease span {
     background-image: linear-gradient(var(--dark), var(--dark));
     background-size: 100% 0.1em;
     background-position: 0 90%;
@@ -76,6 +76,7 @@
     max-width: 640px;
     width: 40%;
     border: 1px solid var(--dark);
+    transition: transform var(--transition-medium) var(--transition-ease);
   }
 
   .tease {
@@ -86,11 +87,22 @@
     font-weight: var(--font-weight-normal);
   }
 
-  .story a img {
-    transition: transform var(--transition-medium) var(--transition-ease);
+  .story a:hover img {
+    transform: scale(1.02);
   }
 
-  .story a:hover img {
-    transform: scale(1.05, 1.05);
+  @media (max-width: 540px) {
+    a {
+      flex-direction: column;
+      padding: 4em 1em;
+    }
+    img {
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 1em;
+    }
+    .tease {
+      padding: 0;
+    }
   }
 </style>

@@ -28,10 +28,6 @@ module.exports = [
 		"filepath": "src/data/about.json"
 	},
 	{
-		"id": "1Fk_6oKJTaEQ8CpEPmsvWGk0Q-R1efu2fWnJ8a_4BRzw",
-		"filepath": "src/data/faq.json"
-	},
-	{
 		"id": "1w0dD988fOZv264KMEKhEDWv942LTp8ZzMPKbtyj1-fc",
 		"filepath": "src/data/privacy.json"
 	},

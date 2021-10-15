@@ -54,9 +54,3 @@
     {/if}
   </section>
 {/each}
-
-<style>
-  h2 {
-    margin-top: 2em;
-  }
-</style>
