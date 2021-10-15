@@ -5,10 +5,14 @@
   export let slug;
   export let tease;
 
-  const DEFAULT_COLOR = "hsl(0, 0%, 80%)";
+  const DEFAULT_COLOR = {
+    light: "hsl(0, 0%, 80%)",
+    dark: "hsl(0, 0%, 44%)",
+    darker: "hsl(0, 0%, 34%)"
+  };
 
   const lookupColor = ({ slug, version }) => {
-    if (collapse) return DEFAULT_COLOR;
+    if (collapse) return DEFAULT_COLOR[version];
 
     const match = colors.find((d) => d.slug === slug);
     return match ? match[version] : DEFAULT_COLOR;

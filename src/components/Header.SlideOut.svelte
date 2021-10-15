@@ -166,7 +166,7 @@
     z-index: var(--z-overlay);
     background: var(--color-body);
     color: var(--background-body);
-    transition: transform 0.5s;
+    transition: transform var(--transition-medium);
     transform: translate(100%, 0);
     width: 100%;
     max-width: var(--width-column-narrow);
