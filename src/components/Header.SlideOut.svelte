@@ -1,5 +1,6 @@
 <script>
   import { onMount, tick } from "svelte";
+  import { navigating } from "$app/stores";
   import copy from "$data/misc.json";
   import { about, follow } from "$data/links.js";
 
@@ -52,6 +53,11 @@
     }
   };
 
+  $: if ($navigating) {
+    visible = false;
+    active = false;
+  }
+
   onMount(() => {
     main = document.querySelector("main");
     const focusableInNav = [...slideNav.querySelectorAll("a, button")];
@@ -96,9 +102,15 @@
         <ul>
           {#each about as { name, url, rel }}
             <li>
-              <a href={url} {rel} sveltekit:prefetch>
-                <span>{name}</span>
-              </a>
+              {#if rel === "external"}
+                <a href={url} {rel}>
+                  <span>{name}</span>
+                </a>
+              {:else}
+                <a href={url} {rel} sveltekit:prefetch>
+                  <span>{name}</span>
+                </a>
+              {/if}
             </li>
           {/each}
         </ul>
