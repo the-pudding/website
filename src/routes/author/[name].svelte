@@ -21,7 +21,12 @@
   import Author from "$components/Author.svelte";
   export let stories;
   export let author;
+
+  const copy = {
+    title: author.name,
+    description: "Author bio and published stories"
+  };
 </script>
 
-<Meta />
+<Meta {copy} />
 <Author {stories} {author} />

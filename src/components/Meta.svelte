@@ -1,8 +1,9 @@
 <script>
-  import { base } from "$app/paths";
-  export let title = "Title TK";
-  export let description = "Description TK";
-  export let url = "https://pudding.cool";
+  import { page } from "$app/stores";
+  export let copy;
+  const { title, description } = copy;
+  const base = "https://pudding.cool";
+  const url = `${base}${$page.path}`;
 </script>
 
 <svelte:head>
@@ -21,7 +22,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="en_US" />
 
-  <meta property="og:image" content="{url}/assets/social-facebook.jpg" />
+  <meta property="og:image" content="common/assets/misc/social-facebook.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="600" />
@@ -31,7 +32,7 @@
   <meta name="twitter:creator" content="@puddingviz" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image:src" content="{url}/assets/social-twitter.jpg" />
+  <meta name="twitter:image:src" content="/common/assets/misc/social-twitter.jpg" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/icon.svg" type="image/svg+xml" />
