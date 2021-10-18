@@ -11,7 +11,7 @@
 <footer class="column-wide">
   <section class="about">
     <div class="wordmark">
-      {@html wordmark}
+      <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
     </div>
     <p>{copy.patreon}</p>
 
@@ -79,6 +79,7 @@
 
   .about {
     max-width: 30em;
+    padding-right: 2rem;
   }
 
   .links {
@@ -93,6 +94,11 @@
     list-style: none;
   }
 
+  :global(.wordmark a) {
+    text-decoration: none;
+    background-image: none;
+  }
+
   @media only screen and (max-width: 700px) {
     footer {
       flex-direction: column;
@@ -101,6 +107,7 @@
     .about {
       max-width: 100%;
       margin-bottom: 2em;
+      margin-right: 0;
     }
   }
 </style>

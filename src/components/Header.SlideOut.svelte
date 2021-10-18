@@ -152,6 +152,10 @@
     transform: translate(-100%, -50%);
   }
 
+  .btn-open:hover {
+    color: var(--color-accent);
+  }
+
   .btn-close {
     background: var(--background-body);
     color: var(--color-link);
@@ -223,5 +227,10 @@
   h4 {
     color: var(--background-body);
     border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  :global(.logo a, .logo a:hover) {
+    text-decoration: none;
+    background-image: none;
   }
 </style>
