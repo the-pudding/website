@@ -80,6 +80,6 @@
     margin: 0;
     padding: 0 1em;
     flex-grow: 1;
-    color: currentColor;
+    color: var(--color-gray-dark);
   }
 </style>
