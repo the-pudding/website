@@ -55,6 +55,11 @@
     stroke: var(--color-accent);
   }
 
+  :global(.stroke-icon svg, .solid-icon svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
   .platforms {
     line-height: 1;
     margin-right: 1em;
@@ -62,5 +67,9 @@
 
   a:focus {
     box-shadow: 0 0 0 2px var(--color-focus);
+  }
+
+  .btn {
+    width: 15rem;
   }
 </style>

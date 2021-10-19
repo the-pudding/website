@@ -129,7 +129,17 @@
       margin: 0 auto;
       margin-bottom: 1em;
     }
+
+    .story.is-collapsed img {
+      width: 100%;
+      filter: grayscale(1);
+    }
+
     .tease {
+      padding: 0;
+    }
+
+    .info p {
       padding: 0;
     }
   }

@@ -12,7 +12,7 @@ export const follow = [
 		name: "Instagram",
 		url: "https://www.instagram.com/the.pudding"
 	},
-	{ name: "Patreon", cta: "Support The Pudding", url: "https://patreon.com/thepudding" },
+	{ name: "Patreon", cta: "Support us on Patreon", url: "https://patreon.com/thepudding" },
 	{ name: "Facebook", url: "https://facebook.com/pudding.viz" },
 	{ name: "YouTube", url: "https://www.youtube.com/channel/UCFuV9vMFVluW9CAOdS4Oluw" },
 	{ name: "Newsletter", cta: "Join the newsletter", url: "http://eepurl.com/czym6f" },

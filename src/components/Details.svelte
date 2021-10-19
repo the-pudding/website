@@ -37,7 +37,7 @@
 
   details {
     font-size: var(--font-size-small);
-    padding: 1em 1em 1em 0em;
+    padding: 1em 0em;
   }
 
   details p,

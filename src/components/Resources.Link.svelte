@@ -82,4 +82,21 @@
     flex-grow: 1;
     color: var(--color-gray-dark);
   }
+
+
+  @media (max-width: 540px) {
+      a {
+        flex-direction: column;
+      }
+      img {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        margin-bottom: 1em;
+      }
+
+      .info {
+        padding: 0;
+      }
+  }
 </style>

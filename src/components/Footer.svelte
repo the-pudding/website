@@ -5,6 +5,7 @@
   import { about, follow } from "$data/links.js";
 
   const ctas = follow.filter((d) => d.cta);
+  console.log(ctas);
   const followNotCtas = follow.filter((d) => !d.cta);
 </script>
 
@@ -13,11 +14,13 @@
     <div class="wordmark">
       <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
     </div>
-    <p>{copy.patreon}</p>
 
-    <div class="buttons">
-      {#each ctas as { cta, url }}
-        <a class="btn" href={url} rel="external">{cta}</a>
+    <div class="cta">
+      {#each ctas as { cta, url, name }}
+        <div>
+          <p>{copy[name.toLowerCase()]}</p>
+          <a class="btn" href={url} rel="external">{cta}</a>
+        </div>
       {/each}
     </div>
   </section>
@@ -97,6 +100,10 @@
   :global(.wordmark a) {
     text-decoration: none;
     background-image: none;
+  }
+
+  .cta div {
+    padding-bottom: 2rem;
   }
 
   @media only screen and (max-width: 700px) {

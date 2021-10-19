@@ -4,8 +4,8 @@
 
   export let name;
   export let direction = "n";
-  export let width = "1em";
-  export let height = "1em";
+  export let width = "1.25em";
+  export let height = "1.25em";
   export let strokeWidth = undefined;
   export let stroke = undefined;
 
@@ -27,8 +27,8 @@
 
 <style>
   svg {
-    width: 1em;
-    height: 1em;
+    width: 1.25em;
+    height: 1.25em;
     overflow: visible;
     transform-origin: 50% 50%;
   }

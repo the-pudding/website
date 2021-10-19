@@ -78,6 +78,7 @@ h3 {
 	font-size: var(--font-size-medium);
 	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
+	margin: 0 0 1rem 0;
 }
 
 h4 {
@@ -137,11 +138,12 @@ button:hover, button:focus, a.btn:hover, a.btn:focus  {
 	width: var(--width-padded);
 	margin: 0;
 	margin-left: var(--margin-left);
+	padding: 0;
 }
 
 .column-regular {
 	max-width: var(--width-column-regular);
-	width: 50vw;
+	width: 60vw;
 	margin: 0;
 	margin-left: var(--margin-left);
 }
@@ -160,4 +162,12 @@ button:hover, button:focus, a.btn:hover, a.btn:focus  {
 
 .libs a {
  	font-weight: v+ar(--font-weight-bold);
+}
+
+@media (max-width: 700px) {
+	.column-regular {
+		max-width: var(--width-column-regular);
+		width: 90vw;
+		margin-right: var(--margin-left);
+	}
 }
