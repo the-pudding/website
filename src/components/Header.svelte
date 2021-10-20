@@ -1,7 +1,6 @@
 <script>
   import Social from "$components/Header.Social.svelte";
   import SlideOut from "$components/Header.SlideOut.svelte";
-  import Promo from "$components/Header.Promo.svelte";
   import logo from "$svg/logo.svg";
 </script>
 

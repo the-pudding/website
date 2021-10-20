@@ -95,6 +95,7 @@ p {
 li {
 	font-size: var(--font-size-small);
 	line-height: 1.65;
+	padding-bottom: 1rem;
 }
 
 a {

@@ -5,7 +5,6 @@
   import { about, follow } from "$data/links.js";
 
   const ctas = follow.filter((d) => d.cta);
-  console.log(ctas);
   const followNotCtas = follow.filter((d) => !d.cta);
 </script>
 
@@ -67,6 +66,10 @@
     justify-content: space-between;
   }
 
+  footer li {
+    padding-bottom: 0;
+  }
+
   h4 {
     margin: 0.5rem 0 1rem 0;
   }
@@ -82,12 +85,16 @@
 
   .about {
     max-width: 30em;
-    padding-right: 2rem;
+    padding-right: 4rem;
   }
 
   .links {
     display: flex;
   }
+
+  .links div {
+      width: 8rem;
+    }
 
   .links div:last-of-type {
     margin-left: 2em;
@@ -115,6 +122,10 @@
       max-width: 100%;
       margin-bottom: 2em;
       margin-right: 0;
+    }
+
+    .links div {
+      width: 50%;
     }
   }
 </style>

@@ -3,7 +3,7 @@ export const about = [
 	{ name: "Pitch a Story", url: "/pitch" },
 	{ name: "Our Resources", url: "/resources" },
 	{ name: "Privacy", url: "/privacy" },
-	{ name: "Polygraph", url: "https://polygraph.cool", rel: "external" }
+	{ name: "Polygraph Studio", url: "https://polygraph.cool", rel: "external" }
 ];
 
 export const follow = [

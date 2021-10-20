@@ -70,6 +70,6 @@
   }
 
   .btn {
-    width: 15rem;
+    width: 13.5rem;
   }
 </style>
