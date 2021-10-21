@@ -2,7 +2,6 @@
   import { getContext, createEventDispatcher } from "svelte";
   import deburr from "lodash.deburr";
   import { sum, ascending } from "d3";
-  import Icon from "$components/helpers/Icon.svelte";
 
   export let highlight;
 
