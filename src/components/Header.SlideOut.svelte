@@ -214,6 +214,10 @@
     margin-left: 2em;
   }
 
+  .links li {
+    padding-bottom: 0;
+  }
+
   .about {
     margin-top: 2em;
   }

@@ -52,4 +52,8 @@
   li {
     padding-bottom: 1rem;
   }
+
+  #contributors li {
+    padding-bottom: 0;
+  }
 </style>
