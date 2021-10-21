@@ -35,7 +35,7 @@
   <h2 class="column-wide upper">{copy.storiesHed}</h2>
   <ul>
     {#each sortedStories as { tease, url, slug, month }}
-      <li>
+      <li class="no-padding-li">
         <Story {tease} {url} {slug} {month} collapse={!highlight.includes(slug)} />
       </li>
     {/each}

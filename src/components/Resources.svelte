@@ -33,7 +33,7 @@
     <h2 class="upper column-wide">{hed}</h2>
     <ul>
       {#each data.filter((d) => d.category === id) as { url, slug, title, description }}
-        <li>
+        <li class="no-padding-li">
           <Link {id} {url} {slug} {title} {description} />
         </li>
       {/each}

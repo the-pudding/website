@@ -66,10 +66,6 @@
     justify-content: space-between;
   }
 
-  footer li {
-    padding-bottom: 0;
-  }
-
   h4 {
     margin: 0.5rem 0 1rem 0;
   }
@@ -78,14 +74,14 @@
     max-width: 10em;
   }
 
-  .buttons {
-    display: flex;
-    flex-direction: column;
-  }
-
   .about {
     max-width: 30em;
     padding-right: 4rem;
+  }
+
+  .btn {
+    display: block;
+    width: 13.5rem;
   }
 
   .links {
@@ -122,6 +118,7 @@
       max-width: 100%;
       margin-bottom: 2em;
       margin-right: 0;
+      padding-right: 0;
     }
 
     .links div {

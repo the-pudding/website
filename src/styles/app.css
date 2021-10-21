@@ -98,6 +98,10 @@ li {
 	padding-bottom: 1rem;
 }
 
+#contributors li, footer li, .no-padding-li {
+    padding-bottom: 0;
+}
+
 a {
 	text-decoration: none;
 	color: var(--color-link);
