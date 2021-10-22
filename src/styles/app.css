@@ -169,6 +169,20 @@ button:hover, button:focus, a.btn:hover, a.btn:focus  {
  	font-weight: v+ar(--font-weight-bold);
 }
 
+#faq details:nth-of-type(2) p {
+	margin: 0;
+	padding: 0;
+}
+
+#faq details:nth-of-type(2) p::before {
+	content: "•";
+	padding-right: 0.75rem;
+}
+
+#faq details:nth-of-type(2) p:nth-of-type(1) {
+	padding: 1rem 0 0 0;
+}
+
 @media (max-width: 700px) {
 	.column-regular {
 		max-width: var(--width-column-regular);
