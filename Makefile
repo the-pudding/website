@@ -1,12 +1,4 @@
-PHONY: github pudding aws-sync aws-cp aws-cache
-
-github:
-	rm -rf docs
-	cp -r build docs
-	touch docs/.nojekyll
-	git add -A
-	git commit -m "update github pages"
-	git push
+PHONY: pudding aws-sync aws-cp aws-cache
 
 aws-sync:
 	aws s3 sync --dryrun build/_app s3://pudding.cool/_app
