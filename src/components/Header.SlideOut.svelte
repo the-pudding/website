@@ -236,6 +236,10 @@
     color: var(--color-link);
   }
 
+  a.btn:focus {
+    background: var(--color-focus);
+  }
+
   a.btn:hover {
     background: var(--color-accent);
   }

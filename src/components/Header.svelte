@@ -32,8 +32,13 @@
   }
 
   .logo a {
+    display: block;
     border: none;
     padding: 0;
+  }
+
+  .logo a:focus {
+    box-shadow: 0 0 0 2px var(--color-focus);
   }
 
   .logo a:hover {

@@ -101,7 +101,7 @@
   .info p {
     padding: 0 1.5em;
     flex-grow: 1;
-    color: var(--dark);
+    color: var(--darker);
   }
 
   a:hover img {

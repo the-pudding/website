@@ -8,7 +8,7 @@
   {#each staff as { id, name, slug }}
     <li>
       <a href="author/{slug}" sveltekit:prefetch>
-        <img src="common/assets/authors/{id}.jpg" alt={name} />
+        <img src="common/assets/authors/{id}.jpg" alt="headshot of {name}" />
         <span>{name}</span>
       </a>
     </li>

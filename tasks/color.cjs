@@ -7,8 +7,8 @@ const PATH_IN = `${CWD}/static/common/assets/thumbnails/640`;
 const PATH_OUT = `${CWD}/src/data`;
 const FILES = fs.readdirSync(PATH_IN).filter(d => d.includes(".jpg"));
 const QUALITY = 2;
-const SCORE_GRAPHIC = 3;
-const SCORE_TEXT = 4.5;
+const SCORE_GRAPHIC = 3.25; // give it a .25 buffer
+const SCORE_TEXT = 4.75; // give it a .25 buffer
 
 const rgbaToString = (rgba) => `rgba(${rgba.join(",")})`;
 
@@ -28,9 +28,9 @@ const getAccessiblePair = (c) => {
 	while (!darker) {
 		const d = l.darken(delta);
 		const score = l.contrast(d);
-		if (!dark && score >= SCORE_GRAPHIC) dark = d.hsl().round().string();
-		if (!darker && score >= SCORE_TEXT) darker = d.hsl().round().string();
-		else delta += inc;
+		if (!dark && score > SCORE_GRAPHIC) dark = d.hsl().round().string();
+		if (!darker && score > SCORE_TEXT) darker = d.hsl().round().string();
+		delta += inc;
 	}
 
 	return { light, dark, darker };
