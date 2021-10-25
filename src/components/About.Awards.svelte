@@ -31,10 +31,11 @@
 
   td,
   th {
-    padding: 0.75rem 0.25rem;
+    padding: 0.75em 0.25em;
   }
 
-  td:nth-child(3) {
-    width: 12%;
+  td:nth-child(3),
+  th:nth-child(3) {
+    text-align: right;
   }
 </style>

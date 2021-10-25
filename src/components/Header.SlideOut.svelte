@@ -147,9 +147,9 @@
     padding: 0;
     position: absolute;
     top: 50%;
-    right: -1.25rem;
-    width: 2rem;
-    height: 2rem;
+    right: -1.5em;
+    width: 2em;
+    height: 2em;
     background: transparent;
     color: var(--color-body);
     transform: translate(-100%, -50%);
@@ -162,9 +162,8 @@
   .btn-close {
     background: var(--background-body);
     color: var(--color-link);
-    width: 2rem;
-    height: 2rem;
-    margin: 0 -0.25rem;
+    width: 2em;
+    height: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,8 +185,8 @@
     transition: transform var(--transition-medium);
     transform: translate(100%, 0);
     width: 100%;
-    max-width: var(--width-column-narrow);
-    padding: 1rem 2rem;
+    max-width: 28em;
+    padding: 1em 2em;
   }
 
   #slide-nav.visible {

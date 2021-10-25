@@ -6,24 +6,26 @@
 
 <details>
   <summary>{@html summary}</summary>
-  {#if text && typeof text === "string"}
-    <p>{@html text}</p>
-  {:else if text}
-    {#each text as { value }}
-      <p>{@html value}</p>
-    {/each}
-  {/if}
-
-  {#if list}
-    <ul>
-      {#each list as value}
-        <li>
-          {#if value.lead}<strong>{@html value.lead}</strong>{/if}
-          {@html value.description || value}
-        </li>
+  <div class="inner">
+    {#if text && typeof text === "string"}
+      <p>{@html text}</p>
+    {:else if text}
+      {#each text as { value }}
+        <p>{@html value}</p>
       {/each}
-    </ul>
-  {/if}
+    {/if}
+
+    {#if list}
+      <ul>
+        {#each list as value}
+          <li>
+            {#if value.lead}<strong>{@html value.lead}</strong>{/if}
+            {@html value.description || value}
+          </li>
+        {/each}
+      </ul>
+    {/if}
+  </div>
 </details>
 
 <style>
@@ -37,12 +39,11 @@
 
   details {
     font-size: var(--font-size-small);
-    padding: 1em 0em;
+    padding: 1em 0;
   }
 
-  details p,
-  details ul {
-    padding: 1rem 1rem 0 1rem;
+  .inner {
+    padding: 1em;
   }
 
   details ul {

@@ -18,6 +18,7 @@
       {#each ctas as { cta, url, name }}
         <div>
           <p>{copy[name.toLowerCase()]}</p>
+          <!-- TODO move to inline link? -->
           <a class="btn" href={url} rel="external">{cta}</a>
         </div>
       {/each}
@@ -67,7 +68,7 @@
   }
 
   h4 {
-    margin: 0.5rem 0 1rem 0;
+    margin: 0.5em 0 1em 0;
   }
 
   .wordmark {
@@ -76,12 +77,11 @@
 
   .about {
     max-width: 30em;
-    padding-right: 4rem;
+    padding-right: 4em;
   }
 
   .btn {
     display: block;
-    width: 13.5rem;
   }
 
   .links {
@@ -89,8 +89,8 @@
   }
 
   .links div {
-      width: 8rem;
-    }
+    width: 10em;
+  }
 
   .links div:last-of-type {
     margin-left: 2em;
@@ -100,13 +100,8 @@
     list-style: none;
   }
 
-  :global(.wordmark a) {
-    text-decoration: none;
-    background-image: none;
-  }
-
   .cta div {
-    padding-bottom: 2rem;
+    padding-bottom: 2em;
   }
 
   @media only screen and (max-width: 700px) {
@@ -123,6 +118,9 @@
 
     .links div {
       width: 50%;
+    }
+    .links div:last-of-type {
+      margin-left: 0;
     }
   }
 </style>

@@ -84,11 +84,12 @@
   }
 
   .wordmark {
-    max-width: calc(var(--font-size-giant) * 1.5);
+    width: calc(var(--font-size-giant) * 1.5);
+    min-width: 4em;
   }
 
   .letter {
-    min-height: 75vh;
+    min-height: 60vh;
   }
 
   .letter p {

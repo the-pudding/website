@@ -7,7 +7,7 @@
 </script>
 
 <div class="resource">
-  <a class="column" href={url} rel="external">
+  <a class="column-wide" href={url} rel="external">
     <img
       src="/common/assets/resources/32/{slug}.jpg"
       alt="thumbnail for link"
@@ -36,7 +36,7 @@
   a {
     background: var(--color-off-white);
     display: flex;
-    padding: 3em;
+    padding: 3em 0;
     text-decoration: none;
     align-items: flex-start;
     text-decoration: none;
@@ -44,6 +44,7 @@
 
   .title {
     font-weight: var(--font-weight-normal);
+    margin: 0;
   }
 
   .title span {
@@ -83,20 +84,19 @@
     color: var(--color-gray-dark);
   }
 
-
   @media (max-width: 540px) {
-      a {
-        flex-direction: column;
-      }
-      img {
-        width: 100%;
-        max-width: 640px;
-        margin: 0 auto;
-        margin-bottom: 1em;
-      }
+    a {
+      flex-direction: column;
+    }
+    img {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      margin-bottom: 1em;
+    }
 
-      .info {
-        padding: 0;
-      }
+    .info {
+      padding: 0;
+    }
   }
 </style>

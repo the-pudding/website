@@ -3,7 +3,7 @@
   import { ascending, descending } from "d3";
   import inView from "../actions/inView.js";
   import Story from "$components/Story.svelte";
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
 
   export const jump = () => {
     const { top } = sectionEl.getBoundingClientRect();
@@ -36,18 +36,20 @@
   let visible = false;
 
   onMount(() => {
+    // TODO
     promoBadge = document.getElementById("promo");
   });
 
   function showPromo() {
-    visible = !visible
+    visible = !visible;
     console.log(visible);
 
     visible ? promoBadge.classList.add("is-visible") : promoBadge.classList.remove("is-visible");
   }
 </script>
 
-<section id="stories"
+<section
+  id="stories"
   bind:this={sectionEl}
   use:inView={{ bottom: 400 }}
   on:enter={() => showPromo()}

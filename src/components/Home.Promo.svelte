@@ -1,15 +1,20 @@
 <script>
-  export let content;
+  export let text;
+  export let link;
 </script>
 
-<a href="{content[0].link}" target="_blank">
-  <div id="promo" class="is-visible">
-    <p>{@html content[0].text}</p>
+<a href={link} rel="extenral">
+  <div id="promo">
+    <p>{@html text}</p>
   </div>
 </a>
 
 <style>
-  #promo {
+  a {
+    display: none;
+  }
+  /* TODO no */
+  /* #promo {
     background: var(--color-accent);
     border-radius: 50%;
     width: 7rem;
@@ -24,17 +29,12 @@
     box-shadow: 0 4px 4px var(--color-gray-light);
     border: 2px solid var(--color-accent);
     opacity: 0;
-    transition: opacity .25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
     pointer-events: none;
   }
 
-  #promo:hover  {
+  #promo:hover {
     border: 2px solid var(--color-off-black);
-  }
-
-  #promo.is-visible {
-	  opacity: 1;
-    pointer-events: auto;
   }
 
   p {
@@ -42,15 +42,15 @@
     text-decoration: underline;
     padding: 1rem;
     line-height: 1.35;
-    animation: spin 10s linear .01s infinite;
+    animation: spin 10s linear 0.01s infinite;
   }
 
-@keyframes spin {
-  from {
-      transform:rotate(0deg);
-  }
-  to {
-      transform:rotate(360deg);
-  }
-}
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  } */
 </style>

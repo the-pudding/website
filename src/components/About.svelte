@@ -62,3 +62,26 @@
     {/if}
   </section>
 {/each}
+
+<style>
+  :global(#contributors ul) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  :global(#contributors li) {
+    padding-bottom: 0;
+    width: 33.3%;
+  }
+
+  @media only screen and (max-width: 700px) {
+    :global(#contributors li) {
+      width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    :global(#contributors li) {
+      width: 100%;
+    }
+  }
+</style>

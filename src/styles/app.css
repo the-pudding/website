@@ -34,10 +34,10 @@
 	--color-selection: var(--color-gray-light);
 	--color-highlight: var(--color-accent);
 	
-	--font-size-giant: clamp(3em, 5.25vw, 6.5em);
-	--font-size-large: clamp(2em, 3.25vw, 3.25em);
-	--font-size-medium: clamp(1.5em, 2.25vw, 2.25em);
-	--font-size-small: clamp(1em, 1.25vw, 1.25em);
+	--font-size-giant: clamp(2.5rem, 5.25vw, 6.5rem);
+	--font-size-large: clamp(1.75rem, 3.25vw, 3.25rem);
+	--font-size-medium: clamp(1.25rem, 2.25vw, 2.25rem);
+	--font-size-small: clamp(1rem, 1.25vw, 1.25rem);
 
 	--font-weight-bold: 900;
 	--font-weight-normal: 400;
@@ -45,7 +45,6 @@
 	
 	--width-column-wide: 1500px;
 	--width-column-regular: 720px;
-	--width-column-narrow: 400px;
 	--width-padded: 90vw;
 	--margin-left: 5vw;
 
@@ -61,16 +60,17 @@ body {
 
 h1 {
 	font-size: var(--font-size-large);
-	line-height: 1;
 	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
+	line-height: 1;
+	margin-top: 2em;
 }
 
 h2 {
 	font-size: var(--font-size-large);
-	line-height: 1;
 	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
+	line-height: 1;
 	margin-top: 2em;
 }
 
@@ -78,7 +78,7 @@ h3 {
 	font-size: var(--font-size-medium);
 	font-weight: var(--font-weight-bold);
 	color: var(--color-off-black);
-	margin: 0 0 1rem 0;
+	margin-top: 2em;
 }
 
 h4 {
@@ -95,11 +95,7 @@ p {
 li {
 	font-size: var(--font-size-small);
 	line-height: 1.65;
-	padding-bottom: 1rem;
-}
-
-#contributors li, footer li, .no-padding-li {
-    padding-bottom: 0;
+	margin-bottom: 1em;
 }
 
 a {
@@ -131,6 +127,7 @@ button, .btn {
 	margin: 0.5rem 0;
 	background-position: 0 0;
 	transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
+	width: 10em;
 }
 
 button:hover, button:focus, a.btn:hover, a.btn:focus  {
@@ -153,40 +150,19 @@ button:hover, button:focus, a.btn:hover, a.btn:focus  {
 	margin-left: var(--margin-left);
 }
 
-.column-narrow {
-	max-width: var(--width-column-narrow);
-	width: 25vw;
-	margin: 0;
-	margin-left: var(--margin-left);
-}
-
 .upper {
 	text-transform: uppercase;
 	transform: translate(0, 0.2em);
 }
 
-.libs a {
- 	font-weight: v+ar(--font-weight-bold);
-}
-
-#faq details:nth-of-type(2) p {
-	margin: 0;
-	padding: 0;
-}
-
-#faq details:nth-of-type(2) p::before {
-	content: "•";
-	padding-right: 0.75rem;
-}
-
-#faq details:nth-of-type(2) p:nth-of-type(1) {
-	padding: 1rem 0 0 0;
+.wordmark a {
+	text-decoration: none;
+	background-image: none;
 }
 
 @media (max-width: 700px) {
 	.column-regular {
 		max-width: var(--width-column-regular);
-		width: 90vw;
-		margin-right: var(--margin-left);
+		width: var(--width-padded);
 	}
 }

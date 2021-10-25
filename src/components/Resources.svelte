@@ -18,14 +18,16 @@
 </section>
 
 <nav>
-  {#each sections as { hed, id }}
-  <div>
-    <a href="#{id}">{hed}</a>
-  </div>
-  {/each}
-  <div>
-    <a href="#faq">FAQ</a>
-  </div>
+  <ul class="column-wide">
+    {#each sections as { hed, id }}
+      <li>
+        <a href="#{id}">{hed}</a>
+      </li>
+    {/each}
+    <li>
+      <a href="#faq">FAQ</a>
+    </li>
+  </ul>
 </nav>
 
 {#each sections as { hed, id }}
@@ -33,7 +35,7 @@
     <h2 class="upper column-wide">{hed}</h2>
     <ul>
       {#each data.filter((d) => d.category === id) as { url, slug, title, description }}
-        <li class="no-padding-li">
+        <li>
           <Link {id} {url} {slug} {title} {description} />
         </li>
       {/each}
@@ -53,6 +55,10 @@
     margin-bottom: 4em;
   }
 
+  h2 {
+    transform: translate(0, 0.2em);
+  }
+
   nav {
     background: var(--background-body);
     position: sticky;
@@ -61,23 +67,35 @@
     width: 100%;
     z-index: var(--z-top);
     padding: 1em 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-shadow: 0 4px 4px var(--color-off-white);
     margin-bottom: 4rem;
   }
 
-  nav div {
-    width: calc(33.33% - 1rem);
-    margin: 0 0.5rem;
-    text-align: center;
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  nav li {
+    margin: 0;
+    margin-right: 1em;
+    list-style-type: none;
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
   }
 
-  nav div:nth-of-type(4n), nav div:nth-of-type(5n), nav div:nth-of-type(6n) {
-    margin-top: 1rem;
+  /* TODO too custom */
+  :global(#faq details:nth-of-type(2) p) {
+    margin: 0;
+    padding: 0;
+  }
+
+  :global(#faq details:nth-of-type(2) p::before) {
+    content: "•";
+    padding-right: 0.75rem;
+  }
+
+  :global(#faq details:nth-of-type(2) p:nth-of-type(1)) {
+    padding: 1rem 0 0 0;
   }
 </style>

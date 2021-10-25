@@ -19,8 +19,8 @@
 </script>
 
 <Intro />
-{#if copy.promo}
-  <Promo content={copy.promo} />
+{#if copy.promo.text}
+  <Promo text={copy.promo.text} link={copy.promo.link} />
 {/if}
 <Search bind:highlight on:focus={onSearchFocus} />
 <Stories {highlight} bind:jump />
