@@ -5,8 +5,8 @@ module.exports = [
 		"filepath": "src/data/stories.csv"
 	},
 	{
-		"id": "1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ",
-		"gid": "2040210797",
+		"id": "1jFlS8Ghkat-h2W27Q2YfoXRV5RuNFY_ML6hiirMa6HM",
+		"gid": "0",
 		"filepath": "src/data/authors.csv"
 	},
 	{

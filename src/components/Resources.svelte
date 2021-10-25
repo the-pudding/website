@@ -59,6 +59,10 @@
     transform: translate(0, 0.2em);
   }
 
+  li {
+    margin: 0;
+  }
+
   nav {
     background: var(--background-body);
     position: sticky;
@@ -84,7 +88,7 @@
     font-weight: var(--font-weight-bold);
   }
 
-  /* TODO too custom */
+  /* TODO fix */
   :global(#faq details:nth-of-type(2) p) {
     margin: 0;
     padding: 0;

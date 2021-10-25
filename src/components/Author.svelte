@@ -58,3 +58,9 @@
     </ul>
   </section>
 {/if}
+
+<style>
+  li {
+    margin: 0;
+  }
+</style>

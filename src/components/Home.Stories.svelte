@@ -3,7 +3,6 @@
   import { ascending, descending } from "d3";
   import inView from "../actions/inView.js";
   import Story from "$components/Story.svelte";
-  import { onMount } from "svelte";
 
   export const jump = () => {
     const { top } = sectionEl.getBoundingClientRect();
@@ -14,6 +13,7 @@
   export let highlight;
 
   const { stories, copy } = getContext("Home");
+
   let sectionEl;
 
   stories.sort((a, b) => descending(a.date, b.date));
@@ -31,34 +31,13 @@
   };
 
   $: highlight, reSort();
-
-  let promoBadge;
-  let visible = false;
-
-  onMount(() => {
-    // TODO
-    promoBadge = document.getElementById("promo");
-  });
-
-  function showPromo() {
-    visible = !visible;
-    console.log(visible);
-
-    visible ? promoBadge.classList.add("is-visible") : promoBadge.classList.remove("is-visible");
-  }
 </script>
 
-<section
-  id="stories"
-  bind:this={sectionEl}
-  use:inView={{ bottom: 400 }}
-  on:enter={() => showPromo()}
-  on:exit={() => showPromo()}
->
+<section id="stories" bind:this={sectionEl}>
   <h2 class="column-wide upper">{copy.storiesHed}</h2>
   <ul>
     {#each sortedStories as { tease, url, slug, month }}
-      <li class="no-padding-li">
+      <li>
         <Story {tease} {url} {slug} {month} collapse={!highlight.includes(slug)} />
       </li>
     {/each}
@@ -68,5 +47,9 @@
 <style>
   section {
     margin-top: 4em;
+  }
+
+  li {
+    margin: 0;
   }
 </style>

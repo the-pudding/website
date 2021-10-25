@@ -17,9 +17,7 @@
     <div class="cta">
       {#each ctas as { cta, url, name }}
         <div>
-          <p>{copy[name.toLowerCase()]}</p>
-          <!-- TODO move to inline link? -->
-          <a class="btn" href={url} rel="external">{cta}</a>
+          <p>{copy[name.toLowerCase()]} <a href={url}>{cta}</a>.</p>
         </div>
       {/each}
     </div>
@@ -67,6 +65,10 @@
     justify-content: space-between;
   }
 
+  li {
+    margin: 0;
+  }
+
   h4 {
     margin: 0.5em 0 1em 0;
   }
@@ -76,12 +78,12 @@
   }
 
   .about {
-    max-width: 30em;
+    max-width: 45em;
     padding-right: 4em;
   }
 
-  .btn {
-    display: block;
+  .about a {
+    font-weight: var(--font-weight-bold);
   }
 
   .links {

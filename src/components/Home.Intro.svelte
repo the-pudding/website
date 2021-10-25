@@ -19,7 +19,8 @@
   };
 
   const renderPersonal = () => {
-    const ran = Math.floor(Math.random() * staff.length);
+    // const ran = Math.floor(Math.random() * staff.length);
+    const ran = 7;
     const { id, name, slug } = staff[ran];
 
     const unused = stories.filter((d) => !popularHTML.includes(d.url));
@@ -180,5 +181,9 @@
   :global(.popular a:hover + img, .personal a:hover + img) {
     transform: scale(1.2, 1.2) translate(0, 15%);
     outline: 2px solid var(--color-off-black);
+  }
+
+  :global(.nowrap) {
+    white-space: nowrap;
   }
 </style>

@@ -127,7 +127,7 @@ button, .btn {
 	margin: 0.5rem 0;
 	background-position: 0 0;
 	transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
-	width: 10em;
+	width: 14em;
 }
 
 button:hover, button:focus, a.btn:hover, a.btn:focus  {
