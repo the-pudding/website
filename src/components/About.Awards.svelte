@@ -35,6 +35,6 @@
   }
 
   td:nth-child(3) {
-    width: 10%;
+    width: 12%;
   }
 </style>

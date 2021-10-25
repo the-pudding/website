@@ -1,7 +1,9 @@
 <script>
   import { getContext } from "svelte";
   import { ascending, descending } from "d3";
+  import inView from "../actions/inView.js";
   import Story from "$components/Story.svelte";
+  import { onMount } from 'svelte';
 
   export const jump = () => {
     const { top } = sectionEl.getBoundingClientRect();
@@ -29,14 +31,33 @@
   };
 
   $: highlight, reSort();
+
+  let promoBadge;
+  let visible = false;
+
+  onMount(() => {
+    promoBadge = document.getElementById("promo");
+  });
+
+  function showPromo() {
+    visible = !visible
+    console.log(visible);
+
+    visible ? promoBadge.classList.add("is-visible") : promoBadge.classList.remove("is-visible");
+  }
 </script>
 
-<section id="stories" bind:this={sectionEl}>
+<section id="stories"
+  bind:this={sectionEl}
+  use:inView={{ bottom: 400 }}
+  on:enter={() => showPromo()}
+  on:exit={() => showPromo()}
+>
   <h2 class="column-wide upper">{copy.storiesHed}</h2>
   <ul>
-    {#each sortedStories as { tease, url, slug }}
-      <li>
-        <Story {tease} {url} {slug} collapse={!highlight.includes(slug)} />
+    {#each sortedStories as { tease, url, slug, month }}
+      <li class="no-padding-li">
+        <Story {tease} {url} {slug} {month} collapse={!highlight.includes(slug)} />
       </li>
     {/each}
   </ul>

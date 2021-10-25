@@ -2,7 +2,7 @@
   import Icon from "$components/helpers/Icon.svelte";
   import { follow } from "$data/links.js";
 
-  const names = ["Twitter", "Instagram", "Facebook"];
+  const names = ["Twitter", "Facebook", "Instagram"];
   const platforms = follow.filter((d) => names.includes(d.name));
   const ctas = follow.filter((d) => d.cta);
 </script>
@@ -10,7 +10,12 @@
 <div class="container">
   <div class="platforms">
     {#each platforms as { name, url }}
-      <a href={url} rel="external" aria-label={name}><Icon name={name.toLowerCase()} /></a>
+      {#if name !== "Instagram"}
+        <a class="solid-icon" href={url} rel="external" aria-label={name}><Icon name={name.toLowerCase()} /></a>
+      {:else}
+      <a class="stroke-icon" href={url} rel="external" aria-label={name}><Icon name={name.toLowerCase()} /></a>
+      {/if}
+
     {/each}
   </div>
 
@@ -37,6 +42,24 @@
     font-size: var(--font-size-small);
   }
 
+  :global(.solid-icon svg) {
+    fill: var(--color-off-black);
+    stroke: none;
+  }
+
+  :global(.solid-icon svg:hover) {
+    fill: var(--color-accent);
+  }
+
+  :global(.stroke-icon svg:hover) {
+    stroke: var(--color-accent);
+  }
+
+  :global(.stroke-icon svg, .solid-icon svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
   .platforms {
     line-height: 1;
     margin-right: 1em;
@@ -44,5 +67,9 @@
 
   a:focus {
     box-shadow: 0 0 0 2px var(--color-focus);
+  }
+
+  .btn {
+    width: 13.5rem;
   }
 </style>

@@ -51,7 +51,7 @@
     <h2 class="column-wide upper">Stories</h2>
     <ul>
       {#each stories as { tease, url, slug, date }}
-        <li>
+        <li class="no-padding-li">
           <Story {tease} {url} {slug} />
         </li>
       {/each}

@@ -4,6 +4,7 @@
   export let url;
   export let slug;
   export let tease;
+  export let month;
 
   const DEFAULT_COLOR = {
     light: "hsl(0, 0%, 80%)",
@@ -43,9 +44,14 @@
       sizes="(max-width: 320px) 640px, (max-width: 480px) 960px, 1280px"
       loading="lazy"
     />
-    <h3 class="tease">
-      <span>{@html tease}</span>
-    </h3>
+    <div class="info">
+      <h3 class="tease">
+        <span>{@html tease}</span>
+      </h3>
+      {#if month}
+        <p>{month}</p>
+      {/if}
+    </div>
   </a>
 </div>
 
@@ -90,12 +96,23 @@
     transition: transform var(--transition-fast) var(--transition-ease);
   }
 
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+
   .tease {
     margin: 0;
     padding: 0 1em;
     flex-grow: 1;
     color: currentColor;
     font-weight: var(--font-weight-normal);
+  }
+
+  .info p {
+    padding: 0 1.5em;
+    flex-grow: 1;
+    color: var(--dark);
   }
 
   a:hover img {
@@ -112,7 +129,17 @@
       margin: 0 auto;
       margin-bottom: 1em;
     }
+
+    .story.is-collapsed img {
+      width: 100%;
+      filter: grayscale(1);
+    }
+
     .tease {
+      padding: 0;
+    }
+
+    .info p {
       padding: 0;
     }
   }

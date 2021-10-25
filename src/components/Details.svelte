@@ -37,15 +37,19 @@
 
   details {
     font-size: var(--font-size-small);
-    padding: 1em 1em 1em 0em;
+    padding: 1em 0em;
   }
 
   details p,
   details ul {
-    padding: 1rem 0 0 1rem;
+    padding: 1rem 1rem 0 1rem;
   }
 
   details ul {
     width: 100%;
+  }
+
+  li {
+    padding-bottom: 1rem;
   }
 </style>

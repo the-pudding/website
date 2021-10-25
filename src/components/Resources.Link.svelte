@@ -1,4 +1,5 @@
 <script>
+  export let id;
   export let url;
   export let slug;
   export let title;
@@ -13,6 +14,7 @@
       srcset="/common/assets/resources/480/{slug}.jpg 480w"
       sizes="480px"
       loading="lazy"
+      class="{id}-img"
     />
     <div class="info">
       <h3 class="title">
@@ -64,6 +66,10 @@
     transform: scale(1.02);
   }
 
+  .podcast-img {
+    max-width: 140px;
+  }
+
   img {
     max-width: 240px;
     width: 40%;
@@ -74,6 +80,23 @@
     margin: 0;
     padding: 0 1em;
     flex-grow: 1;
-    color: currentColor;
+    color: var(--color-gray-dark);
+  }
+
+
+  @media (max-width: 540px) {
+      a {
+        flex-direction: column;
+      }
+      img {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        margin-bottom: 1em;
+      }
+
+      .info {
+        padding: 0;
+      }
   }
 </style>

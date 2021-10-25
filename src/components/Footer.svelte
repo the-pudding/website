@@ -11,13 +11,15 @@
 <footer class="column-wide">
   <section class="about">
     <div class="wordmark">
-      {@html wordmark}
+      <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
     </div>
-    <p>{copy.patreon}</p>
 
-    <div class="buttons">
-      {#each ctas as { cta, url }}
-        <a class="btn" href={url} rel="external">{cta}</a>
+    <div class="cta">
+      {#each ctas as { cta, url, name }}
+        <div>
+          <p>{copy[name.toLowerCase()]}</p>
+          <a class="btn" href={url} rel="external">{cta}</a>
+        </div>
       {/each}
     </div>
   </section>
@@ -72,18 +74,23 @@
     max-width: 10em;
   }
 
-  .buttons {
-    display: flex;
-    flex-direction: column;
-  }
-
   .about {
     max-width: 30em;
+    padding-right: 4rem;
+  }
+
+  .btn {
+    display: block;
+    width: 13.5rem;
   }
 
   .links {
     display: flex;
   }
+
+  .links div {
+      width: 8rem;
+    }
 
   .links div:last-of-type {
     margin-left: 2em;
@@ -91,6 +98,15 @@
 
   .links ul {
     list-style: none;
+  }
+
+  :global(.wordmark a) {
+    text-decoration: none;
+    background-image: none;
+  }
+
+  .cta div {
+    padding-bottom: 2rem;
   }
 
   @media only screen and (max-width: 700px) {
@@ -101,6 +117,12 @@
     .about {
       max-width: 100%;
       margin-bottom: 2em;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .links div {
+      width: 50%;
     }
   }
 </style>

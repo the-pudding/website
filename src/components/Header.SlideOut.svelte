@@ -1,6 +1,7 @@
 <script>
   import { onMount, tick } from "svelte";
   import { navigating } from "$app/stores";
+  import Icon from "$components/helpers/Icon.svelte";
   import copy from "$data/misc.json";
   import { about, follow } from "$data/links.js";
 
@@ -76,7 +77,7 @@
     aria-controls="slide-nav"
     aria-expanded="false"
     bind:this={openBtn}
-    on:click={onOpen}>&#9776;</button
+    on:click={onOpen}><Icon name="menu" /></button
   >
 
   <div
@@ -93,7 +94,7 @@
       class="btn-close"
       aria-label="close navigation"
       bind:this={closeBtn}
-      on:click={onClose}>&times;</button
+      on:click={onClose}><Icon name="x" /></button
     >
 
     <section class="links">
@@ -146,15 +147,31 @@
     padding: 0;
     position: absolute;
     top: 50%;
-    right: 1em;
+    right: -1.25rem;
+    width: 2rem;
+    height: 2rem;
     background: transparent;
     color: var(--color-body);
     transform: translate(-100%, -50%);
   }
 
+  .btn-open:hover {
+    color: var(--color-accent);
+  }
+
   .btn-close {
     background: var(--background-body);
     color: var(--color-link);
+    width: 2rem;
+    height: 2rem;
+    margin: 0 -0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-close:hover {
+    background: var(--color-accent);
   }
 
   #slide-nav {
@@ -197,6 +214,10 @@
     margin-left: 2em;
   }
 
+  .links li {
+    padding-bottom: 0;
+  }
+
   .about {
     margin-top: 2em;
   }
@@ -216,6 +237,10 @@
     color: var(--color-link);
   }
 
+  a.btn:hover {
+    background: var(--color-accent);
+  }
+
   li {
     list-style-type: none;
   }
@@ -223,5 +248,10 @@
   h4 {
     color: var(--background-body);
     border-bottom: 1px solid var(--color-gray-light);
+  }
+
+  :global(.logo a, .logo a:hover) {
+    text-decoration: none;
+    background-image: none;
   }
 </style>
