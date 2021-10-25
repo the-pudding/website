@@ -12,28 +12,22 @@
     darker: "hsl(0, 0%, 34%)"
   };
 
-  const lookupColor = ({ slug, version }) => {
-    if (collapse) return DEFAULT_COLOR[version];
-
+  const lookupColor = (version) => {
     const match = colors.find((d) => d.slug === slug);
     return match ? match[version] : DEFAULT_COLOR;
   };
+
+  const style = `
+	--light: ${lookupColor("light")};
+	--dark: ${lookupColor("dark")};
+	--darker: ${lookupColor("darker")};
+	--default-light: ${DEFAULT_COLOR["light"]};
+	--default-dark: ${DEFAULT_COLOR["dark"]};
+	--default-darker: ${DEFAULT_COLOR["darker"]};
+  `;
 </script>
 
-<div
-  class="story"
-  class:is-collapsed={collapse}
-  style="--light: {lookupColor({
-    slug,
-    version: 'light'
-  })}; --dark: {lookupColor({
-    slug,
-    version: 'dark'
-  })};  --darker: {lookupColor({
-    slug,
-    version: 'darker'
-  })};"
->
+<div class="story" class:is-collapsed={collapse} style: {style}>
   <a class="column-wide" href="https://pudding.cool/{url}" rel="external">
     <img
       src="/common/assets/thumbnails/32/{slug}.jpg"
@@ -79,14 +73,9 @@
   }
 
   a:hover .tease span,
-  a:hover .tease span {
+  a:focus .tease span {
     background-size: 100% 0.1em;
     background-image: linear-gradient(var(--darker), var(--darker));
-  }
-
-  .story.is-collapsed img {
-    width: 20%;
-    filter: grayscale(1);
   }
 
   img {
@@ -119,11 +108,38 @@
     transform: scale(1.02);
   }
 
+  .story.is-collapsed {
+    background: var(--default-light);
+  }
+
+  .story.is-collapsed .tease span {
+    background-image: linear-gradient(var(--default-dark), var(--default-dark));
+  }
+
+  .story.is-collapsed a:hover .tease span,
+  .story.is-collapsed a:focus .tease span {
+    background-image: linear-gradient(var(--default-darker), var(--default-darker));
+  }
+
+  .story.story img {
+    border: 1px solid var(--default-darker);
+  }
+
+  .story.is-collapsed .info p {
+    color: var(--default-dark);
+  }
+
+  .story.is-collapsed img {
+    width: 20%;
+    filter: grayscale(1);
+  }
+
   @media (max-width: 540px) {
     a {
       flex-direction: column;
       padding: 4em 1em;
     }
+
     img {
       width: 100%;
       margin: 0 auto;
@@ -132,7 +148,6 @@
 
     .story.is-collapsed img {
       width: 100%;
-      filter: grayscale(1);
     }
 
     .tease {
