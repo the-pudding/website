@@ -48,7 +48,7 @@
       <ul>
         {#each followNotCtas as { name, url }}
           <li>
-            <a href={url} rel="external">
+            <a href={url}>
               <span>{name}</span>
             </a>
           </li>
