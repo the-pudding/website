@@ -28,7 +28,7 @@
 </script>
 
 <div class="story" class:is-collapsed={collapse} style: {style}>
-  <a class="column-wide" href="https://pudding.cool/{url}" rel="external">
+  <div class="inner column-wide">
     <img
       src="/common/assets/thumbnails/32/{slug}.jpg"
       alt="thumbnail for story"
@@ -40,13 +40,13 @@
     />
     <div class="info">
       <h3 class="tease">
-        <span>{@html tease}</span>
+        <a href="https://pudding.cool/{url}" rel="external">
+          <span>{@html tease}</span>
+        </a>
       </h3>
-      {#if month}
-        <p>{month}</p>
-      {/if}
+      <p>{month}</p>
     </div>
-  </a>
+  </div>
 </div>
 
 <style>
@@ -55,7 +55,7 @@
     margin-bottom: 0.25rem;
   }
 
-  a {
+  .inner {
     background: none;
     display: flex;
     padding: 4rem 0;
@@ -72,8 +72,13 @@
     padding: 0 0.05em;
   }
 
-  a:hover .tease span,
-  a:focus .tease span {
+  a {
+    background: none;
+    display: block;
+  }
+
+  a:hover span,
+  a:focus span {
     background-size: 100% 0.1em;
     background-image: linear-gradient(var(--darker), var(--darker));
   }
@@ -88,23 +93,20 @@
   .info {
     display: flex;
     flex-direction: column;
+    padding: 0 1.5em;
   }
 
   .tease {
     margin: 0;
-    padding: 0 1em;
-    flex-grow: 1;
     color: currentColor;
     font-weight: var(--font-weight-normal);
   }
 
   .info p {
-    padding: 0 1.5em;
-    flex-grow: 1;
     color: var(--darker);
   }
 
-  a:hover img {
+  .inner:hover img {
     transform: scale(1.02);
   }
 
@@ -116,8 +118,8 @@
     background-image: linear-gradient(var(--default-dark), var(--default-dark));
   }
 
-  .story.is-collapsed a:hover .tease span,
-  .story.is-collapsed a:focus .tease span {
+  .story.is-collapsed a:hover span,
+  .story.is-collapsed a:focus span {
     background-image: linear-gradient(var(--default-darker), var(--default-darker));
   }
 
@@ -135,7 +137,7 @@
   }
 
   @media (max-width: 540px) {
-    a {
+    .inner {
       flex-direction: column;
       padding: 4em 1em;
     }
@@ -150,11 +152,7 @@
       width: 100%;
     }
 
-    .tease {
-      padding: 0;
-    }
-
-    .info p {
+    .info {
       padding: 0;
     }
   }

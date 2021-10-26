@@ -50,9 +50,9 @@
   <section id="stories">
     <h2 class="column-wide upper">Stories</h2>
     <ul>
-      {#each stories as { tease, url, slug, date }}
-        <li class="no-padding-li">
-          <Story {tease} {url} {slug} />
+      {#each stories as { tease, url, slug, month }}
+        <li>
+          <Story {tease} {url} {slug} {month} />
         </li>
       {/each}
     </ul>
