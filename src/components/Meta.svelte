@@ -22,7 +22,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="en_US" />
 
-  <meta property="og:image" content="common/assets/misc/social-facebook.jpg" />
+  <meta property="og:image" content="/common/assets/misc/social-facebook.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="600" />
