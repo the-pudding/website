@@ -32,7 +32,7 @@
   <meta name="twitter:creator" content="@puddingviz" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image:src" content="/common/assets/social/twitter.jpg" />
+  <meta name="twitter:image" content="/common/assets/social/twitter.jpg" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/icon.svg" type="image/svg+xml" />
