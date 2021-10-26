@@ -1,6 +1,6 @@
 {
 	"name": "website",
-	"version": "3.0.0",
+	"version": "1.0.0",
 	"scripts": {
 		"gdoc": "node tasks/fetch-google.cjs",
 		"style": "node tasks/style-dictionary.cjs",
@@ -45,7 +45,7 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">= 14.17.3"
+		"node": ">= 16.13.0"
 	},
 	"browserslist": "> 0.5%, last 4 versions, not ie <= 11, not ie_mob <= 11",
 	"pudding": {
