@@ -19,8 +19,7 @@
   };
 
   const renderPersonal = () => {
-    // const ran = Math.floor(Math.random() * staff.length);
-    const ran = 7;
+    const ran = Math.floor(Math.random() * staff.length);
     const { id, name, slug } = staff[ran];
 
     const unused = stories.filter((d) => !popularHTML.includes(d.url));
