@@ -145,14 +145,15 @@
   .btn-open {
     margin: 0;
     padding: 0;
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 1.75em;
     right: -1.5em;
     width: 2em;
     height: 2em;
     background: transparent;
     color: var(--color-body);
     transform: translate(-100%, -50%);
+    z-index: var(--z-overlay);
   }
 
   .btn-open:hover {
