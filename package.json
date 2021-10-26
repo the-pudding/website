@@ -10,7 +10,7 @@
 		"footer": "node tasks/footer.cjs",
 		"dev": "svelte-kit dev --host",
 		"build": "svelte-kit build",
-		"postbuild": "svelte-sitemap --domain https://pudding.cool",
+		"postbuild": "svelte-sitemap --domain https://pudding.cool --ignore 404.html",
 		"preview": "svelte-kit preview",
 		"start": "svelte-kit start",
 		"lint": "prettier --check .",

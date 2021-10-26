@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>The Pudding</title>
+	<meta name="description" content="404">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		@font-face {
+			font-family: "Metropolis";
+			src: url("/assets/fonts/metropolis/Metropolis-Regular.woff2") format("woff2"),
+			url("/assets/fonts/metropolis/Metropolis-Regular.woff") format("woff");
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+
+		@font-face {
+			font-family: "Metropolis";
+			src: url("/assets/fonts/metropolis/Metropolis-Black.woff2") format("woff2"),
+			url("/assets/fonts/metropolis/Metropolis-Black.woff") format("woff");
+			font-weight: 900;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+		}
+
+		body {
+			font-family: "Metropolis", sans-serif;
+		}
+
+		body {
+			padding: 1rem;
+		}
+
+		h1 {
+			font-weight: 900;
+			font-size: clamp(2em, 3vw, 6em);
+			text-align: center;
+			transition: all 100ms ease-out;
+		}
+
+		p {
+			text-align: center;
+			font-size: 1.25em;
+			color: #1a1a1a;
+			line-height: 1.5;
+		}
+
+		a, a:visited {
+			text-decoration: none;
+			color: #1a1a1a;
+			border-bottom: 2px solid #A973FF;
+		}
+
+		a:hover, a:focus {
+			color: #A973FF;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>THIS SITE REQUIRES FLASH</h1>
+	<p>
+		Just kidding, this is a 404. The Pudding link you are looking for must have a typo.
+		<a href="https://pudding.cool#stories">Search all of our stories</a>, you will find it there.
+	</p>
+	<script>
+		let hsl = "hsl(0, 0%, 0%)";
+		setInterval(function () {
+			const h = Math.abs(Math.cos(Date.now() * 0.0001) * 256);
+			hsl = `hsl(${h}, 80%, 50%)`;
+			document.querySelector('h1').style.color = hsl;
+		}, 100);
+	</script>
+</body>
+
+</html>
