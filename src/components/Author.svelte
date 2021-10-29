@@ -14,9 +14,9 @@
 
   const getLinkHTML = () => {
     const t = twitter
-      ? `You can follow them on <a href=${twitter} rel="external">Twitter</a>`
+      ? `You can follow them on <a href="https://twitter.com/${twitter}">Twitter</a>`
       : undefined;
-    const u = url ? `out their <a href=${url} rel="external">website</a>` : undefined;
+    const u = url ? `out their <a href="${url}">website</a>` : undefined;
 
     if (t && u)
       return `
