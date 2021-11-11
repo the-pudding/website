@@ -1,14 +1,15 @@
 # The Pudding Website
 
-## Docs
-### Table of Contents
-* Content
-	* Copy + Data
-	* Images
-	* Tasks
+## Publishing a new story
+* Always pull the repo first to make sure you are up to date
+* Fill out the new story in the [stories doc](https://docs.google.com/spreadsheets/d/1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ/edit#gid=0)
+* Make sure the author is in the [authors doc](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W27Q2YfoXRV5RuNFY_ML6hiirMa6HM/edit#gid=0)
+* Add the thumbnail image (1920x1080) to the `thumbnails/stories` directory
+* Run `npm run update`
+* Commit new changes to repo
+* Run `make pudding`
 
-
-### Content
+## Content
 #### Copy + Data
 Each page has a copy doc in our [website folder]() on Google Drive.
 * [Home]()
