@@ -33,8 +33,8 @@
       src="/common/assets/thumbnails/32/{slug}.jpg"
       alt="thumbnail for story"
       srcset="/common/assets/thumbnails/1280/{slug}.jpg 1280w,
-			/common/assets/thumbnails/640/{slug}.jpg 640w,
-			/common/assets/thumbnails/480/{slug}.jpg 480w"
+			/common/assets/thumbnails/960/{slug}.jpg 960w,
+			/common/assets/thumbnails/640/{slug}.jpg 640w"
       sizes="(max-width: 320px) 640px, (max-width: 480px) 960px, 1280px"
       loading="lazy"
     />

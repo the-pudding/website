@@ -5,7 +5,7 @@ const resize = require("./resize-image.cjs");
 const CWD = process.cwd();
 const pathIn = `${CWD}/thumbnails/stories`;
 const pathOut = `${CWD}/static/common/assets/thumbnails`;
-const sizes = [32, 640, 960, 1280];
+const sizes = [32, 320, 640, 960, 1280];
 
 function getNewImages() {
 	const filesIn = fs.readdirSync(pathIn).filter(d => d.includes('.jpg'));
