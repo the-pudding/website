@@ -8,7 +8,7 @@
 		"thumbnail-resources": "node tasks/thumbnail-resources.cjs",
 		"color": "node tasks/color.cjs",
 		"footer": "node tasks/footer.cjs",
-		"dev": "svelte-kit dev --host",
+		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"postbuild": "svelte-sitemap --domain https://pudding.cool --ignore 404.html",
 		"preview": "svelte-kit preview",

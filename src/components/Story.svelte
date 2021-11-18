@@ -139,7 +139,6 @@
   @media (max-width: 540px) {
     .inner {
       flex-direction: column;
-      padding: 4em 1em;
     }
 
     img {
