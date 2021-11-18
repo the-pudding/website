@@ -9,14 +9,16 @@
 
   stories.sort((a, b) => descending(a.date, b.date));
 
-  const { name, url, twitter } = author;
+  const { name, url, twitter, pronoun } = author;
   const bio = author.bio || "is a contributor to The Pudding.";
 
+  const pronounA = pronoun === "They" ? "them" : pronoun === "He" ? "him" : "her";
+  const pronounB = pronoun === "They" ? "their" : pronoun === "He" ? "his" : "her";
   const getLinkHTML = () => {
     const t = twitter
-      ? `You can follow them on <a href="https://twitter.com/${twitter}">Twitter</a>`
+      ? `You can follow ${pronounA} on <a href="https://twitter.com/${twitter}">Twitter</a>`
       : undefined;
-    const u = url ? `out their <a href="${url}">website</a>` : undefined;
+    const u = url ? `out ${pronounB} <a href="${url}">website</a>` : undefined;
 
     if (t && u)
       return `
@@ -31,7 +33,7 @@
   const link = getLinkHTML();
   const count = numberAsText(stories.length);
   const suffix = stories.length === 1 ? "y" : "ies";
-  const published = `They have worked on ${count} stor${suffix} to date. Explore them all below.`;
+  const published = `${pronoun} has worked on ${count} stor${suffix} to date. Explore them all below.`;
 </script>
 
 <section id="intro" class="column-wide">

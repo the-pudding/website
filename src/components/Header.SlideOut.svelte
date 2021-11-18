@@ -146,7 +146,7 @@
     margin: 0;
     padding: 0;
     position: fixed;
-    top: 1.75em;
+    top: 2em;
     right: -1.5em;
     width: 2em;
     height: 2em;

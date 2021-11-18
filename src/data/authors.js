@@ -9,7 +9,8 @@ const clean = data.map(d => ({
 	position: d.position,
 	twitter: d.twitter,
 	url: d.url,
-	bio: d.bio
+	bio: d.bio,
+	pronoun: d.pronoun
 }));
 
 export default clean;
