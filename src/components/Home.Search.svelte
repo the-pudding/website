@@ -133,4 +133,15 @@
     color: var(--color-gray-dark);
     font-size: var(--font-size-small);
   }
+
+  @media only screen and (max-width: 540px) {
+    #search {
+      padding: 0.75em 0;
+    }
+
+    input {
+      font-size: 14px;
+      width: 14em;
+    }
+  }
 </style>

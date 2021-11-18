@@ -35,7 +35,7 @@
 	--color-highlight: var(--color-accent);
 	
 	--font-size-giant: clamp(2.5rem, 5.25vw, 6.5rem);
-	--font-size-large: clamp(1.75rem, 3.25vw, 3.25rem);
+	--font-size-large: clamp(1.5rem, 3.25vw, 3.25rem);
 	--font-size-medium: clamp(1.25rem, 2.25vw, 2.25rem);
 	--font-size-small: clamp(1rem, 1.25vw, 1.25rem);
 
@@ -45,8 +45,8 @@
 	
 	--width-column-wide: 1500px;
 	--width-column-regular: 720px;
-	--width-padded: 90vw;
-	--margin-left: 5vw;
+	--width-padded: 80vw;
+	--margin-left: 10vw;
 
 	--transition-fast: 100ms;
 	--transition-medium: 200ms;
