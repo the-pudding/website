@@ -11,6 +11,7 @@
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"postbuild": "svelte-sitemap --domain https://pudding.cool --ignore 404.html",
+		"update": "npm run gdoc && npm run thumbnail-stories && npm run thumbnail-resources && npm run thumbnail-color && npm run footer && npmrun build",
 		"preview": "svelte-kit preview",
 		"start": "svelte-kit start",
 		"lint": "prettier --check .",
