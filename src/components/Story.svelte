@@ -85,6 +85,7 @@
 
   img {
     max-width: 640px;
+    min-width: 40%;
     width: 40%;
     border: 1px solid var(--darker);
     transition: transform var(--transition-fast) var(--transition-ease);
