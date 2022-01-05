@@ -33,12 +33,12 @@
   const link = getLinkHTML();
   const count = numberAsText(stories.length);
   const suffix = stories.length === 1 ? "y" : "ies";
-  const published = `${pronoun} has worked on ${count} stor${suffix} to date. Explore them all below.`;
+  const has = pronoun === "They" ? "have" : "has";
+  const published = `${pronoun} ${has} worked on ${count} stor${suffix} to date. Explore them all below.`;
 </script>
 
 <section id="intro" class="column-wide">
   <HeroText>
-    <!-- <img src="/common/assets/authors/{id}.jpg" alt={author.name} /> -->
     <h1>{name}</h1>
 
     <p>
