@@ -24,7 +24,7 @@
       return `
 			${t} or check ${u}. 
 		`;
-    else if (t) return t;
+    else if (t) return `${t}.`;
     else if (u) return `Check ${u}.`;
 
     return undefined;
@@ -34,7 +34,8 @@
   const count = numberAsText(stories.length);
   const suffix = stories.length === 1 ? "y" : "ies";
   const has = pronoun === "They" ? "have" : "has";
-  const published = `${pronoun} ${has} worked on ${count} stor${suffix} to date. Explore them all below.`;
+  const explore = count === 1 ? "it" : "them all";
+  const published = `${pronoun} ${has} worked on ${count} stor${suffix} to date. Explore ${explore} below.`;
 </script>
 
 <section id="intro" class="column-wide">
