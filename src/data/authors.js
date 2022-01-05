@@ -10,7 +10,7 @@ const clean = data.map(d => ({
 	twitter: d.twitter,
 	url: d.url,
 	bio: d.bio,
-	pronoun: d.pronoun
+	pronoun: d.pronoun || "They"
 }));
 
 export default clean;
