@@ -7,7 +7,7 @@ const clean = data.map(d => ({
 	name: d.name,
 	slug: makeSlug(d.name),
 	position: d.position,
-	twitter: d.twitter,
+	social: d.social,
 	url: d.url,
 	bio: d.bio,
 	pronoun: d.pronoun || "They"

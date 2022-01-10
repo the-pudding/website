@@ -9,14 +9,14 @@
 
   stories.sort((a, b) => descending(a.date, b.date));
 
-  const { name, url, twitter, pronoun } = author;
+  const { name, url, social, pronoun } = author;
   const bio = author.bio || "is a contributor to The Pudding.";
 
   const pronounA = pronoun === "They" ? "them" : pronoun === "He" ? "him" : "her";
   const pronounB = pronoun === "They" ? "their" : pronoun === "He" ? "his" : "her";
   const getLinkHTML = () => {
-    const t = twitter
-      ? `You can follow ${pronounA} on <a href="https://twitter.com/${twitter}">Twitter</a>`
+    const t = social
+      ? `You can follow ${pronounA} on <a href="${social}">the socials</a>`
       : undefined;
     const u = url ? `out ${pronounB} <a href="${url}">website</a>` : undefined;
 
