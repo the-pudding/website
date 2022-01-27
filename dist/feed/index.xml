@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+	<channel>
+		<title>The Pudding</title>
+		<atom:link href="https://pudding.cool/feed/index.xml" rel="self" type="application/rss+xml" />
+		<link>https://pudding.cool</link>
+		<description>The Pudding is an editorial publication that explains ideas debated in culture with visual essays.</description>
+		<lastBuildDate>
+			Mon, 30 Aug 2021 17:24:43 GMT
+		</lastBuildDate>
+		<language>en-US</language>
+		<sy:updatePeriod>daily</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+		<image>
+			<title>The Pudding</title>
+			<url>https://pudding.cool/common/assets/misc/social-facebook.jpg</url>
+			<link>https://pudding.cool</link>
+		</image>
+
+		
+<item>
+	<title>How you play Spades is how you play life</title>
+	<link>https://pudding.cool/2021/08/spades</link>
+	<description>First-of-its kind data exploration of Spades in the African-American community</description>
+	<category>culture></category>
+	<pubDate>Mon, 30 Aug 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/08/spades</guid>
+</item>
+	
+<item>
+	<title>Ranking the Biggest NBA Finals Carry Jobs</title>
+	<link>https://pudding.cool/2021/08/nba-carry</link>
+	<description>It is mostly LeBron James.</description>
+	<category>sports></category>
+	<pubDate>Tue, 17 Aug 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/08/nba-carry</guid>
+</item>
+	
+<item>
+	<title>A Visual History of Rickrolling</title>
+	<link>https://pudding.cool/2021/07/rickrolling</link>
+	<description>Millions of comments, posts, and links, charted.</description>
+	<category>culture></category>
+	<pubDate>Tue, 20 Jul 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/07/rickrolling</guid>
+</item>
+	
+<item>
+	<title>“I Kissed A Girl” to “Call Me By Your Name”</title>
+	<link>https://pudding.cool/2021/06/same-gender-lyrics</link>
+	<description>A story about hearing yourself in same-gender lyrics for the first time</description>
+	<category>music></category>
+	<pubDate>Tue, 29 Jun 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/06/same-gender-lyrics</guid>
+</item>
+	
+<item>
+	<title>Help a Computer Win the New Yorker Cartoon Caption Contest</title>
+	<link>https://pudding.cool/projects/caption-contest</link>
+	<description>This is an experiment to see if an AI program can produce humor.</description>
+	<category>other></category>
+	<pubDate>Wed, 26 May 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">projects/caption-contest</guid>
+</item>
+	
+<item>
+	<title>How many artists overshadow their band after going solo?</title>
+	<link>https://pudding.cool/2021/04/solo</link>
+	<description>What the data say about Beyoncé, Nick Lachey, and others.</description>
+	<category>music></category>
+	<pubDate>Thu, 22 Apr 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/04/solo</guid>
+</item>
+	
+<item>
+	<title>Get out of your geographic music bubble</title>
+	<link>https://pudding.cool/2021/04/music-bubble</link>
+	<description>The songs that are popular, far away from you.</description>
+	<category>music></category>
+	<pubDate>Thu, 08 Apr 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/04/music-bubble</guid>
+</item>
+	
+<item>
+	<title>How Science Came Together During COVID-19</title>
+	<link>https://pudding.cool/2021/03/covid-science</link>
+	<description>A look at the global research effort to combat the coronavirus pandemic.</description>
+	<category>culture></category>
+	<pubDate>Wed, 31 Mar 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/03/covid-science</guid>
+</item>
+	
+<item>
+	<title>The Naked Truth</title>
+	<link>https://pudding.cool/2021/03/foundation-names</link>
+	<description>How the names of 6,816 complexion products can reveal bias in beauty.</description>
+	<category>people></category>
+	<pubDate>Thu, 25 Mar 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/03/foundation-names</guid>
+</item>
+	
+<item>
+	<title>Wine &amp; Math: A Model Pairing</title>
+	<link>https://pudding.cool/2021/03/wine-model</link>
+	<description>We built a model that attempts to predict a wine’s quality.</description>
+	<category>other></category>
+	<pubDate>Thu, 18 Mar 2021 04:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/03/wine-model</guid>
+</item>
+	
+<item>
+	<title>Nothing Breaks Like A.I. Heart</title>
+	<link>https://pudding.cool/2021/03/love-and-ai</link>
+	<description>An essay about artificial and emotional intelligence and finding an ending.</description>
+	<category>other></category>
+	<pubDate>Mon, 08 Mar 2021 05:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/03/love-and-ai</guid>
+</item>
+	
+<item>
+	<title>The Cultural Borders of Songs</title>
+	<link>https://pudding.cool/2018/06/music-map</link>
+	<description>We mapped last month’s #1 songs in 3,000 places. </description>
+	<category>music></category>
+	<pubDate>Mon, 24 Feb 2020 05:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2018/06/music-map</guid>
+</item>
+	
+<item>
+	<title>Introducing the Live Music Analyst</title>
+	<link>https://pudding.cool/2021/02/jukebox</link>
+	<description>An auditory comparison of 770 artists' live and studio tracks</description>
+	<category>music></category>
+	<pubDate>Mon, 08 Feb 2021 05:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/02/jukebox</guid>
+</item>
+	
+<item>
+	<title>We created a speaker rider. Journalism didn’t have one.</title>
+	<link>https://pudding.cool/process/speaker-rider</link>
+	<description>Everyone needs to work together to make events more inclusive.</description>
+	<category>how></category>
+	<pubDate>Wed, 27 Jan 2021 05:00:00 GMT</pubDate>
+	<guid isPermaLink="false">process/speaker-rider</guid>
+</item>
+	
+<item>
+	<title>Every time someone says cool in Community</title>
+	<link>https://pudding.cool/2021/01/cool</link>
+	<description>Watch all 412 cools from Abed, and others.</description>
+	<category>entertainment></category>
+	<pubDate>Mon, 11 Jan 2021 05:00:00 GMT</pubDate>
+	<guid isPermaLink="false">2021/01/cool</guid>
+</item>
+	
+
+	</channel>
+</rss>

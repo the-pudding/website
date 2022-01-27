@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+
+	<!-- DO NOT REMOVE -->
+	
+		<title>Caitlyn Ralph - The Pudding</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+		<meta name='description' content='Read more from Caitlyn Ralph on The Pudding.' />
+		<meta name='news_keywords' content='The Pudding' />
+
+		<meta property='og:title' content='Read more from Caitlyn Ralph on The Pudding.' />
+		<meta property='og:site_name' content='The Pudding'/>
+		<meta property='og:url' content='https://pudding.cool' />
+		<meta property='og:description' content='Read more from Caitlyn Ralph on The Pudding.' />
+		<meta property='og:type' content='profile' />
+		<meta property='og:locale' content='en_US' />
+
+		<meta property='og:image' content='https://pudding.cool/common/assets/misc/social-facebook.jpg' />
+		<meta property='og:image:type' content='image/jpeg' />
+		<meta property='og:image:width' content='1200' />
+		<meta property='og:image:height' content='600' />
+
+		<meta name='twitter:card' content='summary_large_image'>
+		<meta name='twitter:site' content='https://pudding.cool'>
+		<meta name='twitter:creator' content='@puddingviz'>
+		<meta name='twitter:title' content='The Pudding'>
+		<meta name='twitter:description' content='Read more from Caitlyn Ralph on The Pudding.'>
+		<meta name='twitter:image:src' content='https://pudding.cool/common/assets/misc/social-twitter.jpg'>
+
+		<link rel='apple-touch-icon' sizes='180x180' href='https://pudding.cool/apple-touch-icon.png'>
+		<link rel='icon' type='image/png' sizes='32x32' href='https://pudding.cool/favicon-32x32.png'>
+		<link rel='icon' type='image/png' sizes='16x16' href='https://pudding.cool/favicon-16x16.png'>
+		<link rel='manifest' href='https://pudding.cool/site.webmanifest'>
+		<link rel='mask-icon' href='https://pudding.cool/safari-pinned-tab.svg' color='#5bbad5'>
+		<meta name='msapplication-TileColor' content='#ffc40d'>
+		<meta name='theme-color' content='#ffffff'>
+
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/tiempos/TiemposHeadlineWeb-Regular.woff2'>
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/national/National2NarrowWeb-Regular.woff2'>
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/national/National2NarrowWeb-Bold.woff2'>
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/national/National2Web-Regular.woff2'>
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/national/National2Web-Bold.woff2'>
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/national/National2NarrowWeb-Black.woff2'>
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2'>
+		<link rel='preload' type='font/woff2' as='font' crossorigin href='https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2'>
+	
+
+	<link inline rel='stylesheet' href='../../common/css/font.css'>
+	<link inline rel='stylesheet' href='../../common/css/bundle.css'>
+	
+	<!-- smoosh -->
+	<script inline src='../../common/js/critical.js'></script>
+	<!-- endsmoosh -->
+
+	<!-- DO NOT REMOVE -->
+	
+
+
+</head>
+
+
+<body id='page-author'>
+
+	<!-- DO NOT REMOVE -->
+	
+		<a href='#content' class='skip-to-main'>Skip to main content</a>
+		<header class=''>
+			
+			<div class='header__top'>
+				
+				<div class='top__title'>
+					<a class='title__wordmark' href='../../' aria-label='The Pudding homepage'>
+						<img inline src='dev/common/assets/svg/pudding-wordmark.svg'>
+					</a>
+				</div>
+
+				<nav class='top__nav'>
+					<ul class='nav__links'>
+						<li><a href='../../about'>About</a></li>
+						<li><a href='../../archives'>Archives</a></li>
+						<li><a href='../../topics'>Topics</a></li>
+					</ul>
+				</nav>
+
+			</div>
+
+			<p class='header__tagline'><span>The Pudding</span> is a digital publication that explains ideas debated in culture with visual essays.</p>
+			
+
+			<div class='header__cta'>
+				
+				<div class='cta__newsletter'>
+					<form action='https://poly-graph.us11.list-manage.com/subscribe/post' method='POST'>
+							<input type='hidden' name='u' value='c70d3c0e372cde433143ffeab'>
+							<input type='hidden' name='id' value='9af100ac0f'>
+							<input aria-label='email' class='newsletter__input' type='email' autocapitalize='off' autocorrect='off' name='MERGE0' id='MERGE0' size='25' value='' placeholder='you@example.com'>
+							<div class='hidden-from-view' style='left:-10000px;position:absolute'>
+								<input aria-label='text' type='text' name='b_c70d3c0e372cde433143ffeab_9af100ac0f' tabindex='-1' value=''>
+							</div>
+							<input class='btn' style='' type='submit' name='submit' value='Join Our Newsletter'>
+						</form>
+				</div>
+					
+				<div class='cta__patreon'>
+					<a class='btn' href='https://www.patreon.com/thepudding'>Fund us on Patreon</a>
+				</div>
+
+				<ul class='cta__social'>
+					<li><a href='https://www.facebook.com/pudding.viz/' aria-label='facebook' class='logo--facebook'><img inline src='dev/common/assets/svg/facebook.svg'></a></li>
+					<li><a href='https://twitter.com/puddingviz' aria-label='twitter' class='logo--twitter'><img inline src='dev/common/assets/svg/twitter.svg'></a></li>
+					<li><a href='https://www.instagram.com/the.pudding' aria-label='instagram' class='logo--instagram'><img inline src='dev/common/assets/svg/instagram.svg'></a></li>
+				</ul>
+
+			</div>
+
+		</header>
+
+	
+		<aside class='sidebar'>
+			<div class='sidebar__content'>
+				<p class='sidebar__tagline'>The Pudding explains ideas debated in culture with visual essays.</p>
+					<ul class='sidebar__links'>
+						<li><a href='../../about'>About</a></li>
+						<li><a href='../../topics'>Topics</a></li>
+						<li><a href='../../archives'>Archives</a></li>
+						<li><a href='http://eepurl.com/czym6f'>Join our Newsletter</a></li>
+						<li><a href='https://pudding.cool/feed/index.xml'>RSS</a></li>
+					</ul>
+				<p class='sidebar__patreon'>We pour our ❤️ into these stories, but they take time and money. For just $1/month, you can help support us. Join our growing community of data-driven enthusiasts.<br><a class='random-background' href='https://www.patreon.com/thepudding'>Help fund us</a></p>
+			</div>
+		</aside>
+
+		<div class='menu'>
+			<a class='menu__logo' href='../../' aria-label='The Pudding homepage'>
+				<img inline src='dev/common/assets/svg/pudding-logo.svg'>
+			</a>
+			
+			<button class='menu__toggle' aria-label="Menu">
+				<span class='toggle--on'>
+					<img inline src='dev/common/assets/svg/menu.svg'>
+				</span>
+				<span class='toggle--off is-hidden'>
+					<img inline src='dev/common/assets/svg/x.svg'>
+				</span>
+			</button>
+		</div>
+	
+	<main id='content'>
+		<section class='author'>
+			<p class='section__label random-color'>Bio</p>
+			<!-- DO NOT REMOVE -->
+			
+		<div class='bio'>
+			<img class='bio__img' src="../../common/assets/authors/caitlyn.jpg" alt="Caitlyn Ralph" />
+			<div class='bio__info'>
+				<p class='info__description'>
+					<span class='description__name'>Caitlyn Ralph</span>
+					<span class='description__bio'>is the Director at <a href=https://polygraph.cool>Polygraph</a>. Aside from data, she enjoys a coffee with oat milk, her planner, and being a native New Yorker living in Scotland. At Julian's disdain, she doesn't plan to stop singing the <a href='https://youtu.be/TOypSnKFHrE?t=58'>same song</a> for another <a href='https://youtu.be/_l09H-3zzgA?t=118'>ten years</a>.</span>
+				</p>
+			</div>
+			<ul class='bio__links'>
+					
+					<li class='link__email'><a href='mailto:caitlyn@pudding.cool'><img inline src='dev/common/assets/svg/mail.svg'>caitlyn@pudding.cool</a></li>
+					<li class='link__url'><a href='https://caitlynmralph.github.io/'><img inline src='dev/common/assets/svg/link.svg'>website</a></li>
+			</ul>
+		</div>
+	
+		</section>
+		
+		<section class='stories'>
+			<p class='section__label random-color'>Stories</p>
+			<ul>
+				<!-- DO NOT REMOVE -->
+				<li>
+		<div class='story-item' data-id="2019/10/laugh" data-topic="culture" data-chart="tree map,stacked bar chart" data-keyword="language" data-author="russell,kishan,caitlyn,jan" data-author_slug="russell-goldenberg, kishan-sheth, caitlyn-ralph, jan-diehm" data-author_name="Russell Goldenberg, Kishan Sheth, Caitlyn Ralph, Jan Diehm" data-hed="laughing online" data-dek="exploring the usage, evolution, and perception of digital laughter." data-date="2019-10-29T04:00:00.000Z" data-views="38083" data-time_on_page="175">
+			<div class='item__img'>
+				<a href='//pudding.cool/2019/10/laugh'>
+					<img src='../../common/assets/thumbnails/640/2019_10_laugh.jpg' alt='Laughing OnLine'>
+				</a>
+				
+			</div>
+			<div class='item__info'>
+				<a href='//pudding.cool/2019/10/laugh'>
+					<h3 class='item__hed'>Laughing OnLine</h3>
+				</a>
+				<div class='info__details'>
+					<p class='item__dek'>Exploring the usage, evolution, and perception of digital laughter.</p>
+					<time class='item__time' datetime='2019-10-29T04:00:00.000Z'></time>
+					<cite class='item__author'>By <a href='../../author/russell-goldenberg'>Russell Goldenberg</a>, <a href='../../author/kishan-sheth'>Kishan Sheth</a>, <a href='../../author/caitlyn-ralph'>Caitlyn Ralph</a>, <a href='../../author/jan-diehm'>Jan Diehm</a></cite>
+				</div>
+			</div>
+		</div>
+	</li><li>
+		<div class='story-item' data-id="2019/10/pubs" data-topic="culture" data-chart="map" data-keyword="geography,food" data-author="caitlyn,jan" data-author_slug="caitlyn-ralph, jan-diehm" data-author_name="Caitlyn Ralph, Jan Diehm" data-hed="ye olde mad-lib pub crawl generator" data-dek="finding the shortest route between uk pubs of the same name." data-date="2019-10-09T04:00:00.000Z" data-views="10110" data-time_on_page="158">
+			<div class='item__img'>
+				<a href='//pudding.cool/2019/10/pubs'>
+					<img src='../../common/assets/thumbnails/640/2019_10_pubs.jpg' alt='Ye Olde Mad-Lib Pub Crawl Generator'>
+				</a>
+				
+			</div>
+			<div class='item__info'>
+				<a href='//pudding.cool/2019/10/pubs'>
+					<h3 class='item__hed'>Ye Olde Mad-Lib Pub Crawl Generator</h3>
+				</a>
+				<div class='info__details'>
+					<p class='item__dek'>Finding the shortest route between UK pubs of the same name.</p>
+					<time class='item__time' datetime='2019-10-09T04:00:00.000Z'></time>
+					<cite class='item__author'>By <a href='../../author/caitlyn-ralph'>Caitlyn Ralph</a>, <a href='../../author/jan-diehm'>Jan Diehm</a></cite>
+				</div>
+			</div>
+		</div>
+	</li><li>
+		<div class='story-item' data-id="2018/11/dearabby" data-topic="people" data-chart="pictogram chart,scatter plot,waffle chart" data-keyword="relationships" data-author="ilia,caitlyn" data-author_slug="ilia-blinderman, caitlyn-ralph" data-author_name="Ilia Blinderman, Caitlyn Ralph" data-hed="30 years of american anxieties" data-dek="what 20,000 letters to an advice columnist tell us about what concerns us most." data-date="2018-11-13T05:00:00.000Z" data-views="42891" data-time_on_page="174">
+			<div class='item__img'>
+				<a href='//pudding.cool/2018/11/dearabby'>
+					<img src='../../common/assets/thumbnails/640/2018_11_dearabby.jpg' alt='30 Years of American Anxieties'>
+				</a>
+				
+			</div>
+			<div class='item__info'>
+				<a href='//pudding.cool/2018/11/dearabby'>
+					<h3 class='item__hed'>30 Years of American Anxieties</h3>
+				</a>
+				<div class='info__details'>
+					<p class='item__dek'>What 20,000 letters to an advice columnist tell us about what concerns us most.</p>
+					<time class='item__time' datetime='2018-11-13T05:00:00.000Z'></time>
+					<cite class='item__author'>By <a href='../../author/ilia-blinderman'>Ilia Blinderman</a>, <a href='../../author/caitlyn-ralph'>Caitlyn Ralph</a></cite>
+				</div>
+			</div>
+		</div>
+	</li><li>
+		<div class='story-item' data-id="2018/10/wiki-breakout" data-topic="people" data-chart="unique,line chart" data-keyword="wiki" data-author="russell,caitlyn" data-author_slug="russell-goldenberg, caitlyn-ralph" data-author_name="Russell Goldenberg, Caitlyn Ralph" data-hed="what does the path to fame look like?" data-dek="tracking the rise in popularity from cardi b to carson wentz" data-date="2018-10-19T04:00:00.000Z" data-views="20151" data-time_on_page="135">
+			<div class='item__img'>
+				<a href='//pudding.cool/2018/10/wiki-breakout'>
+					<img src='../../common/assets/thumbnails/640/2018_10_wiki-breakout.jpg' alt='What Does the Path to Fame Look Like?'>
+				</a>
+				
+			</div>
+			<div class='item__info'>
+				<a href='//pudding.cool/2018/10/wiki-breakout'>
+					<h3 class='item__hed'>What Does the Path to Fame Look Like?</h3>
+				</a>
+				<div class='info__details'>
+					<p class='item__dek'>Tracking the rise in popularity from Cardi B to Carson Wentz</p>
+					<time class='item__time' datetime='2018-10-19T04:00:00.000Z'></time>
+					<cite class='item__author'>By <a href='../../author/russell-goldenberg'>Russell Goldenberg</a>, <a href='../../author/caitlyn-ralph'>Caitlyn Ralph</a></cite>
+				</div>
+			</div>
+		</div>
+	</li><li>
+		<div class='story-item' data-id="2018/09/wiki-billboard" data-topic="people" data-chart="unique" data-keyword="wiki" data-author="russell,ilia,caitlyn" data-author_slug="russell-goldenberg, ilia-blinderman, caitlyn-ralph" data-author_name="Russell Goldenberg, Ilia Blinderman, Caitlyn Ralph" data-hed="the celebrity billboard project" data-dek="tracking the popularity of cultural figures in 2018" data-date="2018-09-11T04:00:00.000Z" data-views="116362" data-time_on_page="116">
+			<div class='item__img'>
+				<a href='//pudding.cool/2018/09/wiki-billboard'>
+					<img src='../../common/assets/thumbnails/640/2018_09_wiki-billboard.jpg' alt='The Celebrity Billboard Project'>
+				</a>
+				
+			</div>
+			<div class='item__info'>
+				<a href='//pudding.cool/2018/09/wiki-billboard'>
+					<h3 class='item__hed'>The Celebrity Billboard Project</h3>
+				</a>
+				<div class='info__details'>
+					<p class='item__dek'>Tracking the popularity of cultural figures in 2018</p>
+					<time class='item__time' datetime='2018-09-11T04:00:00.000Z'></time>
+					<cite class='item__author'>By <a href='../../author/russell-goldenberg'>Russell Goldenberg</a>, <a href='../../author/ilia-blinderman'>Ilia Blinderman</a>, <a href='../../author/caitlyn-ralph'>Caitlyn Ralph</a></cite>
+				</div>
+			</div>
+		</div>
+	</li><li>
+		<div class='story-item' data-id="2017/09/clinics" data-topic="social" data-chart="map,table,bar chart" data-keyword="reproductive health,health,america,geography" data-author="russell,amber,caitlyn" data-author_slug="russell-goldenberg, amber-thomas, caitlyn-ralph" data-author_name="Russell Goldenberg, Amber Thomas, Caitlyn Ralph" data-hed="an analysis of driving times to abortion clinics in the us" data-dek="mapping the cities and places with the worst access" data-date="2017-09-07T04:00:00.000Z" data-views="22434" data-time_on_page="209">
+			<div class='item__img'>
+				<a href='//pudding.cool/2017/09/clinics'>
+					<img src='../../common/assets/thumbnails/640/2017_09_clinics.jpg' alt='An Analysis of Driving Times to Abortion Clinics in the US'>
+				</a>
+				
+			</div>
+			<div class='item__info'>
+				<a href='//pudding.cool/2017/09/clinics'>
+					<h3 class='item__hed'>An Analysis of Driving Times to Abortion Clinics in the US</h3>
+				</a>
+				<div class='info__details'>
+					<p class='item__dek'>Mapping the cities and places with the worst access</p>
+					<time class='item__time' datetime='2017-09-07T04:00:00.000Z'></time>
+					<cite class='item__author'>By <a href='../../author/russell-goldenberg'>Russell Goldenberg</a>, <a href='../../author/amber-thomas'>Amber Thomas</a>, <a href='../../author/caitlyn-ralph'>Caitlyn Ralph</a></cite>
+				</div>
+			</div>
+		</div>
+	</li><li>
+		<div class='story-item' data-id="2017/08/the-office" data-topic="entertainment" data-chart="bar chart,area chart,strip plot" data-keyword="television" data-author="caitlyn" data-author_slug="caitlyn-ralph" data-author_name="Caitlyn Ralph" data-hed="‘the office’ dialogue in five charts" data-dek="a breakdown of how every character contributed to the show" data-date="2017-08-04T04:00:00.000Z" data-views="78696" data-time_on_page="237">
+			<div class='item__img'>
+				<a href='//pudding.cool/2017/08/the-office'>
+					<img src='../../common/assets/thumbnails/640/2017_08_the-office.jpg' alt='‘The Office’ Dialogue in Five Charts'>
+				</a>
+				
+			</div>
+			<div class='item__info'>
+				<a href='//pudding.cool/2017/08/the-office'>
+					<h3 class='item__hed'>‘The Office’ Dialogue in Five Charts</h3>
+				</a>
+				<div class='info__details'>
+					<p class='item__dek'>A breakdown of how every character contributed to the show</p>
+					<time class='item__time' datetime='2017-08-04T04:00:00.000Z'></time>
+					<cite class='item__author'>By <a href='../../author/caitlyn-ralph'>Caitlyn Ralph</a></cite>
+				</div>
+			</div>
+		</div>
+	</li>
+			</ul>
+		</section>
+	</main>
+
+	<!-- DO NOT REMOVE -->
+	
+
+	<footer class='random-background'>
+		<div class='footer__inner'>
+			<div class='footer__cta'>
+				<ul class='footer__cta-list'>
+					<li>
+						<a href='https://facebook.com/pudding.viz/'>
+							<img inline src='dev/common/assets/svg/facebook.svg'>
+							<p>FACEBOOK</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://twitter.com/puddingviz/'>
+							<img inline src='dev/common/assets/svg/twitter.svg'>
+							<p>TWITTER</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://www.instagram.com/the.pudding'>
+							<img inline src='dev/common/assets/svg/instagram.svg'>
+							<p>INSTAGRAM</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://patreon.com/thepudding/'>
+							<img inline src='dev/common/assets/svg/patreon.svg'>
+							<p>PATREON</p>
+						</a>
+					</li>
+          <li>
+						<a href='https://pudding.cool/about'>
+							<img inline src='dev/common/assets/svg/info.svg'>
+							<p>ABOUT</p>
+						</a>
+					</li>
+          <li>
+						<a href='https://pudding.cool/privacy/'>
+							<img inline src='dev/common/assets/svg/lock.svg'>
+							<p>PRIVACY</p>
+						</a>
+					</li>
+					<li>
+						<a href='http://eepurl.com/czym6f'>
+							<img inline src='dev/common/assets/svg/mail.svg'>
+							<p>NEWSLETTER</p>
+						</a>
+					</li>
+					<li>
+						<a href='https://pudding.cool/feed/index.xml'>
+							<img inline src='dev/common/assets/svg/rss.svg'>
+							<p>RSS</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class='footer__about'>
+				<img inline src='dev/common/assets/svg/pudding-wordmark.svg'></a>
+				<p class='footer__description'><a href='https://pudding.cool'>The Pudding</a> is a digital publication that
+					explains ideas debated in culture with visual essays.</p>
+			</div>
+
+		</div>
+	</div>
+	
+</body>
+<script src='../../common/js/d3.v5.min.js'></script>
+<script inline src='../../common/js/general.js'></script>
+
+</html>
