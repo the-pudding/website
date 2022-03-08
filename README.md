@@ -8,6 +8,7 @@
 * Run `npm run update`
 * Commit new changes to repo
 * Run `make pudding`
+* `git push`
 
 ## Content
 #### Copy + Data
