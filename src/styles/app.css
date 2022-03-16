@@ -47,6 +47,8 @@
 	--width-column-regular: 720px;
 	--width-padded: 80vw;
 	--margin-left: 10vw;
+	--width-padded-mobile: 90vw;
+	--margin-left-mobile: 5vw;
 
 	--transition-fast: 100ms;
 	--transition-medium: 200ms;
@@ -161,8 +163,14 @@ button:hover, button:focus, a.btn:hover, a.btn:focus  {
 }
 
 @media (max-width: 700px) {
+
+	.column-wide {
+		width: var(--width-padded-mobile);
+		margin-left: var(--margin-left-mobile);
+	}
+
 	.column-regular {
 		max-width: var(--width-column-regular);
-		width: var(--width-padded);
+		width: var(--width-padded-mobile);
 	}
 }
