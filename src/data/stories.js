@@ -12,9 +12,9 @@ const clean = data.map(d => ({
 	date: parseDate(d.date),
 	month: formatMonth(parseDate(d.date)),
 	slug: makeSlug(d.url),
-	path: `https://pudding.cool/${d.url}`,
 	author: strToArray(d.author),
 	keyword: strToArray(d.keyword),
+	path: d.url_alt || `https://pudding.cool/${d.url}`,
 }));
 
 export default clean;

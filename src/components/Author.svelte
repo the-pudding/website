@@ -53,9 +53,9 @@
   <section id="stories">
     <h2 class="column-wide upper">Stories</h2>
     <ul>
-      {#each stories as { tease, url, slug, month }}
+      {#each stories as { tease, url, url_alt, slug, month }}
         <li>
-          <Story {tease} {url} {slug} {month} />
+          <Story {tease} {url} {url_alt} {slug} {month} />
         </li>
       {/each}
     </ul>

@@ -2,6 +2,7 @@
   import colors from "$data/thumbnail-colors.json";
   export let collapse;
   export let url;
+	export let url_alt;
   export let slug;
   export let tease;
   export let month;
@@ -25,6 +26,8 @@
 	--default-dark: ${DEFAULT_COLOR["dark"]};
 	--default-darker: ${DEFAULT_COLOR["darker"]};
   `;
+
+	const href = url_alt || `https://pudding.cool/${url}`;
 </script>
 
 <div class="story" class:is-collapsed={collapse} style: {style}>
@@ -40,7 +43,7 @@
     />
     <div class="info">
       <h3 class="tease">
-        <a href="https://pudding.cool/{url}" rel="external">
+        <a href="{href}" rel="external">
           <span>{@html tease}</span>
         </a>
       </h3>

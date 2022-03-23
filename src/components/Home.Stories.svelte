@@ -36,9 +36,9 @@
 <section id="stories" bind:this={sectionEl}>
   <h2 class="column-wide upper">{copy.storiesHed}</h2>
   <ul>
-    {#each sortedStories as { tease, url, slug, month } (slug)}
+    {#each sortedStories as { tease, url, url_alt, slug, month } (slug)}
       <li>
-        <Story {tease} {url} {slug} {month} collapse={!highlight.includes(slug)} />
+        <Story {tease} {url} {url_alt} {slug} {month} collapse={!highlight.includes(slug)} />
       </li>
     {/each}
   </ul>

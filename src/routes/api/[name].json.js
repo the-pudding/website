@@ -5,7 +5,7 @@ import filterStoryProps from "$utils/filterStoryProps.js";
 export const get = async ({ params }) => {
 	const { name } = params;
 
-	const keys = ["tease", "url", "slug", "author", "date", "month"];
+	const keys = ["tease", "url", "url_alt", "slug", "author", "date", "month"];
 	const storiesFiltered = filterStoryProps({ data: storiesData, keys });
 
 	const author = authorsData.find(d => d.slug === name);
