@@ -5,7 +5,7 @@ import { descending } from "d3";
 const NUM_ITEMS = 20;
 
 export const get = async () => {
-	const keys = ["url", "url_alt", "date", "hed", "dek", "topic"];
+	const keys = ["path", "date", "hed", "dek", "topic"];
 	const all = filterStoryProps({ data: stories, keys });
 
 	all.sort((a, b) => descending(a.date, b.date));
@@ -21,12 +21,11 @@ const clean = (str) => str
 	.replace(/\</g, '&lt;')
 	.replace(/\>/g, '&gt;');
 
-const createItemXml = ({ path, date, hed, dek, topic }) => `
+const createItemXml = ({ path, date, hed, dek }) => `
 <item>
 	<title>${clean(hed)}</title>
 	<link>${path}</link>
 	<description>${clean(dek)}</description>
-	<category>${topic}></category>
 	<pubDate>${date.toUTCString()}</pubDate>
 	<guid isPermaLink="false">${path}</guid>
 </item>
