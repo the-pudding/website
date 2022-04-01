@@ -8,8 +8,6 @@
   export let copy;
   export let authors;
 
-  console.log(authors);
-
   const { sections } = copy;
   const staff = authors.filter((d) => d.position === "Staff");
 
