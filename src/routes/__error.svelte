@@ -1,19 +1,6 @@
-<script context="module">
-  export function load({ page, error, status }) {
-    return {
-      props: {
-        page,
-        status,
-        message: error.message
-      }
-    };
-  }
-</script>
-
 <script>
   import { onMount } from "svelte";
   import HeroText from "$components/HeroText.svelte";
-  export let status;
 
   let hsl = "hsl(0, 0%, 0%)";
   onMount(() => {
@@ -26,16 +13,16 @@
 
 <section class="column-wide">
   <HeroText>
-    <h1 style="color: {hsl};">THIS SITE REQUIRES FLASH</h1>
+    <h2 style="color: {hsl};">THIS SITE REQUIRES FLASH</h2>
     <p>
-      Just kidding, this is a {status}. The Pudding link you are looking for must have a typo.
+      Just kidding, this is a 404. The Pudding link you are looking for must have a typo.
       <a href="https://pudding.cool#stories">Search all of our stories</a>, you will find it there.
     </p>
   </HeroText>
 </section>
 
 <style>
-  h1 {
+  h2 {
     transition: all 100ms ease-out;
   }
 </style>

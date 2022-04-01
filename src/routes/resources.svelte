@@ -1,6 +1,3 @@
-<script context="module">
-</script>
-
 <script>
   import Meta from "$components/Meta.svelte";
   import Resources from "$components/Resources.svelte";

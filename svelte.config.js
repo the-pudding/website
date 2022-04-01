@@ -1,4 +1,4 @@
-import fs from "fs";
+import { readFileSync } from "fs";
 import path from "path";
 import adapterStatic from "@sveltejs/adapter-static";
 import svg from "vite-plugin-svgstring";
@@ -6,9 +6,9 @@ import dsv from "@rollup/plugin-dsv";
 import sveltePreprocess from "svelte-preprocess";
 import autoprefixer from "autoprefixer";
 
-const { pudding } = JSON.parse(fs.readFileSync("package.json", "utf8"));
+const { version, subdirectory } = JSON.parse(readFileSync("package.json", "utf8"));
 const dev = process.env.NODE_ENV === "development";
-const dir = pudding ? pudding.subdirectory : "";
+const dir = subdirectory || "";
 const prefix = dir.startsWith("/") ? "" : "/";
 const base = dev || !dir ? "" : `${prefix}${dir}`;
 
@@ -22,8 +22,11 @@ const config = {
 	preprocess,
 	kit: {
 		adapter: adapterStatic(),
-		target: "#svelte",
+		prerender: { default: true },
+		files: { lib: "./src" },
+		trailingSlash: "always",
 		vite: {
+			define: { __VERSION__: JSON.stringify(version) },
 			resolve: {
 				alias: {
 					"$actions": path.resolve("./src/actions"),

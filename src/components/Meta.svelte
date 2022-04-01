@@ -3,14 +3,11 @@
   export let copy;
   const { title, description } = copy;
   const base = "https://pudding.cool";
-  const url = `${base}${$page.path}`;
+  const url = `${base}${$page.url.pathname}`;
 </script>
 
 <svelte:head>
   <title>{title}</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="description" content={description} />
   <meta name="author" content="The Pudding" />
   <meta name="news_keywords" content="" />
