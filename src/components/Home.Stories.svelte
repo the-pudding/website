@@ -16,8 +16,6 @@
 
   let sectionEl;
 
-  stories.sort((a, b) => descending(a.date, b.date));
-
   let sortedStories = stories.map((d) => ({ ...d }));
 
   const reSort = () => {
