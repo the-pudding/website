@@ -4,7 +4,7 @@
   import HiddenAuthors from "$components/HiddenAuthors.svelte";
   import copy from "$data/home.json";
 
-  // exports from home.json.js endpoint
+  // exports from index.js endpoint
   export let stories;
   export let staff;
   export let authors;
