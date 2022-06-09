@@ -1,4 +1,4 @@
-PHONY: pudding aws-sync aws-cp aws-cache
+PHONY: pudding aws-sync aws-sync-lite aws-cp aws-cache
 
 aws-sync:
 	aws s3 sync build/_app s3://pudding.cool/_app --quiet
