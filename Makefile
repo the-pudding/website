@@ -25,4 +25,5 @@ aws-cache:
 	aws cloudfront create-invalidation --distribution-id E13X38CRR4E04D --paths "/index.html" "/_app*" "/about*" "/assets*" "/author*" "/common*" "/pitch*" "/privacy*" "/resources*"
 
 pudding: aws-sync aws-cp aws-cache
+
 pudding-lite: aws-sync-lite aws-cp aws-cache
