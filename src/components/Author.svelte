@@ -1,7 +1,7 @@
 <script>
+  import { descending } from "d3";
   import Story from "$components/Story.svelte";
   import HeroText from "$components/HeroText.svelte";
-  import { descending } from "d3";
   import numberAsText from "$utils/numberAsText.js";
 
   export let stories;
@@ -9,7 +9,7 @@
 
   stories.sort((a, b) => descending(a.date, b.date));
 
-  const { name, url, social, pronoun } = author;
+  const { name, url, social, pronoun, position } = author;
   const bio = author.bio || "is a contributor to The Pudding.";
 
   const pronounA = pronoun === "They" ? "them" : pronoun === "He" ? "him" : "her";
@@ -36,6 +36,7 @@
   const has = pronoun === "They" ? "have" : "has";
   const explore = count === 1 ? "it" : "them all";
   const published = `${pronoun} ${has} worked on ${count} stor${suffix} to date. Explore ${explore} below.`;
+  const first = name.split(" ")[0].toLowerCase();
 </script>
 
 <section id="intro" class="column-wide">
@@ -47,6 +48,10 @@
       {#if link}{@html link}{/if}
       {#if stories.length}{published}{/if}
     </p>
+
+    {#if position === "Staff"}
+      <p>Get in touch: <a href="mailto:{first}@pudding.cool">{first}@pudding.cool</a></p>
+    {/if}
   </HeroText>
 </section>
 {#if stories.length}
