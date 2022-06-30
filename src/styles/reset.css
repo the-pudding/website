@@ -146,6 +146,7 @@ tfoot {
 	height: 1px;
 	overflow: hidden;
 	position: absolute;
+  background-image: none;
 }
 
 .skip-to-main:focus {
