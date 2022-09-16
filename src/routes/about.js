@@ -1,6 +1,6 @@
 import authorsData from "$data/authors.js";
 
-export const get = async () => {
+export const GET = async () => {
 	const authors = authorsData.map(d => ({
 		id: d.id,
 		name: d.name,

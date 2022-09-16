@@ -4,5 +4,3 @@ node_modules
 .svelte-kit
 build
 functions
-package-lock.json
-pnpm-lock.yaml

@@ -2,7 +2,7 @@ import storiesData from "$data/stories.js";
 import authorsData from "$data/authors.js";
 import filterStoryProps from "$utils/filterStoryProps.js";
 
-export const get = async ({ params }) => {
+export const GET = async ({ params }) => {
 	const { name } = params;
 
 	const keys = ["tease", "url", "url_alt", "slug", "author", "date", "month"];

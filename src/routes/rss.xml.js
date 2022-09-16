@@ -4,7 +4,7 @@ import { descending } from "d3";
 
 const NUM_ITEMS = 20;
 
-export const get = async () => {
+export const GET = async () => {
 	const keys = ["path", "date", "hed", "dek", "topic"];
 	const all = filterStoryProps({ data: stories, keys });
 
