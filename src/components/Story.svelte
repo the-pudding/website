@@ -31,7 +31,7 @@
 </script>
 
 <div class="story" class:is-collapsed={collapse} {style}>
-  <div class="inner column-wide">
+  <a {href} rel="external" class="inner column-wide">
     <img
       src="/common/assets/thumbnails/32/{slug}.jpg"
       alt="thumbnail for story"
@@ -43,26 +43,17 @@
     />
     <div class="info">
       <h3 class="tease">
-        <a {href} rel="external">
-          <span>{@html tease}</span>
-        </a>
+        <span>{@html tease}</span>
       </h3>
       <p>{month}</p>
     </div>
-  </div>
+  </a>
 </div>
 
 <style>
   .story {
     background: var(--light);
     margin-bottom: 0.25rem;
-  }
-
-  .inner {
-    background: none;
-    display: flex;
-    padding: 4rem 0;
-    align-items: flex-start;
   }
 
   .tease span {
@@ -77,13 +68,19 @@
 
   a {
     background: none;
-    display: block;
+    display: flex;
+    padding: 4rem 0;
+    align-items: flex-start;
   }
 
-  a:hover span,
-  a:focus span {
+  a:hover .tease span,
+  a:focus .tease span {
     background-size: 100% 0.1em;
     background-image: linear-gradient(var(--darker), var(--darker));
+  }
+
+  a:hover img {
+    transform: scale(1.02);
   }
 
   img {
@@ -108,10 +105,6 @@
 
   .info p {
     color: var(--darker);
-  }
-
-  .inner:hover img {
-    transform: scale(1.02);
   }
 
   .story.is-collapsed {
