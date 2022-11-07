@@ -133,6 +133,7 @@
 
     <section class="about">
       <div>
+        <a class="btn" href="https://pudding.cool/process/pudding-cup-2022/" rel="external">Enter The Pudding Cup</a>
         {#each ctas as { cta, url }}
           <a class="btn" href={url} rel="external">{cta}</a>
         {/each}
@@ -172,6 +173,15 @@
 
   .btn-close:hover {
     background: var(--color-accent);
+  }
+
+  .btn:first-of-type {
+    background: var(--color-accent);
+    outline: 2px solid var(--color-accent);
+  }
+
+  .btn:first-of-type:hover {
+    outline: 2px solid var(--color-white);
   }
 
   #slide-nav {
@@ -233,8 +243,9 @@
   }
 
   a.btn {
-    background: var(--background-body);
-    color: var(--color-link);
+    background: transparent;
+    color: var(--color-white);
+    outline: 2px solid var(--color-white);
   }
 
   a.btn:focus {

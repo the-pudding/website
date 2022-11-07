@@ -19,7 +19,6 @@
 <style>
   header {
     display: flex;
-    box-shadow: 0 4px 4px var(--color-off-white);
     position: relative;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +56,7 @@
     display: block;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 850px) {
     .links {
       display: none;
     }

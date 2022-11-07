@@ -20,6 +20,7 @@
     {#each ctas as { cta, url }}
       <a class="btn" href={url} rel="external">{cta}</a>
     {/each}
+    <a class="btn" href="https://pudding.cool/process/pudding-cup-2022/" rel="external">Enter The Pudding Cup</a>
   </div>
 </div>
 
@@ -36,7 +37,30 @@
     line-height: 1;
     margin: 0 0.5em;
     background-image: none;
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-xsmall);
+  }
+
+  .cta {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .btn {
+    background: transparent;
+    border: 2px solid var(--color-off-black);
+    color: var(--color-off-black);
+  }
+
+  .btn:last-of-type {
+    background: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn:last-of-type:hover {
+    border: 2px solid var(--color-off-black);
   }
 
   :global(a.solid svg) {
