@@ -5,21 +5,18 @@ import { descending } from "d3";
 const NUM_ITEMS = 20;
 
 export const GET = async () => {
-	const keys = ["path", "date", "hed", "dek", "topic"];
-	const all = filterStoryProps({ data: stories, keys });
+  const keys = ["path", "date", "hed", "dek", "topic"];
+  const all = filterStoryProps({ data: stories, keys });
 
-	all.sort((a, b) => descending(a.date, b.date));
+  all.sort((a, b) => descending(a.date, b.date));
 
-	const items = all.slice(0, NUM_ITEMS);
-	const body = xml(items);
-	const headers = { "Content-Type": "application/xml" };
-	return { headers, body };
+  const items = all.slice(0, NUM_ITEMS);
+  const body = xml(items);
+  const headers = { "Content-Type": "application/xml" };
+  return { headers, body };
 };
 
-const clean = (str) => str
-	.replace(/\&/g, '&amp;')
-	.replace(/\</g, '&lt;')
-	.replace(/\>/g, '&gt;');
+const clean = (str) => str.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
 
 const createItemXml = ({ path, date, hed, dek }) => `
 <item>
@@ -32,15 +29,15 @@ const createItemXml = ({ path, date, hed, dek }) => `
 `;
 
 const xml = (items) => {
-	const itemXml = items.map(createItemXml).join("");
+  const itemXml = items.map(createItemXml).join("");
 
-	return `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/"
  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
  xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
 	<channel>
 		<title>The Pudding</title>
-		<atom:link href="https://pudding.cool/feed/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://pudding.cool/rss.xml" rel="self" type="application/rss+xml" />
 		<link>https://pudding.cool</link>
 		<description>The Pudding is an editorial publication that explains ideas debated in culture with visual essays.</description>
 		<lastBuildDate>
@@ -58,5 +55,5 @@ const xml = (items) => {
 	${itemXml}
 
 	</channel>
-</rss>`
+</rss>`;
 };
