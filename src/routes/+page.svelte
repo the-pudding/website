@@ -4,10 +4,9 @@
   import HiddenAuthors from "$components/HiddenAuthors.svelte";
   import copy from "$data/home.json";
 
-  // exports from index.js endpoint
-  export let stories;
-  export let staff;
-  export let authors;
+  export let data;
+
+  const { stories, staff, authors } = data;
 </script>
 
 <Meta {copy} />

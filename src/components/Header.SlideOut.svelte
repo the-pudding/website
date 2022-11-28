@@ -108,7 +108,7 @@
                   <span>{name}</span>
                 </a>
               {:else}
-                <a href={url} {rel} sveltekit:prefetch>
+                <a href={url} {rel}>
                   <span>{name}</span>
                 </a>
               {/if}
