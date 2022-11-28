@@ -2,6 +2,8 @@ import stories from "$data/stories.js";
 import filterStoryProps from "$utils/filterStoryProps.js";
 import { descending } from "d3";
 
+export const prerender = true;
+
 const NUM_ITEMS = 20;
 
 const clean = (str) => str.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
