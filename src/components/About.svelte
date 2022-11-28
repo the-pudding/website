@@ -15,7 +15,7 @@
   const contributors = authors.filter((d) => d.position !== "Staff" && d.id !== "pudding");
   contributors.sort((a, b) => ascending(a.name, b.name));
   copy.contributors.detailsList = contributors.map(({ slug, name }) => {
-    return `<a href="/author/${slug}" sveltekit:prefetch>${name}</a>`;
+    return `<a href="/author/${slug}">${name}</a>`;
   });
 </script>
 

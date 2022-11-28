@@ -3,8 +3,8 @@
   import About from "$components/About.svelte";
   import copy from "$data/about.json";
 
-  // exports from author.json.js endpoint
-  export let authors;
+  export let data;
+  const { authors } = data;
 </script>
 
 <Meta {copy} />

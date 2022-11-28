@@ -1,16 +1,12 @@
+import fs from "fs";
+import archieml from "archieml";
+import fetch from "node-fetch";
+import docs from "../google.config.js";
+
 const CWD = process.cwd();
 
-const fs = require("fs");
-const archieml = require("archieml");
-const fetch = require("node-fetch");
-const docs = require(`${CWD}/google.config.cjs`);
-
-const injectExternalMarkup = (str) => {
-	return str.replace(/<a href/g, "<a rel=external href");
-};
-
-const fetchGoogle = async ({ id, gid, filepath }) => {
-	console.log(`fetching: ${filepath}`);
+const fetchGoogle = async ({ id, gid }) => {
+	console.log(`fetching...${id}`);
 
 	const base = "https://docs.google.com";
 	const post = gid ? `spreadsheets/u/1/d/${id}/export?format=csv&id=${id}&gid=${gid}` : `document/d/${id}/export?format=txt`;
@@ -35,9 +31,8 @@ const fetchGoogle = async ({ id, gid, filepath }) => {
 	for (let d of docs) {
 		try {
 			const str = await fetchGoogle(d);
-			const relExternal = injectExternalMarkup(str);
 			const file = `${CWD}/${d.filepath}`;
-			fs.writeFileSync(file, relExternal);
+			fs.writeFileSync(file, str);
 		} catch (err) {
 			console.log(err);
 		}

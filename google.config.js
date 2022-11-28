@@ -1,4 +1,4 @@
-module.exports = [
+export default [
 	{
 		"id": "1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ",
 		"gid": "0",

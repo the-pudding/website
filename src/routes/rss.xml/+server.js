@@ -2,19 +2,9 @@ import stories from "$data/stories.js";
 import filterStoryProps from "$utils/filterStoryProps.js";
 import { descending } from "d3";
 
+export const prerender = true;
+
 const NUM_ITEMS = 20;
-
-export const GET = async () => {
-  const keys = ["path", "date", "hed", "dek", "topic"];
-  const all = filterStoryProps({ data: stories, keys });
-
-  all.sort((a, b) => descending(a.date, b.date));
-
-  const items = all.slice(0, NUM_ITEMS);
-  const body = xml(items);
-  const headers = { "Content-Type": "application/xml" };
-  return { headers, body };
-};
 
 const clean = (str) => str.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
 
@@ -57,3 +47,15 @@ const xml = (items) => {
 	</channel>
 </rss>`;
 };
+
+export async function GET() {
+  const keys = ["path", "date", "hed", "dek", "topic"];
+  const all = filterStoryProps({ data: stories, keys });
+
+  all.sort((a, b) => descending(a.date, b.date));
+
+  const items = all.slice(0, NUM_ITEMS);
+  const body = xml(items);
+  const headers = { "Content-Type": "application/xml" };
+  return new Response(body, { headers });
+}

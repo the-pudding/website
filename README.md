@@ -104,14 +104,14 @@ make github
 
 There are a few stylesheets included by default in `src/styles`. Put anything global in `app.css`. For variable parity in both CSS and JS, modify files in the `properties` folder using the [Style Dictionary](https://amzn.github.io/style-dictionary/) API.
 
-You can use SCSS or another CSS preprocessor by installing the module (eg. `node-sass`) and including the property in the svelte-preprocess in `svelte.config.cjs`.
+You can use SCSS or another CSS preprocessor by installing the module (eg. `node-sass`) and including the property in the svelte-preprocess in `svelte.config.js`.
 
 ## Google Docs and Sheets
 
 - Create a Google Doc or Sheet
 - Click `Share` button -> advanced -> Change... -> to "Anyone with this link"
 - In the address bar, grab the ID - eg. ...com/document/d/**1IiA5a5iCjbjOYvZVgPcjGzMy5PyfCzpPF-LnQdCdFI0**/edit
-- paste in the ID above into `google.config.cjs`, and set the filepath to where you want the file saved
+- paste in the ID above into `google.config.js`, and set the filepath to where you want the file saved
 - If you want to do a Google Sheet, be sure to include the `gid` value in the url as well
 
 Running `npm run gdoc` at any point (even in new tab while server is running) will fetch the latest from all Docs and Sheets.

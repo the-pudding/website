@@ -2,9 +2,9 @@
   import Meta from "$components/Meta.svelte";
   import Author from "$components/Author.svelte";
 
-  // exports from [name].json.js endpoint
-  export let stories;
-  export let author;
+  export let data;
+
+  const { stories, author } = data;
 
   const copy = {
     title: author.name,

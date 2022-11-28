@@ -1,11 +1,11 @@
-const fs = require("fs");
-const mkdirp = require("mkdirp");
-const resize = require("./resize-image.cjs");
+import fs from "fs";
+import mkdirp from "mkdirp";
+import resize from "./resize-image.js";
 
 const CWD = process.cwd();
-const pathIn = `${CWD}/thumbnails/resources`;
-const pathOut = `${CWD}/static/common/assets/resources`;
-const sizes = [32, 480];
+const pathIn = `${CWD}/thumbnails/stories`;
+const pathOut = `${CWD}/static/common/assets/thumbnails`;
+const sizes = [32, 320, 640, 960, 1280];
 
 function getNewImages() {
 	const filesIn = fs.readdirSync(pathIn).filter(d => d.includes('.jpg'));
@@ -26,7 +26,7 @@ function makeThumbnail(file) {
 }
 
 (async () => {
-	console.log("task: resizing thumbnails - resources");
+	console.log("task: resizing thumbnails - stories");
 
 	sizes.forEach(size => mkdirp.sync(`${pathOut}/${size}`));
 
@@ -40,7 +40,7 @@ function makeThumbnail(file) {
 		console.error(err);
 	}
 
-	console.log('DONE: resizing thumbnails - resources');
+	console.log('DONE: resizing thumbnails - stories');
 	process.exit();
 })();
 

@@ -1,34 +1,33 @@
 import { readFileSync } from "fs";
-import path from "path";
 import adapterStatic from "@sveltejs/adapter-static";
-import svg from "vite-plugin-svgstring";
-import dsv from "@rollup/plugin-dsv";
 import sveltePreprocess from "svelte-preprocess";
 import autoprefixer from "autoprefixer";
 
 const { subdirectory } = JSON.parse(readFileSync("package.json", "utf8"));
-const dev = process.env.NODE_ENV === "development";
+const dev = process.env.NODE_ENV !== "production";
 const dir = subdirectory || "";
 const prefix = dir.startsWith("/") ? "" : "/";
 const base = dev || !dir ? "" : `${prefix}${dir}`;
 
 const preprocess = sveltePreprocess({
-	postcss: {
-		plugins: [autoprefixer]
-	}
+  postcss: {
+    plugins: [autoprefixer]
+  }
 });
 
 const config = {
-	preprocess,
-	kit: {
-		adapter: adapterStatic(),
-		prerender: { default: true },
-		files: { lib: "./src" },
-		trailingSlash: "always",
-		paths: {
-			base
-		},
-	}
+  preprocess,
+  kit: {
+    adapter: adapterStatic(),
+    paths: {
+      base
+    }
+  },
+  vitePlugin: {
+    experimental: {
+      inspector: { holdMode: true }
+    }
+  }
 };
 
 export default config;

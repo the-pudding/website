@@ -1,6 +1,6 @@
-const fs = require("fs");
-const vibrant = require("node-vibrant");
-const color = require("color");
+import fs from "fs";
+import vibrant from "node-vibrant";
+import color from "color";
 
 const CWD = process.cwd();
 const PATH_IN = `${CWD}/static/common/assets/thumbnails/640`;

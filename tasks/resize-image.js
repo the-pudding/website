@@ -1,6 +1,6 @@
-const jimp = require("jimp");
+import jimp from "jimp";
 
-module.exports = resizeImage = ({ pathIn, pathOut, file, size, blur }) => {
+export default function resizeImage({ pathIn, pathOut, file, size, blur }) {
 	return new Promise((resolve, reject) => {
 		const src = `${pathIn}/${file}`;
 		const dest = `${pathOut}/${size}/${file}`;
@@ -21,4 +21,4 @@ module.exports = resizeImage = ({ pathIn, pathOut, file, size, blur }) => {
 			})
 			.catch(reject);
 	});
-};
+}

@@ -1,7 +1,7 @@
 const CWD = process.cwd();
 
-const fs = require("fs");
-const papa = require("papaparse");
+import fs  from "fs";
+import papa from "papaparse";
 
 const csv = fs.readFileSync(`${CWD}/src/data/stories.csv`, "utf8");
 
