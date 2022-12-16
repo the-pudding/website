@@ -2,7 +2,12 @@
   import Icon from "$components/helpers/Icon.svelte";
   import { follow } from "$data/links.js";
 
-  const names = ["Twitter", "Facebook", "Instagram"];
+  import tiktokLogo from "$svg/tiktok.svg";
+	import mastodonLogo from "$svg/mastodon.svg";
+
+  const names = ["Twitter", "Facebook", "Instagram", 
+  //"TikTok", "Mastodon"
+  ];
   const platforms = follow.filter((d) => names.includes(d.name));
   const ctas = follow.filter((d) => d.cta);
 </script>
@@ -10,9 +15,19 @@
 <div class="container">
   <div class="platforms">
     {#each platforms as { name, url }}
+      <!-- {#if name == "TikTok"}
+        <a class="solid" href={url} aria-label={name}>
+          <div><div class="round-svg">{@html tiktokLogo}</div></div>
+        </a>
+      {:else if name == "Mastodon"}
+        <a class="solid" href={url} aria-label={name}>
+          <div><div class="round-svg">{@html mastodonLogo}</div></div>
+        </a>
+      {:else} -->
       <a class={name === "Instagram" ? "stroke" : "solid"} href={url} aria-label={name}
         ><Icon name={name.toLowerCase()} /></a
       >
+      <!-- {/if} -->
     {/each}
   </div>
 
@@ -39,12 +54,16 @@
     font-size: var(--font-size-small);
   }
 
-  :global(a.solid svg) {
+  .round-svg {
+    margin-top: 0.125rem;
+  }
+
+  :global(a.solid svg, .round-svg svg) {
     fill: var(--color-off-black);
     stroke: none;
   }
 
-  :global(.solid svg:hover) {
+  :global(.solid svg:hover, .round-svg svg:hover) {
     fill: var(--color-accent);
   }
 
