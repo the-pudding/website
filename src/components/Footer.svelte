@@ -11,7 +11,7 @@
 <footer class="column-wide">
   <section class="about">
     <div class="wordmark">
-      <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}</a>
+      <a href="https://pudding.cool" aria-label="The Pudding">{@html wordmark}®</a>
     </div>
 
     <div class="cta">
@@ -75,6 +75,10 @@
 
   .wordmark {
     max-width: 10em;
+  }
+
+  .wordmark a {
+    display: flex;
   }
 
   .about {
