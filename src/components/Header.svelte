@@ -71,6 +71,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 3em;
+    text-align: center;
   }
   a.banner:hover {
     background: var(--color-off-black);
