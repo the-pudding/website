@@ -1,10 +1,11 @@
 <script>
-  import { onMount, tick } from "svelte";
+  import { onMount, tick, createEventDispatcher } from "svelte";
   import { navigating } from "$app/stores";
   import Icon from "$components/helpers/Icon.svelte";
   import copy from "$data/misc.json";
   import { about, follow } from "$data/links.js";
 
+  const dispatch = createEventDispatcher();
   const ctas = follow.filter((d) => d.cta);
   const followNotCtas = follow.filter((d) => !d.cta);
 
@@ -17,13 +18,13 @@
   let visible = false;
   let active = false;
 
-  const onOpen = async () => {
+  export const onOpen = async (e) => {
     active = true;
     visible = true;
     await tick();
     closeBtn.focus();
     main.setAttribute("aria-hidden", true);
-    openBtn.setAttribute("aria-hidden", true);
+    e.target.setAttribute("aria-hidden", true);
   };
 
   const onClose = async (e) => {
@@ -31,9 +32,8 @@
 
     active = false;
     await tick();
-    openBtn.focus();
     main.removeAttribute("aria-hidden");
-    openBtn.removeAttribute("aria-hidden");
+    dispatch("close");
   };
 
   const onTransitionEnd = () => {
@@ -70,16 +70,6 @@
 </script>
 
 <nav>
-  <button
-    type="button"
-    class="btn-open"
-    aria-label="open navigation"
-    aria-controls="slide-nav"
-    aria-expanded="false"
-    bind:this={openBtn}
-    on:click={onOpen}><Icon name="menu" /></button
-  >
-
   <div
     id="slide-nav"
     class="slide-content"
@@ -142,24 +132,6 @@
 </nav>
 
 <style>
-  .btn-open {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    top: 2em;
-    right: -1.5em;
-    width: 2em;
-    height: 2em;
-    background: transparent;
-    color: var(--color-body);
-    transform: translate(-100%, -50%);
-    z-index: var(--z-overlay);
-  }
-
-  .btn-open:hover {
-    color: var(--color-accent);
-  }
-
   .btn-close {
     background: var(--background-body);
     color: var(--color-link);
