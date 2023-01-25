@@ -3,10 +3,13 @@
   import { follow } from "$data/links.js";
 
   import tiktokLogo from "$svg/tiktok.svg";
-	import mastodonLogo from "$svg/mastodon.svg";
+  import mastodonLogo from "$svg/mastodon.svg";
 
-  const names = ["Twitter", "Facebook", "Instagram", 
-  //"TikTok", "Mastodon"
+  const names = [
+    "Twitter",
+    "Facebook",
+    "Instagram"
+    //"TikTok", "Mastodon"
   ];
   const platforms = follow.filter((d) => names.includes(d.name));
   const ctas = follow.filter((d) => d.cta);

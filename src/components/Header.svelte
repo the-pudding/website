@@ -2,7 +2,14 @@
   import Social from "$components/Header.Social.svelte";
   import SlideOut from "$components/Header.SlideOut.svelte";
   import logo from "$svg/logo.svg";
+  import misc from "$data/misc.json";
+
+  $: hasBanner = misc.banner && misc.bannerUrl;
 </script>
+
+{#if hasBanner}
+  <a class="banner" href={misc.bannerUrl} target="_blank" aria-label={misc.banner}>{misc.banner}</a>
+{/if}
 
 <header>
   <div class="logo">
@@ -54,6 +61,19 @@
 
   .links {
     display: block;
+  }
+
+  a.banner {
+    height: 4em;
+    background: var(--color-purple);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a.banner:hover {
+    background: var(--color-off-black);
   }
 
   @media only screen and (max-width: 850px) {
