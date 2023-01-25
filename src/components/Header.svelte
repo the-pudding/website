@@ -4,11 +4,11 @@
   import logo from "$svg/logo.svg";
   import misc from "$data/misc.json";
 
-  $: hasBanner = misc.banner && misc.bannerUrl;
+  $: hasBanner = misc.banner;
 </script>
 
 {#if hasBanner}
-  <a class="banner" href={misc.bannerUrl} target="_blank" aria-label={misc.banner}>{misc.banner}</a>
+  <div class="banner">{@html misc.banner}</div>
 {/if}
 
 <header>
@@ -63,19 +63,17 @@
     display: block;
   }
 
-  a.banner {
-    height: 4em;
+  .banner {
     background: var(--color-purple);
-    color: white;
+    color: var(--color-white);
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 3em;
+    padding: 16px 8px;
     text-align: center;
   }
-  a.banner:hover {
-    background: var(--color-off-black);
+
+  :global(.banner a) {
+    color: var(--color-white);
+    border-bottom: 2px solid currentColor;
   }
 
   @media only screen and (max-width: 850px) {
