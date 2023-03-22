@@ -13,7 +13,7 @@ const output = stories
   .filter((d) => !d.hide_footer && !d.hide_all)
   .map((d) => ({
     image: d.url.replace(/\//g, "_"),
-    url: d.url,
+    url: d.url_alt || d.url,
     hed: d.hed
   }));
 
