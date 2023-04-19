@@ -57,9 +57,9 @@
     font-size: var(--font-size-small);
   }
 
-  .round-svg {
+  /* .round-svg {
     margin-top: 0.125rem;
-  }
+  } */
 
   :global(a.solid svg, .round-svg svg) {
     fill: var(--color-off-black);
