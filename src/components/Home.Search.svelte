@@ -1,5 +1,6 @@
 <script>
-  import { getContext, createEventDispatcher } from "svelte";
+  import { onMount, getContext, createEventDispatcher } from "svelte";
+  import { page } from "$app/stores";
   import deburr from "lodash.deburr";
   import { sum, ascending } from "d3";
 
@@ -92,6 +93,12 @@
   $: highlight = results.map((d) => d.slug);
   $: if (query.length >= MIN_CHARS) dispatch("focus");
   $: matchSuffix = highlight.length === 1 ? "y" : "ies";
+
+  onMount(() => {
+    const search = $page.url.searchParams.get("search");
+    value = search || "";
+    window.history.replaceState({}, "", $page.url.pathname);
+  });
 </script>
 
 <div id="search">
