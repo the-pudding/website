@@ -7,9 +7,9 @@
 
   const names = [
     "Twitter",
-    "Facebook",
-    "Instagram"
-    //"TikTok", "Mastodon"
+    "YouTube",
+    "Instagram",
+    "TikTok"
   ];
   const platforms = follow.filter((d) => names.includes(d.name));
   const ctas = follow.filter((d) => d.cta);
@@ -18,19 +18,15 @@
 <div class="container">
   <div class="platforms">
     {#each platforms as { name, url }}
-      <!-- {#if name == "TikTok"}
+      {#if name == "TikTok"}
         <a class="solid" href={url} aria-label={name}>
           <div><div class="round-svg">{@html tiktokLogo}</div></div>
         </a>
-      {:else if name == "Mastodon"}
-        <a class="solid" href={url} aria-label={name}>
-          <div><div class="round-svg">{@html mastodonLogo}</div></div>
-        </a>
-      {:else} -->
-      <a class={name === "Instagram" ? "stroke" : "solid"} href={url} aria-label={name}
-        ><Icon name={name.toLowerCase()} /></a
-      >
-      <!-- {/if} -->
+      {:else}
+        <a class={name === "Instagram" || name == "YouTube" ? "stroke" : "solid"} href={url} aria-label={name}
+          ><Icon name={name.toLowerCase()} /></a
+        >
+      {/if}
     {/each}
   </div>
 
