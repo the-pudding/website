@@ -23,6 +23,7 @@
   table {
     width: 100%;
     table-layout: auto;
+    margin-bottom: 48px;
   }
 
   tr {

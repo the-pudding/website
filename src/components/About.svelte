@@ -32,6 +32,11 @@
       <h2>{hed}</h2>
     {/if}
 
+    <!-- special cases -->
+    {#if id === "awards"}
+      <Awards />
+    {/if}
+
     {#if Array.isArray(copy[id])}
       {#each copy[id] as { value }}
         <p>{@html value}</p>
@@ -42,11 +47,6 @@
       {#each copy[id].text as { value }}
         <p>{@html value}</p>
       {/each}
-    {/if}
-
-    <!-- special cases -->
-    {#if id === "awards"}
-      <Awards />
     {/if}
 
     {#if id === "team"}
