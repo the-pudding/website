@@ -9,7 +9,7 @@
 
   stories.sort((a, b) => descending(a.date, b.date));
 
-  const { name, url, social, pronoun, position } = author;
+  const { name, email, url, social, pronoun, position } = author;
   const bio = author.bio || "is a contributor to The Pudding.";
 
   const pronounA = pronoun === "They" ? "them" : pronoun === "He" ? "him" : "her";
@@ -49,8 +49,8 @@
       {#if stories.length}{published}{/if}
     </p>
 
-    {#if position === "Staff"}
-      <p>Get in touch: <a href="mailto:{first}@pudding.cool">{first}@pudding.cool</a></p>
+    {#if position === "Staff" && email}
+      <p>Get in touch: <a href="mailto:{email}">{first}@pudding.cool</a></p>
     {/if}
   </HeroText>
 </section>
