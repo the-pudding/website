@@ -3,6 +3,7 @@
   import HeroText from "$components/HeroText.svelte";
   import Details from "$components/Details.svelte";
   import Team from "$components/About.Team.svelte";
+  import Cohort from "$components/About.Cohort.svelte";
   import Awards from "$components/About.Awards.svelte";
 
   export let copy;
@@ -10,6 +11,7 @@
 
   const { sections } = copy;
   const staff = authors.filter((d) => d.position === "Staff");
+  const cohort = authors.filter((d) => d.position === "2024 Cohort");
 
   // hack to get contributors in details list form in copy
   const contributors = authors.filter((d) => d.position !== "Staff" && d.id !== "pudding");
@@ -51,6 +53,10 @@
 
     {#if id === "team"}
       <Team {staff} />
+    {/if}
+
+    {#if id === "team"}
+      <Cohort {cohort} />
     {/if}
 
     {#if copy[id] && copy[id].detailsSummary}
