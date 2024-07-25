@@ -14,7 +14,8 @@ const output = stories
   .map((d) => ({
     image: d.url.replace(/\//g, "_"),
     url: d.url_alt || d.url,
-    hed: d.hed
+    hed: d.hed,
+    tease: d.tease
   }));
 
 const json = JSON.stringify(output);
