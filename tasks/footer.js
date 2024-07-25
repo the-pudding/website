@@ -15,7 +15,10 @@ const output = stories
     image: d.url.replace(/\//g, "_"),
     url: d.url_alt || d.url,
     hed: d.hed,
-    tease: d.tease
+    tease: d.tease,
+    date: d.date,
+    bgColor:d.bgColor,
+    fgColor:d.fgColor
   }));
 
 const json = JSON.stringify(output);
