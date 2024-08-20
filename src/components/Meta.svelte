@@ -69,5 +69,5 @@
     href="https://feeds.feedburner.com/pudding/feed"
   />
 
-  <link rel="canonical" href="{url}/" />
+  <link rel="canonical" href={url} />
 </svelte:head>
