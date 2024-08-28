@@ -24,7 +24,7 @@
   }
 
   li {
-    max-width: 10em;
+    max-width: 10.1em;
     margin-right: 2em;
     margin-bottom: 2em;
     line-height: 1.25;
