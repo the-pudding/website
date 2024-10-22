@@ -16,9 +16,10 @@ const output = stories
     url: d.url_alt || d.url,
     hed: d.hed,
     tease: d.tease,
+    short: d.home_text,
     date: d.date,
-    bgColor:d.bgColor,
-    fgColor:d.fgColor
+    bgColor: d.bgColor,
+    fgColor: d.fgColor
   }));
 
 const json = JSON.stringify(output);
