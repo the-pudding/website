@@ -1,0 +1,28 @@
+{
+	"color": {
+		"black": {
+			"value": "#1a1a1a"
+		},
+		"off-black": {
+			"value": "#282828"
+		},
+		"gray-dark": {
+			"value": "#6A6A6A"
+		},
+		"gray-medium": {
+			"value": "#949494"
+		},
+		"gray-light": {
+			"value": "#c9c9c9"
+		},
+		"off-white": {
+			"value": "#f0f0f0"
+		},
+		"white": {
+			"value": "#ffffff"
+		},
+		"purple": {
+			"value": "#A973FF"
+		}
+	}
+}

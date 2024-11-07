@@ -1,196 +1,216 @@
-# The Pudding Website
+# Svelte Starter
 
-## Publishing a new story
-* Always pull the repo first to make sure you are up to date
-* Fill out the new story in the [stories doc](https://docs.google.com/spreadsheets/d/1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ/edit#gid=0)
-* Make sure the author is in the [authors doc](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W27Q2YfoXRV5RuNFY_ML6hiirMa6HM/edit#gid=0)
-* Add the thumbnail image (1920x1080) to the `thumbnails/stories` directory
-* Run `npm run update`
-* Commit new changes to repo
-* Run `make pudding`
-* `git push`
+**NOTE**: This uses Svelte 5 and is under active migration (not all features will work). For the less adventurous, use the [previous version](https://github.com/the-pudding/svelte-starter) (with Svelte 4).
 
-## Content
-#### Copy + Data
-Each page has a copy doc in our [website folder]() on Google Drive.
-* [Home]()
-* [About]()
-* [Pitch]()
-* [Resources]()
-* [Privacy]()
+This [starter template](https://github.com/the-pudding/svelte-starter) aims to quickly scaffold a [SvelteKit](https://kit.svelte.dev/) project, designed around data-driven, visual stories at [The Pudding](https://pudding.cool).
 
-Additionally, there is a misc copy doc for a few items that can appear in multiple places.
+### Notes
+* _Do not use or reproduce The Pudding logos or fonts without written permission._
+* _Prettier Formatting: Disable any text editor Prettier extensions to take advantage of the built-in rules._
 
-Stories
-* There is a [Google Sheet]() for all story data.
-* Fill out `home_text` to populate the intro letter copy (keep it to a few words). Fill out `home_pick` with a staff's slug (each staff should have six selections).
+### Features
 
-Authors
-There is a [Google Sheet]() for all author data.
-
-#### Tasks
-* Generating thumbnail images
-	* Resize and optimize
-	* Extracting color palette
-* Fetching copy
-* Generating project footer stories data 
-
-### Feature and Design Development
-#### Routes
-* Endpoints
-* Metadata
-* Components
-* Dynamic pages (authors)
-
-
-## Development
-
-This [starter template](https://github.com/the-pudding/svelte-starter) aims for fast and easy web development speficially for data-driven and visual stories. It is an opinionated template built on top of [SvelteKit](https://kit.svelte.dev/).
-
-_Please Note: do not use or reproduce The Pudding logos or fonts without written permission._
-
-_Prettier Formatting: Disable any text editor Prettier extensions to take advantage of the built-in rules._
-
-#### Features
-
-- [Feather Icons](https://github.com/feathericons/feather) for simple/easy svg icons
+- [Lucide Icons](https://lucide.dev/) for simple/easy svg icons
 - [ArchieML](http://archieml.org/) for micro-CMS powered by Google Docs and Sheets
-- [LayerCake](https://layercake.graphics/) enabled by default for chart making
 - [Style Dictionary](https://amzn.github.io/style-dictionary/) for CSS/JS style parity
-- Includes csv, json, and svg imports by default
-- Static-hosted builds by default
+- CSV, JSON, and SVG imports
+- SSR static-hosted builds by default
 
 ## Quickstart
+#### From Scratch
+* Click the green `Use this template` button above.
+* Alternatively: `npx degit the-pudding/svelte-starter my-project`
 
-New school: just click the `Use this template` button above.
+#### Pre-existing Project
+* clone the repo
 
-Old school:
-
-```bash
-npx degit the-pudding/svelte-starter my-project
-```
-
-Then in your local repo:
-
-```bash
-npm install
-```
+#### Installation
+* In your local repo run `pnpm install` or `npm install`
 
 ## Development
-
-To start the dev server:
 
 ```bash
 npm run dev
 ```
 
-Modify content in `src` and `static/assets`.
+Change the script in `package.json` to `"dev": "svelte-kit dev --host"` to test on your local network on a different device.
 
 ## Deploy
-
 ```bash
 npm run build
 ```
 
-This generates a directory called `build` with the server-side rendered static-hostable app.
+This generates a directory called `build` with the statically rendered app.
 
-If deploying to github pages:
-
+A shortcut for github pages:
 ```bash
 make github
 ```
 
+Deploying to Pudding AWS:
+```bash
+make pudding
+```
+
 ## Style
 
-There are a few stylesheets included by default in `src/styles`. Put anything global in `app.css`. For variable parity in both CSS and JS, modify files in the `properties` folder using the [Style Dictionary](https://amzn.github.io/style-dictionary/) API.
+There are a few stylesheets included by default in `src/styles`. Refer to them in `app.css`, the place for applying global styles.
 
-You can use SCSS or another CSS preprocessor by installing the module (eg. `node-sass`) and including the property in the svelte-preprocess in `svelte.config.js`.
+For variable parity in both CSS and JS, modify files in the `properties` folder using the [Style Dictionary](https://amzn.github.io/style-dictionary/) API.
+
+Run `npm run style` to regenerate the style dictionary.
+
+#### Some css utility classes in reset.css
+* `.sr-only`: makes content invisible available for screen reader
+* `.text-outline`: adds a psuedo stroke to text element
+
+### Custom Fonts
+For locally hosted fonts, simply add the font to the `static/assets` folder and include a reference in `src/styles/font.css`, making sure the url starts with `"assets/..."`.
 
 ## Google Docs and Sheets
 
-- Create a Google Doc or Sheet
-- Click `Share` button -> advanced -> Change... -> to "Anyone with this link"
-- In the address bar, grab the ID - eg. ...com/document/d/**1IiA5a5iCjbjOYvZVgPcjGzMy5PyfCzpPF-LnQdCdFI0**/edit
-- paste in the ID above into `google.config.js`, and set the filepath to where you want the file saved
-- If you want to do a Google Sheet, be sure to include the `gid` value in the url as well
+* Create a Google Doc or Sheet
+* Click `Share` -> `Advanced` -> `Change...` -> `Anyone with this link`
+* In the address bar, grab the ID - eg. "...com/document/d/**1IiA5a5iCjbjOYvZVgPcjGzMy5PyfCzpPF-LnQdCdFI0**/edit"
+* paste in the ID above into `google.config.js`, and set the filepath to where you want the file saved
+* If you want to do a Google Sheet, be sure to include the `gid` value in the url as well
 
 Running `npm run gdoc` at any point (even in new tab while server is running) will fetch the latest from all Docs and Sheets.
+
+## Structural Overview
+
+### Pages
+The `src/routes` directory contains pages for your app. For a single-page app (most cases) you don't have to modify anything in here. `+page.svelte` represents the root page, think of it as the `index.html` file. It is prepopulated with a few things like metadata and font preloading. It also includes a reference to a blank slate component `src/components/Index.svelte`. This is the file you want to really start in for your app.
+
+### Embedding Data
+For smaller datasets, it is often great to embed the data into the HTML file. If you want to use data as-is, you can use normal import syntax (e.g., `import data from "$data/file.csv"`). If you are working with data but you want to preserve the original or clean/parse just what you need to use in the browser to optimize the front-end payload, you can load it via `+page.server.js`, do some work on it, and return just what you need. This is passed automatically to `+page.svelte` and accessible in any component with `getContext("data")`.
+
 
 ## Pre-loaded helpers
 
 ### Components
 
-Located in `src/lib/components`.
+Located in `src/components`.
 
-- `Footer.svelte`: Pudding recirculation and social links.
-- `Header.svelte`: Pudding logo.
+```js
+// Usage
+import Example from "$components/Example.svelte";
+```
+
+* `Footer.svelte`: Pudding recirculation and social links.
+* `Header.svelte`: Pudding masthead.
 
 ### Helper Components
 
-Located in `src/lib/components/helpers`.
+Located in `src/components/helpers`.
 
-- `Icon.svelte`: Simple integration with Feather Icons.
-- `Slider.svelte (and Slider.Slide.svelte)`: A slider widget, especially useful for swipe/slide stories.
-- `Scrolly.svelte`: Scrollytelling
-- `Tap.svelte`: Edge-of-screen tapping library, designed to integrate with slider.
-- `ButtonSet.svelte`: Accessible button group inputs
-- `Toggle.svelte`: Accessible toggle inputs
-- `Range.svelte`: Customizable range slider
+```js
+// Usage
+import Example from "$components/helpers/Example.svelte";
+```
+
+*Available*
+* `Scrolly.svelte`: Scrollytelling.
+
+*Need to migrate*
+* `ButtonSet.svelte`: Accessible button group inputs.
+* `Chunk.svelte`: Split text into smaller dom element chunks.
+* `Countdown.svelte`: Countdown timer text.
+* `DarkModeToggle.svelte`: A toggle button for dark mode.
+* `Figure.svelte`: A barebones chart figure component to handle slots.
+* `MotionToggle.svelte`: A toggle button to enable/disable front-end user motion preference.
+* `Range.svelte`: Customizable range slider.
+* `ShareLink.svelte`: Button to share link natively/copy to clipboard.
+* `SortTable.svelte`: Sortable semantic table with customizable props.
+* `Slider.svelte (and Slider.Slide.svelte)`: A slider widget, especially useful for swipe/slide stories.
+* `Tap.svelte`: Edge-of-screen tapping library, designed to integrate with slider.
+* `Tip.svelte`: Button that links to Strip payment link.
+* `Toggle.svelte`: Accessible toggle inputs.
+
+### Headless Components
+
+[bits UI](https://www.bits-ui.com/docs/introduction) comes pre-installed. It is recommended to use these for any UI components.
+
+### Layercake Chart Components
+
+Starter templates for various chart types to be used with [LayerCake](https://layercake.graphics/). Located in `src/components/layercake`.
+
+*Note:* You must install the module `layercake` first.
+
+```js
+// Usage
+import Example from "$components/layercake/Example.svelte";
+```
 
 ### Actions
 
-Located in `src/lib/actions`.
-
-- `inView.js`: detect when an element enters or exits the viewport.
-- `css.js`: dynmically change the value of a CSS variable.
-
-### Utils
-
-Located in `src/lib/utils/`.
-
-- `mapToArray.js`: Convenience function to convert maps (generated from d3 group and rollup) to iterable array of objects.
-- `move.js`: transform translate function shorthand.
-
-### Stores
-
-These are located in `src/lib/stores`. You can put custom ones in `src/lib/stores/misc.js` or create unique files for more complex ones. To include them do this (replacing `name`):
+Located in `src/actions`.
 
 ```js
-import name from "$stores/name.js";
+// Usage
+import example from "$actions/action.js";
 ```
 
-- `mq`: returns an object of media queries booleans if they are enabled or not. You can modify them in the js file.
+* `canTab.js`: enable/disable tabbing on child elements.
+* `checkOverlap.js`: Label overlapping detection. Loops through selection of nodes and adds a class to the ones that are overlapping. Once one is hidden it ignores it.
+* `focusTrap.js`: Enable a keyboard focus trap for modals and menus.
+* `keepWithinBox.js`: Offsets and element left/right to stay within parent.
+* `inView.js`: detect when an element enters or exits the viewport.
+* `resize.js`: detect when an element is resized.
 
-- `viewport`: returns an object `{ width, height }` of the viewport dimensions. It is debounced for performance.
+### Runes
 
-- `scrollY`: returns an number window vertical scroll position. It is throttled using rAF for performance.
+These are located in `src/runes`. You can put custom ones in `src/runes/misc.js` or create unique files for more complex ones.
 
-- `timer`: returns an object { timer, elapsed }. `timer` has 5 methods (start, stop, toggle, set, reset) and `elapsed` is a store that is the number of ms.
+```js
+// Usage
+import example from "$runes/example.js";
+import { example } from "$runes/misc.js";
+```
+*Available*
+* `viewport`: returns an object `{ width, height }` of the viewport dimensions. It is debounced for performance.
+
+*Need to migrate*
+* `mq`: returns an object of media queries booleans if they are enabled or not. You can modify them in the js file.
+* `previous`: returns the previous value of another value.
+* `scrollY`: returns a number of window vertical scroll position. It is throttled using rAF for performance.
+* `timer`: returns an object `{ timer, elapsed }`. `timer` has 5 methods (start, stop, toggle, set, reset) and `elapsed` is a value that is the number of ms.
 
 ### Utils
 
-`checkOverlap.js`: Label overlapping detection. Loops through selection of nodes and adds a class to the ones that are overlapping. Once one is hidden it ignores it.
+Located in `src/utils/`.
 
-`csvDownload.js`: Converts a flat array of data to CSV content ready to be used as an `href` value for download.
+```js
+// Usage
+import example from "$utils/example.js";
+```
+* `checkScrollDir.js`: Gets the user's scroll direction ("up" or "down")
+* `csvDownload.js`: Converts a flat array of data to CSV content ready to be used as an `href` value for download.
+* `generateId.js`: Generate an alphanumeric id.
+* `loadCsv.js`: Loads and parses a CSV file.
+* `loadImage.js`: Loads an image.
+* `loadJson.js`: Loads and parses a JSON file.
+* `loadPixels.js`: Loads the pixel data of an image via an offscreen canvas.
+* `localStorage.js`: Read and write to local storage.
+* `mapToArray.js`: Convenience function to convert a map to an array.
+* `move.js`: transform translate function shorthand.
+* `transformSvg.js`: Custom transition lets you apply an svg transform property with the in/out svelte transition. Parameters (with defaults):
+* `translate.js`: Convenience function for transform translate css.
+* `urlParams.js`: Get and set url parameters.
 
-`loadImage.js`: Loads an image.
+## Tips
 
-`loadPixels.js`: Loads the pixel data of an image via an offscreen canvas.
+### Image asset paths
+For `img` tags, use relative paths:
 
-`mapToArray.js`: Convenience function to convert a map to an array.
-
-`translate.js`: Convenience function for transform translate css.
-
-`transformSvg.js`: Custom transition lets you apply an svg transform property with the in/out svelte transition. Parameters (with defaults):
-
-`urlParams.js`: Get and set url parameters.
-
-**Usage**
-
-```svelte
-<g out:transformSvg={{ target: "translate(50, 50)" }}>
+```html
+<img src="assets/demo/test.jpg" alt="cat" />
 ```
 
-## Notes
+For CSS background images, use absolute paths:
 
-Any @html tags, e.g., `{@html user}` must be the child of a dom element so they can be properly hydrated.
+```css
+background: url("/assets/demo/test.jpg");
+```
+
+View example code in the preloaded demo.

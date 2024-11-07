@@ -1,14 +1,30 @@
 <script>
+  import { setContext } from "svelte";
+  import { browser } from "$app/environment";
   import Meta from "$components/Meta.svelte";
   import Home from "$components/Home.svelte";
-  import HiddenAuthors from "$components/HiddenAuthors.svelte";
+  // import HiddenAuthors from "$components/HiddenAuthors.svelte";
+  import version from "$utils/version.js";
   import copy from "$data/home.json";
 
-  export let data;
+  let { data } = $props();
 
-  const { stories, staff, authors } = data;
+  version();
+
+  const preloadFont = [
+    "https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2",
+    "https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2",
+    "https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff2",
+    "https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Bold-Web.woff2"
+  ];
+
+  const { stories, authors } = data;
+  const { title, description, url, keywords } = copy;
+
+  setContext("Home", { stories, copy });
 </script>
 
 <Meta {copy} />
-<Home {copy} {stories} {staff} />
-<HiddenAuthors {authors} />
+<Home {copy} {stories} />
+<!-- TODO still needed? -->
+<!-- <HiddenAuthors {authors} /> -->

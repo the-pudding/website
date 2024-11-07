@@ -1,3 +1,7 @@
+/* Usage
+<g out:transformSvg={{ target: "translate(50, 50)" }}>
+*/
+
 import { linear } from "svelte/easing";
 import { interpolateTransformSvg } from "d3";
 
@@ -14,6 +18,6 @@ export default function transform(node, params) {
 			const transform = interpolator(u);
 			node.setAttribute("transform", transform);
 		},
-		css: (t) => params.opacity ? `opacity: ${t}` : null
+		css: (t) => (params.opacity ? `opacity: ${t}` : null)
 	};
 }

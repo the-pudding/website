@@ -1,15 +1,51 @@
 /**
  * Do not edit directly
- * Generated on Fri, 15 Oct 2021 13:05:24 GMT
+ * Generated on Tue, 31 May 2022 13:42:06 GMT
  */
 
 :root {
-  --color-black: #1a1a1a;
-  --color-off-black: #282828;
-  --color-gray-dark: #6a6a6a;
-  --color-gray-medium: #949494;
-  --color-gray-light: #c9c9c9;
-  --color-off-white: #f0f0f0;
+  --category-blue: #4477AA;
+  --category-red: #EE6677;
+  --category-green: #228833;
+  --category-yellow: #CCBB44;
+  --category-cyan: #66CCEE;
+  --category-purple: #AA3377;
+  --category-gray: #BBBBBB;
+  --color-black: #000000;
   --color-white: #ffffff;
-  --color-purple: #a973ff;
+  --color-gray-50: #f7f7f7;
+  --color-gray-100: #efefef;
+  --color-gray-200: #dfdfdf;
+  --color-gray-300: #cacaca;
+  --color-gray-400: #a8a8a8;
+  --color-gray-500: #878787;
+  --color-gray-600: #6d6d6d;
+  --color-gray-700: #4e4e4e;
+  --color-gray-800: #373737;
+  --color-gray-900: #262626;
+  --color-gray-1000: #191919;
+  --color-purple: #a239ca;
+  --color-blue: #4717f6;
+  --color-green: #34a29e;
+  --color-red: #ff533d;
+  --color-yellow: #e5e338;
+  --12px: 0.75rem;
+  --14px: 0.875rem;
+  --16px: 1rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --22px: 1.375rem;
+  --24px: 1.5rem;
+  --28px: 1.75rem;
+  --32px: 2rem;
+  --36px: 2.25rem;
+  --40px: 2.5rem;
+  --44px: 2.75rem;
+  --48px: 3rem;
+  --56px: 3.5rem;
+  --64px: 4rem;
+  --80px: 5rem;
+  --96px: 6rem;
+  --112px: 7rem;
+  --128px: 8rem;
 }

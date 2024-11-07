@@ -6,172 +6,88 @@
 /* colors defined in variables.css */
 :root {
 	/* font */
-	--sans: "Metropolis", Helvetica, Arial, sans-serif;
-	--serif: Georgia, Times, serif;
-	--mono: Menlo, Consolas, Monaco, "Courier New", monospace;
-	
+	--sans: "Atlas Grotesk", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+	--serif: "Tiempos Text Web", Iowan Old Style, Times New Roman, Times, serif;
+	--mono: Menlo, Consolas, Monaco, monospace;
+
 	/* z-index */
 	--z-bottom: -100;
-  --z-middle: 0;
-  --z-top: 100;
+	--z-middle: 0;
+	--z-top: 100;
 	--z-overlay: 1000;
 
-	/* presets */
-	--border-radius: 0px;
-	--font-body: var(--sans);
+	/* presets (used in reset.css) */
+	--border-radius: 2px;
+	--font-body: var(--serif);
 	--font-form: var(--sans);
-	
-	--color-accent: var(--color-purple);
-	--background-body: var(--color-white);
-	--background-form: var(--color-off-white);
-	--color-body: var(--color-off-black);
-	--color-placeholder: var(--color-gray-dark);
-	--color-link: var(--color-off-black);
-	--color-link-border: var(--color-off-black);
-	--color-focus: var(--color-accent);
-	--color-form: var(--color-black);
-	--color-border: var(--color-gray-light);
-	--color-selection: var(--color-gray-light);
-	--color-highlight: var(--color-accent);
-	
-	--font-size-giant: clamp(2.5rem, 5.25vw, 6.5rem);
-	--font-size-large: clamp(1.5rem, 3.25vw, 3.25rem);
-	--font-size-medium: clamp(1.25rem, 2.25vw, 2.25rem);
-	--font-size-small: clamp(1rem, 1.25vw, 1.25rem);
-	--font-size-xsmall: clamp(0.85rem, 1vw, 1rem);
+	--color-bg: var(--color-white);
+	--color-fg: var(--color-gray-900);
+	--color-primary: var(--color-black);
+	--color-link: var(--color-black);
+	--color-focus: var(--color-red);
+	--color-mark: var(--color-yellow);
+	--color-selection: var(--color-gray-300);
+	--color-border: var(--color-gray-300);
+	--color-button-bg: var(--color-gray-300);
+	--color-button-fg: var(--color-gray-900);
+	--color-button-hover: var(--color-gray-400);
+	--color-input-bg: var(--color-gray-50);
+	--color-input-fg: var(--color-gray-900);
+	--color-placeholder: var(--color-gray-500);
 
-	--font-weight-bold: 900;
-	--font-weight-normal: 400;
-	--font-weight-thin: 100;
-	
-	--width-column-wide: 1500px;
-	--width-column-regular: 720px;
-	--width-padded: 80vw;
-	--margin-left: 10vw;
-	--width-padded-mobile: 90vw;
-	--margin-left-mobile: 5vw;
-
-	--transition-fast: 100ms;
-	--transition-medium: 200ms;
-	--transition-slow: 500ms;
-	--transition-ease: ease-in;
+	/* "1" second duration */
+	--1s: 1ms;
 }
 
-body {
-	font-size: 16px;
+/* dark theme */
+/* this is a starting place for dark mode - test before deploying */
+
+/* @media screen and (prefers-color-scheme:dark) {
+	:root {
+		--color-bg: var(--color-gray-900);
+		--color-fg: var(--color-gray-100);
+		--color-primary: var(--color-white);
+		--color-link: var(--color-white);
+		--color-focus: var(--color-red);
+		--color-mark: var(--color-yellow);
+		--color-selection: var(--color-gray-600);
+		--color-border: var(--color-gray-600);
+		--color-button-bg: var(--color-gray-600);
+		--color-button-fg: var(--color-gray-100);
+		--color-button-hover: var(--color-gray-700);
+		--color-input-bg: var(--color-gray-800);
+		--color-input-fg: var(--color-gray-100);
+		--color-placeholder: var(--color-gray-400);
+		--color-text-outline: var(--color-bg);
+	}
+} */
+
+@media screen and (prefers-reduced-motion: no-preference) {
+	:root {
+		--1s: 1s;
+	}
 }
 
 h1 {
-	font-size: var(--font-size-large);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-off-black);
-	line-height: 1;
-	margin-top: 2em;
+	font-size: var(--48px, 48px);
 }
 
 h2 {
-	font-size: var(--font-size-large);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-off-black);
-	line-height: 1;
-	margin-top: 2em;
+	font-size: var(--36px, 36px);
 }
 
 h3 {
-	font-size: var(--font-size-medium);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-off-black);
-	margin-top: 2em;
+	font-size: var(--28px, 28px);
 }
 
 h4 {
-	font-size: var(--font-size-small);
-	font-weight: var(--font-weight-bold);
-	color: var(--color-off-black);
+	font-size: var(--24px, 24px);
 }
 
-p {
-	font-size: var(--font-size-small);
-	line-height: 1.65;
+h5 {
+	font-size: var(--22px, 22px);
 }
 
-li {
-	font-size: var(--font-size-small);
-	line-height: 1.65;
-	margin-bottom: 1em;
-}
-
-a {
-	text-decoration: none;
-	color: var(--color-link);
-	background-image: linear-gradient(var(--color-accent), var(--color-accent));
-	background-size: 100% 0.1em;
-	background-position: 0 90%;
-	background-repeat: no-repeat;
-	transition: all var(--transition-fast) var(--transition-ease);
-	padding: 0 0.05em;
-}
-
-a:hover, a:focus {
-	background-size: 100% 100%;
-	outline: none;
-}
-
-button, .btn {
-	background: var(--color-body);
-	color: var(--background-body);
-	border-radius: var(--border-radius);
-	padding: 0.75em 1em;
-	text-decoration: none;
-	line-height: 1;
-	font-size: var(--font-size-small);
-	font-weight: var(--font-weight-bold);
-	text-align:  center;
-	margin: 0.5rem 0;
-	background-position: 0 0;
-	transition: background-position var(--transition-medium) var(--transition-ease) color var(--transition-slow) var(--transition-ease);
-	width: 14em;
-}
-
-button:hover, button:focus, a.btn:hover, a.btn:focus  {
-	background-image: linear-gradient(90deg, var(--color-accent) 50%, var(--color-accent) 50%);
-	
-}
-
-.column-wide {
-	max-width: var(--width-column-wide);
-	width: var(--width-padded);
-	margin: 0;
-	margin-left: var(--margin-left);
-	padding: 0;
-}
-
-.column-regular {
-	max-width: var(--width-column-regular);
-	width: 60vw;
-	margin: 0;
-	margin-left: var(--margin-left);
-}
-
-.upper {
-	text-transform: uppercase;
-	transform: translate(0, 0.2em);
-}
-
-.wordmark a {
-	text-decoration: none;
-	background-image: none;
-}
-
-@media (max-width: 700px) {
-
-	.column-wide {
-		width: var(--width-padded-mobile);
-		margin-left: var(--margin-left-mobile);
-	}
-
-	.column-regular {
-		max-width: var(--width-column-regular);
-		width: var(--width-padded-mobile);
-	}
+h6 {
+	font-size: var(--20px, 20px);
 }

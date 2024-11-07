@@ -1,12 +1,13 @@
 
 body {
-	background-color: var(--background-body);
-  color: var(--color-body);
+	background-color: var(--color-bg, white);
+	color: var(--color-fg, black);
 	line-height: 1.4;
-	font-family: var(--font-body);
+	font-family: var(--font-body, serif);
 	font-feature-settings: 'kern' 1, 'onum' 0, 'liga' 0, 'tnum' 1;
 	text-rendering: optimizeLegibility;
-  word-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-tap-highlight-color: transparent;
 }
 
 h1,
@@ -16,129 +17,184 @@ h4,
 h5,
 h6,
 p {
-	margin: 1rem 0;
+	margin: 16px 0;
 }
 
 mark {
-  background-color: var(--color-highlight);
-  padding: 0 0.25em;
+	background-color: var(--color-mark, yellow);
+	padding: 0 4px;
 }
 
 a {
-  color: var(--color-link);
+	color: var(--color-link, blue);
+	text-decoration: 2px underline var(--color-link, blue);
 }
+
 
 img,
 video {
 	display: block;
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+input, textarea {
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: var(--color-input-bg, whitesmoke);
+	color: var(--color-input-fg, black);
+	border-radius: var(--border-radius, 0);
+	border: none;
+	font-family: var(--font-form, sans-serif);
+	font-size: inherit;
+	outline: 1px solid var(--color-border, ray);
+	padding: 8px;
 }
 
 button,
 select,
-textarea,
+a[role="button"],
 input[type="submit"],
+input[type="reset"],
 input[type="button"] {
+	-webkit-appearance: none;
 	appearance: none;
-  background-color: var(--background-form);
-  border: none;
-  border-radius: var(--border-radius);
-  color: var(--color-form);
-  font-family: var(--font-form);
-  font-size: inherit;
-  outline: none;
-  padding: 0.5em;
+	background-color: var(--color-button-bg, lightgray);
+	color: var(--color-button-fg, black);
+	border-radius: var(--border-radius, 0);
+	border: none;
+	font-family: var(--font-form, sans-serif);
+	font-size: inherit;
+	outline: none;
+	padding: 8px;
+	text-decoration: none;
 }
 
 button,
+a[role="button"],
 input[type="button"],
 input[type="checkbox"],
 input[type="radio"],
 input[type="range"],
 input[type="submit"],
+input[type="reset"],
 select {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 input[type="button"],
 input[type="range"],
 input[type="submit"],
+input[type="reset"],
 select {
-  display: inline-block;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="submit"]:hover {
-  background: var(--background-form);
-}
-
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  box-shadow: 0 0 0 2px var(--color-focus);
+	display: inline-block;
 }
 
 button:disabled,
+a[role="button"]:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+input[type="range"] {
+	-webkit-appearance: auto;
+	appearance: auto;
+	padding: 0;
+	outline: none;
+}
+
+button:focus,
+a:focus,
+a[role="button"]:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 2px solid var(--color-focus);
+	outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+a[role="button"]:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+	outline: 2px solid transparent;
+}
+
+button:disabled,
+a[role="button"]:disabled,
 input:disabled,
 select:disabled,
 textarea:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
+	cursor: not-allowed;
+	opacity: 0.5;
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
 }
 
 table caption,
 td,
 th {
-  text-align: left;
+	text-align: left;
 }
 
 td,
 th {
-  padding: 0.25em;
-  vertical-align: top;
-  word-wrap: break-word;
+	padding: 8px 0;
+	vertical-align: top;
+	word-wrap: break-word;
 }
 
 thead {
-  border-bottom: 1px solid var(--color-border);
+	border-bottom: 1px solid var(--color-border, lightgray);
 }
 
 tfoot {
-  border-top: 1px solid var(--color-border);
+	border-top: 1px solid var(--color-border, lightgray);
 }
 
 ::-moz-placeholder {
-  color: var(--color-placeholder);
+	color: var(--color-placeholder, gray);
 }
 
 :-ms-input-placeholder {
-  color: var(--color-placeholder);
+	color: var(--color-placeholder, gray);
 }
 
 ::-ms-input-placeholder {
-  color: var(--color-placeholder);
+	color: var(--color-placeholder, gray);
 }
 
 ::placeholder {
-  color: var(--color-placeholder);
+	color: var(--color-placeholder, gray);
 }
 
 ::-moz-selection {
-  background-color: var(--color-selection);
+	background-color: var(--color-selection, lightgray);
 }
 ::selection {
-  background-color: var(--color-selection);
+	background-color: var(--color-selection, lightgray);
 }
 
+select {
+	padding-right: 24px;
+	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23424242%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E%0A");
+	background-position: right 8px center;
+	background-repeat: no-repeat;
+	background-size: auto 50%;
+}
+
+ol, ul {
+	padding-left: 16px;
+}
 
 .skip-to-main {
 	border: none;
@@ -146,16 +202,15 @@ tfoot {
 	height: 1px;
 	overflow: hidden;
 	position: absolute;
-  background-image: none;
 }
 
 .skip-to-main:focus {
-	background-color: var(--color-off-black);
-	color: var(--color-white);
+	background-color: var(--color-gray-900, black);
+	color: var(--color-white, white);
 	width: auto;
 	height: auto;
-	padding: 0.5em;
-	z-index: var(--z-overlay);
+	padding: 8px;
+	z-index: var(--z-overlay, 1000);
 }
 
 .sr-only {
@@ -168,12 +223,36 @@ tfoot {
 	width: 1px;
 }
 
-mark::before, mark::after, del::before, del::after, ins::before, ins::after, s::before, s::after {
-  clip: rect(0 0 0 0);
-	clip-path: inset(100%);
-	height: 1px;
-	overflow: hidden;
-	position: absolute;
-	white-space: nowrap; 
-	width: 1px;
+.text-outline {
+	--stroke-width: 1px;
+	--stroke-width-n: calc(var(--stroke-width) * -1);
+	text-shadow: var(--stroke-width-n) var(--stroke-width-n) 0 var(--color-text-outline, #fff),
+		0 var(--stroke-width-n) 0 var(--color-text-outline, #fff),
+		var(--stroke-width) var(--stroke-width-n) 0 var(--color-text-outline, #fff),
+		var(--stroke-width) 0 0 var(--color-text-outline, #fff),
+		var(--stroke-width) var(--stroke-width) 0 var(--color-text-outline, #fff),
+		0 var(--stroke-width) 0 var(--color-text-outline, #fff),
+		var(--stroke-width-n) var(--stroke-width) 0 var(--color-text-outline, #fff),
+		var(--stroke-width-n) 0 0 var(--color-text-outline, #fff); 
+}
+
+/* desktop (mouse-enabled device) */
+@media (hover: hover) and (pointer: fine) {
+	button:hover,
+	a[role="button"]:hover,
+	input[type="button"]:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover {
+		background: var(--color-button-hover, lightgray);
+	}	
+
+	button:disabled:hover,
+	a[role="button"]:disabled:hover,
+	input[type="button"]:disabled:hover,
+	input[type="submit"]:disabled:hover,
+	input[type="reset"]:disabled:hover {
+		opacity: 0.5;
+		cursor: not-allowed;
+		background: var(--color-button-bg, lightgray);
+	}
 }

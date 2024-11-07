@@ -1,26 +1,98 @@
 <script>
   import { ascending } from "d3";
   import { setContext } from "svelte";
-  import Intro from "$components/Home.Intro.svelte";
-  import Promo from "$components/Home.Promo.svelte";
-  import Search from "$components/Home.Search.svelte";
   import Stories from "$components/Home.Stories.svelte";
+  // import Search from "$components/Home.Search.svelte";
 
-  export let copy;
-  export let stories;
-  export let staff;
+  import collabs from "$svg/collabs.svg";
+  import yourinput from "$svg/yourinput.svg";
+  import updating from "$svg/updating.svg";
+  import video from "$svg/video.svg";
+  import audio from "$svg/audio.svg";
+  import awardwinners from "$svg/awardwinners.svg";
+  import ourfaves from "$svg/ourfaves.svg";
 
-  let highlight = stories.map((d) => d.slug);
-  let jump;
+  const svgs = {
+    collabs,
+    yourinput,
+    updating,
+    video,
+    audio,
+    awardwinners,
+    ourfaves
+  };
 
-  setContext("Home", { stories, staff, copy });
+  let { copy, stories } = $props();
 
-  const onSearchFocus = () => jump();
+  // let jump;
+
+  let highlight = $state(stories.map((d) => d.slug));
+
+  const filters = [
+    "Our Faves",
+    "Award Winners",
+    "Audio",
+    "Video",
+    "Updating",
+    "Your Input",
+    "Collabs"
+  ];
+
+  // const onSearchFocus = () => jump();
 </script>
 
-<Intro />
-{#if copy.promo.text}
-  <Promo text={copy.promo.text} link={copy.promo.link} />
-{/if}
-<Search bind:highlight on:focus={onSearchFocus} />
-<Stories {highlight} bind:jump />
+<!-- <Search bind:highlight on:focus={onSearchFocus} /> -->
+<div class="ui">
+  <div><span>Search</span> <input placeholder="Find a story" /></div>
+  <div class="filters">
+    <span>Filter By</span>
+    {#each filters as filter}
+      {@const slug = filter.replace(/\s/g, "").toLowerCase()}
+      <span class="filter">
+        <span class="icon">
+          {@html svgs[slug]}
+        </span>
+        <span class="name">{filter}</span>
+      </span>
+    {/each}
+  </div>
+</div>
+<Stories {highlight} />
+
+<style>
+  .ui {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    padding: 16px 8px;
+    z-index: var(--z-overlay);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    font-size: var(--14px);
+    font-weight: bold;
+  }
+
+  .filters {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter {
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  input::placeholder {
+    font-family: var(--mono);
+  }
+
+  :global(.filter svg) {
+    display: block;
+  }
+</style>
