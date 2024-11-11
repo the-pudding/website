@@ -1,8 +1,5 @@
 <script>
   import wordmark from "$svg/wordmark-plain.svg";
-  import about from "$svg/about.svg";
-  import donate from "$svg/donate.svg";
-  import subscribe from "$svg/subscribe.svg";
 </script>
 
 <header>
@@ -16,19 +13,24 @@
     </div>
     <ul class="menu">
       <li>
-        <a href="about" aria-label="About" target="_self">about</a>
+        <a href="about" aria-label="About" target="_self"
+          ><img src="assets/stickers/about@2x.png" alt="about sticker" /></a
+        >
       </li>
       <li>
-        <a href="donate" aria-label="Donate" target="_self">donate</a>
+        <a href="donate" aria-label="Donate" target="_self"
+          ><img src="assets/stickers/donate@2x.png" alt="donate sticker" /></a
+        >
       </li>
       <li>
         <a
           href="https://pudding.cool/subscribe"
           rel="external"
           aria-label="subscribe"
-          target="_self">subscribe</a
+          target="_self"><img src="assets/stickers/subscribe@2x.png" alt="subscribe sticker" /></a
         >
       </li>
+      <!-- <button aria-label="Menu" target="_self">{@html more}</a> -->
     </ul>
   </div>
 </header>
@@ -62,7 +64,6 @@
   li {
     list-style-type: none;
     text-transform: uppercase;
-    font-size: 14px;
     margin: 0 8px;
   }
 

@@ -1,32 +1,24 @@
 <script>
-  import { ascending } from "d3";
-  import { setContext } from "svelte";
+  import { descending } from "d3";
+  import { getContext } from "svelte";
   import Stories from "$components/Home.Stories.svelte";
-  // import Search from "$components/Home.Search.svelte";
 
-  import collabs from "$svg/collabs.svg";
-  import yourinput from "$svg/yourinput.svg";
-  import updating from "$svg/updating.svg";
-  import video from "$svg/video.svg";
-  import audio from "$svg/audio.svg";
-  import awardwinners from "$svg/awardwinners.svg";
-  import ourfaves from "$svg/ourfaves.svg";
+  const { stories, copy } = getContext("Home");
 
-  const svgs = {
-    collabs,
-    yourinput,
-    updating,
-    video,
-    audio,
-    awardwinners,
-    ourfaves
-  };
+  let searchValue = $state("");
 
-  let { copy, stories } = $props();
+  // todo load more story data
 
-  // let jump;
-
-  let highlight = $state(stories.map((d) => d.slug));
+  let filtered = $derived.by(() => {
+    const query = searchValue.toLowerCase();
+    const f = stories.filter((d) => {
+      // todo flesh out
+      const search = [d.short, d.tease].join(" ").toLowerCase();
+      return search.includes(query);
+    });
+    f.sort((a, b) => descending(a.id, b.id));
+    return f;
+  });
 
   const filters = [
     "Our Faves",
@@ -38,26 +30,30 @@
     "Collabs"
   ];
 
-  // const onSearchFocus = () => jump();
+  function onSearchFocus() {
+    jump();
+  }
 </script>
 
-<!-- <Search bind:highlight on:focus={onSearchFocus} /> -->
 <div class="ui">
-  <div><span>Search</span> <input placeholder="Find a story" /></div>
+  <div class="search">
+    <span>Search</span>
+    <img class="icon" src="assets/stickers/search@2x.png" alt="search sticker" />
+    <input placeholder="Find a story" bind:value={searchValue} />
+  </div>
   <div class="filters">
     <span>Filter By</span>
     {#each filters as filter}
-      {@const slug = filter.replace(/\s/g, "").toLowerCase()}
+      {@const slug = filter.toLowerCase().replace(/[^a-z]/g, "_")}
       <span class="filter">
-        <span class="icon">
-          {@html svgs[slug]}
-        </span>
+        <img class="icon" src="assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
+
         <span class="name">{filter}</span>
       </span>
     {/each}
   </div>
 </div>
-<Stories {highlight} />
+<Stories stories={filtered} />
 
 <style>
   .ui {
@@ -77,6 +73,11 @@
     font-weight: bold;
   }
 
+  .search {
+    display: flex;
+    align-items: center;
+  }
+
   .filters {
     display: flex;
     align-items: center;
@@ -88,11 +89,16 @@
     align-items: center;
   }
 
-  input::placeholder {
-    font-family: var(--mono);
+  .icon {
+    width: 48px;
+    margin-left: 4px;
   }
 
-  :global(.filter svg) {
-    display: block;
+  input {
+    margin-left: 8px;
+  }
+
+  input::placeholder {
+    font-family: var(--mono);
   }
 </style>

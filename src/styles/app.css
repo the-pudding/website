@@ -24,7 +24,7 @@
 	--color-fg: var(--color-gray-900);
 	--color-primary: var(--color-black);
 	--color-link: var(--color-black);
-	--color-focus: var(--color-red);
+	--color-focus: var(--color-purple);
 	--color-mark: var(--color-yellow);
 	--color-selection: var(--color-gray-300);
 	--color-border: var(--color-gray-300);
@@ -34,6 +34,28 @@
 	--color-input-bg: var(--color-gray-50);
 	--color-input-fg: var(--color-gray-900);
 	--color-placeholder: var(--color-gray-500);
+
+	--font-size-giant: clamp(2.5rem, 5.25vw, 6.5rem);
+	--font-size-large: clamp(1.5rem, 3.25vw, 3.25rem);
+	--font-size-medium: clamp(1.25rem, 2.25vw, 2.25rem);
+	--font-size-small: clamp(1rem, 1.25vw, 1.25rem);
+	--font-size-xsmall: clamp(0.85rem, 1vw, 1rem);
+
+	--font-weight-bold: 900;
+	--font-weight-normal: 400;
+	--font-weight-thin: 100;
+	
+	--width-column-wide: 1500px;
+	--width-column-regular: 720px;
+	--width-padded: 80vw;
+	--margin-left: 10vw;
+	--width-padded-mobile: 90vw;
+	--margin-left-mobile: 5vw;
+
+	--transition-fast: 100ms;
+	--transition-medium: 200ms;
+	--transition-slow: 500ms;
+	--transition-ease: ease-in;
 
 	/* "1" second duration */
 	--1s: 1ms;

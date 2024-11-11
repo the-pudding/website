@@ -25,6 +25,6 @@
 </script>
 
 <Meta {copy} />
-<Home {copy} {stories} />
+<Home />
 <!-- TODO still needed? -->
 <!-- <HiddenAuthors {authors} /> -->

@@ -1,11 +1,10 @@
 <script>
-  import { onMount, getContext, createEventDispatcher } from "svelte";
+  import { getContext } from "svelte";
   import { page } from "$app/stores";
   import deburr from "lodash.deburr";
   import { sum, ascending } from "d3";
 
-  export let highlight;
-
+  let { value = $bindable("") } = $props();
   const { stories } = getContext("Home");
 
   const MIN_CHARS = 3;
@@ -27,10 +26,12 @@
       weight: 2
     }
   ];
-  const dispatch = createEventDispatcher();
-  let value = "";
+  const data = stories.map((d) => ({
+    slug: d.slug,
+    search: tokenize(d)
+  }));
 
-  const tokenize = (d) => {
+  function tokenize(d) {
     return WEIGHTS.map(({ prop }) => {
       if (typeof d[prop] !== "string") return { prop, tokens: d[prop] };
 
@@ -42,9 +43,9 @@
         tokens: clean
       };
     });
-  };
+  }
 
-  const getPropScore = ({ prop, tokens }, fullQuery) => {
+  function getPropScore({ prop, tokens }, fullQuery) {
     const queryWords = fullQuery
       .split(/\W/)
       .filter((d) => d.length >= MIN_CHARS)
@@ -63,14 +64,14 @@
     const subScore = subMatches * weight * 0.5;
 
     return wordScore + subScore;
-  };
+  }
 
-  const getTotalScore = (search, fullQuery) => {
+  function getTotalScore(search, fullQuery) {
     const scores = search.map((d) => getPropScore(d, fullQuery));
     return sum(scores);
-  };
+  }
 
-  const sortResults = (fullQuery) => {
+  function sortResults(fullQuery) {
     const results = data
       .map((d) => ({
         ...d,
@@ -81,20 +82,14 @@
     results.sort((a, b) => ascending(a.score, b.score));
 
     return results;
-  };
+  }
 
-  const data = stories.map((d) => ({
-    slug: d.slug,
-    search: tokenize(d)
-  }));
+  let query = $derived(value.toLowerCase().trim());
+  let results = $derived.by(() => (query.length >= MIN_CHARS ? sortResults(query) : data));
+  // $: if (query.length >= MIN_CHARS) dispatch("focus");
+  // let matchSuffix = $derived(highlight.length === 1 ? "y" : "ies");
 
-  $: query = value.toLowerCase().trim();
-  $: results = query.length >= MIN_CHARS ? sortResults(query) : data;
-  $: highlight = results.map((d) => d.slug);
-  $: if (query.length >= MIN_CHARS) dispatch("focus");
-  $: matchSuffix = highlight.length === 1 ? "y" : "ies";
-
-  onMount(() => {
+  $effect(() => {
     const search = $page.url.searchParams.get("search");
     value = search || "";
     window.history.replaceState({}, "", $page.url.pathname);
@@ -102,9 +97,11 @@
 </script>
 
 <div id="search">
-  <div class="inner column-wide">
-    <input placeholder="Search stories (e.g., Spotify)" bind:value />
-    <p>{highlight.length} stor{matchSuffix}</p>
+  <div class="inner">
+    <span>Search</span>
+    <img class="icon" src="assets/stickers/search@2x.png" alt="search sticker" />
+    <input placeholder="Find a story" bind:value />
+    <!-- <p>{highlight.length} stor{matchSuffix}</p> -->
   </div>
 </div>
 
@@ -128,10 +125,12 @@
   }
 
   input {
-    width: 15em;
-    font-size: var(--font-size-small);
+    width: 12em;
+    font-size: var(--font-size-x-small);
+    font-family: var(--mono);
     padding: 0.5em;
     line-height: 1;
+    margin-left: 8px;
   }
 
   p {
@@ -141,10 +140,15 @@
     font-size: var(--font-size-small);
   }
 
+  .icon {
+    width: 48px;
+    margin-left: 4px;
+  }
+
   @media only screen and (max-width: 540px) {
     input {
-      font-size: 14px;
-      width: 14em;
+      font-size: var(--font-size-small);
+      width: 12em;
     }
   }
 </style>

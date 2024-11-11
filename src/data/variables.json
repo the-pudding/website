@@ -1,13 +1,4 @@
 {
-  "category": {
-    "blue": "#4477AA",
-    "red": "#EE6677",
-    "green": "#228833",
-    "yellow": "#CCBB44",
-    "cyan": "#66CCEE",
-    "purple": "#AA3377",
-    "gray": "#BBBBBB"
-  },
   "color": {
     "black": "#000000",
     "white": "#ffffff",
@@ -24,7 +15,7 @@
     "gray-1000": "rgb(25, 25, 25)",
     "purple": "#a239ca",
     "blue": "#4717f6",
-    "green": "#34a29e",
+    "green": "#3AE660",
     "red": "#ff533d",
     "yellow": "#e5e338"
   },
