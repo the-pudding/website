@@ -5,7 +5,7 @@ import filterStoryProps from "$utils/filterStoryProps.js";
 export async function load() {
   const keys = ["id", "href", "month", "short", "tease", "slug"];
 
-  const stories = filterStoryProps({ data: storiesData, keys }).slice(-8);
+  const stories = filterStoryProps({ data: storiesData, keys }).slice(-9, -1);
   // console.table(stories);
   // const staff = authorsData
   //   .filter((d) => d.position === "Staff")

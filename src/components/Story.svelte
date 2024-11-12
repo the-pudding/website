@@ -58,6 +58,7 @@
     font-family: var(--mono);
     margin-bottom: 8px;
     align-items: center;
+    user-select: none;
   }
 
   .id {
@@ -92,6 +93,7 @@
 
   img {
     position: absolute;
+    /* top: var(--padding); */
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);

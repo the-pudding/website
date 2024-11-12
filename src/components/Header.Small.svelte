@@ -1,34 +1,56 @@
 <script>
   import wordmark from "$svg/wordmark-sticker.svg";
+  import Menu from "$components/Header.Menu.svelte";
+  import copy from "$data/misc.json";
+
+  let menu;
+  let visible = $state(false);
+  let openBtnEl;
+
+  const onClose = () => {
+    visible = false;
+    openBtnEl.focus();
+    openBtnEl.removeAttribute("aria-hidden");
+  };
 </script>
 
 <header>
   <div class="stories">
-    Visual data stories on just about everything, <br />including <a href="#">Spotify</a>,
-    <a href="#">birthdays</a>, <a href="#">rickrolling</a>, and more.
+    <p>{@html copy.tagline}</p>
   </div>
   <div class="wordmark">
     <a href="https://pudding.cool" aria-label="The Pudding" target="_self">{@html wordmark}</a>
   </div>
-  <ul class="menu">
-    <li>
-      <a href="about" aria-label="About" target="_self"
-        ><img src="assets/stickers/about@2x.png" alt="about sticker" /></a
-      >
-    </li>
-    <li>
-      <a href="donate" aria-label="Donate" target="_self"
-        ><img src="assets/stickers/donate@2x.png" alt="donate sticker" /></a
-      >
-    </li>
-    <li>
-      <a href="https://pudding.cool/subscribe" rel="external" aria-label="subscribe" target="_self"
-        ><img src="assets/stickers/subscribe@2x.png" alt="subscribe sticker" /></a
-      >
-    </li>
-    <!-- <button aria-label="Menu" target="_self">{@html more}</a> -->
-  </ul>
+  <div class="menu">
+    <ul>
+      <li>
+        <a href="about" aria-label="About" target="_self"
+          ><img src="assets/stickers/about@2x.png" alt="about sticker" /></a
+        >
+      </li>
+      <li>
+        <a
+          href="https://pudding.cool/subscribe"
+          rel="external"
+          aria-label="subscribe"
+          target="_self"><img src="assets/stickers/subscribe@2x.png" alt="subscribe sticker" /></a
+        >
+      </li>
+      <li>
+        <button
+          bind:this={openBtnEl}
+          onclick={() => (visible = true)}
+          aria-label="open menu"
+          aria-controls="nav-content"
+        >
+          <img src="assets/stickers/more@2x.png" alt="more sticker" />
+        </button>
+      </li>
+    </ul>
+  </div>
 </header>
+
+<Menu {visible} bind:this={menu} close={onClose} />
 
 <style>
   header {
@@ -36,18 +58,16 @@
     justify-content: space-between;
     align-items: center;
     font-family: var(--sans);
-    padding: 32px 16px;
-    /* TODO */
-    max-width: 1400px;
+    padding: 16px;
+    max-width: calc(var(--width-column-wide) - var(--margin) * 2);
     margin: 0 auto 64px auto;
   }
 
-  .stories,
-  .menu {
-    width: 30%;
+  header > div {
+    width: 25%;
   }
 
-  .menu {
+  ul {
     padding: 0;
     display: flex;
     align-items: center;
@@ -59,7 +79,6 @@
 
   li a {
     display: block;
-    width: 100%;
   }
 
   li:nth-of-type(1) {
@@ -68,6 +87,11 @@
 
   li:nth-of-type(2) {
     transform: rotate(-3deg);
+  }
+
+  .stories p {
+    margin: 0;
+    line-height: 1.325;
   }
 
   .wordmark {
@@ -89,8 +113,10 @@
     background-color: transparent;
   }
 
-  :global(header svg) {
-    display: block;
-    width: 100%;
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
   }
 </style>

@@ -3,6 +3,7 @@
   import { browser } from "$app/environment";
   import Meta from "$components/Meta.svelte";
   import Home from "$components/Home.svelte";
+
   // import HiddenAuthors from "$components/HiddenAuthors.svelte";
   import version from "$utils/version.js";
   import copy from "$data/home.json";

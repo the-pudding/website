@@ -8,7 +8,7 @@
 	/* font */
 	--sans: "Atlas Grotesk", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 	--serif: "Tiempos Text Web", Iowan Old Style, Times New Roman, Times, serif;
-	--mono: Menlo, Consolas, Monaco, monospace;
+	--mono: "Atlas Typewriter", Menlo, Consolas, Monaco, monospace;
 
 	/* z-index */
 	--z-bottom: -100;
@@ -17,9 +17,9 @@
 	--z-overlay: 1000;
 
 	/* presets (used in reset.css) */
-	--border-radius: 2px;
+	--border-radius: 0px;
 	--font-body: var(--serif);
-	--font-form: var(--sans);
+	--font-form: var(--mono);
 	--color-bg: var(--color-white);
 	--color-fg: var(--color-gray-900);
 	--color-primary: var(--color-black);
@@ -35,17 +35,18 @@
 	--color-input-fg: var(--color-gray-900);
 	--color-placeholder: var(--color-gray-500);
 
-	--font-size-giant: clamp(2.5rem, 5.25vw, 6.5rem);
-	--font-size-large: clamp(1.5rem, 3.25vw, 3.25rem);
-	--font-size-medium: clamp(1.25rem, 2.25vw, 2.25rem);
-	--font-size-small: clamp(1rem, 1.25vw, 1.25rem);
-	--font-size-xsmall: clamp(0.85rem, 1vw, 1rem);
+	--font-size-giant: clamp(2.5rem, 4vw, 4.5rem);
+	--font-size-large: clamp(1.5rem, 2.5vw, 2.5rem);
+	--font-size-medium: clamp(1rem, 1.75vw, 1.5rem);
+	--font-size-small: clamp(0.8rem, 1.25vw, 1rem);
+	--font-size-xsmall: clamp(0.7rem, 1vw, 0.8rem);
 
 	--font-weight-bold: 900;
 	--font-weight-normal: 400;
 	--font-weight-thin: 100;
-	
-	--width-column-wide: 1500px;
+
+	--margin: 16px;
+	--width-column-wide: 1400px;
 	--width-column-regular: 720px;
 	--width-padded: 80vw;
 	--margin-left: 10vw;
@@ -112,4 +113,16 @@ h5 {
 
 h6 {
 	font-size: var(--20px, 20px);
+}
+
+main {
+	max-width: var(--width-column-wide);
+	margin: 0 auto;
+	padding: 0;
+}
+
+svg {
+	display: block;
+	width: 100%;
+	height: auto;
 }

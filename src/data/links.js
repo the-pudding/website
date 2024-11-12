@@ -1,22 +1,29 @@
 export const about = [
-	{ name: "Our Team", url: "/about" },
-	{ name: "Pitch a Story", url: "/pitch" },
-	{ name: "Our Resources", url: "/resources" },
-	{ name: "Privacy", url: "/privacy" },
-	{ name: "Polygraph Studio", url: "https://polygraph.cool", rel: "external" }
+  { name: "About", url: "/about" },
+  { name: "Subscribe", url: "https://pudding.cool/subscribe", rel: "external" },
+  { name: "Donate", url: "https://patreon.com/thepudding", rel: "external" },
+  { name: "Pitch Us", url: "/pitch" },
+  { name: "Resources", url: "/resources" },
+  { name: "Privacy", url: "/privacy" },
+  { name: "Polygraph Studio", url: "https://polygraph.cool", rel: "external" }
 ];
 
 export const follow = [
-	{ name: "Twitter", url: "https://twitter.com/puddingviz" },
-	{
-		name: "Instagram",
-		url: "https://www.instagram.com/the.pudding"
-	},
-	{ name: "Patreon", cta: "Support us on Patreon", url: "https://patreon.com/thepudding" },
-	// { name: "Facebook", url: "https://facebook.com/pudding.viz" },
-	{ name: "YouTube", url: "https://www.youtube.com/channel/UCFuV9vMFVluW9CAOdS4Oluw" },
-	{ name: "TikTok", url: "https://www.tiktok.com/@the_pudding" },
-	// { name: "Mastodon", url: "https://vis.social/@thepudding" },
-	{ name: "Newsletter", cta: "Join the newsletter", url: "https://pudding.cool/subscribe" },
-	{ name: "RSS", url: "https://pudding.cool/rss.xml" }
+  { name: "BlueSky", url: "#" },
+  { name: "Facebook", url: "https://facebook.com/pudding.viz" },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/the.pudding",
+    footer: true
+  },
+  { name: "LinkedIn", url: "#" }, //TODO
+  { name: "Threads", url: "#" }, // TODO
+  { name: "TikTok", url: "https://www.tiktok.com/@the_pudding", footer: true },
+  { name: "Twitter/X", url: "https://twitter.com/puddingviz", footer: true },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/channel/UCFuV9vMFVluW9CAOdS4Oluw",
+    footer: true
+  },
+  { name: "RSS", url: "https://pudding.cool/rss.xml", footer: true }
 ];
