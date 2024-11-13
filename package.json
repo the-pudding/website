@@ -26,6 +26,7 @@
     "bits-ui": "^0.21.16",
     "color": "^4.2.3",
     "d3": "^7.9.0",
+    "jsdom": "^25.0.1",
     "lodash.debounce": "^4.0.8",
     "lodash.deburr": "^4.1.0",
     "lucide-svelte": "^0.453.0",
