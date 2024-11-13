@@ -1,9 +1,5 @@
 <script>
-  export let id;
-  export let url;
-  export let slug;
-  export let title;
-  export let description;
+  let { id, url, slug, title, description } = $props();
 </script>
 
 <div class="resource">

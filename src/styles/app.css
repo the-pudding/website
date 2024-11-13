@@ -126,3 +126,18 @@ svg {
 	width: 100%;
 	height: auto;
 }
+
+.column-wide {
+	max-width: var(--width-column-wide);
+	padding: 0 16px;
+}
+
+
+.column-regular {
+	max-width: var(--width-column-regular);
+	padding: 0 16px;
+}
+
+.upper {
+	text-transform: uppercase;
+}

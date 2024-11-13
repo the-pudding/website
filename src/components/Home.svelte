@@ -1,7 +1,7 @@
 <script>
   import { descending } from "d3";
   import { getContext } from "svelte";
-  import Stories from "$components/Home.Stories.svelte";
+  import Stories from "$components/Stories.svelte";
 
   const { stories, copy } = getContext("Home");
 
@@ -36,7 +36,7 @@
 </script>
 
 <div class="c">
-  <div class="ui">
+  <div class="ui column-wide">
     <div class="search">
       <span>Search</span>
       <img class="icon" src="assets/stickers/search@2x.png" alt="search sticker" />
@@ -60,8 +60,6 @@
   .c {
     /* --screenshot: 16em;
     --padding: 48px; */
-    max-width: calc(var(--width-column-wide) - (var(--margin) * 2));
-    margin: 0 auto;
   }
 
   .ui {

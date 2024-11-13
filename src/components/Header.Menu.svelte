@@ -1,4 +1,5 @@
 <script>
+  import { base } from "$app/paths";
   import { navigating } from "$app/stores";
   import copy from "$data/misc.json";
   import { about, follow } from "$data/links.js";
@@ -30,6 +31,10 @@
   $effect(() => {
     mainEl = document.querySelector("main");
   });
+
+  $effect(() => {
+    if (!$navigating) visible = false;
+  });
 </script>
 
 <svelte:window on:keyup={onClose} />
@@ -48,7 +53,7 @@
             {@const slug = name.toLowerCase().replace(/[^a-z]/g, "_")}
             <li>
               <a href={url} {rel}>
-                <img aria-label={name} src="assets/stickers/{slug}@2x.png" alt={name} />
+                <img aria-label={name} src="{base}/assets/stickers/{slug}@2x.png" alt={name} />
               </a>
             </li>
           {/each}
@@ -62,7 +67,9 @@
             {@const slug = name.toLowerCase().replace(/[^a-z]/g, "_")}
             <li>
               <a href={url} target="_blank" rel="noreferrer">
-                <img src="assets/stickers/{slug}@2x.png" alt="{name} logo" /><span>{name}</span>
+                <img src="{base}/assets/stickers/{slug}@2x.png" alt="{name} logo" /><span
+                  >{name}</span
+                >
               </a>
             </li>
           {/each}

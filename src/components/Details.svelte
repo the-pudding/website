@@ -1,7 +1,5 @@
 <script>
-  export let summary;
-  export let text;
-  export let list;
+  let { summary, text, list } = $props();
 </script>
 
 <details>

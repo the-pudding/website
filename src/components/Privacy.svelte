@@ -1,7 +1,7 @@
 <script>
   import HeroText from "$components/HeroText.svelte";
 
-  export let copy;
+  let { copy } = $props();
 
   const { sections } = copy;
 </script>

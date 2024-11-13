@@ -1,4 +1,5 @@
 <script>
+  import { base } from "$app/paths";
   import { onMount } from "svelte";
   import { shuffle } from "d3";
   import wordmark from "$svg/wordmark-sticker.svg";
@@ -92,7 +93,7 @@
     </div>
     <div class="bottom">
       <section class="donate">
-        <img src="assets/stickers/donate-footer@2x.png" alt="donate sticker" />
+        <img src="{base}/assets/stickers/donate-footer@2x.png" alt="donate sticker" />
         <p><a href="https://patreon.com/thepudding">Support us on Patreon</a></p>
         <p>
           We pour our heart into these stories, but they take time and money. For just $2/month, you
@@ -101,7 +102,7 @@
       </section>
 
       <section class="subscribe">
-        <img src="assets/stickers/subscribe-footer@2x.png" alt="donate sticker" />
+        <img src="{base}/assets/stickers/subscribe-footer@2x.png" alt="donate sticker" />
         <p><a href="https://pudding.cool/subscribe">Subscribe to our newsletter</a></p>
         <p>
           Get all our latest stories in your inbox. Plus get links to some of our favorite projects

@@ -1,4 +1,5 @@
 <script>
+  import { base } from "$app/paths";
   import wordmark from "$svg/wordmark-sticker.svg";
   import Menu from "$components/Header.Menu.svelte";
   import copy from "$data/misc.json";
@@ -14,7 +15,7 @@
   };
 </script>
 
-<header>
+<header class="column-wide">
   <div class="stories">
     <p>{@html copy.tagline}</p>
   </div>
@@ -25,7 +26,7 @@
     <ul>
       <li>
         <a href="about" aria-label="About" target="_self"
-          ><img src="assets/stickers/about@2x.png" alt="about sticker" /></a
+          ><img src="{base}/assets/stickers/about@2x.png" alt="about sticker" /></a
         >
       </li>
       <li>
@@ -33,7 +34,8 @@
           href="https://pudding.cool/subscribe"
           rel="external"
           aria-label="subscribe"
-          target="_self"><img src="assets/stickers/subscribe@2x.png" alt="subscribe sticker" /></a
+          target="_self"
+          ><img src="{base}/assets/stickers/subscribe@2x.png" alt="subscribe sticker" /></a
         >
       </li>
       <li>
@@ -43,7 +45,7 @@
           aria-label="open menu"
           aria-controls="nav-content"
         >
-          <img src="assets/stickers/more@2x.png" alt="more sticker" />
+          <img src="{base}/assets/stickers/more@2x.png" alt="more sticker" />
         </button>
       </li>
     </ul>
@@ -58,8 +60,8 @@
     justify-content: space-between;
     align-items: center;
     font-family: var(--sans);
-    padding: 16px;
-    max-width: calc(var(--width-column-wide) - var(--margin) * 2);
+    padding-top: 16px;
+    padding-bottom: 16px;
     margin: 0 auto 64px auto;
   }
 

@@ -4,9 +4,11 @@
 
 <table>
   <thead>
-    <th>Award</th>
-    <th>Story</th>
-    <th>Year</th>
+    <tr>
+      <th>Award</th>
+      <th>Story</th>
+      <th>Year</th>
+    </tr>
   </thead>
   <tbody>
     {#each awards as { awardText, awardUrl, storyHed, storyUrl, year }}

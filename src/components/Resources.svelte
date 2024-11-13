@@ -5,7 +5,7 @@
   import data from "$data/resources.csv";
   import wordmark from "$svg/wordmark.svg";
 
-  export let copy;
+  let { copy } = $props();
 
   const { sections } = copy;
 </script>

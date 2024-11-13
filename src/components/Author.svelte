@@ -1,11 +1,10 @@
 <script>
   import { descending } from "d3";
-  import Story from "$components/Story.svelte";
+  import Stories from "$components/Stories.svelte";
   import HeroText from "$components/HeroText.svelte";
   import numberAsText from "$utils/numberAsText.js";
 
-  export let stories;
-  export let author;
+  let { author, stories } = $props();
 
   stories.sort((a, b) => descending(a.date, b.date));
 
@@ -54,17 +53,10 @@
     {/if}
   </HeroText>
 </section>
+
 {#if stories.length}
-  <section id="stories">
-    <h2 class="column-wide upper">Stories</h2>
-    <ul>
-      {#each stories as { tease, url, url_alt, slug, month }}
-        <li>
-          <Story {tease} {url} {url_alt} {slug} {month} />
-        </li>
-      {/each}
-    </ul>
-  </section>
+  <h2 class="column-wide upper">Stories</h2>
+  <Stories {stories} />
 {/if}
 
 <style>
