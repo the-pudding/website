@@ -63,10 +63,15 @@
     padding-top: 16px;
     padding-bottom: 16px;
     margin: 0 auto 64px auto;
+    max-height: 100px;
   }
 
   header > div {
-    width: 25%;
+    width: 33.33%;
+  }
+
+  .menu {
+    max-width: 100px;
   }
 
   ul {
@@ -77,10 +82,17 @@
 
   li {
     list-style-type: none;
+    width: 100%;
+    transition: transform calc(var(--1s) * 0.25);
+  }
+
+  li:hover {
+    transform: rotate(var(--right-tilt)) scale(1.05);
   }
 
   li a {
     display: block;
+    max-width: 100px;
   }
 
   li:nth-of-type(1) {
@@ -89,19 +101,38 @@
 
   li:nth-of-type(2) {
     transform: rotate(-3deg);
+    display: none;
+  }
+
+  li:nth-of-type(1) {
+    display: none;
+  }
+
+  li:nth-of-type(1):hover, li:nth-of-type(2):hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+
+  .stories {
+    display: none;
   }
 
   .stories p {
     margin: 0;
+    font-size: var(--14px);
     line-height: 1.325;
   }
 
   .wordmark {
-    width: 40%;
-    margin: 0 auto;
+    width: 200px;
+    margin: 0 0 0 -16px;
     transform: rotate(-4deg);
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    transition: transform calc(var(--1s) * 0.25);
+  }
+
+  .wordmark:hover {
+    transform: rotate(var(--left-tilt)) scale(1.05);
   }
 
   .wordmark a {
@@ -120,5 +151,33 @@
     border: none;
     padding: 0;
     line-height: 1;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .wordmark {
+      width: 40%;
+    }
+    li {
+      width: 33.33%;
+    }
+    .menu {
+      width: 300px;
+      max-width: none;
+    }
+    li:nth-of-type(1), li:nth-of-type(2) {
+      display: inline-block;
+    }
+  }
+
+  @media only screen and (min-width: 960px) {
+    .stories {
+      display: inline-block;
+      max-width: 300px;
+    }
+
+    .wordmark {
+      margin: 0 auto;
+      justify-content: center;
+    }
   }
 </style>

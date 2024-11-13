@@ -35,17 +35,30 @@
     cursor: pointer;
   }
 
+  summary:hover {
+    transform: translateX(4px)
+  }
+
   details {
     font-size: var(--font-size-small);
+    font-family: var(--sans);
+    font-weight: var(--font-weight-bold);
     padding: 1em 0;
   }
 
   .inner {
     padding: 1em;
+    font-family: var(--serif);
+    font-weight: var(--font-weight-normal);
   }
 
   details ul {
     width: 100%;
+  }
+
+  :global(details a:hover) {
+    color: var(--color-link-hover);
+    text-decoration: underline 2px var(--color-link-hover);
   }
 
   li {

@@ -15,6 +15,8 @@
   :global(.hero-text h1) {
     margin: 0;
     font-size: var(--font-size-giant);
+    font-family: var(--sans);
+    font-weight: var(--font-weight-bold);
   }
 
   :global(.hero-text p) {

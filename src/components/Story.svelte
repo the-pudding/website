@@ -28,7 +28,7 @@
     <p class="id">#{id}</p>
     <p class="month">{month}</p>
   </div>
-  <a {href} rel="external" target="_blank" class="inner column-wide">
+  <a {href} rel="external" target="_blank" class="inner">
     <div class="screenshot">
       <img
         src="/common/assets/thumbnails/test/{slug}.jpg"
@@ -59,6 +59,7 @@
     margin-bottom: 8px;
     align-items: center;
     user-select: none;
+    transition: transform calc(var(--1s) * 0.25);
   }
 
   .id {
@@ -82,6 +83,18 @@
     text-decoration: none;
   }
 
+  .story:hover .info {
+    transform: translateY(-4px);
+  }
+
+  .story:not(.youtube):hover .screenshot img {
+    transform: translate(-50%, 0) scale(1.05);
+  }
+
+  .youtube:hover .screenshot img {
+    transform: translate(-50%, 50%) scale(1.05);
+  }
+
   .screenshot {
     background: var(--primary, var(--color-gray-100));
     /* background: var(--secondary, var(--color-gray-100)); */
@@ -96,14 +109,17 @@
     /* top: var(--padding); */
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0) scale(1);
     width: calc(100% - (var(--padding) * 2));
+    transform-origin: center center;
+    transition: transform calc(var(--1s) * 0.25);
     /* border: 1px solid var(--color-fg); */
   }
 
   .youtube img {
     bottom: 50%;
     transform: translate(-50%, 50%);
+    transform-origin: center center;
   }
 
   .text {
