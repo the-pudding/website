@@ -3,7 +3,6 @@
   import Link from "$components/Resources.Link.svelte";
   import Details from "$components/Details.svelte";
   import data from "$data/resources.csv";
-  import wordmark from "$svg/wordmark.svg";
 
   let { copy } = $props();
 
