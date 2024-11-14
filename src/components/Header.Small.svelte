@@ -8,11 +8,16 @@
   let visible = $state(false);
   let openBtnEl;
 
-  const onClose = () => {
+  function onClose() {
     visible = false;
     openBtnEl.focus();
     openBtnEl.removeAttribute("aria-hidden");
-  };
+  }
+
+  function onClickMenu() {
+    console.log("click");
+    visible = true;
+  }
 </script>
 
 <header class="column-wide">
@@ -25,7 +30,7 @@
   <div class="menu">
     <ul>
       <li>
-        <a href="about" aria-label="About" target="_self"
+        <a href="/about" aria-label="About" target="_self"
           ><img src="{base}/assets/stickers/about@2x.png" alt="about sticker" /></a
         >
       </li>
@@ -41,7 +46,7 @@
       <li>
         <button
           bind:this={openBtnEl}
-          onclick={() => (visible = true)}
+          onclick={onClickMenu}
           aria-label="open menu"
           aria-controls="nav-content"
         >
@@ -108,7 +113,8 @@
     display: none;
   }
 
-  li:nth-of-type(1):hover, li:nth-of-type(2):hover {
+  li:nth-of-type(1):hover,
+  li:nth-of-type(2):hover {
     transform: rotate(0deg) scale(1.05);
   }
 
@@ -164,7 +170,8 @@
       width: 300px;
       max-width: none;
     }
-    li:nth-of-type(1), li:nth-of-type(2) {
+    li:nth-of-type(1),
+    li:nth-of-type(2) {
       display: inline-block;
     }
   }

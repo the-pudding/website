@@ -1,6 +1,6 @@
 <script>
   import { base } from "$app/paths";
-  import { navigating } from "$app/stores";
+  import { afterNavigate } from "$app/navigation";
   import copy from "$data/misc.json";
   import { about, follow } from "$data/links.js";
   import focusTrap from "$actions/focusTrap.js";
@@ -22,7 +22,7 @@
   };
 
   const onClose = async (e) => {
-    if (e.type === "keyup" && e.key !== "Escape") return;
+    if (e?.type === "keyup" && e?.key !== "Escape") return;
 
     mainEl.removeAttribute("aria-hidden");
     visible = false;
@@ -33,8 +33,8 @@
     mainEl = document.querySelector("main");
   });
 
-  $effect(() => {
-    if (!$navigating) visible = false;
+  afterNavigate(() => {
+    onClose();
   });
 </script>
 
