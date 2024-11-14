@@ -26,6 +26,7 @@
     width: 100%;
     table-layout: auto;
     margin-bottom: 48px;
+    font-family: var(--sans);
   }
 
   tr {
@@ -37,8 +38,17 @@
     padding: 0.75em 0.25em;
   }
 
+  td {
+    font-size: var(--font-size-xsmall);
+  }
+
   td:nth-child(3),
   th:nth-child(3) {
     text-align: right;
+  }
+
+  :global(table a:hover) {
+    color: var(--color-link-hover);
+    text-decoration: underline 2px var(--color-link-hover);
   }
 </style>

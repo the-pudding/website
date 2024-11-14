@@ -24,6 +24,7 @@
 	--color-fg: var(--color-gray-900);
 	--color-primary: var(--color-black);
 	--color-link: var(--color-black);
+	--color-link-hover: var(--color-gray-500);
 	--color-focus: var(--color-purple);
 	--color-mark: var(--color-yellow);
 	--color-selection: var(--color-gray-300);
@@ -52,6 +53,11 @@
 	--margin-left: 10vw;
 	--width-padded-mobile: 90vw;
 	--margin-left-mobile: 5vw;
+
+	--left-tilt: -2deg;
+	--right-tilt: 2deg;
+	--left-tilt-double: -4deg;
+	--right-tilt-double: 4deg;
 
 	--transition-fast: 100ms;
 	--transition-medium: 200ms;
@@ -138,6 +144,21 @@ svg {
 	padding: 0 16px;
 }
 
+.column-regular a:hover {
+	color: var(--color-link-hover);
+	text-decoration: underline 2px var(--color-link-hover); 
+}
+
+.column-regular h2 {
+	font-family: var(--sans);
+	font-weight: var(--font-weight-bold);
+	margin-top: 64px;
+}
+
 .upper {
 	text-transform: uppercase;
+}
+
+.inner strong, li strong {
+	font-family: var(--sans);
 }

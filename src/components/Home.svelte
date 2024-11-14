@@ -109,9 +109,18 @@
     font-size: var(--font-size-xsmall);
   }
 
+  .filter:hover .icon {
+    transform: rotate(var(--left-tilt-double)) scale(1.05);
+  }
+
   .icon {
     width: 48px;
     margin-left: 4px;
+    transition: transform calc(var(--1s) * 0.25);
+  }
+
+  .icon:hover {
+    transform: rotate(var(--left-tilt-double)) scale(1.05);
   }
 
   input {

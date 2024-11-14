@@ -4,6 +4,7 @@
   import copy from "$data/misc.json";
   import { about, follow } from "$data/links.js";
   import focusTrap from "$actions/focusTrap.js";
+  import closeIcon from "$svg/circle-x.svg";
 
   let { visible, close } = $props();
 
@@ -42,7 +43,7 @@
 <nav id="nav-menu" class:visible use:focusTrap>
   <div class="nav-content" class:visible class:active bind:this={slideNav}>
     <button class="btn-close" aria-label="close menu" bind:this={closeBtnEl} onclick={onClose}
-      >X</button
+      >{@html closeIcon}</button
     >
 
     <section class="links">
@@ -84,12 +85,12 @@
     position: fixed;
     top: 0;
     right: 0;
-    max-width: 320px;
+    max-width: 360px;
     height: 100svh;
     z-index: calc(var(--z-overlay) + 1);
     background: var(--color-fg);
     color: var(--color-bg);
-    visibility: hidden;
+    visibility: visible;
     transform: translate(100%, 0);
     transition: transform var(--transition-medium);
   }
@@ -108,11 +109,12 @@
   .links {
     display: flex;
     align-items: flex-start;
+    gap: 32px;
+    padding: 0 24px;
   }
 
   .links > div {
     width: 50%;
-    padding: 0 16px;
   }
 
   .links ul {
@@ -126,6 +128,8 @@
     padding: 0;
     margin: 0;
     margin-bottom: 8px;
+    transition: transform calc(var(--1s) * 0.25);
+    transform-origin: center center;
   }
 
   .links li a {
@@ -139,8 +143,16 @@
     margin-left: 4px;
   }
 
+  .links li:hover img {
+    transform: rotate(var(--left-tilt-double)) scale(1.05);
+  }
+
   .follow img {
     width: 48px;
+  }
+
+  .follow li:hover span {
+    color: var(--color-link-hover);
   }
 
   .btn-close {
@@ -148,7 +160,16 @@
     justify-self: flex-end;
     justify-content: center;
     align-items: center;
-    width: 2em;
-    height: 2em;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+  }
+
+  :global(.btn-close svg path, .btn-close svg circle) {
+    stroke: var(--color-bg);
+  }
+
+  :global(.btn-close:hover svg path, .btn-close:hover svg circle) {
+    stroke: var(--color-link-hover);
   }
 </style>

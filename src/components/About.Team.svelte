@@ -20,13 +20,19 @@
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    padding: 0;
+    gap: 32px;
+    margin-bottom: 32px;
   }
 
   li {
     max-width: 10.1em;
-    margin-right: 2em;
-    margin-bottom: 2em;
     line-height: 1.25;
+    transition: transform calc(var(--1s) * 0.25);
+  }
+
+  li:hover img {
+    transform: rotate(var(--left-tilt)) scale(1.05);
   }
 
   a {
@@ -35,5 +41,14 @@
 
   img {
     margin-bottom: 0.25em;
+  }
+
+  span {
+    font-family: var(--sans);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small);
+    display: inline-block;
+    padding-top: 6px;
+    text-decoration: underline 2px;
   }
 </style>
