@@ -26,7 +26,7 @@
 
     mainEl.removeAttribute("aria-hidden");
     visible = false;
-    close();
+    close(e === "skip");
   };
 
   $effect(() => {
@@ -34,7 +34,7 @@
   });
 
   afterNavigate(() => {
-    onClose();
+    onClose("skip");
   });
 </script>
 

@@ -8,10 +8,10 @@
   let visible = $state(false);
   let openBtnEl;
 
-  function onClose() {
+  function onClose(skip) {
     visible = false;
-    openBtnEl.focus();
     openBtnEl.removeAttribute("aria-hidden");
+    if (!skip) openBtnEl.focus();
   }
 
   function onClickMenu() {

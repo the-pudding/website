@@ -6,6 +6,7 @@
   const { stories, copy } = getContext("Home");
 
   let searchValue = $state("");
+  let activeFilter = $state(undefined);
 
   // todo load more story data
 
@@ -14,7 +15,10 @@
     const f = stories.filter((d) => {
       // todo flesh out
       const search = [d.short, d.tease].join(" ").toLowerCase();
-      return search.includes(query);
+      const inSearch = search.includes(query);
+
+      const inFilter = activeFilter ? d.filters.includes(activeFilter) : true;
+      return inSearch && inFilter;
     });
     f.sort((a, b) => descending(a.id, b.id));
     return f;
@@ -33,6 +37,8 @@
   function onSearchFocus() {
     jump();
   }
+
+  $inspect(activeFilter);
 </script>
 
 <div class="c">
@@ -45,8 +51,13 @@
     <div class="filters">
       <span>Filter By</span>
       {#each filters as filter}
-        {@const slug = filter.toLowerCase().replace(/[^a-z]/g, "_")}
-        <button class="filter">
+        {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
+        {@const active = slug === activeFilter || !activeFilter}
+        <button
+          class:active
+          class="filter"
+          onclick={() => (activeFilter = slug === activeFilter ? undefined : slug)}
+        >
           <img class="icon" src="assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
           <span class="name">{filter}</span>
         </button>
@@ -103,6 +114,12 @@
     padding: 0;
     border: none;
     text-transform: uppercase;
+    opacity: 0.33;
+    transition: opacity var(--transition-fast);
+  }
+
+  button.filter.active {
+    opacity: 1;
   }
 
   .filter span {

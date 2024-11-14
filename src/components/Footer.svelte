@@ -106,12 +106,12 @@
               <span class="arrow">{@html linkOutArrow}</span>
             </p>
             <p>
-              We pour our heart into these stories, but they take time and money. For just $2/month, you
-              can help support us. Join our growing community of data-driven enthusiasts.
+              We pour our heart into these stories, but they take time and money. For just $2/month,
+              you can help support us. Join our growing community of data-driven enthusiasts.
             </p>
           </div>
         </section>
-  
+
         <section class="subscribe">
           <div class="img-wrapper">
             <a href="https://pudding.cool/subscribe">
@@ -124,8 +124,8 @@
               <span class="arrow">{@html linkOutArrow}</span>
             </p>
             <p>
-              Get all our latest stories in your inbox. Plus get links to some of our favorite projects
-              from around the web.
+              Get all our latest stories in your inbox. Plus get links to some of our favorite
+              projects from around the web.
             </p>
           </div>
         </section>
@@ -234,7 +234,8 @@
     padding: 0;
   }
 
-  .about, .follow {
+  .about,
+  .follow {
     width: 50%;
   }
 
@@ -244,12 +245,12 @@
   }
 
   .text-wrapper {
-      width: 100%;
+    width: 100%;
   }
 
   .text-wrapper p {
-       font-size: var(--14px);
-    }
+    font-size: var(--14px);
+  }
 
   .img-wrapper {
     width: 100%;
@@ -328,11 +329,11 @@
     }
 
     .text-wrapper {
-       width: 66.66%;
+      width: 66.66%;
     }
 
     .text-wrapper p {
-       font-size: var(--16px);
+      font-size: var(--16px);
     }
 
     .img-wrapper {
@@ -389,6 +390,5 @@
     .subscribe img {
       max-width: 200px;
     }
-
   }
 </style>

@@ -1,12 +1,11 @@
 import data from "$data/authors.csv";
-
-const makeSlug = (str) => str.toLowerCase().replace(/\//g, "_").replace(/ /g, "-");
+import slugify from "$utils/slugify.js";
 
 const clean = data.map((d) => ({
   id: d.id,
   name: d.name,
   email: d.email,
-  slug: makeSlug(d.name),
+  slug: slugify(d.name),
   position: d.position,
   social: d.social,
   url: d.url,

@@ -1,8 +1,8 @@
 import data from "$data/stories.csv";
-import { timeParse, timeFormat, index } from "d3";
+import { timeParse, timeFormat } from "d3";
+import slugify from "$utils/slugify.js";
 
 const strToArray = (str) => str.split(",").map((d) => d.trim());
-const makeSlug = (str) => str.toLowerCase().replace(/\//g, "_");
 
 const parseDate = timeParse("%m/%d/%Y");
 const formatMonth = timeFormat("%b %Y");
@@ -12,9 +12,10 @@ const clean = data
     ...d,
     date: parseDate(d.date),
     month: formatMonth(parseDate(d.date)),
-    slug: makeSlug(d.url),
+    slug: slugify(d.url),
     author: strToArray(d.author),
     keyword: strToArray(d.keyword),
+    filters: strToArray(d.filters),
     href: d.url_alt || `https://pudding.cool/${d.url}`
   }))
   .filter((d) => !d.hide_all)
