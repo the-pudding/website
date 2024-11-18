@@ -33,7 +33,7 @@ const getBestColors = (p) => {
 
   // sort candidates by saturation, then population, then lightness
   candidates.sort(
-    (a, b) => descending(a.pop, b.pop) || descending(a.s, b.s) || descending(a.l, b.l)
+    (a, b) => descending(a.l, b.l) || descending(a.s, b.s) || descending(a.pop, b.pop)
   );
 
   return candidates;

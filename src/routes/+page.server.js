@@ -5,7 +5,7 @@ import filterStoryProps from "$utils/filterStoryProps.js";
 export async function load() {
   const keys = ["id", "href", "month", "short", "tease", "slug", "filters"];
 
-  const stories = filterStoryProps({ data: storiesData, keys }).slice(-9, -1);
+  const stories = filterStoryProps({ data: storiesData, keys });
 
   const authors = authorsData.map((d) => d.slug);
 
