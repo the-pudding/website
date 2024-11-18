@@ -41,7 +41,7 @@
     margin: 0;
     list-style-type: none;
     /* width: calc(var(--screenshot) + (var(--padding) * 2)); */
-    padding: var(--margin);
+    padding: 32px 24px;
     width: 100%;
     --padding: clamp(16px, 12vw, 48px);
   }
@@ -56,14 +56,8 @@
   @media only screen and (min-width: 960px) {
     li {
       width: 33.3%;
-      --padding: clamp(16px, 4vw, 48px);
+      --padding: clamp(24px, 4vw, 56px);
     }
   }
 
-  @media only screen and (min-width: 1280px) {
-    li {
-      width: 25%;
-      --padding: clamp(16px, 3vw, 48px);
-    }
-  }
 </style>
