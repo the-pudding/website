@@ -97,7 +97,7 @@
 
   .screenshot {
     background: var(--primary, var(--color-gray-100));
-    background: var(--color-gray-1000);
+    /* background: var(--color-gray-1000); */
     /* background: var(--secondary, var(--color-gray-100)); */
     /* background: var(--tertiary, var(--color-gray-100)); */
     aspect-ratio: 1;
@@ -139,5 +139,11 @@
   p.tease {
     color: var(--color-gray-600);
     font-size: var(--16px);
+  }
+
+  @media only screen and (min-width: 1250px) {
+    h3.short {
+      font-size: var(--36px);
+    }
   }
 </style>
