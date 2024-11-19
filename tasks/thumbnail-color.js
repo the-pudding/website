@@ -23,7 +23,8 @@ const getBestColors = (p) => {
     const hsl = p[k]._hsl;
     const rgb = p[k]._rgb;
     const pop = p[k]._population;
-    if (!pop || k.includes("Muted")) return;
+
+    if (!pop) return;
     // is it saturated?
     const h = hsl[0];
     const s = hsl[1];
@@ -32,11 +33,10 @@ const getBestColors = (p) => {
   });
 
   // sort candidates by saturation, then population, then lightness
-  candidates.sort(
-    (a, b) => descending(a.l, b.l) || descending(a.s, b.s) || descending(a.pop, b.pop)
-  );
+  const noBg = candidates.filter((d) => d.pop < 5000);
 
-  return candidates;
+  noBg.sort((a, b) => descending(a.s, b.s));
+  return noBg;
 };
 
 const getAccesibleText = (str) => {
@@ -51,11 +51,11 @@ const getAccesibleText = (str) => {
 
 const createPalette = (p) => {
   const colors = getBestColors(p);
+
   const primary = colors[0] ? rgbToString(roundRGB(colors[0].rgb)) : undefined;
   const secondary = colors[1] ? rgbToString(roundRGB(colors[1].rgb)) : undefined;
-  const tertiary = colors[2] ? rgbToString(roundRGB(colors[2].rgb)) : undefined;
   const text = getAccesibleText(primary);
-  return { primary, secondary, tertiary, text };
+  return { primary, secondary, text };
 };
 
 const getColor = (path) => {
@@ -76,9 +76,9 @@ const getColor = (path) => {
     for (let file of FILES) {
       console.log(`- extracting ${file}`);
       const path = `${PATH_IN}/${file}`;
-      const { primary, secondary, tertiary, text } = await getColor(path);
+      const { primary, secondary, text } = await getColor(path);
       const slug = file.replace(".jpg", "");
-      output.push({ slug, primary, secondary, tertiary, text });
+      output.push({ slug, primary, secondary, text });
     }
   } catch (err) {
     console.error(err);
