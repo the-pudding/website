@@ -10,7 +10,7 @@
     "thumbnail-color": "node tasks/thumbnail-color.js",
     "footer": "node tasks/footer.js",
     "postbuild": "svelte-sitemap --domain https://pudding.cool --ignore 404.html",
-    "update": "npm run gdoc && npm run thumbnail-stories && npm run thumbnail-resources && npm run thumbnail-color && npm run footer && npm run build",
+    "update": "npm run gdoc && npm run fetch-og-images && npm run thumbnail-og && npm run thumbnail-resources && npm run thumbnail-color && npm run footer && npm run build",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
