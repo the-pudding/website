@@ -1,10 +1,8 @@
 <script>
   import colors from "$data/thumbnail-colors.json";
-  let { id, href, slug, short, tease, month } = $props();
+  let { id, href, slug, short, tease, month, resource } = $props();
 
-  const DEFAULT_COLOR = {
-    primary: "rgb(239,239,239)"
-  };
+  const DEFAULT_COLOR = "rgb(239,239,239)";
 
   const lookupColor = (version) => {
     const match = colors.find((d) => d.slug === slug);
@@ -15,30 +13,36 @@
 	--primary: ${lookupColor("primary")};
 	--secondary: ${lookupColor("secondary")};
 	--tertiary: ${lookupColor("tertiary")};
-	--default-primary: ${DEFAULT_COLOR["primary"]};
-	--default-secondary: ${DEFAULT_COLOR["primary"]};
-	--default-tertiary: ${DEFAULT_COLOR["primary"]};
+	--default-primary: ${DEFAULT_COLOR};
+	--default-secondary: ${DEFAULT_COLOR};
+	--default-tertiary: ${DEFAULT_COLOR};
   `;
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");
+
+  const dir = resource ? "resources/480" : "thumbnails/test";
+  const imagePath = `/common/assets/${dir}`;
 </script>
 
-<div class="story" {style} class:youtube>
-  <div class="info">
-    <p class="id">#{id}</p>
-    <p class="month">{month}</p>
-  </div>
+<div class="story" {style} class:youtube class:resource>
+  {#if !resource}
+    <div class="info">
+      <p class="id">#{id}</p>
+      <p class="month">{month}</p>
+    </div>
+  {/if}
   <a {href} rel="external" target="_blank" class="inner">
     <div class="screenshot">
-      <img
-        src="/common/assets/thumbnails/test/{slug}.jpg"
+      <!-- <img
+        src="{imagePath}/{slug}.jpg"
         alt="thumbnail for story"
-        srcset="/common/assets/thumbnails/test/{slug}.jpg 1280w,
-			/common/assets/thumbnails/test/{slug}.jpg 960w,
-			/common/assets/thumbnails/test/{slug}.jpg 640w"
+        srcset="{imagePath}/{slug}.jpg 1280w,
+			{imagePath}/{slug}.jpg 960w,
+			{imagePath}/{slug}.jpg 640w"
         sizes="(max-width: 320px) 640px, (max-width: 480px) 960px, 1280px"
         loading="lazy"
-      />
+      /> -->
+      <img src="{imagePath}/{slug}.jpg" loading="lazy" alt="thumbnail for story" />
     </div>
     <div class="text">
       <h3 class="short">
@@ -87,11 +91,13 @@
     transform: translateY(-4px);
   }
 
-  .story:not(.youtube):hover .screenshot img {
+  .story:not(.youtube):hover .screenshot img,
+  .story:not(.resource):hover .screenshot img {
     transform: translate(-50%, 0) scale(1.05);
   }
 
-  .youtube:hover .screenshot img {
+  .youtube:hover .screenshot img,
+  .resource:hover .screenshot img {
     transform: translate(-50%, 50%) scale(1.05);
   }
 
@@ -114,7 +120,8 @@
     /* border: 1px solid var(--color-fg); */
   }
 
-  .youtube img {
+  .youtube img,
+  .resource img {
     bottom: 50%;
     transform: translate(-50%, 50%);
     transform-origin: center center;

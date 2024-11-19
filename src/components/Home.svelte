@@ -50,17 +50,10 @@
 </div>
 
 <style>
-  .c {
-    /* --screenshot: 16em;
-    --padding: 48px; */
-  }
-
   .ui {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: sticky;
-    top: 0; */
     background: var(--color-bg);
     padding: 16px;
     z-index: var(--z-overlay);
