@@ -1,24 +1,16 @@
 <script>
   import { getContext } from "svelte";
   import { ascending, descending } from "d3";
-  import inView from "../actions/inView.js";
   import Story from "$components/Story.svelte";
 
-  let { stories } = $props();
-  // const jump = () => {
-  //   const { top } = sectionEl.getBoundingClientRect();
-  //   const y = window.scrollY + top - 64;
-  //   window.scrollTo(0, y);
-  // };
-
-  let sectionEl;
+  let { stories, resource = false } = $props();
 </script>
 
-<section id="stories" bind:this={sectionEl}>
+<section id="stories">
   <ul>
     {#each stories as story (story.slug)}
       <li>
-        <Story {...story} />
+        <Story {...story} {resource} />
       </li>
     {/each}
   </ul>

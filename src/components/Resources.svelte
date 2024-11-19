@@ -3,10 +3,19 @@
   import Link from "$components/Resources.Link.svelte";
   import Details from "$components/Details.svelte";
   import data from "$data/resources.csv";
+  import Stories from "$components/Stories.svelte";
 
   let { copy } = $props();
 
   const { sections } = copy;
+
+  // id, href, slug, short, tease, month
+  const stories = data.map((d) => ({
+    ...d,
+    href: d.url,
+    short: d.title,
+    tease: d.description
+  }));
 </script>
 
 <section id="intro" class="column-wide">
@@ -32,13 +41,7 @@
 {#each sections as { hed, id }}
   <section {id}>
     <h2 class="upper column-wide">{hed}</h2>
-    <ul>
-      {#each data.filter((d) => d.category === id) as { url, slug, title, description }}
-        <li>
-          <Link {id} {url} {slug} {title} {description} />
-        </li>
-      {/each}
-    </ul>
+    <Stories stories={stories.filter((d) => d.category === id)} resource={true} />
   </section>
 {/each}
 
