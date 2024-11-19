@@ -20,7 +20,7 @@
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");
 
-  const dir = resource ? "resources/480" : "thumbnails/test";
+  const dir = resource ? "resources/480" : "thumbnails/screenshots";
   const imagePath = `/common/assets/${dir}`;
 </script>
 
