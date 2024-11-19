@@ -2,14 +2,24 @@
   import { descending } from "d3";
   import { getContext } from "svelte";
   import Stories from "$components/Stories.svelte";
+  import Filters from "$components/Home.Filters.svelte";
 
   const { stories, copy } = getContext("Home");
+
+  const filters = [
+    "Our Faves",
+    "Award Winners",
+    "Audio",
+    "Video",
+    "Updating",
+    "Your Input",
+    "Collabs"
+  ];
 
   let searchValue = $state("");
   let activeFilter = $state(undefined);
 
   // todo load more story data
-
   let filtered = $derived.by(() => {
     const query = searchValue.toLowerCase();
     const f = stories.filter((d) => {
@@ -23,45 +33,17 @@
     f.sort((a, b) => descending(a.id, b.id));
     return f;
   });
-
-  const filters = [
-    "Our Faves",
-    "Award Winners",
-    "Audio",
-    "Video",
-    "Updating",
-    "Your Input",
-    "Collabs"
-  ];
-
-  function onSearchFocus() {
-    jump();
-  }
-
-  $inspect(activeFilter);
 </script>
 
 <div class="c">
   <div class="ui column-wide">
     <div class="search">
       <span>Search</span>
-      <img class="icon" src="assets/stickers/search@2x.png" alt="search sticker" />
+      <img class="icon" src="assets/stickers/search@2x.png" aria-hidden="true" alt="" />
       <input placeholder="Find a story" bind:value={searchValue} />
     </div>
     <div class="filters">
-      <span>Filter By</span>
-      {#each filters as filter}
-        {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
-        {@const active = slug === activeFilter || !activeFilter}
-        <button
-          class:active
-          class="filter"
-          onclick={() => (activeFilter = slug === activeFilter ? undefined : slug)}
-        >
-          <img class="icon" src="assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
-          <span class="name">{filter}</span>
-        </button>
-      {/each}
+      <Filters {filters} bind:activeFilter></Filters>
     </div>
   </div>
   <Stories stories={filtered} />
@@ -97,52 +79,6 @@
     font-size: var(--font-size-xsmall);
   }
 
-  .filters {
-    display: flex;
-    align-items: center;
-  }
-
-  .filters > span {
-    font-size: var(--font-size-xsmall);
-    display: block;
-  }
-
-  button.filter {
-    margin: 0 8px;
-    display: flex;
-    align-items: center;
-    background: none;
-    padding: 0;
-    border: none;
-    text-transform: uppercase;
-    opacity: 0.33;
-    flex: auto;
-    transition: opacity var(--transition-fast);
-  }
-
-  button.filter.active {
-    opacity: 1;
-  }
-
-  .filter span {
-    font-size: var(--font-size-xsmall);
-    text-align: left;
-  }
-
-  .filter:hover .icon {
-    transform: rotate(var(--left-tilt-double)) scale(1.05);
-  }
-
-  .icon {
-    width: 48px;
-    margin-left: 4px;
-    transition: transform calc(var(--1s) * 0.25);
-  }
-
-  .icon:hover {
-    transform: rotate(var(--left-tilt-double)) scale(1.05);
-  }
-
   input {
     margin-left: 8px;
     width: 12em;
@@ -152,9 +88,8 @@
     font-family: var(--mono);
   }
 
-  @media (max-width: 1360px) {
-    .ui {
-      display: none;
-    }
+  .icon {
+    width: 48px;
+    margin-left: 4px;
   }
 </style>

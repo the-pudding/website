@@ -41,7 +41,7 @@
     margin: 0;
     list-style-type: none;
     /* width: calc(var(--screenshot) + (var(--padding) * 2)); */
-    padding: 32px 24px;
+    padding: 32px 16px;
     width: 100%;
     --padding: clamp(16px, 12vw, 48px);
   }
@@ -59,5 +59,4 @@
       --padding: clamp(24px, 4vw, 56px);
     }
   }
-
 </style>
