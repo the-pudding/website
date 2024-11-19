@@ -97,9 +97,7 @@
 
   .screenshot {
     background: var(--primary, var(--color-gray-100));
-    background: var(--color-gray-1000);
     /* background: var(--secondary, var(--color-gray-100)); */
-    /* background: var(--tertiary, var(--color-gray-100)); */
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;

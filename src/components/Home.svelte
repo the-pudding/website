@@ -102,8 +102,9 @@
     align-items: center;
   }
 
-  .filters span {
+  .filters > span {
     font-size: var(--font-size-xsmall);
+    display: block;
   }
 
   button.filter {
@@ -115,6 +116,7 @@
     border: none;
     text-transform: uppercase;
     opacity: 0.33;
+    flex: auto;
     transition: opacity var(--transition-fast);
   }
 
@@ -124,6 +126,7 @@
 
   .filter span {
     font-size: var(--font-size-xsmall);
+    text-align: left;
   }
 
   .filter:hover .icon {
@@ -147,5 +150,11 @@
 
   input::placeholder {
     font-family: var(--mono);
+  }
+
+  @media (max-width: 1360px) {
+    .ui {
+      display: none;
+    }
   }
 </style>
