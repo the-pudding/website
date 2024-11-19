@@ -4,7 +4,7 @@ import color from "color";
 import { descending } from "d3";
 
 const CWD = process.cwd();
-const PATH_IN = `${CWD}/static/common/assets/thumbnails/test`;
+const PATH_IN = `${CWD}/static/common/assets/thumbnails/screenshots`;
 const PATH_OUT = `${CWD}/src/data`;
 const FILES = fs.readdirSync(PATH_IN).filter((d) => d.includes(".jpg"));
 const QUALITY = 2;
@@ -33,10 +33,16 @@ const getBestColors = (p) => {
   });
 
   // sort candidates by saturation, then population, then lightness
-  const noBg = candidates.filter((d) => d.pop < 5000);
+  const noBg = candidates.filter((d) => d.pop < 5000 && d.s > 0.5 && d.l > 0.5);
 
-  noBg.sort((a, b) => descending(a.s, b.s));
-  return noBg;
+  noBg.sort((a, b) => descending(a.s + a.l, b.s + a.l));
+
+  if (noBg.length > 0) return noBg;
+  return candidates.sort((a, b) => descending(a.s + a.l, b.s + a.l));
+
+  // noBg.slice(0, 3).forEach((d) => {
+  //   console.log(d.pop, d.h.toFixed(2), d.s.toFixed(2), d.l.toFixed(2));
+  // });
 };
 
 const getAccesibleText = (str) => {
@@ -54,8 +60,9 @@ const createPalette = (p) => {
 
   const primary = colors[0] ? rgbToString(roundRGB(colors[0].rgb)) : undefined;
   const secondary = colors[1] ? rgbToString(roundRGB(colors[1].rgb)) : undefined;
+  const tertiary = colors[2] ? rgbToString(roundRGB(colors[2].rgb)) : undefined;
   const text = getAccesibleText(primary);
-  return { primary, secondary, text };
+  return { primary, secondary, tertiary, text };
 };
 
 const getColor = (path) => {
@@ -76,9 +83,9 @@ const getColor = (path) => {
     for (let file of FILES) {
       console.log(`- extracting ${file}`);
       const path = `${PATH_IN}/${file}`;
-      const { primary, secondary, text } = await getColor(path);
+      const { primary, secondary, tertiary, text } = await getColor(path);
       const slug = file.replace(".jpg", "");
-      output.push({ slug, primary, secondary, text });
+      output.push({ slug, primary, secondary, tertiary, text });
     }
   } catch (err) {
     console.error(err);

@@ -4,10 +4,16 @@
 
   const DEFAULT_COLOR = "rgb(239,239,239)";
 
-  const lookupColor = (version) => {
+  let c = $state("primary");
+
+  function lookupColor(version) {
     const match = colors.find((d) => d.slug === slug);
     return match ? match[version] : DEFAULT_COLOR;
-  };
+  }
+
+  function cycle() {
+    c = c === "primary" ? "secondary" : c === "secondary" ? "tertiary" : "primary";
+  }
 
   const style = `
 	--primary: ${lookupColor("primary")};
@@ -19,15 +25,15 @@
   `;
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");
-
   const dir = resource ? "resources/480" : "thumbnails/screenshots";
   const imagePath = `/common/assets/${dir}`;
 </script>
 
-<div class="story" {style} class:youtube class:resource>
+<div class="story" style="{style} --bg: {lookupColor(c)};" class:youtube class:resource>
   {#if !resource}
     <div class="info">
       <p class="id">#{id}</p>
+      <button onclick={cycle}>cycle color</button>
       <p class="month">{month}</p>
     </div>
   {/if}
@@ -102,7 +108,7 @@
   }
 
   .screenshot {
-    background: var(--primary, var(--color-gray-100));
+    background: var(--bg, var(--color-gray-100));
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;
