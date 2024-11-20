@@ -1,7 +1,7 @@
 import fs from "fs";
 import vibrant from "node-vibrant";
 import color from "color";
-import { descending } from "d3";
+import { max, descending } from "d3";
 
 const CWD = process.cwd();
 const PATH_IN = `${CWD}/static/common/assets/thumbnails/screenshots`;
@@ -12,38 +12,58 @@ const SCORE_GRAPHIC = 3.25; // give it a .25 buffer
 const SCORE_TEXT = 4.75; // give it a .25 buffer
 const SATURATION_THRESHOLD = 0.6;
 
-const rgbToString = (rgb) => `rgb(${rgb.join(", ")})`;
-
-const roundRGB = (rgb) => rgb.map((d) => Math.round(d));
+function hslToString({ h, s, l }) {
+  const h1 = Math.round(h * 360);
+  const s1 = Math.round(s * 100);
+  const l1 = Math.round(l * 100);
+  return `hsl(${h1}, ${s1}%, ${l1}%)`;
+}
 
 const getBestColors = (p) => {
   // loop through all color swatches
   const candidates = [];
   Object.keys(p).forEach((k) => {
     const hsl = p[k]._hsl;
-    const rgb = p[k]._rgb;
+    // const rgb = p[k]._rgb;
     const pop = p[k]._population;
 
     if (!pop) return;
     // is it saturated?
     const h = hsl[0];
     const s = hsl[1];
-    const l = hsl[2];
-    candidates.push({ h, s, l, rgb, pop });
+    const l = Math.max(0.5, Math.min(0.8, hsl[2]));
+    candidates.push({ h, s, l, pop });
   });
 
-  candidates.forEach((d) => console.log(d.pop, d.s.toFixed(2), d.l.toFixed(2)));
+  // candidates.forEach((d) => console.log(d.pop, d.s.toFixed(2), d.l.toFixed(2)));
+
   // sort candidates by saturation, then population, then lightness
-  const noBg = candidates.filter((d) => d.pop < 5000 && d.s > 0.3 && d.l > 0.3);
+  // const noBg = candidates.filter((d) => d.pop < 5000 && d.s > 0.3 && d.l > 0.3);
 
-  noBg.sort((a, b) => descending(a.s + a.l, b.s + a.l));
+  const maxPop = max(candidates, (d) => d.pop);
+  const bgHue = maxPop > 1000 ? candidates.find((d) => d.pop === maxPop).h : undefined;
+  // a custom blend prioritizing saturation and lightness, deprioritizing population
 
-  if (noBg.length > 0) return noBg;
-  return candidates.sort((a, b) => descending(a.s + a.l, b.s + a.l));
+  const scored = candidates.map((d) => {
+    let popScore = 1;
 
-  // noBg.slice(0, 3).forEach((d) => {
-  //   console.log(d.pop, d.h.toFixed(2), d.s.toFixed(2), d.l.toFixed(2));
-  // });
+    if (bgHue) {
+      if (d.pop === maxPop) popScore = 0;
+      else if (d.pop < 10) popScore = 0.25;
+      else if (d.pop < 50) popScore = 0.75;
+    }
+
+    const hueDiff = bgHue ? Math.abs(d.h - bgHue) : 0;
+    const score = d.s + popScore + hueDiff;
+    return {
+      ...d,
+      score
+    };
+  });
+  scored.sort((a, b) => descending(a.score, b.score));
+  // console.table(scored);
+
+  return candidates;
 };
 
 const getAccesibleText = (str) => {
@@ -59,9 +79,9 @@ const getAccesibleText = (str) => {
 const createPalette = (p) => {
   const colors = getBestColors(p);
 
-  const primary = colors[0] ? rgbToString(roundRGB(colors[0].rgb)) : undefined;
-  const secondary = colors[1] ? rgbToString(roundRGB(colors[1].rgb)) : undefined;
-  const tertiary = colors[2] ? rgbToString(roundRGB(colors[2].rgb)) : undefined;
+  const primary = colors[0] ? hslToString(colors[0]) : undefined;
+  const secondary = colors[1] ? hslToString(colors[1]) : undefined;
+  const tertiary = colors[2] ? hslToString(colors[2]) : undefined;
   const text = getAccesibleText(primary);
   return { primary, secondary, tertiary, text };
 };

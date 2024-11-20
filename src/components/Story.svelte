@@ -136,12 +136,12 @@
 
   .text {
     font-family: var(--sans);
-    margin-top: 8px;
+    margin-top: 12px;
   }
 
   h3.short {
     color: var(--color-gray-900);
-    font-size: var(--28px);
+    font-size: clamp(var(--24px), 6vw, var(--28px));
     line-height: 1;
     margin: 0;
     margin-bottom: 8px;
@@ -152,9 +152,9 @@
     font-size: var(--16px);
   }
 
-  @media only screen and (min-width: 1250px) {
+  @media (min-width: 960px) {
     h3.short {
-      font-size: var(--36px);
+      font-size: clamp(var(--24px), 2.75vw, var(--32px));
     }
   }
 </style>
