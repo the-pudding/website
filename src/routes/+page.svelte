@@ -16,7 +16,8 @@
     "https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2",
     "https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2",
     "https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff2",
-    "https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Bold-Web.woff2"
+    "https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Bold-Web.woff2",
+    "https://pudding.cool/assets/fonts/atlas/AtlasTypewriter-Medium-Web.woff2"
   ];
 
   const { stories, authors } = data;
@@ -25,7 +26,7 @@
   setContext("Home", { stories, copy });
 </script>
 
-<Meta {copy} />
+<Meta {copy} {preloadFont} />
 <Home />
 <!-- TODO still needed? -->
 <!-- <HiddenAuthors {authors} /> -->
