@@ -1,23 +1,23 @@
 <script>
-  let { activeFilter = $bindable(), filters } = $props();
+  import { base } from "$app/paths";
+  let { link, activeFilter = $bindable(), filters } = $props();
 </script>
 
-<div class="filters--desktop">
-  <span>Filter By</span>
+<div class="filters--desktop" class:link>
   {#each filters as filter}
     {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
     {@const active = slug === activeFilter || !activeFilter}
     <button class:active onclick={() => (activeFilter = slug === activeFilter ? undefined : slug)}>
-      <img class="icon" src="assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
+      <img class="icon" src="{base}/assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
       <span class="name">{filter}</span>
     </button>
   {/each}
 </div>
 
 <div class="filters--mobile">
-  <label for="filter-select">Filter by</label>
+  <!-- <label for="filter-select">Filter by</label> -->
   <select id="filter-select" bind:value={activeFilter}>
-    <option value="">All</option>
+    <option value="">{All}</option>
     {#each filters as filter}
       {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
       <option value={slug}>{filter}</option>
@@ -47,6 +47,10 @@
     opacity: 0.33;
     flex: auto;
     transition: opacity var(--transition-fast);
+  }
+
+  .filters--desktop.link button {
+    opacity: 1;
   }
 
   .filters--desktop button.active {
@@ -80,7 +84,7 @@
     font-size: var(--font-size-small);
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 960px) {
     .filters--desktop {
       display: none;
     }

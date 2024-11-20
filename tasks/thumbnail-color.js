@@ -32,8 +32,9 @@ const getBestColors = (p) => {
     candidates.push({ h, s, l, rgb, pop });
   });
 
+  candidates.forEach((d) => console.log(d.pop, d.s.toFixed(2), d.l.toFixed(2)));
   // sort candidates by saturation, then population, then lightness
-  const noBg = candidates.filter((d) => d.pop < 5000 && d.s > 0.5 && d.l > 0.5);
+  const noBg = candidates.filter((d) => d.pop < 5000 && d.s > 0.3 && d.l > 0.3);
 
   noBg.sort((a, b) => descending(a.s + a.l, b.s + a.l));
 

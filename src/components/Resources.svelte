@@ -1,13 +1,22 @@
 <script>
+  import { browser } from "$app/environment";
   import HeroText from "$components/HeroText.svelte";
-  import Link from "$components/Resources.Link.svelte";
   import Details from "$components/Details.svelte";
-  import data from "$data/resources.csv";
   import Stories from "$components/Stories.svelte";
+  import Filters from "$components/Filters.svelte";
+  import data from "$data/resources.csv";
 
   let { copy } = $props();
 
   const { sections } = copy;
+  const filters = [
+    "How To Blogs",
+    "Live Coding",
+    "Talks & Presentations",
+    "Podcasts",
+    "Pudding Cup",
+    "FAQ"
+  ];
 
   // id, href, slug, short, tease, month
   const stories = data.map((d) => ({
@@ -16,6 +25,19 @@
     short: d.title,
     tease: d.description
   }));
+  let activeFilter = $state(undefined);
+
+  function slugify(str) {
+    return str.toLowerCase()?.replace(/[^a-z]/g, "_");
+  }
+
+  $effect(() => {
+    // jump to anchor link when activeFilter changes
+    if (browser && activeFilter) {
+      const el = document.getElementById(activeFilter);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 </script>
 
 <section id="intro" class="column-wide">
@@ -25,69 +47,40 @@
   </HeroText>
 </section>
 
-<nav>
-  <ul class="column-wide">
-    {#each sections as { hed, id }}
-      <li>
-        <a href="#{id}">{hed}</a>
-      </li>
-    {/each}
-    <li>
-      <a href="#faq">FAQ</a>
-    </li>
-  </ul>
-</nav>
-
-{#each sections as { hed, id }}
-  <section {id}>
-    <h2 class="upper column-wide">{hed}</h2>
-    <Stories stories={stories.filter((d) => d.category === id)} resource={true} />
-  </section>
-{/each}
-
-<section id="faq" class="column-regular">
-  <h2 class="upper">FAQ</h2>
-  {#each copy.faq as { question, answer }}
-    <Details summary={question} text={answer} />
+<div class="c">
+  <div class="ui column-wide">
+    <div class="filters">
+      <Filters {filters} bind:activeFilter link={true}></Filters>
+    </div>
+  </div>
+  {#each sections as { hed }}
+    {@const id = slugify(hed)}
+    <section {id}>
+      <h2 class="upper column-wide">{hed}</h2>
+      <Stories stories={stories.filter((d) => slugify(d.group) === id)} resource={true} />
+    </section>
   {/each}
-</section>
+
+  <section id="faq" class="column-regular">
+    <h2 class="upper">FAQ</h2>
+    {#each copy.faq as { question, answer }}
+      <Details summary={question} text={answer} />
+    {/each}
+  </section>
+</div>
 
 <style>
   section {
     margin-bottom: 4em;
   }
 
-  h2 {
-    transform: translate(0, 0.2em);
-  }
-
-  li {
-    margin: 0;
-  }
-
-  nav {
-    background: var(--background-body);
+  .ui {
     position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: var(--z-top);
-    padding: 1em 0;
-    margin-bottom: 4rem;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  nav li {
-    margin: 0;
-    margin-right: 1em;
-    list-style-type: none;
-    font-size: var(--font-size-small);
-    font-weight: var(--font-weight-bold);
+    background: var(--color-bg);
+    padding: 16px 0;
   }
 
   /* TODO fix */

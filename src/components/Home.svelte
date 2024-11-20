@@ -2,11 +2,11 @@
   import { descending } from "d3";
   import { getContext } from "svelte";
   import Stories from "$components/Stories.svelte";
-  import Filters from "$components/Home.Filters.svelte";
+  import Filters from "$components/Filters.svelte";
 
   const { stories, copy } = getContext("Home");
 
-  const filters = ["Our Faves", "Audio", "Video", "Updating", "Your Input", "Collabs"];
+  const filters = ["Our Faves", "Audio", "Video", "Updating", "Your Input"];
 
   let searchValue = $state("");
   let activeFilter = $state(undefined);
@@ -30,7 +30,7 @@
 <div class="c">
   <div class="ui column-wide">
     <div class="search">
-      <span>Search</span>
+      <!-- <span>Search</span> -->
       <img class="icon" src="assets/stickers/search@2x.png" aria-hidden="true" alt="" />
       <input placeholder="Find a story" bind:value={searchValue} />
     </div>
@@ -48,7 +48,7 @@
     align-items: center;
     background: var(--color-bg);
     padding: 16px;
-    z-index: var(--z-overlay);
+    z-index: var(--z-top);
     font-family: var(--mono);
     text-transform: uppercase;
     font-size: var(--14px);
