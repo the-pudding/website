@@ -15,7 +15,7 @@
   }
 
   function onClickMenu() {
-    console.log("click");
+    // console.log("click");
     visible = true;
   }
 </script>
