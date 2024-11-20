@@ -31,7 +31,7 @@ const xml = (items) => {
 		<link>https://pudding.cool</link>
 		<description>The Pudding is an editorial publication that explains ideas debated in culture with visual essays.</description>
 		<lastBuildDate>
-			Mon, 30 Aug 2021 17:24:43 GMT
+			Wed, 20 Nov 2024 12:00:00 GMT
 		</lastBuildDate>
 		<language>en-US</language>
 		<sy:updatePeriod>daily</sy:updatePeriod>

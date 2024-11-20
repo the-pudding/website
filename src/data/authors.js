@@ -1,5 +1,6 @@
 import data from "$data/authors.csv";
-import slugify from "$utils/slugify.js";
+
+const slugify = (str) => str.toLowerCase().replace(/\s/g, "-");
 
 const clean = data.map((d) => ({
   id: d.id,
