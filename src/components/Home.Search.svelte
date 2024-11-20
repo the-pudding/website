@@ -143,6 +143,12 @@
   .icon {
     width: 48px;
     margin-left: 4px;
+    transition: transform calc(var(--1s) * 0.25);
+    pointer-events: auto;
+  }
+
+  .icon:hover {
+    transform: rotate(var(--left-tilt-double)) scale(1.05);
   }
 
   @media only screen and (max-width: 540px) {

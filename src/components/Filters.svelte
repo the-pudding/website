@@ -37,7 +37,7 @@
   }
 
   .filters--desktop button {
-    margin: 0 8px;
+    margin: 0 8px 0 -8px;
     display: flex;
     align-items: center;
     background: none;
@@ -45,13 +45,12 @@
     border: none;
     text-transform: uppercase;
     opacity: 0.33;
-    flex: auto;
     transition: opacity var(--transition-fast);
   }
 
-  .filters--desktop.link button {
+  /* .filters--desktop.link button {
     opacity: 1;
-  }
+  } */
 
   .filters--desktop button.active {
     opacity: 1;
@@ -78,6 +77,15 @@
 
   .filters--mobile {
     display: none;
+  }
+
+  .filters--mobile select {
+    border: 2px solid var(--color-fg);
+    background-color: var(--color-bg);
+    border-radius: 3px;
+    line-height: normal;
+    font-size-adjust: 0.5;
+    transform: translateY(1px);
   }
 
   label {

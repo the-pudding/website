@@ -4,6 +4,7 @@
   import { shuffle } from "d3";
   import wordmark from "$svg/wordmark-sticker.svg";
   import linkOutArrow from "$svg/arrow-up-right.svg";
+  import Story from "$components/Story.svelte";
 
   let localURL;
   let storiesRecent = $state([]);
@@ -41,10 +42,18 @@
       const response = await fetch(url);
       const data = await response.json();
 
-      const filtered = data.filter((d) => !localURL.includes(d.url));
+      // const filtered = data.filter((d) => !localURL.includes(d.url));
+
+      const withSlug = data.map((d) => ({
+        ...d,
+        slug: d.image,
+        href: d.url
+      }));
 
       storyCount = data.length;
-      storiesRecent = recent ? filtered.slice(0, 4) : [];
+      storiesRecent = recent ? withSlug.slice(0, 4) : [];
+
+      console.log(storiesRecent)
       storiesTopics = topics ? shuffle(filtered.filter((d) => d.short)).slice(0, 3) : [];
     }
   });
@@ -62,35 +71,17 @@
         </section>
       {/if}
 
-      <!-- {#if storiesRecent.length}
+      {#if storiesRecent && storiesRecent.length}
         <section class="recent">
-          <div
-            class="stories-wrapper"
-            style="min-width: {storiesRecent.length * (300 + 20) + 30}px;"
-          >
-            {#each storiesRecent as { date, bgColor, fgColor, tease, url, image }}
-              {@const href = url.startsWith("http") ? url : `https://pudding.cool/${url}`}
-              <div class="story">
-                <a {href}>
-                  <div class="story-img-wrapper">
-                    <img
-                      src="https://pudding.cool/common/assets/thumbnails/960/{image}.jpg"
-                      alt="thumbnail"
-                    />
-                  </div>
-
-                  <div class="story-desc" style="background-color:{bgColor}; color:{fgColor};">
-                    <p class="story-hed">{tease}</p>
-                    <p class="story-date">
-                      {date.slice(0, 2)}/{date.slice(6, 10)}
-                    </p>
-                  </div>
-                </a>
-              </div>
-            {/each}
-          </div>
+            <ul>
+              {#each storiesRecent as story (story.slug)}
+                <li>
+                  <Story {...story} />
+                </li>
+              {/each}
+            </ul>
         </section>
-      {/if} -->
+      {/if}
     </div>
     <div class="bottom">
       <div class="cta-wrapper">
@@ -168,6 +159,43 @@
     padding: 16px;
     margin: 32px auto 100px auto;
     font-family: var(--sans);
+  }
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 64px 0;
+  }
+
+  .topics {
+    font-family: var(--mono);
+    font-size: var(--font-size-medium, 16px);
+    text-align: center;
+    max-width: 900px;
+  }
+
+  .recent {
+    width: 100%;
+  }
+
+  .recent ul {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    gap: 32px;
+  }
+
+  .recent ul li {
+    width: 50%;
+    margin: 0;
+    list-style-type: none;
+    /* width: calc(var(--screenshot) + (var(--padding) * 2)); */
+    padding: 32px 0;
+    width: 100%;
+    --padding: clamp(16px, 12vw, 48px);
   }
 
   .bottom {

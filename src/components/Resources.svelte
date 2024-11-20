@@ -10,9 +10,9 @@
 
   const { sections } = copy;
   const filters = [
-    "How To Blogs",
+    "How-To Blogs",
     "Live Coding",
-    "Talks & Presentations",
+    "Presentations",
     "Podcasts",
     "Pudding Cup",
     "FAQ"
@@ -32,6 +32,7 @@
   }
 
   $effect(() => {
+    console.log({activeFilter});
     // jump to anchor link when activeFilter changes
     if (browser && activeFilter) {
       const el = document.getElementById(activeFilter);
@@ -56,7 +57,7 @@
   {#each sections as { hed }}
     {@const id = slugify(hed)}
     <section {id}>
-      <h2 class="upper column-wide">{hed}</h2>
+      <!-- <h2 class="upper column-wide">{hed}</h2> -->
       <Stories stories={stories.filter((d) => slugify(d.group) === id)} resource={true} />
     </section>
   {/each}
@@ -80,7 +81,7 @@
     left: 0;
     z-index: var(--z-top);
     background: var(--color-bg);
-    padding: 16px 0;
+    padding: 16px;
   }
 
   /* TODO fix */
