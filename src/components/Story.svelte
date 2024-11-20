@@ -1,5 +1,6 @@
 <script>
   import colors from "$data/thumbnail-colors.json";
+  import playSvg from "$svg/play.svg";
   let { id, href, slug, short, tease, month, color_override, resource } = $props();
 
   const DEFAULT_COLOR = "rgb(239,239,239)";
@@ -30,6 +31,9 @@
   <a {href} rel="external" target="_blank" class="inner">
     <div class="screenshot">
       <img src="{imagePath}/{slug}.jpg" loading="lazy" alt="thumbnail for story" />
+      {#if youtube}
+        <span class="icon--play">{@html playSvg}</span>
+      {/if}
     </div>
     <div class="text">
       <h3 class="short">
@@ -93,6 +97,17 @@
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;
+  }
+
+  span.icon--play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4em;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: var(--z-top);
   }
 
   img {
