@@ -80,7 +80,7 @@
     font-size: var(--font-size-small);
   }
 
-  @media (max-width: 1360px) {
+  @media (max-width: 1200px) {
     .filters--desktop {
       display: none;
     }

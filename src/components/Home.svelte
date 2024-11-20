@@ -6,15 +6,7 @@
 
   const { stories, copy } = getContext("Home");
 
-  const filters = [
-    "Our Faves",
-    "Award Winners",
-    "Audio",
-    "Video",
-    "Updating",
-    "Your Input",
-    "Collabs"
-  ];
+  const filters = ["Our Faves", "Audio", "Video", "Updating", "Your Input", "Collabs"];
 
   let searchValue = $state("");
   let activeFilter = $state(undefined);
