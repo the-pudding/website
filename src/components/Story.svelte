@@ -102,8 +102,8 @@
     transform: translate(-50%, 0) scale(1.05);
   }
 
-  .youtube:hover .screenshot img,
-  .resource:hover .screenshot img {
+  .story.youtube:hover .screenshot img,
+  .story.resource:hover .screenshot img {
     transform: translate(-50%, 50%) scale(1.05);
   }
 
