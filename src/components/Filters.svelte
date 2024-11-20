@@ -17,7 +17,7 @@
 <div class="filters--mobile">
   <!-- <label for="filter-select">Filter by</label> -->
   <select id="filter-select" bind:value={activeFilter}>
-    <option value="">{All}</option>
+    <option value="">All</option>
     {#each filters as filter}
       {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
       <option value={slug}>{filter}</option>

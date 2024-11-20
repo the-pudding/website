@@ -1,12 +1,13 @@
 <script>
   import colors from "$data/thumbnail-colors.json";
-  let { id, href, slug, short, tease, month, resource } = $props();
+  let { id, href, slug, short, tease, month, color_override, resource } = $props();
 
   const DEFAULT_COLOR = "rgb(239,239,239)";
 
   let c = $state("primary");
 
   function lookupColor(version) {
+    if (color_override) return color_override;
     const match = colors.find((d) => d.slug === slug);
     return match ? match[version] : DEFAULT_COLOR;
   }
