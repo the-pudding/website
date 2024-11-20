@@ -79,11 +79,9 @@ const getAccesibleText = (str) => {
 const createPalette = (p) => {
   const colors = getBestColors(p);
 
-  const primary = colors[0] ? hslToString(colors[0]) : undefined;
-  const secondary = colors[1] ? hslToString(colors[1]) : undefined;
-  const tertiary = colors[2] ? hslToString(colors[2]) : undefined;
-  const text = getAccesibleText(primary);
-  return { primary, secondary, tertiary, text };
+  const bg = colors[0] ? hslToString(colors[0]) : undefined;
+  const text = getAccesibleText(bg);
+  return { bg, text };
 };
 
 const getColor = (path) => {
@@ -104,9 +102,9 @@ const getColor = (path) => {
     for (let file of FILES) {
       console.log(`- extracting ${file}`);
       const path = `${PATH_IN}/${file}`;
-      const { primary, secondary, tertiary, text } = await getColor(path);
+      const { bg, text } = await getColor(path);
       const slug = file.replace(".jpg", "");
-      output.push({ slug, primary, secondary, tertiary, text });
+      output.push({ slug, bg, text });
     }
   } catch (err) {
     console.error(err);

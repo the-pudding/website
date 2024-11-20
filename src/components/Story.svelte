@@ -4,25 +4,15 @@
 
   const DEFAULT_COLOR = "rgb(239,239,239)";
 
-  let c = $state("primary");
-
-  function lookupColor(version) {
+  function lookupColor() {
     if (color_override) return color_override;
     const match = colors.find((d) => d.slug === slug);
-    return match ? match[version] : DEFAULT_COLOR;
-  }
-
-  function cycle() {
-    c = c === "primary" ? "secondary" : c === "secondary" ? "tertiary" : "primary";
+    return match ? match.bg : DEFAULT_COLOR;
   }
 
   const style = `
-	--primary: ${lookupColor("primary")};
-	--secondary: ${lookupColor("secondary")};
-	--tertiary: ${lookupColor("tertiary")};
-	--default-primary: ${DEFAULT_COLOR};
-	--default-secondary: ${DEFAULT_COLOR};
-	--default-tertiary: ${DEFAULT_COLOR};
+	--bg: ${lookupColor()};
+	--default-bg: ${DEFAULT_COLOR};
   `;
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");
@@ -30,25 +20,15 @@
   const imagePath = `/common/assets/${dir}`;
 </script>
 
-<div class="story" style="{style} --bg: {lookupColor(c)};" class:youtube class:resource>
+<div class="story" {style} class:youtube class:resource>
   {#if !resource}
     <div class="info">
       <p class="id">#{id}</p>
-      <button onclick={cycle}>cycle color</button>
       <p class="month">{month}</p>
     </div>
   {/if}
   <a {href} rel="external" target="_blank" class="inner">
     <div class="screenshot">
-      <!-- <img
-        src="{imagePath}/{slug}.jpg"
-        alt="thumbnail for story"
-        srcset="{imagePath}/{slug}.jpg 1280w,
-			{imagePath}/{slug}.jpg 960w,
-			{imagePath}/{slug}.jpg 640w"
-        sizes="(max-width: 320px) 640px, (max-width: 480px) 960px, 1280px"
-        loading="lazy"
-      /> -->
       <img src="{imagePath}/{slug}.jpg" loading="lazy" alt="thumbnail for story" />
     </div>
     <div class="text">
