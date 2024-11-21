@@ -66,6 +66,7 @@
   .filters--desktop span {
     font-size: var(--font-size-xsmall);
     text-align: left;
+    color: var(--color-fg);
   }
 
   .filters--desktop button:hover .icon {
@@ -88,11 +89,12 @@
 
   .filters--mobile select {
     border: 2px solid var(--color-fg);
-    background-color: var(--color-bg);
+    background-color: var(--color-input-bg);
     border-radius: 3px;
     line-height: normal;
     font-size-adjust: 0.5;
     transform: translateY(1px);
+    font-size: var(--font-size-small);
   }
 
   label {
@@ -105,7 +107,8 @@
     }
 
     .filters--mobile {
-      display: block;
+      display: inline-block;
+      margin-top: -3px;
     }
   }
 </style>

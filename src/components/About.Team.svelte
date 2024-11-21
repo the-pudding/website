@@ -29,6 +29,7 @@
     max-width: 10.1em;
     line-height: 1.25;
     transition: transform calc(var(--1s) * 0.25);
+    color: var(--color-fg);
   }
 
   li:hover img {
@@ -37,10 +38,16 @@
 
   a {
     padding: 0;
+    color: var(--color-fg);
+  }
+
+  li:hover a {
+    color: var(--color-link-hover);
   }
 
   img {
     margin-bottom: 0.25em;
+    transition: transform calc(var(--1s) * 0.25);
   }
 
   span {

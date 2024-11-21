@@ -27,6 +27,7 @@
     table-layout: auto;
     margin-bottom: 48px;
     font-family: var(--sans);
+    color: var(--color-fg);
   }
 
   tr {
@@ -39,7 +40,13 @@
   }
 
   td {
-    font-size: var(--font-size-xsmall);
+    font-size: var(--font-size-small);
+    color: var(--color-fg);
+  }
+
+  td a {
+    color: var(--color-fg);
+    text-decoration: underline 2px var(--color-fg);
   }
 
   td:nth-child(3),

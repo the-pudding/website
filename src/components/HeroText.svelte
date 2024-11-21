@@ -9,7 +9,7 @@
 <style>
   div {
     line-height: 1.65;
-    padding: 4em 0 2em 0;
+    padding: 2em 0;
   }
 
   :global(.hero-text h1) {
@@ -22,5 +22,13 @@
   :global(.hero-text p) {
     font-weight: var(--font-weight-thin);
     font-size: var(--font-size-large);
+    line-height: 1.3;
+    max-width: var(--width-padded);
+  }
+
+  @media only screen and (min-width: 960px) {
+    div {
+      padding: 4em 0 2em 0;
+    }
   }
 </style>

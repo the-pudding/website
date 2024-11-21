@@ -15,7 +15,7 @@
 {#each sections as { hed, id }}
   <section {id} class="column-regular">
     {#if hed}
-      <h2>{hed}</h2>
+      <h2 class="hed-dek">{hed}</h2>
     {/if}
 
     {#if copy[id]}

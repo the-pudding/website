@@ -1,9 +1,24 @@
 <script>
   import colors from "$data/thumbnail-colors.json";
   import playSvg from "$svg/play.svg";
+  import { onMount } from "svelte";
   let { id, href, slug, short, tease, month, color_override, resource, footer } = $props();
+  let prefersDarkMode = $state();
+  let style = $state();
+  let DEFAULT_COLOR = $state();
 
-  const DEFAULT_COLOR = "rgb(239,239,239)";
+  onMount(() => {
+      const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+      prefersDarkMode = darkModeQuery.matches;
+
+      const handleChange = (event) => { prefersDarkMode = event.matches; };
+      darkModeQuery.addEventListener('change', handleChange);
+
+      return () => {
+          darkModeQuery.removeEventListener('change', handleChange);
+      };
+  });
 
   function lookupColor() {
     if (color_override) return color_override;
@@ -12,10 +27,13 @@
     return match ? match.bg : DEFAULT_COLOR;
   }
 
-  const style = `
-	--bg: ${lookupColor()};
-	--default-bg: ${DEFAULT_COLOR};
-  `;
+  $effect(() => {
+    DEFAULT_COLOR = prefersDarkMode ? "rgb(78, 78, 78)" : "rgb(239,239,239)";
+    style = `
+      --bg: ${lookupColor()};
+      --default-bg: ${DEFAULT_COLOR};
+    `;
+  });
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");
   const dir = resource ? "resources/480" : "thumbnails/screenshots";
@@ -94,7 +112,7 @@
   }
 
   .screenshot {
-    background: var(--bg, var(--color-gray-100));
+    background: var(--bg, var(--color-story-bg));
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;
@@ -136,11 +154,15 @@
   }
 
   h3.short {
-    color: var(--color-gray-900);
+    color: var(--color-fg);
     font-size: clamp(var(--24px), 6vw, var(--28px));
     line-height: 1;
     margin: 0;
     margin-bottom: 8px;
+  }
+
+  .resource h3.short {
+    font-size: clamp(var(--20px), 6vw, var(--24px));
   }
 
   .footer h3.short {
@@ -148,13 +170,13 @@
   }
 
   p.tease {
-    color: var(--color-gray-600);
+    color: var(--color-secondary-gray);
     font-size: var(--16px);
   }
 
   .footer p.tease {
     color: var(--color-gray-900);
-    font-size: clamp(var(--18px), 4vw, var(--24px));
+    font-size: clamp(var(--16px), 4vw, var(--20px));
     font-weight: bold;
     line-height: 1.2;
   }
