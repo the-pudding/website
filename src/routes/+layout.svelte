@@ -10,4 +10,4 @@
 <main id="content">
   {@render children?.()}
 </main>
-<Footer recirc={true} recircImages={true} />
+<Footer />

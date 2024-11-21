@@ -53,8 +53,9 @@
 
       storyCount = filtered.length;
 
-      if (recent) stories = recent ? withSlug.slice(0, 4) : [];
-      else stories = shuffle(withSlug).slice(0, 3);
+      const numStories = recircImages ? 4 : 3;
+      if (recent) stories = recent ? withSlug.slice(0, numStories) : [];
+      else stories = shuffle(withSlug).slice(0, numStories);
     }
   });
 </script>
@@ -154,6 +155,7 @@
   footer {
     margin-top: 100px;
   }
+
   .c {
     max-width: calc(var(--width-column-wide) - var(--margin) * 2);
     padding: 16px;
@@ -170,8 +172,8 @@
   }
 
   .text {
-    font-family: var(--mono);
-    font-size: var(--font-size-medium, 16px);
+    font-family: var(--sans);
+    font-size: var(--28px);
     text-align: center;
     max-width: 900px;
   }

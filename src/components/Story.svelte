@@ -7,6 +7,7 @@
 
   function lookupColor() {
     if (color_override) return color_override;
+    if (footer) return DEFAULT_COLOR;
     const match = colors.find((d) => d.slug === slug);
     return match ? match.bg : DEFAULT_COLOR;
   }
@@ -142,9 +143,20 @@
     margin-bottom: 8px;
   }
 
+  .footer h3.short {
+    display: none;
+  }
+
   p.tease {
     color: var(--color-gray-600);
     font-size: var(--16px);
+  }
+
+  .footer p.tease {
+    color: var(--color-gray-900);
+    font-size: clamp(var(--18px), 4vw, var(--24px));
+    font-weight: bold;
+    line-height: 1.2;
   }
 
   @media (min-width: 960px) {
