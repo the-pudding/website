@@ -37,7 +37,7 @@
   }
 
   .filters--desktop button {
-    margin: 0 8px 0 -8px;
+    margin: 0 16px 0 -8px;
     display: flex;
     align-items: center;
     background: none;

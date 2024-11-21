@@ -7,14 +7,14 @@
   import Story from "$components/Story.svelte";
 
   let localURL;
-  let storiesRecent = $state([]);
-  let storiesTopics = $state([]);
+  let stories = $state([]);
   let storyCount = $state(0);
 
-  let { topics = false, recent = false } = $props();
+  let { recirc = false, recent = false, recircImages = false } = $props();
 
   const v = Date.now();
-  const url = `https://pudding.cool/assets/data/stories.json?v=${v}`;
+  // TODO MAKE THIS A REAL URL
+  const url = `assets/data/stories.json?v=${v}`;
 
   const about = [
     { name: "Our Team", url: "https://pudding.cool/about" },
@@ -38,23 +38,23 @@
   onMount(async () => {
     localURL = window.location.href;
 
-    if (topics || recent) {
+    if (recirc) {
       const response = await fetch(url);
       const data = await response.json();
 
-      // const filtered = data.filter((d) => !localURL.includes(d.url));
+      const filtered = data.filter((d) => !localURL.includes(d.url));
 
-      const withSlug = data.map((d) => ({
+      const withSlug = filtered.map((d) => ({
         ...d,
+        tease: d.hed,
         slug: d.image,
         href: d.url
       }));
 
-      storyCount = data.length;
-      storiesRecent = recent ? withSlug.slice(0, 4) : [];
+      storyCount = filtered.length;
 
-      console.log(storiesRecent)
-      storiesTopics = topics ? shuffle(filtered.filter((d) => d.short)).slice(0, 3) : [];
+      if (recent) stories = recent ? withSlug.slice(0, 4) : [];
+      else stories = shuffle(withSlug).slice(0, 3);
     }
   });
 </script>
@@ -62,25 +62,25 @@
 <footer>
   <div class="c">
     <div class="top">
-      {#if storiesTopics.length}
-        <section class="topics">
-          We’ve published <strong>{storyCount}</strong> awesome stories on topics such as
-          {#each storiesTopics as { short, url }, i}
-            <a href={url} target="_blank" rel="noreferrer">{short}</a>,&nbsp;
-          {/each}and more.
-        </section>
-      {/if}
-
-      {#if storiesRecent && storiesRecent.length}
-        <section class="recent">
+      {#if recirc && stories.length}
+        {#if recircImages}
+          <section class="images">
             <ul>
-              {#each storiesRecent as story (story.slug)}
+              {#each stories as story}
                 <li>
-                  <Story {...story} />
+                  <Story {...story} footer={true} />
                 </li>
               {/each}
             </ul>
-        </section>
+          </section>
+        {:else}
+          <section class="text">
+            We’ve published <strong>{storyCount}</strong> awesome stories such as
+            {#each stories as { short, url }, i}
+              <a href={url} target="_blank" rel="noreferrer">{short}</a>,&nbsp;
+            {/each}and more.
+          </section>
+        {/if}
       {/if}
     </div>
     <div class="bottom">
@@ -169,18 +169,18 @@
     margin: 0 0 64px 0;
   }
 
-  .topics {
+  .text {
     font-family: var(--mono);
     font-size: var(--font-size-medium, 16px);
     text-align: center;
     max-width: 900px;
   }
 
-  .recent {
+  .images {
     width: 100%;
   }
 
-  .recent ul {
+  .images ul {
     width: 100%;
     padding: 0;
     display: flex;
@@ -188,7 +188,7 @@
     gap: 32px;
   }
 
-  .recent ul li {
+  .images ul li {
     width: 50%;
     margin: 0;
     list-style-type: none;

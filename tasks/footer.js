@@ -1,11 +1,8 @@
+import fs from "fs";
+import { csvParse } from "d3";
 const CWD = process.cwd();
 
-import fs from "fs";
-import papa from "papaparse";
-
-const csv = fs.readFileSync(`${CWD}/src/data/stories.csv`, "utf8");
-
-const stories = papa.parse(csv, { header: true }).data;
+const stories = csvParse(fs.readFileSync(`${CWD}/src/data/stories.csv`, "utf8"));
 
 stories.sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -14,10 +11,8 @@ const output = stories
   .map((d) => ({
     image: d.url.replace(/\//g, "_"),
     url: d.url_alt || d.url,
+    short: d.short,
     hed: d.hed,
-    tease: d.tease,
-    short: d.home_text,
-    date: d.date,
     bgColor: d.bgColor,
     fgColor: d.fgColor
   }));
