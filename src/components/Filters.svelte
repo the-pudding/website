@@ -1,6 +1,6 @@
 <script>
   import { base } from "$app/paths";
-  let { link, activeFilter = $bindable(), filters } = $props();
+  let { resource, activeFilter = $bindable(), filters } = $props();
 
   let override = $state();
 
@@ -14,7 +14,7 @@
   });
 </script>
 
-<div class="filters--desktop" class:link>
+<div class="filters--desktop" class:resource>
   {#each filters as filter}
     {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
     {@const active = override ? slug === override : slug === activeFilter || !activeFilter}
@@ -28,7 +28,7 @@
 <div class="filters--mobile">
   <!-- <label for="filter-select">Filter by</label> -->
   <select id="filter-select" bind:value={activeFilter}>
-    <option value="">All</option>
+    <option value="">{resource ? "Choose Type" : "All"}</option>
     {#each filters as filter}
       {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
       <option value={slug}>{filter}</option>
@@ -58,10 +58,6 @@
     opacity: 0.33;
     transition: opacity var(--transition-fast);
   }
-
-  /* .filters--desktop.link button {
-    opacity: 1;
-  } */
 
   .filters--desktop button.active {
     opacity: 1;

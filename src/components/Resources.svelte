@@ -52,7 +52,7 @@
 <div class="c">
   <div class="ui column-wide">
     <div class="filters">
-      <Filters {filters} bind:activeFilter link={true} bind:this={filtersComponent}></Filters>
+      <Filters {filters} bind:activeFilter resource={true} bind:this={filtersComponent}></Filters>
     </div>
   </div>
   {#each sections as { hed }}
