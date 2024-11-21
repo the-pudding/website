@@ -5,8 +5,10 @@
   import Stories from "$components/Stories.svelte";
   import Filters from "$components/Filters.svelte";
   import data from "$data/resources.csv";
+  import inView from "$actions/inView.js";
 
   let { copy } = $props();
+  let filtersComponent = $state();
 
   const { sections } = copy;
   const filters = [
@@ -32,7 +34,6 @@
   }
 
   $effect(() => {
-    console.log({activeFilter});
     // jump to anchor link when activeFilter changes
     if (browser && activeFilter) {
       const el = document.getElementById(activeFilter);
@@ -51,12 +52,12 @@
 <div class="c">
   <div class="ui column-wide">
     <div class="filters">
-      <Filters {filters} bind:activeFilter link={true}></Filters>
+      <Filters {filters} bind:activeFilter link={true} bind:this={filtersComponent}></Filters>
     </div>
   </div>
   {#each sections as { hed }}
     {@const id = slugify(hed)}
-    <section {id}>
+    <section {id} use:inView onenter={() => filtersComponent.set(id)}>
       <!-- <h2 class="upper column-wide">{hed}</h2> -->
       <Stories stories={stories.filter((d) => slugify(d.group) === id)} resource={true} />
     </section>
@@ -79,7 +80,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    z-index: var(--z-top);
+    z-index: var(--z-overlay);
     background: var(--color-bg);
     padding: 16px;
   }

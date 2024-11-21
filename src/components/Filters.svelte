@@ -1,12 +1,23 @@
 <script>
   import { base } from "$app/paths";
   let { link, activeFilter = $bindable(), filters } = $props();
+
+  let override = $state();
+
+  export function set(f) {
+    override = f;
+  }
+
+  $effect(() => {
+    // when active filter changes, reset override
+    if (activeFilter) override = undefined;
+  });
 </script>
 
 <div class="filters--desktop" class:link>
   {#each filters as filter}
     {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
-    {@const active = slug === activeFilter || !activeFilter}
+    {@const active = override ? slug === override : slug === activeFilter || !activeFilter}
     <button class:active onclick={() => (activeFilter = slug === activeFilter ? undefined : slug)}>
       <img class="icon" src="{base}/assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
       <span class="name">{filter}</span>
