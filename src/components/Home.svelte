@@ -65,21 +65,31 @@
   }
 
   input {
-    margin-left: 8px;
-    width: 12em;
+    margin-left: 4px;
+    width: 10em;
+    outline: 2px solid var(--color-fg);
+    border-radius: 1px;
   }
 
   input::placeholder {
     font-family: var(--mono);
+    font-size: var(--12px);
   }
 
   .icon {
     width: 48px;
-    margin-left: 4px;
+    margin-left: -4px;
     transition: transform calc(var(--1s) * 0.25);
   }
 
   .icon:hover {
     transform: rotate(var(--left-tilt-double)) scale(1.05);
+  }
+
+  @media only screen and (min-width: 400px) {
+    input {
+      margin-left: 8px;
+      width: 12em;
+    }
   }
 </style>

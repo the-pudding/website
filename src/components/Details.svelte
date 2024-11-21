@@ -29,10 +29,10 @@
 <style>
   summary {
     color: var(--color-off-black);
-    border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.75rem;
     font-size: var(--font-size-small);
     cursor: pointer;
+    transition: transform calc(var(--1s) * 0.25);
   }
 
   summary:hover {
@@ -43,7 +43,8 @@
     font-size: var(--font-size-small);
     font-family: var(--sans);
     font-weight: var(--font-weight-bold);
-    padding: 1em 0;
+    padding: 1em 0 0 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .inner {

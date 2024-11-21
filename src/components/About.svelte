@@ -28,7 +28,7 @@
 {#each sections as { id, hed }}
   <section {id} class="column-regular below">
     {#if hed}
-      <h2>{hed}</h2>
+      <h2 class="hed-dek">{hed}</h2>
     {/if}
 
     {#if id === "awards"}
@@ -69,6 +69,15 @@
   :global(#contributors li) {
     padding-bottom: 0;
     width: 33.3%;
+  }
+
+  :global(.hed-dek) {
+    line-height: 1.2;
+  }
+
+  :global(.inner a, .column-regular a) {
+    color: var(--color-fg);
+    text-decoration: underline 2px var(--color-fg);
   }
 
   @media only screen and (max-width: 700px) {
