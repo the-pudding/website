@@ -16,8 +16,8 @@ export const follow = [
     url: "https://www.instagram.com/the.pudding",
     footer: true
   },
-  { name: "LinkedIn", url: "#" }, //TODO
-  { name: "Threads", url: "#" }, // TODO
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/pudding-viz/" },
+  { name: "Threads", url: "https://www.threads.net/@the.pudding" },
   { name: "TikTok", url: "https://www.tiktok.com/@the_pudding", footer: true },
   { name: "Twitter/X", url: "https://twitter.com/puddingviz", footer: true },
   {

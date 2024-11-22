@@ -52,8 +52,10 @@
         <ul>
           {#each about as { name, url, rel }}
             {@const slug = name.toLowerCase().replace(/[^a-z]/g, "_")}
+            {@const external = rel === "external"}
+            {@const prefix = external ? "" : `${base}/`}
             <li>
-              <a href={url} {rel}>
+              <a href="{base}{url}" {rel}>
                 <img aria-label={name} src="{base}/assets/stickers/{slug}@2x.png" alt={name} />
               </a>
             </li>

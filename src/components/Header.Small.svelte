@@ -30,7 +30,7 @@
   <div class="menu">
     <ul>
       <li>
-        <a href="/about" aria-label="About" target="_self"
+        <a href="{base}/about" aria-label="About" target="_self"
           ><img src="{base}/assets/stickers/about@2x.png" alt="about sticker" /></a
         >
       </li>
