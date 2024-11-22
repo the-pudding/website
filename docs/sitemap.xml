@@ -11,10 +11,10 @@
     <loc>https://pudding.cool/privacy</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/resources</loc>
+    <loc>https://pudding.cool/pitch</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/pitch</loc>
+    <loc>https://pudding.cool/resources</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/aaron-reiss</loc>
@@ -248,13 +248,13 @@
     <loc>https://pudding.cool/author/minji-kim</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/mureji-fatunde</loc>
-  </url>
-  <url>
     <loc>https://pudding.cool/author/neil-paine</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/ofunne-amaka</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/mureji-fatunde</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/oliver-roeder</loc>
@@ -296,16 +296,13 @@
     <loc>https://pudding.cool/author/sam-vickars</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/sara-stoudt</loc>
-  </url>
-  <url>
     <loc>https://pudding.cool/author/shirley-wu</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/simran-vatsa</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/swati-murugappan</loc>
+    <loc>https://pudding.cool/author/sara-stoudt</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/the-data-face</loc>
@@ -314,16 +311,19 @@
     <loc>https://pudding.cool/author/tom-vaillant</loc>
   </url>
   <url>
+    <loc>https://pudding.cool/author/swati-murugappan</loc>
+  </url>
+  <url>
     <loc>https://pudding.cool/author/tyler-machado</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/vivian-li</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/tynesha-foreman</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/uri-bram</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/vivian-li</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/wessel-stoop</loc>

@@ -60,10 +60,6 @@
     align-items: center;
   }
 
-  .search span {
-    font-size: var(--font-size-xsmall);
-  }
-
   input {
     margin-left: 4px;
     width: 10em;

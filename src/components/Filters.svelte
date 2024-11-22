@@ -42,11 +42,6 @@
     align-items: center;
   }
 
-  .filters--desktop > span {
-    font-size: var(--font-size-xsmall);
-    display: block;
-  }
-
   .filters--desktop button {
     margin: 0 16px 0 -8px;
     display: flex;
@@ -94,10 +89,6 @@
     line-height: normal;
     font-size-adjust: 0.5;
     transform: translateY(1px);
-    font-size: var(--font-size-small);
-  }
-
-  label {
     font-size: var(--font-size-small);
   }
 
