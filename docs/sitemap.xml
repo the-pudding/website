@@ -8,10 +8,10 @@
     <loc>https://pudding.cool/about</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/privacy</loc>
+    <loc>https://pudding.cool/pitch</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/pitch</loc>
+    <loc>https://pudding.cool/privacy</loc>
   </url>
   <url>
     <loc>https://pudding.cool/resources</loc>
@@ -134,9 +134,6 @@
     <loc>https://pudding.cool/author/florina-sutanto</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/gabrielle-hickmon</loc>
-  </url>
-  <url>
     <loc>https://pudding.cool/author/gwendal-uguen</loc>
   </url>
   <url>
@@ -150,6 +147,9 @@
   </url>
   <url>
     <loc>https://pudding.cool/author/isabel-carter</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/gabrielle-hickmon</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/isabella-chua</loc>
@@ -170,9 +170,6 @@
     <loc>https://pudding.cool/author/jared-whalen</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/jared-wilbur</loc>
-  </url>
-  <url>
     <loc>https://pudding.cool/author/jason-eppink</loc>
   </url>
   <url>
@@ -186,9 +183,6 @@
   </url>
   <url>
     <loc>https://pudding.cool/author/jess-peter</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/jordan-dworkin</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/josh-comeau</loc>
@@ -224,34 +218,31 @@
     <loc>https://pudding.cool/author/malaika-handa</loc>
   </url>
   <url>
+    <loc>https://pudding.cool/author/jared-wilbur</loc>
+  </url>
+  <url>
     <loc>https://pudding.cool/author/malik-yusuf</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/manyun-zou</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/matt-daniels</loc>
+    <loc>https://pudding.cool/author/michelle-jia</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/jordan-dworkin</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/matthew-conlen</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/michelle-jia</loc>
+    <loc>https://pudding.cool/author/mike-lacher</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/michelle-pera-mcghee</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/mike-lacher</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/minji-kim</loc>
-  </url>
-  <url>
     <loc>https://pudding.cool/author/neil-paine</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/ofunne-amaka</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/mureji-fatunde</loc>
@@ -260,13 +251,16 @@
     <loc>https://pudding.cool/author/oliver-roeder</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/oscar-molina-palestina</loc>
+    <loc>https://pudding.cool/author/ofunne-amaka</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/minji-kim</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/owen-phillips</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/pamela-mishkin</loc>
+    <loc>https://pudding.cool/author/oscar-molina-palestina</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/rebecca-monteleone</loc>
@@ -276,6 +270,12 @@
   </url>
   <url>
     <loc>https://pudding.cool/author/rob-smith</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/pamela-mishkin</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/matt-daniels</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/rosie-cima</loc>
@@ -296,13 +296,16 @@
     <loc>https://pudding.cool/author/sam-vickars</loc>
   </url>
   <url>
+    <loc>https://pudding.cool/author/sara-stoudt</loc>
+  </url>
+  <url>
     <loc>https://pudding.cool/author/shirley-wu</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/simran-vatsa</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/sara-stoudt</loc>
+    <loc>https://pudding.cool/author/swati-murugappan</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/the-data-face</loc>
@@ -311,7 +314,10 @@
     <loc>https://pudding.cool/author/tom-vaillant</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/swati-murugappan</loc>
+    <loc>https://pudding.cool/author/tynesha-foreman</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/wessel-stoop</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/tyler-machado</loc>
@@ -320,12 +326,6 @@
     <loc>https://pudding.cool/author/vivian-li</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/tynesha-foreman</loc>
-  </url>
-  <url>
     <loc>https://pudding.cool/author/uri-bram</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/wessel-stoop</loc>
   </url>
 </urlset>
