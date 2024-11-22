@@ -54,7 +54,7 @@
   }
 
   .info p {
-    font-size: var(--14px);
+    font-size: var(--14px, 14px);
     text-transform: uppercase;
   }
 
@@ -81,7 +81,7 @@
   }
 
   .screenshot {
-    background: var(--story-bg, var(--color-default-story-bg));
+    background: var(--story-bg, var(--color-default-story-bg, "#ddd"));
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;
@@ -100,14 +100,12 @@
 
   img {
     position: absolute;
-    /* top: var(--padding); */
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0) scale(1);
-    width: calc(100% - (var(--padding) * 2));
+    width: calc(100% - (var(--padding, 16px) * 2));
     transform-origin: center center;
     transition: transform calc(var(--1s) * 0.25);
-    /* border: 1px solid var(--color-fg); */
   }
 
   .youtube img,
@@ -124,14 +122,14 @@
 
   h3.short {
     color: var(--color-fg);
-    font-size: clamp(var(--24px), 6vw, var(--28px));
+    font-size: clamp(var(--24px, 24px), 6vw, var(--28px, 28px));
     line-height: 1;
     margin: 0;
     margin-bottom: 8px;
   }
 
   .resource h3.short {
-    font-size: clamp(var(--20px), 6vw, var(--24px));
+    font-size: clamp(var(--20px, 20px), 6vw, var(--24px, 24px));
   }
 
   .footer h3.short {
@@ -139,20 +137,20 @@
   }
 
   p.tease {
-    color: var(--color-secondary-gray);
+    color: var(--color-secondary-gray, var(--color-fg));
     font-size: var(--16px);
   }
 
   .footer p.tease {
-    color: var(--color-gray-900);
-    font-size: clamp(var(--16px), 4vw, var(--20px));
+    color: var(--color-secondary-gray, var(--color-fg));
+    font-size: clamp(var(--16px), 4vw, var(--20px, 20px));
     font-weight: bold;
     line-height: 1.2;
   }
 
   @media (min-width: 960px) {
     h3.short {
-      font-size: clamp(var(--24px), 2.75vw, var(--32px));
+      font-size: clamp(var(--24px, 24px), 2.75vw, var(--32px, 32px));
     }
   }
 </style>
