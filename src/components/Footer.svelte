@@ -14,7 +14,7 @@
 
   const v = Date.now();
   // TODO MAKE THIS A REAL URL
-  const url = `assets/data/stories.json?v=${v}`;
+  const url = `../assets/data/stories.json?v=${v}`;
 
   const about = [
     { name: "Our Team", url: "https://pudding.cool/about" },
@@ -157,7 +157,7 @@
   }
 
   .c {
-    max-width: calc(var(--width-column-wide) - var(--margin) * 2);
+    max-width: calc(var(--width-column-wide, 1280px) - var(--margin, 16px) * 2);
     padding: 16px;
     margin: 32px auto 100px auto;
     font-family: var(--sans);
@@ -172,8 +172,7 @@
   }
 
   .text {
-    font-family: var(--sans);
-    font-size: var(--28px);
+    font-size: var(--28px, 28px);
     text-align: center;
     max-width: 900px;
   }
@@ -200,7 +199,6 @@
     width: 100%;
     margin: 0;
     list-style-type: none;
-    /* width: calc(var(--screenshot) + (var(--padding) * 2)); */
     padding: 0;
     --padding: clamp(16px, 12vw, 36px);
   }
@@ -309,7 +307,7 @@
   }
 
   .donate img {
-    transform: rotate(var(--right-tilt));
+    transform: rotate(var(--right-tilt, 2deg));
     width: 100%;
     max-width: 180px;
     transition: transform calc(var(--1s) * 0.25);
@@ -326,11 +324,11 @@
   }
 
   .subscribe .img-wrapper:hover img {
-    transform: rotate(var(--left-tilt)) scale(1.05);
+    transform: rotate(var(--left-tilt, -2deg)) scale(1.05);
   }
 
   .wordmark {
-    transform: rotate(var(--left-tilt));
+    transform: rotate(var(--left-tilt, -2deg));
     max-width: 360px;
     transition: transform calc(var(--1s) * 0.25);
   }
@@ -381,7 +379,7 @@
     }
 
     .text-wrapper p {
-      font-size: var(--16px);
+      font-size: var(--16px, 16px);
     }
 
     .img-wrapper {
@@ -396,7 +394,7 @@
     }
 
     li {
-      font-size: var(--16px);
+      font-size: var(--16px, 16px);
     }
 
     .arrow {

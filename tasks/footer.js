@@ -1,8 +1,9 @@
 import fs from "fs";
 import { csvParse } from "d3";
-import slugify from "./src/utils/slugify.js";
+import slugify from "../src/utils/slugify.js";
 const CWD = process.cwd();
 
+const colors = JSON.parse(fs.readFileSync(`${CWD}/src/data/thumbnail-colors.json`, "utf8"));
 const stories = csvParse(fs.readFileSync(`${CWD}/src/data/stories.csv`, "utf8"));
 
 stories.sort((a, b) => new Date(b.date) - new Date(a.date));

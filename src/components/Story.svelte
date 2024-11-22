@@ -6,9 +6,10 @@
   const youtube = href.includes("youtube") || href.includes("youtu.be");
   const dir = resource ? "resources/480" : "thumbnails/screenshots";
   const imagePath = `/common/assets/${dir}`;
+  const style = bgColor ? `--story-bg: ${bgColor};` : "";
 </script>
 
-<div class="story" style="--story-bg: {bgColor};" class:youtube class:resource class:footer>
+<div class="story" {style} class:youtube class:resource class:footer>
   {#if !resource && !footer}
     <div class="info">
       <p class="id">#{id}</p>
