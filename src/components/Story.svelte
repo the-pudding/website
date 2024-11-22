@@ -1,46 +1,14 @@
 <script>
-  import colors from "$data/thumbnail-colors.json";
   import playSvg from "$svg/play.svg";
   import { onMount } from "svelte";
-  let { id, href, slug, short, tease, month, color_override, resource, footer } = $props();
-  let prefersDarkMode = $state();
-  let style = $state();
-  let DEFAULT_COLOR = $state();
-
-  onMount(() => {
-      const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-      prefersDarkMode = darkModeQuery.matches;
-
-      const handleChange = (event) => { prefersDarkMode = event.matches; };
-      darkModeQuery.addEventListener('change', handleChange);
-
-      return () => {
-          darkModeQuery.removeEventListener('change', handleChange);
-      };
-  });
-
-  function lookupColor() {
-    if (color_override) return color_override;
-    if (footer) return DEFAULT_COLOR;
-    const match = colors.find((d) => d.slug === slug);
-    return match ? match.bg : DEFAULT_COLOR;
-  }
-
-  $effect(() => {
-    DEFAULT_COLOR = prefersDarkMode ? "rgb(78, 78, 78)" : "rgb(239,239,239)";
-    style = `
-      --bg: ${lookupColor()};
-      --default-bg: ${DEFAULT_COLOR};
-    `;
-  });
+  let { id, href, slug, short, tease, month, bgColor, resource, footer } = $props();
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");
   const dir = resource ? "resources/480" : "thumbnails/screenshots";
   const imagePath = `/common/assets/${dir}`;
 </script>
 
-<div class="story" {style} class:youtube class:resource class:footer>
+<div class="story" style="--story-bg: {bgColor};" class:youtube class:resource class:footer>
   {#if !resource && !footer}
     <div class="info">
       <p class="id">#{id}</p>
@@ -112,7 +80,7 @@
   }
 
   .screenshot {
-    background: var(--bg, var(--color-story-bg));
+    background: var(--story-bg, var(--color-default-story-bg));
     aspect-ratio: 1;
     position: relative;
     overflow: hidden;
