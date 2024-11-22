@@ -40,7 +40,7 @@
 
 <svelte:window on:keyup={onClose} />
 
-<nav id="nav-menu" class:visible use:focusTrap>
+<nav id="nav-menu" class:visible use:focusTrap aria-hidden={!visible}>
   <div class="nav-content" class:visible class:active bind:this={slideNav}>
     <button class="btn-close" aria-label="close menu" bind:this={closeBtnEl} onclick={onClose}
       >{@html closeIcon}</button
@@ -90,7 +90,7 @@
     z-index: calc(var(--z-overlay) + 1);
     background: var(--color-fg);
     color: var(--color-bg);
-    visibility: visible;
+    visibility: hidden;
     transform: translate(100%, 0);
     transition: transform var(--transition-medium);
   }
