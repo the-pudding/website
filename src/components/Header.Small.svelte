@@ -25,7 +25,7 @@
     <p>{@html copy.tagline}</p>
   </div>
   <div class="wordmark">
-    <a href="https://pudding.cool" aria-label="The Pudding" target="_self">{@html wordmark}</a>
+    <a href="{base}/" aria-label="The Pudding" target="_self">{@html wordmark}</a>
   </div>
   <div class="menu">
     <ul>
