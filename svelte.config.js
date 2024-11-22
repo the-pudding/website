@@ -3,21 +3,19 @@ import { sveltePreprocess } from "svelte-preprocess";
 import autoprefixer from "autoprefixer";
 
 const preprocess = sveltePreprocess({
-	postcss: {
-		plugins: [autoprefixer]
-	}
+  postcss: {
+    plugins: [autoprefixer]
+  }
 });
 
-// TODO switch
-
 const config = {
-	compilerOptions: {
-		runes: true
-	},
-	preprocess,
-	kit: {
-		adapter: adapterStatic({ strict: false })
-	}
+  compilerOptions: {
+    runes: true
+  },
+  preprocess,
+  kit: {
+    adapter: adapterStatic({ strict: false })
+  }
 };
 
 export default config;

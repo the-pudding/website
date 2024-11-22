@@ -5,7 +5,7 @@ import { descending } from "d3";
 export async function load({ params }) {
   const { name } = params;
 
-  const keys = ["id", "href", "month", "short", "tease", "slug", "author"];
+  const keys = ["id", "href", "month", "short", "tease", "slug", "author", "bgColor"];
   const storiesFiltered = filterStoryProps({ data: storiesData, keys });
 
   const author = authorsData.find((d) => d.slug === name);

@@ -55,12 +55,9 @@
 </section>
 
 {#if stories.length}
-  <h2 class="column-wide upper">Stories</h2>
+  <div class="column-regular">
+    <h2 class="hed-dek">Stories</h2>
+  </div>
+
   <Stories {stories} />
 {/if}
-
-<style>
-  li {
-    margin: 0;
-  }
-</style>
