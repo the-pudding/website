@@ -3,6 +3,8 @@
   import { ascending, descending } from "d3";
   import Story from "$components/Story.svelte";
   import Subscribe from "$components/Story.Subscribe.svelte";
+  import Merch from "$components/Story.Merch.svelte";
+  import Faves from "$components/Story.Faves.svelte";
   const components = { Subscribe };
 
   let { stories, resource = false } = $props();

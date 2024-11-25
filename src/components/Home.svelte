@@ -30,6 +30,8 @@
 
     sliced.splice(4, 0, { component: "Subscribe" });
 
+    console.log(stories)
+
     return sliced;
   });
 

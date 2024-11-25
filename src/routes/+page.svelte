@@ -21,9 +21,11 @@
   ];
 
   const { stories, authors } = data;
+
+  console.log({authors})
   const { title, description, url, keywords } = copy;
 
-  setContext("Home", { stories, copy });
+  setContext("Home", { stories, copy, authors });
 </script>
 
 <Meta {copy} {preloadFont} />
