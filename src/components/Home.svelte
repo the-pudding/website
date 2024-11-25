@@ -4,7 +4,8 @@
   import Stories from "$components/Stories.svelte";
   import Filters from "$components/Filters.svelte";
 
-  const maxStories = 30;
+  const initMax = 29;
+  let maxStories = $state(initMax);
 
   const { stories, copy } = getContext("Home");
 
@@ -31,6 +32,10 @@
 
     return sliced;
   });
+
+  function onLoadMore() {
+    maxStories = stories.length;
+  }
 </script>
 
 <div class="c">
@@ -45,6 +50,9 @@
     </div>
   </div>
   <Stories stories={filtered} />
+  <div class="more" class:visible={initMax === maxStories}>
+    <button onclick={onLoadMore}>Load More Stories</button>
+  </div>
 </div>
 
 <style>
@@ -87,6 +95,20 @@
 
   .icon:hover {
     transform: rotate(var(--left-tilt-double)) scale(1.05);
+  }
+
+  .more {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .more.visible {
+    display: flex;
+  }
+
+  .more button {
+    text-transform: uppercase;
   }
 
   @media only screen and (min-width: 400px) {
