@@ -61,7 +61,7 @@
   }
 
   input {
-    /* margin-left: 4px; */
+    margin-left: -8px;
     width: 10em;
     outline: 2px solid var(--color-fg);
     border-radius: 1px;
