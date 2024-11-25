@@ -4,6 +4,8 @@
   import Stories from "$components/Stories.svelte";
   import Filters from "$components/Filters.svelte";
 
+  const maxStories = 30;
+
   const { stories, copy } = getContext("Home");
 
   const filters = ["Our Faves", "Audio", "Video", "Updating", "Your Input"];
@@ -23,7 +25,11 @@
       return inSearch && inFilter;
     });
     f.sort((a, b) => descending(a.id, b.id));
-    return f;
+    const sliced = f.slice(0, maxStories);
+
+    sliced.splice(4, 0, { component: "Subscribe" });
+
+    return sliced;
   });
 </script>
 
