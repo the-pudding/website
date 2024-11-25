@@ -30,8 +30,6 @@
 
     sliced.splice(4, 0, { component: "Subscribe" });
 
-    console.log(stories)
-
     return sliced;
   });
 
@@ -111,6 +109,17 @@
 
   .more button {
     text-transform: uppercase;
+    background: var(--color-fg);
+    color: var(--color-bg);
+    border-radius: 2px;
+    padding: 12px;
+    font-size: var(--font-size-xsmall);
+    transition: transform calc(var(--1s) * 0.25);
+  }
+
+  .more button:hover {
+    transform: translateY(-4px);
+    opacity: 0.85;
   }
 
   @media only screen and (min-width: 400px) {
