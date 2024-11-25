@@ -2,6 +2,8 @@
   import { getContext } from "svelte";
   import { ascending, descending } from "d3";
   import Story from "$components/Story.svelte";
+  import Subscribe from "$components/Story.Subscribe.svelte";
+  const components = { Subscribe };
 
   let { stories, resource = false } = $props();
 </script>
@@ -9,8 +11,13 @@
 <section id="stories">
   <ul>
     {#each stories as story (story.slug)}
+      {@const C = components[story.component]}
       <li>
-        <Story {...story} {resource} />
+        {#if C}
+          <C {...story}></C>
+        {:else}
+          <Story {...story} {resource} />
+        {/if}
       </li>
     {/each}
   </ul>

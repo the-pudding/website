@@ -30,9 +30,9 @@
 	--color-mark: var(--color-yellow);
 	--color-selection: var(--color-gray-300);
 	--color-border: var(--color-gray-300);
-	--color-button-bg: var(--color-gray-300);
-	--color-button-fg: var(--color-gray-900);
-	--color-button-hover: var(--color-gray-400);
+	--color-button-bg: var(--color-gray-900);
+	--color-button-fg: var(--color-gray-100);
+	--color-button-hover: var(--color-gray-700);
 	--color-input-bg: var(--color-gray-50);
 	--color-input-fg: var(--color-gray-900);
 	--color-placeholder: var(--color-gray-500);
@@ -85,9 +85,9 @@
 		--color-mark: var(--color-yellow);
 		--color-selection: var(--color-gray-300);
 		--color-border: var(--color-gray-700);
-		--color-button-bg: var(--color-gray-300);
+		--color-button-bg: var(--color-gray-100);
 		--color-button-fg: var(--color-gray-900);
-		--color-button-hover: var(--color-gray-400);
+		--color-button-hover: var(--color-gray-300);
 		--color-input-bg: var(--color-gray-50);
 		--color-input-fg: var(--color-gray-900);
 		--color-placeholder: var(--color-gray-500);
@@ -171,5 +171,4 @@ input[type="search"],
 input[type="text"], 
 textarea {
   font-size: 16px;
-	transform: scale(0.75);
 }

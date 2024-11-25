@@ -4,6 +4,9 @@
   import Stories from "$components/Stories.svelte";
   import Filters from "$components/Filters.svelte";
 
+  const initMax = 29;
+  let maxStories = $state(initMax);
+
   const { stories, copy } = getContext("Home");
 
   const filters = ["Our Faves", "Audio", "Video", "Updating", "Your Input"];
@@ -23,8 +26,16 @@
       return inSearch && inFilter;
     });
     f.sort((a, b) => descending(a.id, b.id));
-    return f;
+    const sliced = f.slice(0, maxStories);
+
+    sliced.splice(4, 0, { component: "Subscribe" });
+
+    return sliced;
   });
+
+  function onLoadMore() {
+    maxStories = stories.length;
+  }
 </script>
 
 <div class="c">
@@ -39,6 +50,9 @@
     </div>
   </div>
   <Stories stories={filtered} />
+  <div class="more" class:visible={initMax === maxStories}>
+    <button onclick={onLoadMore}>Load More Stories</button>
+  </div>
 </div>
 
 <style>
@@ -65,6 +79,8 @@
     width: 10em;
     outline: 2px solid var(--color-fg);
     border-radius: 1px;
+    transform: scale(0.75);
+    padding: 12px 8px;
   }
 
   input::placeholder {
@@ -81,10 +97,26 @@
     transform: rotate(var(--left-tilt-double)) scale(1.05);
   }
 
+  .more {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .more.visible {
+    display: flex;
+  }
+
+  .more button {
+    text-transform: uppercase;
+  }
+
   @media only screen and (min-width: 400px) {
     input {
-      margin-left: -8px;
+      margin-left: -4px;
+      transform: scale(0.875);
       width: 12em;
+      padding: 8px;
     }
   }
 </style>
