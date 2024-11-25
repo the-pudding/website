@@ -4,7 +4,7 @@ export const about = [
   { name: "Donate", url: "https://patreon.com/thepudding", rel: "external" },
   { name: "Pitch Us", url: "/pitch" },
   { name: "Resources", url: "/resources" },
-  { name: "Privacy", url: "/privacy" },
+  { name: "Privacy Policy", url: "/privacy" },
   { name: "Polygraph Studio", url: "https://polygraph.cool", rel: "external" }
 ];
 

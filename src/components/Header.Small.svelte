@@ -1,11 +1,14 @@
 <script>
   import { base } from "$app/paths";
+  import { fade } from "svelte/transition";
   import wordmark from "$svg/wordmark-sticker.svg";
   import Menu from "$components/Header.Menu.svelte";
   import copy from "$data/misc.json";
 
-  let menu;
   let visible = $state(false);
+  let index = $state(0);
+  let tagline = $derived(copy.taglines[index]);
+  let menu;
   let openBtnEl;
 
   function onClose(skip) {
@@ -18,11 +21,25 @@
     // console.log("click");
     visible = true;
   }
+
+  $effect(() => {
+    const i = setInterval(() => {
+      index += 1;
+      if (index >= copy.taglines.length) index = 0;
+    }, 5000);
+
+    return () => clearInterval(i);
+  });
+
+  $inspect(tagline);
 </script>
 
 <header class="column-wide">
   <div class="stories">
-    <p>{@html copy.tagline}</p>
+    <p>
+      {@html copy.taglinePre}...<br />
+      {#key index}<span in:fade={{ delay: 100, duration: 500 }}>{tagline}</span>{/key}
+    </p>
   </div>
   <div class="wordmark">
     <a href="{base}/" aria-label="The Pudding" target="_self">{@html wordmark}</a>

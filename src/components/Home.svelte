@@ -65,6 +65,8 @@
     width: 10em;
     outline: 2px solid var(--color-fg);
     border-radius: 1px;
+    transform: scale(0.75);
+    padding: 12px 8px;
   }
 
   input::placeholder {
@@ -83,8 +85,10 @@
 
   @media only screen and (min-width: 400px) {
     input {
-      margin-left: -8px;
+      margin-left: -4px;
+      transform: scale(0.875);
       width: 12em;
+      padding: 8px;
     }
   }
 </style>
