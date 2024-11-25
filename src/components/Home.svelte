@@ -32,7 +32,7 @@
     <div class="search">
       <!-- <span>Search</span> -->
       <img class="icon" src="assets/stickers/search@2x.png" aria-hidden="true" alt="" />
-      <input placeholder="Find a story" bind:value={searchValue} />
+      <input type="text" placeholder="Find a story" bind:value={searchValue} />
     </div>
     <div class="filters">
       <Filters {filters} bind:activeFilter></Filters>
@@ -61,7 +61,7 @@
   }
 
   input {
-    margin-left: 4px;
+    /* margin-left: 4px; */
     width: 10em;
     outline: 2px solid var(--color-fg);
     border-radius: 1px;
@@ -69,7 +69,6 @@
 
   input::placeholder {
     font-family: var(--mono);
-    font-size: var(--12px);
   }
 
   .icon {
@@ -84,7 +83,7 @@
 
   @media only screen and (min-width: 400px) {
     input {
-      margin-left: 8px;
+      margin-left: -8px;
       width: 12em;
     }
   }
