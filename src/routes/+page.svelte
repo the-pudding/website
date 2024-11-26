@@ -22,7 +22,6 @@
 
   const { stories, authors } = data;
 
-  console.log({authors})
   const { title, description, url, keywords } = copy;
 
   setContext("Home", { stories, copy, authors });
@@ -30,5 +29,3 @@
 
 <Meta {copy} {preloadFont} />
 <Home />
-<!-- TODO still needed? -->
-<!-- <HiddenAuthors {authors} /> -->

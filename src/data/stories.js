@@ -13,6 +13,10 @@ const lookupColor = (slug) => {
   return match?.bg;
 };
 
+const addFaves = (arr, name) => {
+  if (name) return [...arr, "our_faves"];
+};
+
 const clean = data
   .map((d) => ({
     ...d,
@@ -21,7 +25,7 @@ const clean = data
     slug: slugify(d.url),
     author: strToArray(d.author),
     keyword: strToArray(d.keyword),
-    filters: strToArray(d.filters),
+    filters: addFaves(strToArray(d.filters), d.faves),
     href: d.url_alt || `https://pudding.cool/${d.url}`
   }))
   .filter((d) => !d.hide_all)

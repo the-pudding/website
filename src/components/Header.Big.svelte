@@ -38,7 +38,6 @@
 <style>
   header {
     padding: 0 0 0 0;
-    /* TODO */
     max-width: 1460px;
     margin: 0 auto;
   }

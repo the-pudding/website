@@ -21,7 +21,7 @@
     { name: "Our Resources", url: "https://pudding.cool/resources/" },
     { name: "Pitch a Story", url: "https://pudding.cool/pitch/" },
     { name: "Brand Partnerships", url: "https://polygraph.cool" },
-    { name: "Privacy", url: "https://pudding.cool/pitch/" }
+    { name: "Privacy Policy", url: "https://pudding.cool/pitch/" }
   ];
 
   const follow = [

@@ -7,7 +7,7 @@
   const initMax = 29;
   let maxStories = $state(initMax);
 
-  const { stories, copy } = getContext("Home");
+  const { stories, authors, copy } = getContext("Home");
 
   const filters = ["Our Faves", "Audio", "Video", "Updating", "Your Input"];
 
