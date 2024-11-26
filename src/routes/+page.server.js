@@ -7,7 +7,7 @@ export async function load() {
 
   const stories = filterStoryProps({ data: storiesData, keys });
 
-  const authors = authorsData.map((d) => d.slug);
+  const authors = authorsData.map((d) => d.slug).filter((d) => d.position === "Staff");
 
   const data = {
     stories,
