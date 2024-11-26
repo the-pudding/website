@@ -20,11 +20,11 @@
     "https://pudding.cool/assets/fonts/atlas/AtlasTypewriter-Medium-Web.woff2"
   ];
 
-  const { stories, authors } = data;
+  const { stories, staff } = data;
 
   const { title, description, url, keywords } = copy;
 
-  setContext("Home", { stories, copy, authors });
+  setContext("Home", { stories, copy, staff });
 </script>
 
 <Meta {copy} {preloadFont} />
