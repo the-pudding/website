@@ -4,8 +4,8 @@
   import { shuffle } from "d3";
   const { stories, staff } = getContext("Home");
 
-  let links = $state("");
-  let author = $state({});
+  let links = $state(undefined);
+  let author = $state(undefined);
 
   $effect(() => {
     const numStories = 3;
@@ -23,7 +23,7 @@
 </script>
 
 <div class="interstitial-inner">
-  {#key { author, links }}
+  {#if links}
     <p>Some of my favorite projects are about {@html links}.</p>
     <div class="credit">
       <a href="{base}/author/{author.slug}">
@@ -32,7 +32,7 @@
         <p class="title">Pudding Staff</p>
       </a>
     </div>
-  {/key}
+  {/if}
 </div>
 
 <style>
