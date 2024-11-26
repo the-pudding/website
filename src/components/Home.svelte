@@ -14,8 +14,6 @@
   let searchValue = $state("");
   let activeFilter = $state(undefined);
 
-  $inspect(staff);
-
   // todo load more story data
   let filtered = $derived.by(() => {
     const query = searchValue.toLowerCase();

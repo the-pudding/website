@@ -4,22 +4,26 @@
   import { shuffle } from "d3";
   const { stories, staff } = getContext("Home");
 
-  const numStories = 3;
-  const faveStories = stories.filter((d) => d.faves);
-  const randomId = shuffle(faveStories)[0].faves.trim();
-  const author = staff.find((d) => d.id === randomId);
-  const randomFaves = faveStories.filter((d) => d.faves === randomId).slice(0, numStories);
+  let links = $state("");
+  let author = $state({});
 
-  const urls = randomFaves
-    .map(({ href, short }) => `<a href=${href} rel="external" class="bold-link">${short}</a>`)
-    .join(", ");
-  // replace last ", " with ", and "
-  const links = urls.replace(/,([^,]*)$/, " and$1");
-  const data = {author, links}
+  $effect(() => {
+    const numStories = 3;
+    const faveStories = stories.filter((d) => d.faves);
+    const randomId = shuffle(faveStories)[0].faves.trim();
+    const randomFaves = faveStories.filter((d) => d.faves === randomId).slice(0, numStories);
+
+    author = staff.find((d) => d.id === randomId);
+
+    const urls = randomFaves
+      .map(({ href, short }) => `<a href=${href} rel="external" class="bold-link">${short}</a>`)
+      .join(", ");
+    links = urls.replace(/,([^,]*)$/, " and$1");
+  });
 </script>
 
 <div class="interstitial-inner">
-  {#key {author, links}}
+  {#key { author, links }}
     <p>Some of my favorite projects are about {@html links}.</p>
     <div class="credit">
       <a href="{base}/author/{author.slug}">
