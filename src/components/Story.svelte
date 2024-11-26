@@ -68,7 +68,7 @@
     text-decoration: none;
   }
 
-  a:focus {
+  a:focus-visible {
     outline: 2px solid var(--color-focus);
   }
 

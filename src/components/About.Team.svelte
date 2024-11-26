@@ -1,5 +1,6 @@
 <script>
   import { ascending } from "d3";
+  import { base } from "$app/paths";
   let { staff } = $props();
   staff.sort((a, b) => ascending(a.name, b.name));
 </script>
@@ -7,8 +8,8 @@
 <ul>
   {#each staff as { id, name, slug }}
     <li>
-      <a href="/author/{slug}">
-        <img src="/common/assets/authors/{id}.jpg" alt="headshot of {name}" />
+      <a href="{base}/author/{slug}">
+        <img src="{base}/common/assets/authors/{id}.jpg" alt="headshot of {name}" />
         <span>{name}</span>
       </a>
     </li>
