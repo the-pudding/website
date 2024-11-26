@@ -80,11 +80,13 @@
 
   .filters--mobile {
     display: none;
+    color: var(--color-bg);
   }
 
   .filters--mobile select {
     border: 2px solid var(--color-fg);
     background-color: var(--color-input-bg);
+    color: var(--color-fg);
     border-radius: 3px;
     line-height: normal;
     font-size-adjust: 0.5;
