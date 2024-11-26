@@ -9,7 +9,7 @@
 
   const { stories, staff, copy } = getContext("Home");
 
-  const filters = ["Our Faves", "Audio", "Video", "Updating", "Your Input"];
+  const filters = ["Our Faves", "Popular", "Updating", "Your Input", "Video", "Audio"];
 
   let searchValue = $state("");
   let activeFilter = $state(undefined);
