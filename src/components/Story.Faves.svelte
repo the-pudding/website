@@ -19,7 +19,7 @@
 </script>
 
 <div class="interstitial-inner">
-  {#key data}
+  {#key {author, links}}
     <p>Some of my favorite projects are about {@html links}.</p>
     <div class="credit">
       <a href="{base}/author/{author.slug}">
