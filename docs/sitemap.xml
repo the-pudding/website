@@ -311,6 +311,15 @@
     <loc>https://pudding.cool/author/the-data-face</loc>
   </url>
   <url>
+    <loc>https://pudding.cool/author/tom-vaillant</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/tynesha-foreman</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/tyler-machado</loc>
+  </url>
+  <url>
     <loc>https://pudding.cool/author/uri-bram</loc>
   </url>
   <url>
@@ -318,14 +327,5 @@
   </url>
   <url>
     <loc>https://pudding.cool/author/wessel-stoop</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/tom-vaillant</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/tyler-machado</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/tynesha-foreman</loc>
   </url>
 </urlset>
