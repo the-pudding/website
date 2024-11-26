@@ -24,7 +24,7 @@
 
 <div class="interstitial-inner">
   {#if links}
-    <p>Some of my favorite projects are about {@html links}.</p>
+    <p>Some of my favorite projects: {@html links}.</p>
     <div class="credit">
       <a href="{base}/author/{author.slug}">
         <img src="{base}/common/assets/authors/{author.id}.jpg" alt="headshot of {author.name}" />
