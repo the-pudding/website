@@ -16,7 +16,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 64px 36px 36px 36px;
+        padding: 36px;
     }
 
     .sticker-set {
@@ -35,12 +35,11 @@
 
     p {
         margin: 0;
-        font-family: var(--mono);
-        font-size: var(--font-size-small);
+        font-family: var(--sans);
+        font-size: var(--font-size-medium);
         text-align: center;
         line-height: 1;
-        max-width: 260px;
-        text-transform: uppercase;
+        width: 100%;
         color: var(--color-fg);
     }
 
@@ -48,20 +47,19 @@
         font-family: var(--sans);
         font-size: var(--font-size-xsmall);
         font-family: var(--mono);
-        color: var(--color-gray-1000);
-        text-decoration: underline 2px var(--color-gray-1000);
+        color: var(--color-bg);
+        text-decoration: none;
         text-transform: uppercase;
         margin: 0;
-        padding: 8px 16px;
-        background: var(--color-electric-green);
-        height: 36px;
-        border-radius: 24px;
+        padding: 12px;
+        background: var(--color-fg);
+        border-radius: 2px;
         transition: transform calc(var(--1s) * 0.25);
         cursor: pointer;
     }
 
     a:hover {
         transform: translateY(-4px);
-        opacity: 0.9;
+        background: var(--color-secondary-gray);
     }
 </style>

@@ -11,23 +11,24 @@
   const randomFaves = faveStories.filter((d) => d.faves === randomId).slice(0, numStories);
 
   const urls = randomFaves
-    .map(({ href, short }) => `<a href=${href} rel="external">${short}</a>`)
+    .map(({ href, short }) => `<a href=${href} rel="external" class="bold-link">${short}</a>`)
     .join(", ");
   // replace last ", " with ", and "
   const links = urls.replace(/,([^,]*)$/, " and$1");
+  const data = {author, links}
 </script>
 
 <div class="interstitial-inner">
-  <img class="icon" src="{base}/assets/stickers/our_faves@2x.png" alt="heart sticker" />
-  <p>Some of my favorite projects are about {@html links}.</p>
-
-  <div class="credit">
-    <a href="{base}/author/{author.slug}">
-      <img src="{base}/common/assets/authors/{author.id}.jpg" alt="headshot of {author.name}" />
-      <p class="name">{author.name}</p>
-      <p class="title">Pudding Staff</p>
-    </a>
-  </div>
+  {#key data}
+    <p>Some of my favorite projects are about {@html links}.</p>
+    <div class="credit">
+      <a href="{base}/author/{author.slug}">
+        <img src="{base}/common/assets/authors/{author.id}.jpg" alt="headshot of {author.name}" />
+        <p class="name">{author.name}</p>
+        <p class="title">Pudding Staff</p>
+      </a>
+    </div>
+  {/key}
 </div>
 
 <style>
@@ -37,17 +38,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 64px 36px 36px 36px;
+    padding: 64px 36px;
+  }
+
+  :global(.interstitial-inner .bold-link) {
+    font-weight: var(--font-weight-bold);
+  }
+
+  :global(.interstitial-inner .bold-link:hover) {
+    color: var(--color-secondary-gray);
+    text-decoration: underline 2px var(--color-secondary-gray);
   }
 
   p {
     margin: 0;
+    width: 100%;
     font-family: var(--sans);
     text-align: center;
     line-height: 1.2;
-    max-width: 260px;
     color: var(--color-fg);
-    font-size: var(--24px, 24px);
+    font-size: var(--font-size-medium);
     margin-bottom: 32px;
   }
 
@@ -61,8 +71,13 @@
   }
 
   img {
-    width: 60px;
+    width: 80px;
     aspect-ratio: 1;
+    transition: transform calc(var(--1s) * 0.25);
+  }
+
+  .credit a:hover img {
+    transform: rotate(var(--left-tilt)) scale(1.05);
   }
 
   .credit .name {
@@ -71,7 +86,7 @@
     font-family: var(--mono);
     text-transform: uppercase;
     text-decoration: underline 2px var(--color-fg);
-    padding: 8px 0;
+    padding: 8px 0 4px 0;
     margin: 0;
   }
 

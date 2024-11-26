@@ -29,7 +29,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 64px 36px 36px 36px;
+        padding: 36px;
     }
 
     .sticker-set {
@@ -52,12 +52,11 @@
 
     p {
         margin: 0;
-        font-family: var(--mono);
+        font-family: var(--sans);
         font-size: var(--font-size-medium);
         text-align: center;
         max-width: 260px;
         line-height: 1;
-        text-transform: uppercase;
         color: var(--color-fg);
     }
 
@@ -66,6 +65,16 @@
         display: flex;
         flex-direction: row;
         width: 100%;
+        transition: transform calc(var(--1s) * 0.25);
+    }
+
+    form:hover {
+        transform: translateY(-4px);
+    }
+
+    form:hover .submit-input {
+        background: var(--color-secondary-gray);
+        outline: 2px solid var(--color-secondary-gray);
     }
 
     .email-input {
@@ -84,12 +93,6 @@
         min-width: 80px;
         outline: 2px solid var(--color-fg);
         border-radius: 0 1px 1px 0;
-    }
-
-    .submit-input:hover {
-        background: #A290E9;
-        outline: 2px solid #A290E9;
-        color: var(--color-gray-1000);
     }
 
     .credit {
