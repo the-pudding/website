@@ -1,120 +1,121 @@
 <script>
-    import { base } from "$app/paths";
+  import { base } from "$app/paths";
 </script>
-<div class="interstitial-inner">
-    <div class="sticker-set">
-        <img class="icon" src="{base}/assets/stickers/mailbox@2x.png" alt="mailbox sticker" />
-    </div>
-    <p>Get The Pudding in your inbox</p>
 
-    <form action="https://buttondown.com/api/emails/embed-subscribe/thepudding"
-        method="post"
-        class="embeddable-buttondown-form"
-    >
-        <input type="email" class="email-input" name="email" placeholder="you@example.com" />
-        <input type="hidden" value="1" name="embed" />
-        <input type="submit" class="submit-input" value="Subscribe" />
-    </form>
-    <p class="credit">
-        <a href="https://buttondown.com" target="_blank">
-        Powered by Buttondown.
-        </a>
-    </p>
+<div class="interstitial-inner">
+  <div class="sticker-set">
+    <img class="icon" src="{base}/assets/stickers/mailbox@2x.png" alt="mailbox sticker" />
+  </div>
+  <p>Get The Pudding in your inbox</p>
+
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/thepudding"
+    method="post"
+    class="embeddable-buttondown-form"
+  >
+    <input type="email" class="email-input" name="email" placeholder="you@example.com" />
+    <input type="hidden" value="1" name="embed" />
+    <input type="submit" class="submit-input" value="Subscribe" />
+  </form>
+  <!-- <p class="credit">
+    <a href="https://buttondown.com" target="_blank"> Powered by Buttondown. </a>
+  </p> -->
 </div>
 
 <style>
-    .interstitial-inner {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 36px;
-    }
+  .interstitial-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px;
+  }
 
-    .sticker-set {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
+  .sticker-set {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .icon {
-        width: 180px;
-        margin: 16px 0;
-        transition: transform calc(var(--1s) * 0.25);
-    }
+  .icon {
+    width: 180px;
+    margin: 16px 0;
+    transition: transform calc(var(--1s) * 0.25);
+  }
 
-    .icon:hover {
-        transform: rotate(var(--left-tilt-double)) scale(1.05);
-     }
+  .icon:hover {
+    transform: rotate(var(--left-tilt-double)) scale(1.05);
+  }
 
-    p {
-        margin: 0;
-        font-family: var(--sans);
-        font-size: var(--font-size-medium);
-        text-align: center;
-        max-width: 260px;
-        line-height: 1;
-        color: var(--color-fg);
-    }
+  p {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: var(--font-size-medium);
+    text-align: center;
+    max-width: 260px;
+    line-height: 1;
+    color: var(--color-fg);
+  }
 
-    form {
-        margin: 32px 0 0 0;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        transition: transform calc(var(--1s) * 0.25);
-    }
+  form {
+    margin: 32px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    transition: transform calc(var(--1s) * 0.25);
+  }
 
-    form:hover {
-        transform: translateY(-4px);
-    }
+  .submit-input {
+    text-transform: uppercase;
+    margin-left: 8px;
+    transition: all calc(var(--1s) * 0.25);
+  }
 
-    form:hover .submit-input {
-        background: var(--color-secondary-gray);
-        outline: 2px solid var(--color-secondary-gray);
-    }
+  .submit-input:hover {
+    transform: translateY(-4px);
+  }
 
-    .email-input {
-        width: 65%;
-        font-size: var(--font-size-xsmall);
-        border-radius: 1px 0 0 1px;
-        outline: 2px solid var(--color-fg);
-        color: var(--color-secondary-gray);
-    }
+  /* .email-input {
+    width: 65%;
+    font-size: var(--font-size-xsmall);
+    border-radius: 1px 0 0 1px;
+    outline: 2px solid var(--color-fg);
+    color: var(--color-secondary-gray);
+  } */
 
-    .submit-input {
-        width: 35%;
-        background: var(--color-fg);
-        font-size: var(--font-size-xsmall);
-        text-transform: uppercase;
-        min-width: 80px;
-        outline: 2px solid var(--color-fg);
-        border-radius: 0 1px 1px 0;
-    }
+  /* .submit-input {
+    width: 35%;
+    background: var(--color-fg);
+    font-size: var(--font-size-xsmall);
+    text-transform: uppercase;
+    min-width: 80px;
+    outline: 2px solid var(--color-fg);
+    border-radius: 0 1px 1px 0;
+  } */
 
-    .credit {
-        text-align: right;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        max-width: none;
-    }
+  .credit {
+    text-align: right;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+  }
 
-    a {
-        font-family: var(--sans);
-        font-size: var(--font-size-xsmall);
-        color: var(--color-secondary-gray);
-        text-decoration: underline 2px var(--color-secondary-gray);
-        text-transform: none;
-        margin: 0;
-        padding: 0;
-    }
+  a {
+    font-family: var(--sans);
+    font-size: var(--font-size-xsmall);
+    color: var(--color-secondary-gray);
+    text-decoration: underline 2px var(--color-secondary-gray);
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+  }
 
-    a:hover {
-        color: var(--color-fg);
-        text-decoration: underline 2px var(--color-fg);
-    }
+  a:hover {
+    color: var(--color-fg);
+    text-decoration: underline 2px var(--color-fg);
+  }
 </style>

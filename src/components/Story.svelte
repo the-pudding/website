@@ -64,7 +64,12 @@
   }
 
   a {
+    display: block;
     text-decoration: none;
+  }
+
+  a:focus {
+    outline: 2px solid var(--color-focus);
   }
 
   .story:hover .info {

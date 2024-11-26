@@ -79,7 +79,7 @@
   input {
     margin-left: -8px;
     width: 10em;
-    outline: 2px solid var(--color-fg);
+    border: 2px solid var(--color-fg);
     border-radius: 1px;
     transform: scale(0.75);
     padding: 12px 8px;
@@ -110,12 +110,6 @@
   }
 
   .more button {
-    text-transform: uppercase;
-    background: var(--color-fg);
-    color: var(--color-bg);
-    border-radius: 2px;
-    padding: 12px;
-    font-size: var(--font-size-xsmall);
     transition: transform calc(var(--1s) * 0.25);
   }
 
