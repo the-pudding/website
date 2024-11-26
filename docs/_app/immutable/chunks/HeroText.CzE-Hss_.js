@@ -1,0 +1,1 @@
+import{a as r,t as s}from"./disclose-version.CREomnJd.js";import{m as i,o as p,n as m,g as n,j as d}from"./index-client.C6T7o1Pl.js";import{s as v}from"./snippet.D6npmVyO.js";var l=s('<div class="hero-text svelte-i0k7y6"><!></div>');function u(o,e){i(e,!0);var a=l(),t=n(a);v(t,()=>e.children??m),d(a),r(o,a),p()}export{u as H};
