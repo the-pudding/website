@@ -12,7 +12,7 @@
 
 <section id="stories">
   <ul>
-    {#each stories as story}
+    {#each stories as story (story.slug)}
       {@const C = components[story.component]}
       <li>
         {#if C}
