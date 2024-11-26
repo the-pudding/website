@@ -30,7 +30,7 @@
     f.sort((a, b) => descending(a.id, b.id));
     const sliced = f.slice(0, maxStories);
 
-    sliced.splice(4, 0, { component: "Subscribe" });
+    sliced.splice(7, 0, { component: "Subscribe" });
     sliced.splice(15, 0, { component: "Faves" });
     sliced.splice(26, 0, { component: "Merch" });
 
@@ -123,7 +123,7 @@
 
   .more button:hover {
     transform: translateY(-4px);
-    opacity: 0.85;
+    background: var(--color-secondary-gray);
   }
 
   @media only screen and (min-width: 400px) {
