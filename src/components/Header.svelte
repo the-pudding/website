@@ -31,8 +31,6 @@
 
     return () => clearInterval(i);
   });
-
-  $inspect(tagline);
 </script>
 
 <header class="column-wide">

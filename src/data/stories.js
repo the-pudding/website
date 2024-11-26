@@ -15,6 +15,7 @@ const lookupColor = (slug) => {
 
 const addFaves = (arr, name) => {
   if (name) return [...arr, "our_faves"];
+  return arr;
 };
 
 const clean = data

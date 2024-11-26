@@ -4,7 +4,7 @@
   import Stories from "$components/Stories.svelte";
   import Filters from "$components/Filters.svelte";
 
-  const initMax = 29;
+  const initMax = 27;
   let maxStories = $state(initMax);
 
   const { stories, staff, copy } = getContext("Home");
@@ -13,6 +13,8 @@
 
   let searchValue = $state("");
   let activeFilter = $state(undefined);
+
+  $inspect(staff);
 
   // todo load more story data
   let filtered = $derived.by(() => {
@@ -29,6 +31,8 @@
     const sliced = f.slice(0, maxStories);
 
     sliced.splice(4, 0, { component: "Subscribe" });
+    sliced.splice(15, 0, { component: "Faves" });
+    sliced.splice(26, 0, { component: "Merch" });
 
     return sliced;
   });

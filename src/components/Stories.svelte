@@ -5,14 +5,14 @@
   import Subscribe from "$components/Story.Subscribe.svelte";
   import Merch from "$components/Story.Merch.svelte";
   import Faves from "$components/Story.Faves.svelte";
-  const components = { Subscribe };
+  const components = { Subscribe, Faves, Merch };
 
   let { stories, resource = false } = $props();
 </script>
 
 <section id="stories">
   <ul>
-    {#each stories as story (story.slug)}
+    {#each stories as story}
       {@const C = components[story.component]}
       <li>
         {#if C}
