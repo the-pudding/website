@@ -8,10 +8,10 @@
     <loc>https://pudding.cool/about</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/pitch</loc>
+    <loc>https://pudding.cool/privacy</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/privacy</loc>
+    <loc>https://pudding.cool/pitch</loc>
   </url>
   <url>
     <loc>https://pudding.cool/resources</loc>
@@ -65,10 +65,10 @@
     <loc>https://pudding.cool/author/antal-van-den-bosch</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/arjun-kakkar</loc>
+    <loc>https://pudding.cool/author/ash-ngu</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/ash-ngu</loc>
+    <loc>https://pudding.cool/author/arjun-kakkar</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/ashley-cai</loc>
@@ -314,18 +314,18 @@
     <loc>https://pudding.cool/author/tom-vaillant</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/tyler-machado</loc>
+    <loc>https://pudding.cool/author/uri-bram</loc>
+  </url>
+  <url>
+    <loc>https://pudding.cool/author/wessel-stoop</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/tynesha-foreman</loc>
   </url>
   <url>
-    <loc>https://pudding.cool/author/uri-bram</loc>
+    <loc>https://pudding.cool/author/tyler-machado</loc>
   </url>
   <url>
     <loc>https://pudding.cool/author/vivian-li</loc>
-  </url>
-  <url>
-    <loc>https://pudding.cool/author/wessel-stoop</loc>
   </url>
 </urlset>
