@@ -35,9 +35,8 @@
   ];
 
   onMount(async () => {
-    localURL = window.location.href;
-
     if (recirc) {
+      localURL = window.location.href;
       const response = await fetch(url);
       const data = await response.json();
 
