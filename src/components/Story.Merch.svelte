@@ -4,7 +4,9 @@
 <div class="interstitial-inner">
     <p>If you like our stories, you'll love our merch</p>
     <div class="sticker-set">
-        <img class="icon" src="{base}/assets/img/merch-tease.png" alt="pudding tee" />
+        <img class="icon" src="{base}/assets/img/merch-tee.png" alt="pudding tee with a skeleton working on a computer" />
+        <img class="sticker-left" src="{base}/assets/img/merch-sticker-left.png" alt="a red and yellow technical sticker that reads The Pudding: Visual Data Stories About Just About Everything" />
+        <img class="sticker-right" src="{base}/assets/img/merch-sticker-right.png" alt="a green blob sticker that reads Pudding Dot Cool" />
     </div>
     <a href="https://the-pudding.printify.me/products">Shop our swag</a>
 </div>
@@ -19,18 +21,55 @@
         padding: 36px;
     }
 
+    .sticker-set:hover .sticker-left {
+        transform: rotate(3deg) scale(1.05);
+    }
+
+    .sticker-set:hover .sticker-right {
+        transform: rotate(-5deg) scale(1.05);
+    }
+
+    .sticker-set:hover .icon {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
     .sticker-set {
         width: 100%;
+        aspect-ratio: 1;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
 
     .icon {
-        width: 80%;
-        max-width: 260px;
-        margin: 24px 0;
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform calc(var(--1s) * 0.25);
+    }
+
+    .sticker-left {
+        width: 40%;
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        transform: rotate(-5deg);
+        transition: transform calc(var(--1s) * 0.25);
+    }
+
+    .sticker-right {
+        width: 30%;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        transform: rotate(5deg);
+        transition: transform calc(var(--1s) * 0.25);
     }
 
     p {
