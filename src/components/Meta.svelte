@@ -9,7 +9,7 @@
   <title>{copy.title}</title>
   <meta name="description" content={copy.description} />
   <meta name="author" content="The Pudding" />
-  <meta name="news_keywords" content={copy.keywords} />
+  <meta name="news_keywords" content={copy.keywords || ""} />
 
   <meta property="og:title" content={copy.title} />
   <meta property="og:site_name" content="The Pudding" />
