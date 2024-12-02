@@ -6,6 +6,7 @@
 
   const initMax = 27;
   let maxStories = $state(initMax);
+  let storiesEl = undefined;
 
   const { stories, staff, copy } = getContext("Home");
 
@@ -38,6 +39,15 @@
   function onLoadMore() {
     maxStories = stories.length;
   }
+
+  $effect(() => {
+    // scroll to
+    if (searchValue) {
+      storiesEl.scrollIntoView({ behavior: "instant" });
+      const offset = -54;
+      window.scrollBy({ top: offset, behavior: "instant" });
+    }
+  });
 </script>
 
 <div class="c">
@@ -51,7 +61,9 @@
       <Filters {filters} bind:activeFilter></Filters>
     </div>
   </div>
-  <Stories stories={filtered} />
+  <div class="stories" bind:this={storiesEl}>
+    <Stories stories={filtered} />
+  </div>
   <div class="more" class:visible={initMax === maxStories}>
     <button onclick={onLoadMore}>Load More Stories</button>
   </div>
@@ -64,11 +76,14 @@
     align-items: center;
     background: var(--color-bg);
     padding: 16px;
-    z-index: var(--z-top);
+    z-index: var(--z-overlay);
     font-family: var(--mono);
     text-transform: uppercase;
     font-size: var(--14px);
     font-weight: bold;
+    position: sticky;
+    top: 0;
+    left: 0;
   }
 
   .search {
