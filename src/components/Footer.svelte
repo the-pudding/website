@@ -6,7 +6,6 @@
   import linkOutArrow from "$svg/arrow-up-right.svg";
   import Story from "$components/Story.svelte";
 
-  let localURL;
   let stories = $state([]);
   let storyCount = $state(0);
 
@@ -36,7 +35,7 @@
 
   onMount(async () => {
     if (recirc) {
-      localURL = window.location.href;
+      const localURL = window.location.href;
       const response = await fetch(url);
       const data = await response.json();
 
