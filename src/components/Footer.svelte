@@ -13,8 +13,7 @@
   let { recirc = false, recent = false, recircImages = false } = $props();
 
   const v = Date.now();
-  // TODO MAKE THIS A REAL URL
-  const url = `../assets/data/stories.json?v=${v}`;
+  const url = `https://pudding.cool/assets/data/stories.json?v=${v}`;
 
   const about = [
     { name: "Our Team", url: "https://pudding.cool/about" },
