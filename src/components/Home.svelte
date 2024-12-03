@@ -3,25 +3,25 @@
   import { getContext } from "svelte";
   import Stories from "$components/Stories.svelte";
   import Filters from "$components/Filters.svelte";
+  import loadCsv from "$utils/loadCsv.js";
+  import tokenize from "$utils/tokenize.js";
 
   const initMax = 27;
+  const { stories } = getContext("Home");
+  const filters = ["Our Faves", "Popular", "Updating", "Your Input", "Video", "Audio"];
+
   let maxStories = $state(initMax);
   let storiesEl = undefined;
-
-  const { stories } = getContext("Home");
-
-  const filters = ["Our Faves", "Popular", "Updating", "Your Input", "Video", "Audio"];
+  let storiesWithSearch = $state([...stories]);
 
   let searchValue = $state("");
   let activeFilter = $state(undefined);
 
-  // todo load more story data
   let filtered = $derived.by(() => {
     const query = searchValue.toLowerCase();
-    const f = stories.filter((d) => {
-      // todo flesh out
-      const search = [d.short, d.tease].join(" ").toLowerCase();
-      const inSearch = search.includes(query);
+    const f = storiesWithSearch.filter((d) => {
+      const tokens = tokenize(query);
+      const inSearch = tokens.every((t) => d.search.some((s) => s.includes(t)));
 
       const inFilter = activeFilter ? d.filters.includes(activeFilter) : true;
       return inSearch && inFilter;
@@ -47,6 +47,24 @@
       const offset = -54;
       window.scrollBy({ top: offset, behavior: "instant" });
     }
+  });
+
+  $effect(async () => {
+    const searchData = await loadCsv("assets/data/search.csv");
+    storiesWithSearch = storiesWithSearch.map((d) => {
+      const match = searchData.find((e) => e.slug === d.slug) || {};
+      return {
+        ...d,
+        search: [
+          ...tokenize(d.tease),
+          ...tokenize(d.short),
+          ...tokenize(match.hed),
+          ...tokenize(match.dek),
+          ...tokenize(match.keyword),
+          ...tokenize(match.author)
+        ]
+      };
+    });
   });
 </script>
 
