@@ -24,7 +24,7 @@ Authors
 There is a [Google Sheet](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W27Q2YfoXRV5RuNFY_ML6hiirMa6HM/edit?gid=0#gid=0) for all author data.
 
 ### Screenshot Guidelines
-**Size:** a 600x700px (WxH) image and run through an optimization software, like [ImageOptim].
+**Size:** a 600x700px (WxH) image and run through an optimization software, like [ImageOptim]. Videos should be 600x400.
 
 **Location:** Put it here: `static/common/assets/thumbnails/screenshots`.
 

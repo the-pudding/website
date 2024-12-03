@@ -5,8 +5,8 @@
   let { id, href, slug, short, tease, month, bgColor, resource, footer } = $props();
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");
-  const dir = resource ? "resources/480" : "thumbnails/screenshots";
-  const imagePath = `${base}/common/assets/${dir}`;
+  const dir = resource ? "resources" : "screenshots";
+  const imagePath = `${base}/common/assets/thumbnails/${dir}`;
   const style = bgColor ? `--story-bg: ${bgColor};` : "";
 </script>
 
