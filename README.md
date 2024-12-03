@@ -36,6 +36,11 @@ There is a [Google Sheet](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W
 * Our homepage automatically pulls a saturated color for the background color from the image, so it's good to at least have one color present in your image. You can override the automatic color with the `color_override` column in the stories sheet.
 * There are no other color or content guidelines you need to follow. 
 
+### Resources Guidelines
+**Size:** a 600x? (WxH) image and run through an optimization software, like [ImageOptim]. 
+
+**Location:** Put it here: `static/common/assets/thumbnails/resources`.
+
 # Starter Template
 **NOTE**: This uses Svelte 5 and is under active migration (not all features will work). For the less adventurous, use the [previous version](https://github.com/the-pudding/svelte-starter) (with Svelte 4).
 
