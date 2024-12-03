@@ -85,7 +85,6 @@
     padding: 16px;
   }
 
-  /* TODO fix */
   :global(#faq details:nth-of-type(2) p) {
     margin: 0;
     padding: 0;
