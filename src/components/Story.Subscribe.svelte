@@ -6,7 +6,7 @@
   <div class="sticker-set">
     <img class="icon" src="{base}/assets/stickers/mailbox@2x.png" alt="mailbox sticker" />
   </div>
-  <p>Get The Pudding in your inbox</p>
+  <p>Get The Pudding <br />in your inbox</p>
 
   <form
     action="https://buttondown.com/api/emails/embed-subscribe/thepudding"
