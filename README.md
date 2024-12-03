@@ -1,14 +1,14 @@
 # The Pudding Website
 
 ## Publishing a new story
-* Always pull the repo first to make sure you are up to date
+* In the repo, `git pull`
 * Fill out the new story in the [stories doc](https://docs.google.com/spreadsheets/d/1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ/edit#gid=0)
 * Make sure the author is in the [authors doc](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W27Q2YfoXRV5RuNFY_ML6hiirMa6HM/edit#gid=0)
-* Add a screenshot image (600x700) to the `static/common/assets/thumbnails/screenshots` directory - [screenshot guidelines](#screenshot-guidelines)
+* [Add a screenshot image](#screenshot-guidelines)
 * Run `npm run update`
-* Commit new changes to repo
-* Run `make pudding`
-* `git push`
+* Optionally: test locally `npm run dev`
+* Git add/commit
+* Run `make pudding` to deploy live
 
 ## Content
 #### Copy + Data
