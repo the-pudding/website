@@ -1,5 +1,42 @@
-# Svelte Starter
+# The Pudding Website
 
+## Publishing a new story
+* Always pull the repo first to make sure you are up to date
+* Fill out the new story in the [stories doc](https://docs.google.com/spreadsheets/d/1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ/edit#gid=0)
+* Make sure the author is in the [authors doc](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W27Q2YfoXRV5RuNFY_ML6hiirMa6HM/edit#gid=0)
+* Add a screenshot image (600x700) to the `static/common/assets/thumbnails/screenshots` directory - [screenshot guidelines](#screenshot-guidelines)
+* Run `npm run update`
+* Commit new changes to repo
+* Run `make pudding`
+* `git push`
+
+## Content
+#### Copy + Data
+Each page has a copy doc in our [website folder](https://drive.google.com/drive/u/0/folders/1A5yM2yx5TWcHS9pA1OWEJ0pUSahJNasa) on Google Drive.
+
+Additionally, there is a misc. copy doc for a few items that can appear in multiple places.
+
+Stories
+* There is a [Google Sheet](https://docs.google.com/spreadsheets/d/1hIIwnbmcIpRlygNZNY6SAnKFzAI79QROcrCglQhoZyQ/edit?gid=0#gid=0) for all story data.
+* Fill out all visible columns
+
+Authors
+There is a [Google Sheet](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W27Q2YfoXRV5RuNFY_ML6hiirMa6HM/edit?gid=0#gid=0) for all author data.
+
+### Screenshot Guidelines
+**Size:** a 600x700px (WxH) image and run through an optimization software, like [ImageOptim].
+
+**Location:** Put it here: `static/common/assets/thumbnails/screenshots`.
+
+**Tips:**
+* Homepage story images should be screenshots of the article. These can be straight screenshots, or can be combined from different parts of the article.
+* The primary goal of the screenshot is to give a taste of what is in the article, **NOT** for these images to be completely legible.
+* Avoid any large text in the images, especially headlines. The images should serve as a texture of sorts, elevating and prioritizing the actual title text.
+* Screenshots can be taken from whatever device (mobile or desktop), but keep in mid that taking the images on desktop will provide you more room to tease actual story content. On desktop, most traditional stories look good at around 800-1000px width.
+* Our homepage automatically pulls a saturated color for the background color from the image, so it's good to at least have one color present in your image. You can override the automatic color with the `color_override` column in the stories sheet.
+* There are no other color or content guidelines you need to follow. 
+
+# Starter Template
 **NOTE**: This uses Svelte 5 and is under active migration (not all features will work). For the less adventurous, use the [previous version](https://github.com/the-pudding/svelte-starter) (with Svelte 4).
 
 This [starter template](https://github.com/the-pudding/svelte-starter) aims to quickly scaffold a [SvelteKit](https://kit.svelte.dev/) project, designed around data-driven, visual stories at [The Pudding](https://pudding.cool).
