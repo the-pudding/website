@@ -9,7 +9,7 @@
   let stories = $state([]);
   let storyCount = $state(0);
 
-  let { recirc = false, recent = false, recircImages = false } = $props();
+  let { recirc = false, recent = true, recircImages = false } = $props();
 
   const v = Date.now();
   const url = `https://pudding.cool/assets/data/stories.json?v=${v}`;
