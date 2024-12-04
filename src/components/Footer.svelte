@@ -9,7 +9,7 @@
   let stories = $state([]);
   let storyCount = $state(0);
 
-  let { recirc = false, recent = false, recircImages = false } = $props();
+  let { recirc = false, recent = true, recircImages = false } = $props();
 
   const v = Date.now();
   const url = `https://pudding.cool/assets/data/stories.json?v=${v}`;
@@ -408,6 +408,10 @@
       width: calc(25% - 24px);
       padding: 32px 0;
     }
+
+    .text {
+      font-size: var(--20px, 20px);
+    }
   }
 
   @media only screen and (min-width: 960px) {
@@ -440,6 +444,10 @@
 
     .subscribe img {
       max-width: 200px;
+    }
+
+    .text {
+      font-size: var(--28px, 28px);
     }
   }
 </style>

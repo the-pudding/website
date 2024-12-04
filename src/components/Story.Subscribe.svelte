@@ -37,6 +37,7 @@
     flex-direction: column;
     align-items: center;
     padding: 36px;
+    overflow: hidden;
   }
 
   .sticker-set {
