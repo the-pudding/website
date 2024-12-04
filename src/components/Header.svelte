@@ -135,22 +135,28 @@
   }
 
   li:nth-of-type(1) {
-    transform: rotate(0deg);
+    transform: rotate(var(--left-tilt));
+  }
+
+  li:nth-of-type(3) {
+    transform: rotate(var(--right-tilt));
+  }
+
+  li:nth-of-type(3):hover {
+    transform: rotate(var(--right-tilt-double)) scale(1.05);
+  }
+
+  li:nth-of-type(1):hover {
+    transform: rotate(0deg) scale(1.05);
   }
 
   li:nth-of-type(2) {
     width: 40%;
-    transform: rotate(-2deg);
     display: none;
   }
 
   li:nth-of-type(1) {
     display: none;
-  }
-
-  li:nth-of-type(1):hover,
-  li:nth-of-type(2):hover {
-    transform: rotate(0deg) scale(1.05);
   }
 
   .stories {

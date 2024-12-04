@@ -18,8 +18,8 @@
   {#each filters as filter, i}
     {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
     {@const active = override ? slug === override : slug === activeFilter || !activeFilter}
-    <button class:active onclick={() => (activeFilter = slug === activeFilter ? undefined : slug)}>
-      <img class="icon {i % 2 === 0 ? 'icon-even': ''}" src="{base}/assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
+    <button class="{i % 2 === 0 ? 'button-even': ''}" class:active onclick={() => (activeFilter = slug === activeFilter ? undefined : slug)}>
+      <img class="icon" src="{base}/assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
       <span class="name">{filter}</span>
     </button>
   {/each}
@@ -76,12 +76,12 @@
     transform: rotate(var(--right-tilt));
   }
 
-  .filters--desktop .icon-even{
+  .filters--desktop .button-even .icon {
     transform: rotate(var(--left-tilt));
   }
 
-  .filters--desktop .icon:hover {
-    transform: rotate(var(--left-tilt-double)) scale(1.05);
+  .filters--desktop .button-even:hover .icon {
+    transform: rotate(-6deg) scale(1.05);
   }
 
   .filters--mobile {

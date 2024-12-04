@@ -165,8 +165,9 @@
 
   .more {
     display: none;
-    height: 100vh;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 100%);
+    height: 50vh;
+    max-height: 600px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 1) 50%);
     position: absolute;
     width: 100%;
     bottom: 0;
