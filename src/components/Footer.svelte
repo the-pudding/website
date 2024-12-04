@@ -151,7 +151,7 @@
 
 <style>
   footer {
-    margin-top: 100px;
+    margin-top: 60px;
   }
 
   .c {

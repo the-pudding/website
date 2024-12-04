@@ -65,6 +65,7 @@
 	--transition-medium: 200ms;
 	--transition-slow: 500ms;
 	--transition-ease: ease-in;
+	--fade: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 1) 50%);
 
 	/* "1" second duration */
 	--1s: 1ms;
@@ -92,6 +93,7 @@
 		--color-input-fg: var(--color-gray-50);
 		--color-placeholder: var(--color-gray-400);
 		--color-default-story-bg: var(--color-gray-800);
+		--fade: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, rgba(25, 25, 25, 0.8) 30%, rgba(25, 25, 25, 1) 50%);
 	}
 }
 

@@ -167,7 +167,7 @@
     display: none;
     height: 50vh;
     max-height: 600px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 1) 50%);
+    background: var(--fade);
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -198,7 +198,7 @@
 
   .more button svg {
     width: 23px;
-    stroke: #fff;
+    stroke: var(--color-bg);
     margin-right: 7px;
   }
 
