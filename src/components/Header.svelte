@@ -37,7 +37,7 @@
   <div class="stories">
     <p>
       {@html copy.taglinePre}...<br />
-      {#key index}<strong in:fly={{ delay: 200, duration: 300, y: 32 }}>{tagline}</strong>{/key}
+      {#key index}<strong in:fly={{ delay: 200, duration: 500, y: 15 }}>{tagline}</strong>{/key}
     </p>
   </div>
   <div class="wordmark">
@@ -72,6 +72,14 @@
     </ul>
   </div>
 </header>
+<div class="column-wide">
+  <div class="stories stories-mobile">
+    <p>
+      {@html copy.taglinePre}...<br />
+      {#key index}<strong in:fly={{ delay: 200, duration: 500, y: 15 }}>{tagline}</strong>{/key}
+    </p>
+  </div>
+</div>
 
 <Menu {visible} bind:this={menu} close={onClose} />
 
@@ -83,12 +91,13 @@
     font-family: var(--sans);
     padding-top: 16px;
     padding-bottom: 16px;
-    margin: 0 auto 64px auto;
+    margin: 0 auto 24px auto;
     max-height: 100px;
+    margin-bottom: 0;
   }
 
   header > div {
-    width: 33.33%;
+    width: 30%;
   }
 
   .menu {
@@ -113,7 +122,7 @@
 
   li a {
     display: block;
-    max-width: 100px;
+    max-width: 150px;
   }
 
   li:nth-of-type(1) {
@@ -121,8 +130,9 @@
   }
 
   li:nth-of-type(2) {
-    transform: rotate(-3deg);
+    transform: rotate(0deg);
     display: none;
+    width: 40%;
   }
 
   li:nth-of-type(1) {
@@ -136,6 +146,14 @@
 
   .stories {
     display: none;
+  }
+
+  .stories-mobile {
+    display: block;
+    font-family: var(--sans);
+    margin-bottom: 64px;
+    text-align: center;
+    transform: translate(0, -5px);
   }
 
   .stories p {
@@ -187,13 +205,18 @@
       width: 33.33%;
     }
     .menu {
-      width: 300px;
+      width: 350px;
       max-width: none;
     }
     li:nth-of-type(1),
     li:nth-of-type(2) {
       display: inline-block;
     }
+    .stories-mobile {
+      text-align: left;
+      transform: translate(0, 5px);
+    }
+
   }
 
   @media only screen and (min-width: 960px) {
@@ -201,10 +224,15 @@
       display: inline-block;
       max-width: 300px;
     }
-
+    .stories-mobile {
+      display: none;
+    }
     .wordmark {
       margin: 0 auto;
       justify-content: center;
+    }
+    header {
+      margin-bottom: 24px;
     }
   }
 </style>

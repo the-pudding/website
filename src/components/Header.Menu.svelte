@@ -106,6 +106,7 @@
     font-family: var(--mono);
     font-size: var(--font-size-xsmall);
     text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
   }
 
   .links {
@@ -138,11 +139,13 @@
     display: flex;
     align-items: center;
     color: currentColor;
+    text-decoration: none;
   }
 
   .links li a span {
-    border-bottom: 1px solid currentColor;
     margin-left: 4px;
+    border: none;
+    text-decoration: none;
   }
 
   .links li:hover img {

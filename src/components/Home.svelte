@@ -73,7 +73,7 @@
     <div class="search">
       <!-- <span>Search</span> -->
       <img class="icon" src="assets/stickers/search@2x.png" aria-hidden="true" alt="" />
-      <input type="text" placeholder="Find a story" bind:value={searchValue} />
+      <input type="text" placeholder="Find a story..." bind:value={searchValue} />
     </div>
     <div class="filters">
       <Filters {filters} bind:activeFilter></Filters>
@@ -83,17 +83,23 @@
     <Stories stories={filtered} />
   </div>
   <div class="more" class:visible={initMax === maxStories}>
-    <button onclick={onLoadMore}>Load More Stories</button>
+    <button onclick={onLoadMore}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <span>Load More Stories</span>
+    </button>
   </div>
 </div>
 
 <style>
+  .c {
+    position: relative;
+  }
   .ui {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--color-bg);
     padding: 16px;
+    background-color: var(--color-bg);
     z-index: var(--z-overlay);
     font-family: var(--mono);
     text-transform: uppercase;
@@ -110,16 +116,29 @@
   }
 
   input {
-    margin-left: -8px;
-    width: 10em;
-    border: 2px solid var(--color-fg);
-    border-radius: 1px;
-    transform: scale(0.75);
+    margin-left: 0px;
+    width: 130px;
     padding: 12px 8px;
+    border: 1px solid rgba(48, 48, 48, .4);
+    background: white;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    outline: none;
   }
 
   input::placeholder {
-    font-family: var(--mono);
+    font-family: var(--sans);
+  }
+  input::-webkit-input-placeholder {
+    font-family: var(--sans);
+  }
+
+  input::-moz-placeholder {
+    font-family: var(--sans);
+  }
+
+  input:-ms-input-placeholder {
+    font-family: var(--sans);
   }
 
   .icon {
@@ -134,8 +153,16 @@
 
   .more {
     display: none;
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, white 100%);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
   }
 
   .more.visible {
@@ -144,11 +171,28 @@
 
   .more button {
     transition: transform calc(var(--1s) * 0.25);
+    margin-bottom: 20%;
+    display: flex;
+    align-items: center;
+    padding: 16px 18px;
+    pointer-events: all;
   }
 
   .more button:hover {
     transform: translateY(-4px);
     background: var(--color-secondary-gray);
+  }
+
+  .more button svg {
+    width: 23px;
+    stroke: #fff;
+    margin-right: 7px;
+  }
+
+  .more button span {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 1px;
   }
 
   @media only screen and (min-width: 400px) {

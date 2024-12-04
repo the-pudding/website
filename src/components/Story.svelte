@@ -43,6 +43,7 @@
     align-items: center;
     user-select: none;
     transition: transform calc(var(--1s) * 0.25);
+    -webkit-font-smoothing: antialiased;
   }
 
   .id {
@@ -65,6 +66,7 @@
   a {
     display: block;
     text-decoration: none;
+    cursor: pointer;
   }
 
   a:focus-visible {
@@ -144,6 +146,7 @@
   p.tease {
     color: var(--color-secondary-gray, var(--color-fg));
     font-size: var(--16px);
+    -webkit-font-smoothing: antialiased;
   }
 
   .footer p.tease {
