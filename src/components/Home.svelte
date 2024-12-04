@@ -36,7 +36,8 @@
     return sliced;
   });
 
-  function onLoadMore() {
+  function onLoadMore(e) {
+    e.stopPropagation();
     maxStories = stories.length;
   }
 
@@ -84,7 +85,18 @@
   </div>
   <div class="more" class:visible={initMax === maxStories}>
     <button onclick={onLoadMore}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg
+      >
       <span>Load More Stories</span>
     </button>
   </div>
@@ -117,9 +129,9 @@
 
   input {
     margin-left: 0px;
-    width: 130px;
+    width: 140px;
     padding: 12px 8px;
-    border: 1px solid rgba(48, 48, 48, .4);
+    border: 1px solid rgba(48, 48, 48, 0.4);
     background: white;
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
     border-radius: 6px;

@@ -33,6 +33,13 @@
   });
 </script>
 
+<div class="special">
+  <p>
+    <a href="https://www.instagram.com/p/DDKdigixJPX/?img_index=1" target="_blank" rel="noreferrer"
+      >Free Crokinole board giveaway!</a
+    >
+  </p>
+</div>
 <header class="column-wide">
   <div class="stories">
     <p>
@@ -50,6 +57,7 @@
           ><img src="{base}/assets/stickers/about@2x.png" alt="about sticker" /></a
         >
       </li>
+
       <li>
         <a
           href="https://pudding.cool/subscribe"
@@ -59,6 +67,7 @@
           ><img src="{base}/assets/stickers/subscribe@2x.png" alt="subscribe sticker" /></a
         >
       </li>
+
       <li>
         <button
           bind:this={openBtnEl}
@@ -126,13 +135,13 @@
   }
 
   li:nth-of-type(1) {
-    transform: rotate(-2deg);
+    transform: rotate(0deg);
   }
 
   li:nth-of-type(2) {
-    transform: rotate(0deg);
-    display: none;
     width: 40%;
+    transform: rotate(-2deg);
+    display: none;
   }
 
   li:nth-of-type(1) {
@@ -204,6 +213,11 @@
     li {
       width: 33.33%;
     }
+
+    li:nth-of-type(2) {
+      width: 50%;
+    }
+
     .menu {
       width: 350px;
       max-width: none;
@@ -216,7 +230,6 @@
       text-align: left;
       transform: translate(0, 5px);
     }
-
   }
 
   @media only screen and (min-width: 960px) {
@@ -234,5 +247,22 @@
     header {
       margin-bottom: 24px;
     }
+  }
+
+  .special {
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+    text-align: center;
+    padding: 16px;
+  }
+
+  .special p {
+    margin: 0;
+  }
+  .special p a {
+    font-family: var(--mono);
+    color: var(--color-bg);
+    text-decoration-color: var(--color-bg);
+    font-size: var(--14px);
   }
 </style>
