@@ -9,7 +9,7 @@ export const about = [
 ];
 
 export const follow = [
-  { name: "BlueSky", url: "#" },
+  { name: "BlueSky", url: "https://bsky.app/profile/puddingviz.bsky.social" },
   { name: "Facebook", url: "https://facebook.com/pudding.viz" },
   {
     name: "Instagram",
