@@ -1,7 +1,6 @@
 <script>
   import { base } from "$app/paths";
   import playSvg from "$svg/play.svg";
-  import { onMount } from "svelte";
   let { id, href, slug, short, tease, month, bgColor, resource, footer } = $props();
 
   const youtube = href.includes("youtube") || href.includes("youtu.be");

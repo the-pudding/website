@@ -27,6 +27,7 @@
     flex-direction: column;
     align-items: center;
     padding: 36px;
+    overflow: hidden;
   }
 
   .sticker-set {
@@ -69,6 +70,7 @@
     text-transform: uppercase;
     margin-left: 8px;
     transition: all calc(var(--1s) * 0.25);
+    font-size: var(--14px);
   }
 
   .submit-input:hover {
