@@ -1,5 +1,29 @@
 <script>
   import { base } from "$app/paths";
+  import checkScreenMode from "$utils/checkScreenMode.js";
+  import { onMount } from "svelte";
+
+  let merchTeeImage = $state(`${base}/assets/img/merch-tee-light.png`);
+
+  const updateImage = () => {
+    const screenMode = checkScreenMode();
+    merchTeeImage = screenMode === "dark"
+      ? `${base}/assets/img/merch-tee-light.png`
+      : `${base}/assets/img/merch-tee-dark.png`;
+  };
+
+  onMount(() => {
+    updateImage();
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = () => { updateImage(); };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  });
 </script>
 
 <div class="interstitial-inner">
@@ -7,7 +31,7 @@
   <div class="sticker-set">
     <img
       class="icon"
-      src="{base}/assets/img/merch-tee.png"
+      src={merchTeeImage}
       alt="pudding tee with a skeleton working on a computer"
     />
     <img
