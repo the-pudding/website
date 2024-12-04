@@ -15,11 +15,11 @@
 </script>
 
 <div class="filters--desktop" class:resource>
-  {#each filters as filter}
+  {#each filters as filter, i}
     {@const slug = filter?.toLowerCase()?.replace(/[^a-z]/g, "_")}
     {@const active = override ? slug === override : slug === activeFilter || !activeFilter}
     <button class:active onclick={() => (activeFilter = slug === activeFilter ? undefined : slug)}>
-      <img class="icon" src="{base}/assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
+      <img class="icon {i % 2 === 0 ? 'icon-even': ''}" src="{base}/assets/stickers/{slug}@2x.png" alt="{slug} sticker" />
       <span class="name">{filter}</span>
     </button>
   {/each}
@@ -62,6 +62,7 @@
     font-size: var(--font-size-xsmall);
     text-align: left;
     color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
   }
 
   .filters--desktop button:hover .icon {
@@ -72,6 +73,11 @@
     width: 48px;
     margin-left: 4px;
     transition: transform calc(var(--1s) * 0.25);
+    transform: rotate(var(--right-tilt));
+  }
+
+  .filters--desktop .icon-even{
+    transform: rotate(var(--left-tilt));
   }
 
   .filters--desktop .icon:hover {
@@ -81,17 +87,22 @@
   .filters--mobile {
     display: none;
     color: var(--color-bg);
+    margin-top: 1px;
+    -webkit-font-smoothing: antialiased;
   }
 
   .filters--mobile select {
-    border: 2px solid var(--color-fg);
+    border: 1px solid rgb(214 214 214);
     background-color: var(--color-input-bg);
     color: var(--color-fg);
-    border-radius: 3px;
+    border-radius: 6px;
     line-height: normal;
-    font-size-adjust: 0.5;
-    transform: translateY(1px);
-    font-size: var(--font-size-small);
+    font-size: 1rem;
+    max-width: 120px;
+    padding: 12px 8px;
+    padding-right: 24px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.1);
+    
   }
 
   @media (max-width: 960px) {
@@ -101,7 +112,16 @@
 
     .filters--mobile {
       display: inline-block;
-      margin-top: -3px;
     }
   }
+
+  @media only screen and (min-width: 400px) {
+    .filters--mobile select {
+      transform: scale(0.875);
+      padding: 8px;
+      padding-right: 24px;
+      max-width: none;
+    }
+  }
+
 </style>

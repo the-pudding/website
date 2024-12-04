@@ -47,6 +47,7 @@
 
   :global(.interstitial-inner .bold-link) {
     font-weight: var(--font-weight-bold);
+    -webkit-font-smoothing: antialiased;
   }
 
   :global(.interstitial-inner .bold-link:hover) {
@@ -92,6 +93,7 @@
     text-decoration: underline 2px var(--color-fg);
     padding: 8px 0 4px 0;
     margin: 0;
+    -webkit-font-smoothing: antialiased;
   }
 
   .credit .title {

@@ -30,6 +30,7 @@
     { name: "Twitter/X", url: "https://twitter.com/puddingviz/" },
     { name: "TikTok", url: "https://www.tiktok.com/@the_pudding" },
     { name: "YouTube", url: "https://www.youtube.com/@thepudding" },
+    { name: "Bluesky", url: "https://bsky.app/profile/puddingviz.bsky.social" },
     { name: "RSS", url: "https://pudding.cool/feed/index.xml" }
   ];
 
@@ -233,6 +234,7 @@
     font-weight: bold;
     text-transform: uppercase;
     font-size: var(--font-size-xsmall, 14px);
+    -webkit-font-smoothing: antialiased;
   }
 
   .links .inner {
@@ -251,6 +253,7 @@
     font-weight: 700;
     color: var(--color-fg);
     text-decoration: 2px underline var(--color-fg);
+    -webkit-font-smoothing: antialiased;
   }
 
   a:hover {

@@ -165,6 +165,7 @@ svg {
 
 .inner strong, li strong {
 	font-family: var(--sans);
+	-webkit-font-smoothing: antialiased;
 }
 
 input[type="search"], 

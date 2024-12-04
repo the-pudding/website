@@ -108,6 +108,7 @@
     border-radius: 2px;
     transition: transform calc(var(--1s) * 0.25);
     cursor: pointer;
+    -webkit-font-smoothing: antialiased;
   }
 
   a:hover {

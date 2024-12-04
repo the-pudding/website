@@ -20,6 +20,16 @@
 </div>
 
 <style>
+  input.email-input {
+    outline: none;
+    border: 1px solid rgba(48, 48, 48, .4);
+    background: white;
+    -webkit-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    width: 175px;
+    font-family: var(--sans);
+  }
   .interstitial-inner {
     width: 100%;
     height: 100%;
@@ -62,16 +72,37 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    flex-wrap: wrap;
     transition: transform calc(var(--1s) * 0.25);
+    justify-content: center;
+    gap: 10px;
   }
 
   .submit-input {
     text-transform: uppercase;
-    margin-left: 8px;
     transition: all calc(var(--1s) * 0.25);
+    letter-spacing: 1px;
+    border-radius: 3px;
+    padding: 12px 8px;
   }
 
   .submit-input:hover {
     transform: translateY(-4px);
   }
+
+  input::placeholder {
+    font-family: var(--sans);
+  }
+  input::-webkit-input-placeholder {
+    font-family: var(--sans);
+  }
+
+  input::-moz-placeholder {
+    font-family: var(--sans);
+  }
+
+  input:-ms-input-placeholder {
+    font-family: var(--sans);
+  }
+
 </style>
