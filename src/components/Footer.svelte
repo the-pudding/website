@@ -405,6 +405,10 @@
       width: calc(25% - 24px);
       padding: 32px 0;
     }
+
+    .text {
+      font-size: var(--20px, 20px);
+    }
   }
 
   @media only screen and (min-width: 960px) {
@@ -437,6 +441,10 @@
 
     .subscribe img {
       max-width: 200px;
+    }
+
+    .text {
+      font-size: var(--28px, 28px);
     }
   }
 </style>
