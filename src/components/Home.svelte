@@ -83,7 +83,7 @@
   <div class="stories" bind:this={storiesEl}>
     <Stories stories={filtered} />
   </div>
-  <div class="more" class:visible={initMax === maxStories}>
+  <div class="more" class:visible={filtered.length > maxStories}>
     <button onclick={onLoadMore}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
