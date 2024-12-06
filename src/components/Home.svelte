@@ -216,4 +216,25 @@
       padding: 8px;
     }
   }
+  @media screen and (prefers-color-scheme:dark) {
+    input {
+      border: none;
+      color: var(--color-bg);
+    }
+
+    input::placeholder {
+      color: var(--color-bg);
+    }
+    input::-webkit-input-placeholder {
+      color: var(--color-bg);
+    }
+    input::-moz-placeholder {
+      color: var(--color-bg);
+    }
+
+    input:-ms-input-placeholder {
+      color: var(--color-bg);
+    }
+  }
+
 </style>
