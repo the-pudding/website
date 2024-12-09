@@ -33,9 +33,9 @@
   });
 </script>
 
-{#if copy.special}
-  <div class="special">
-    <p>{@html copy.special}</p>
+{#if copy.promo}
+  <div class="promo">
+    <p><a href={copy.promo.href} target="_blank" rel="noreferrer">{@html copy.promo.text}</a></p>
   </div>
 {/if}
 
@@ -254,17 +254,18 @@
     }
   }
 
-  .special {
+  .promo {
     background-color: var(--color-fg);
     color: var(--color-bg);
     text-align: center;
     padding: 16px;
   }
 
-  .special p {
+  .promo p {
     margin: 0;
   }
-  .special p a {
+
+  .promo p a {
     font-family: var(--mono);
     color: var(--color-bg);
     text-decoration-color: var(--color-bg);
