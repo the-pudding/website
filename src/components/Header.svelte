@@ -33,13 +33,12 @@
   });
 </script>
 
-<div class="special">
-  <p>
-    <a href="https://www.instagram.com/p/DDKdigixJPX/?img_index=1" target="_blank" rel="noreferrer"
-      >Free Crokinole board giveaway!</a
-    >
-  </p>
-</div>
+{#if copy.special}
+  <div class="special">
+    <p>{@html copy.special}</p>
+  </div>
+{/if}
+
 <header class="column-wide">
   <div class="stories">
     <p>
@@ -98,7 +97,7 @@
     justify-content: space-between;
     align-items: center;
     font-family: var(--sans);
-    padding-top: 16px;
+    padding-top: 32px;
     padding-bottom: 16px;
     margin: 0 auto 24px auto;
     max-height: 100px;
