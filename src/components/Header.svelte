@@ -167,7 +167,7 @@
     font-family: var(--sans);
     margin-bottom: 64px;
     text-align: center;
-    transform: translate(0, -5px);
+    margin-top: 10px;
   }
 
   .stories p {

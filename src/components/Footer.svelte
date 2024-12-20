@@ -231,7 +231,7 @@
 
   .links p.title {
     font-family: var(--mono);
-    font-weight: bold;
+    font-weight: 400;
     text-transform: uppercase;
     font-size: var(--font-size-xsmall, 14px);
     -webkit-font-smoothing: antialiased;

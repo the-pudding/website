@@ -133,6 +133,7 @@
     line-height: 1;
     margin: 0;
     margin-bottom: 8px;
+    letter-spacing: -.8px;
   }
 
   .resource h3.short {
@@ -146,7 +147,6 @@
   p.tease {
     color: var(--color-secondary-gray, var(--color-fg));
     font-size: var(--16px);
-    -webkit-font-smoothing: antialiased;
   }
 
   .footer p.tease {

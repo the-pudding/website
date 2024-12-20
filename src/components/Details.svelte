@@ -30,7 +30,7 @@
   summary {
     color: var(--color-off-black);
     padding-bottom: 0.75rem;
-    font-size: var(--font-size-small);
+    font-size: max(16px,var(--font-size-small));
     cursor: pointer;
     transition: transform calc(var(--1s) * 0.25);
   }

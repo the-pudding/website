@@ -43,6 +43,7 @@
     flex-direction: column;
     align-items: center;
     padding: 64px 36px;
+    justify-content: center;
   }
 
   :global(.interstitial-inner .bold-link) {

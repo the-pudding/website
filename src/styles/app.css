@@ -7,7 +7,7 @@
 :root {
 	/* font */
 	--sans: "Atlas Grotesk", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-	--serif: "Tiempos Text Web", Iowan Old Style, Times New Roman, Times, serif;
+	--serif: "Tiempos Text", Iowan Old Style, Times New Roman, Times, serif;
 	--mono: "Atlas Typewriter", Menlo, Consolas, Monaco, monospace;
 
 	/* z-index */
@@ -41,8 +41,8 @@
 	--font-size-giant: clamp(3rem, 4vw, 5rem);
 	--font-size-large: clamp(1.5rem, 2.5vw, 2.5rem);
 	--font-size-medium: clamp(1rem, 1.75vw, 1.5rem);
-	--font-size-small: clamp(0.8rem, 1.25vw, 1rem);
-	--font-size-xsmall: clamp(0.7rem, 1vw, 0.8rem);
+	--font-size-small: clamp(15px, 1.25vw, 1rem);
+	--font-size-xsmall: clamp(12px, 1vw, 0.8rem);
 
 	--font-weight-bold: 900;
 	--font-weight-normal: 400;

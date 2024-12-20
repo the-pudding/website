@@ -17,13 +17,15 @@
     font-size: var(--font-size-giant);
     font-family: var(--sans);
     font-weight: var(--font-weight-bold);
+    -webkit-font-smoothing: antialiased;
   }
 
   :global(.hero-text p) {
     font-weight: var(--font-weight-thin);
     font-size: var(--font-size-large);
-    line-height: 1.3;
+    line-height: 1.4;
     max-width: var(--width-padded);
+    -webkit-font-smoothing: antialiased;
   }
 
   @media only screen and (min-width: 960px) {
