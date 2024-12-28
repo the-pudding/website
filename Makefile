@@ -30,7 +30,7 @@ aws-cp:
 	aws s3 cp build/. s3://pudding.cool --recursive --exclude "*" --include "*" --exclude "*/*" --exclude ".DS_Store" --quiet
 
 aws-cache:
-	aws cloudfront create-invalidation --distribution-id E13X38CRR4E04D --paths "/index.html" "/_app*" "/about*" "/assets*" "/author*" "/common*" "/pitch*" "/privacy*" "/resources*"
+	aws cloudfront create-invalidation --distribution-id E13X38CRR4E04D --paths "/index.html" "/_app*" "/about*" "/assets*" "/author*" "/common*" "/pitch*" "/privacy*" "/resources*" "/feed*" "/rss.xml"
 
 pudding: aws-sync aws-cp aws-cache
 
