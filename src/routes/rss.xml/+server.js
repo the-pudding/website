@@ -8,13 +8,14 @@ const NUM_ITEMS = 20;
 
 const clean = (str) => str.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
 
-const createItemXml = ({ path, date, hed, dek }) => `
+const createItemXml = ({ href, date, short, tease, slug }) => `
 <item>
-	<title>${clean(hed)}</title>
-	<link>${path}</link>
-	<description>${clean(dek)}</description>
+	<title>${clean(short)}</title>
+	<link>${href}</link>
+	<description>${clean(tease)}</description>
 	<pubDate>${date.toUTCString()}</pubDate>
-	<guid isPermaLink="false">${path}</guid>
+	<guid isPermaLink="false">${href}</guid>
+	<media:content url="https://pudding.cool/common/assets/thumbnails/640/${slug}.jpg" medium="image" type="image/jpeg"/>
 </item>
 `;
 
@@ -24,7 +25,7 @@ const xml = (items) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/"
  xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
- xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+ xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/">
 	<channel>
 		<title>The Pudding</title>
 		<atom:link href="https://pudding.cool/rss.xml" rel="self" type="application/rss+xml" />
@@ -49,7 +50,7 @@ const xml = (items) => {
 };
 
 export async function GET() {
-  const keys = ["path", "date", "hed", "dek", "topic"];
+  const keys = ["href", "date", "short", "tease", "slug"];
   const all = filterStoryProps({ data: stories, keys });
 
   all.sort((a, b) => descending(a.date, b.date));
