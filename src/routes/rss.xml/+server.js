@@ -8,9 +8,9 @@ const NUM_ITEMS = 20;
 
 const clean = (str) => str.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
 
-const createItemXml = ({ href, date, short, tease, slug }) => `
+const createItemXml = ({ href, date, hed, tease, slug }) => `
 <item>
-	<title>${clean(short)}</title>
+	<title>${clean(hed)}</title>
 	<link>${href}</link>
 	<description>${clean(tease)}</description>
 	<pubDate>${date.toUTCString()}</pubDate>
@@ -50,7 +50,7 @@ const xml = (items) => {
 };
 
 export async function GET() {
-  const keys = ["href", "date", "short", "tease", "slug"];
+  const keys = ["href", "date", "hed", "tease", "slug"];
   const all = filterStoryProps({ data: stories, keys });
 
   all.sort((a, b) => descending(a.date, b.date));
