@@ -111,6 +111,7 @@
     left: 50%;
     transform: translate(-50%, 0) scale(1);
     width: calc(100% - (var(--padding, 16px) * 2));
+    aspect-ratio: 6/7;
     transform-origin: center center;
     transition: transform calc(var(--1s) * 0.25);
   }
@@ -120,6 +121,7 @@
     bottom: 50%;
     transform: translate(-50%, 50%);
     transform-origin: center center;
+    aspect-ratio: auto;
   }
 
   .text {
@@ -133,7 +135,7 @@
     line-height: 1;
     margin: 0;
     margin-bottom: 8px;
-    letter-spacing: -.8px;
+    letter-spacing: -0.8px;
   }
 
   .resource h3.short {
