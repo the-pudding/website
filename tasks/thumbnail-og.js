@@ -9,7 +9,7 @@ const width = 640;
 const ratio = 16 / 9;
 
 function getNewImages() {
-  const filesIn = fs.readdirSync(pathIn).filter((d) => d.includes(".jpg"));
+  const filesIn = fs.readdirSync(pathIn).filter((d) => d.includes(".jpg") || d.includes(".png"));
   const filesOut = fs.readdirSync(`${pathOut}/${width}`).filter((d) => d.includes(".jpg"));
 
   return filesIn.filter((d) => !filesOut.includes(d));

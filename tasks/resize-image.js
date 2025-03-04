@@ -2,7 +2,7 @@ import { Jimp } from "jimp";
 
 export default async function resizeImage({ pathIn, pathOut, file, width, height, cover = false }) {
   const src = `${pathIn}/${file}`;
-  const dest = `${pathOut}/${width}/${file}`;
+  const dest = `${pathOut}/${width}/${file.replace(".png", ".jpg")}`;
 
   console.log(`- resizing ${file} -> ${width}`);
 
