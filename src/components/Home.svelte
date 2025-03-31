@@ -83,23 +83,25 @@
   <div class="stories" bind:this={storiesEl}>
     <Stories stories={filtered} />
   </div>
-  <div class="more" class:visible={filtered.length > maxStories}>
-    <button onclick={onLoadMore}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg
-      >
-      <span>Load More Stories</span>
-    </button>
-  </div>
+  {#if stories.length > maxStories}
+    <div class="more" class:visible={filtered.length > maxStories}>
+      <button onclick={onLoadMore}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg
+        >
+        <span>Load More Stories</span>
+      </button>
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -216,7 +218,7 @@
       padding: 8px;
     }
   }
-  @media screen and (prefers-color-scheme:dark) {
+  @media screen and (prefers-color-scheme: dark) {
     input {
       border: none;
       color: var(--color-bg);
@@ -236,5 +238,4 @@
       color: var(--color-bg);
     }
   }
-
 </style>
