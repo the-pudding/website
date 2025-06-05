@@ -7,6 +7,7 @@
 
 <svelte:head>
   <title>{copy.title}</title>
+  <meta name="robots" content="nosnippet" />
   <meta name="description" content={copy.description} />
   <meta name="author" content="The Pudding" />
   <meta name="news_keywords" content={copy.keywords || ""} />
