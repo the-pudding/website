@@ -32,7 +32,7 @@ There is a [Google Sheet](https://docs.google.com/spreadsheets/d/1jFlS8Ghkat-h2W
 * Homepage story images should be screenshots of the article. These can be straight screenshots, or can be combined from different parts of the article.
 * The primary goal of the screenshot is to give a taste of what is in the article, **NOT** for these images to be completely legible.
 * Avoid any large text in the images, especially headlines. The images should serve as a texture of sorts, elevating and prioritizing the actual title text.
-* Screenshots can be taken from whatever device (mobile or desktop), but keep in mid that taking the images on desktop will provide you more room to tease actual story content. On desktop, most traditional stories look good at around 800-1000px width.
+* Screenshots can be taken from whatever device (mobile or desktop), but keep in mind that taking the images on desktop will provide you more room to tease actual story content. On desktop, most traditional stories look good at around 800-1000px width.
 * Our homepage automatically pulls a saturated color for the background color from the image, so it's good to at least have one color present in your image. You can override the automatic color with the `color_override` column in the stories sheet.
 * There are no other color or content guidelines you need to follow. 
 
