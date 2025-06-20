@@ -36,7 +36,7 @@
 
   <meta name="robots" content="max-image-preview:large" />
 
-  <link rel="canonical" href="{url}/" />
+  <link rel="canonical" href={url} />
 
   {#each preloadFont as href}
     <link rel="preload" {href} as="font" type="font/woff2" crossorigin />
