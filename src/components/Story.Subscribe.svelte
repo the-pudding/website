@@ -22,9 +22,10 @@
 </div>
 
 <style>
-
   label {
     font-family: var(--sans);
+    width: 100%;
+    text-align: center;
   }
   input.email-input, input#captcha {
     outline: none;
