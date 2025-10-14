@@ -27,7 +27,9 @@ mark {
 
 a {
 	color: var(--color-link, blue);
-	text-decoration: 2px underline var(--color-link, blue);
+	text-decoration-color: var(--color-link, blue); 
+	text-decoration-thickness: underline;
+	text-decoration-style: underline;
 }
 
 

@@ -152,7 +152,9 @@ svg {
 
 .column-regular a:hover {
 	color: var(--color-link-hover);
-	text-decoration: underline 2px var(--color-link-hover); 
+	text-decoration-color: var(--color-link-hover); 
+	text-decoration-thickness: underline;
+	text-decoration-style: underline;
 }
 
 .column-regular h2 {
