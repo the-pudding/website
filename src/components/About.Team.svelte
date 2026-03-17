@@ -27,7 +27,7 @@
   }
 
   li {
-    max-width: 10.1em;
+    max-width: 9em;
     line-height: 1.25;
     transition: transform calc(var(--1s) * 0.25);
     color: var(--color-fg);
