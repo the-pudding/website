@@ -2,7 +2,7 @@
   import { base } from "$app/paths";
   import { onMount } from "svelte";
   import { shuffle } from "d3";
-  import wordmark from "$svg/wordmark-sticker.svg";
+  import wordmark from "$svg/wordmark_script_stacked_sticker.svg";
   import linkOutArrow from "$svg/arrow-up-right.svg";
   import Story from "$components/Story.svelte";
 
@@ -329,8 +329,9 @@
 
   .wordmark {
     transform: rotate(var(--left-tilt, -2deg));
-    max-width: 360px;
+    max-width: 320px;
     transition: transform calc(var(--1s) * 0.25);
+    margin-left: -5%;
   }
 
   .wordmark:hover {
