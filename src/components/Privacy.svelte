@@ -32,3 +32,13 @@
     {/if}
   </section>
 {/each}
+
+<style>
+   h1, h2 {
+    font-family: var(--serif);
+  }
+
+  p, ul {
+    font-family: var(--sans);
+  }
+</style>

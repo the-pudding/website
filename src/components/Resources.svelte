@@ -72,6 +72,10 @@
 </div>
 
 <style>
+ h1, h2 {
+    font-family: var(--serif);
+  }
+  
   section {
     margin-bottom: 4em;
   }

@@ -67,7 +67,8 @@
 
   p {
     margin: 0;
-    font-family: var(--sans);
+    font-family: var(--serif);
+    font-weight: 700;
     font-size: var(--font-size-medium);
     text-align: center;
     max-width: 260px;

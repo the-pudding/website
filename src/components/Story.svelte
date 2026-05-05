@@ -130,6 +130,7 @@
   }
 
   h3.short {
+    font-family: var(--serif);
     color: var(--color-fg);
     font-size: clamp(var(--24px, 24px), 6vw, var(--28px, 28px));
     line-height: 1;

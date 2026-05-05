@@ -59,7 +59,7 @@
   p {
     margin: 0;
     width: 100%;
-    font-family: var(--sans);
+    font-family: var(--serif);
     text-align: center;
     line-height: 1.2;
     color: var(--color-fg);
@@ -97,7 +97,8 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .credit .title {
+  .credit p.title {
+    font-family: var(--sans);
     font-size: var(--font-size-xsmall);
     color: var(--color-secondary-gray);
     padding: 0;

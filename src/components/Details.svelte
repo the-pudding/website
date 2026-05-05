@@ -49,7 +49,7 @@
 
   .inner {
     padding: 1em;
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-weight: var(--font-weight-normal);
   }
 

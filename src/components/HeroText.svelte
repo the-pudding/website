@@ -21,6 +21,7 @@
   }
 
   :global(.hero-text p) {
+    font-family: var(--serif) !important;
     font-weight: var(--font-weight-thin);
     font-size: var(--font-size-large);
     line-height: 1.4;

@@ -62,6 +62,18 @@
 {/each}
 
 <style>
+  h1, h2 {
+    font-family: var(--serif);
+  }
+
+  p {
+    font-family: var(--sans);
+  }
+
+  .hero-text p {
+    font-family: var(--serif) !important;
+  }
+
   :global(#contributors ul) {
     display: flex;
     flex-wrap: wrap;
@@ -72,6 +84,7 @@
   }
 
   :global(.hed-dek) {
+    font-family: var(--serif);
     line-height: 1.2;
   }
 
