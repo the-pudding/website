@@ -1,7 +1,7 @@
 <script>
   import { base } from "$app/paths";
   import { fly, fade } from "svelte/transition";
-  import wordmark from "$svg/wordmark-sticker.svg";
+  import wordmark from "$svg/wordmark_script_stacked_sticker.svg";
   import Menu from "$components/Header.Menu.svelte";
   import copy from "$data/misc.json";
 
@@ -100,7 +100,7 @@
     padding-top: 32px;
     padding-bottom: 16px;
     margin: 0 auto 24px auto;
-    max-height: 100px;
+    max-height: 120px;
     margin-bottom: 0;
   }
 
@@ -181,8 +181,8 @@
   }
 
   .wordmark {
-    width: 200px;
-    margin: 0 0 0 -16px;
+    width: 180px;
+    margin: 0 0 0 -8px;
     transform: rotate(-4deg);
     display: flex;
     justify-content: start;
@@ -213,7 +213,7 @@
 
   @media only screen and (min-width: 600px) {
     .wordmark {
-      width: 40%;
+      width: 220px;
     }
     li {
       width: 33.33%;

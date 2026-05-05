@@ -42,3 +42,21 @@
 	font-stretch: normal;
 	font-display: swap;
 }
+
+@font-face {
+	font-family: "Gooper SemiCondensed";
+	src: url("https://pudding.cool/assets/fonts/gooper/GooperSemiCondensed-Regular.woff") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Gooper SemiCondensed";
+	src: url("https://pudding.cool/assets/fonts/gooper/GooperSemiCondensed-Bold.woff") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	font-display: swap;
+}
