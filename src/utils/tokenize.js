@@ -45,8 +45,9 @@ const stop = [
 ];
 
 export default function tokenize(str) {
+  if (!str) return [];
   return str
-    ?.toLowerCase()
+    .toLowerCase()
     .split(/\s+/)
     .map((d) => d.replace(/[^a-z]/g, ""))
     .filter((d) => d && !stop.includes(d));
