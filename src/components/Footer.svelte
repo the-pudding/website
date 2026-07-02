@@ -30,7 +30,7 @@
     { name: "Twitter/X", url: "https://twitter.com/puddingviz/" },
     { name: "TikTok", url: "https://www.tiktok.com/@the_pudding" },
     { name: "YouTube", url: "https://www.youtube.com/@thepudding" },
-    { name: "Bluesky", url: "https://bsky.app/profile/puddingviz.bsky.social" },
+    { name: "Bluesky", url: "https://bsky.app/profile/pudding.cool" },
     { name: "RSS", url: "https://pudding.cool/feed/index.xml" }
   ];
 
