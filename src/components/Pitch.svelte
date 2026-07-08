@@ -42,4 +42,8 @@
   p, ul {
     font-family: var(--sans);
   }
+
+  li {
+    padding: 0.25rem 0;
+  }
 </style>
