@@ -42,5 +42,18 @@ export default [
 	{
 		"id": "1kj_np3CIaO8rmRswvgLipH1DUvr1JF-wAQ2flo6apgU",
 		"filepath": "src/data/resources.json"
-	}
+	},
+	{
+		id: "1bnzMjtM1PDY6V6RFgT4OU6UXOoT2E5f39imsnVZ0nIo",
+		filepath: "src/data/studio-general.json"
+	  },
+	  {
+		id: "1aCSGGUdsd2CFuf8AuU8R4DR-6VjTNRvR-ODsrePdIL0",
+		filepath: "src/data/studio-home.json"
+	  },
+	  {
+		id: "1VWpGyCeQ1q5og_5CQDE9EWFXAMBI0zIt_H9yBHwmswU",
+		gid: "0",
+		filepath: "src/data/studio-projects.csv"
+	  }
 ]

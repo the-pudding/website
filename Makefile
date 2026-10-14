@@ -17,6 +17,7 @@ aws-sync:
 	aws s3 sync build/pitch s3://pudding.cool/pitch --quiet
 	aws s3 sync build/privacy s3://pudding.cool/privacy --quiet
 	aws s3 sync build/resources s3://pudding.cool/resources --quiet
+	aws s3 sync build/studio s3://pudding.cool/studio --quiet
 
 aws-sync-lite:
 	aws s3 sync build/_app s3://pudding.cool/_app --quiet
@@ -25,12 +26,13 @@ aws-sync-lite:
 	aws s3 sync build/pitch s3://pudding.cool/pitch --quiet
 	aws s3 sync build/privacy s3://pudding.cool/privacy --quiet
 	aws s3 sync build/resources s3://pudding.cool/resources --quiet
+	aws s3 sync build/studio s3://pudding.cool/studio --quiet
 
 aws-cp:
 	aws s3 cp build/. s3://pudding.cool --recursive --exclude "*" --include "*" --exclude "*/*" --exclude ".DS_Store" --quiet
 
 aws-cache:
-	aws cloudfront create-invalidation --distribution-id E13X38CRR4E04D --paths "/index.html" "/_app*" "/about*" "/assets*" "/author*" "/common*" "/pitch*" "/privacy*" "/resources*" "/feed*" "/rss.xml"
+	aws cloudfront create-invalidation --distribution-id E13X38CRR4E04D --paths "/index.html" "/_app*" "/about*" "/assets*" "/author*" "/common*" "/pitch*" "/privacy*" "/resources*" "/studio*" "/feed*" "/rss.xml"
 
 pudding: aws-sync aws-cp aws-cache
 
