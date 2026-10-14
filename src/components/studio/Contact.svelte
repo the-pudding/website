@@ -1,5 +1,5 @@
 <script>
-  import logo from "$svg/polygraph-logo.svg";
+  import logo from "$svg/wordmark_studio.svg";
 
   let { general } = $props();
 </script>

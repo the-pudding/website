@@ -1,13 +1,16 @@
 <script>
   import { base } from "$app/paths";
+  import { page } from "$app/stores";
   import { fly, fade } from "svelte/transition";
   import wordmark from "$svg/wordmark_script_stacked_sticker.svg";
+  import wordmarkStudio from "$svg/wordmark_studio.svg";
   import Menu from "$components/Header.Menu.svelte";
   import copy from "$data/misc.json";
 
   let visible = $state(false);
   let index = $state(-1);
   let tagline = $derived(copy.taglines[index] || "");
+  let isStudio = $derived($page.route.id?.startsWith("/studio") ?? false);
   let menu;
   let openBtnEl;
 
@@ -47,7 +50,11 @@
     </p>
   </div>
   <div class="wordmark">
-    <a href="{base}/" aria-label="The Pudding" target="_self">{@html wordmark}</a>
+    {#if isStudio}
+      <a href="{base}/studio" aria-label="Polygraph" target="_self">{@html wordmarkStudio}</a>
+    {:else}
+      <a href="{base}/" aria-label="The Pudding" target="_self">{@html wordmark}</a>
+    {/if}
   </div>
   <div class="menu">
     <ul>
@@ -203,7 +210,6 @@
   .wordmark a:hover {
     background-color: transparent;
   }
-
   button {
     background: none;
     border: none;
