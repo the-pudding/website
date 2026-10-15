@@ -1,4 +1,17 @@
 slug,hed,dek,keyword,author
+2026_10_lifeafter,Who believes in an afterlife?,,"afterlife,global flourishing study,religion,worldwide beliefs,heaven,hell,agnostic",Alvin Chang
+2026_06_mow,Why some people mow a lawn better than others.,,"game,experiment,lawn","Russell Samora, Arjun Kakkar, Florina Sutanto, Sushant Karki"
+2026_07_essential-words,How the Words We Teach English Language Learners Changed,,,Jasmine Nackash
+2026_06_ethical-champions,"Ethical NBA Championships, Ranked",,"nba, asterisk, title, champion",Russell Samora
+2026_06_menu-collection,"5,000 Restaurant Menus, Years 1880-1920",,"menu,menus,food,restaurant,history","Matt Daniels, Stephen Lurie"
+2026_06_menu-story,A History of Menus is a Menu of History,,"menu,menus,food,restaurant,history","Matt Daniels, Stephen Lurie"
+2026_06_love-story,A Love Story,,"love,claymation,sociology,history",Alvin Chang
+2026_05_kpop-generations,Growing Up with K-Pop,,"kpop, music, story, friendship","Caitlyn Ralph, Eunice Lee, Minji Kim"
+2026_05_similes,Comparisons as Predictable as the Sunrise,,"simile, fiction, book, figurative, comparison, literature, language","Russell Samora, Shelly Tan"
+2026_03_ivf,A Journey Through Infertility,,"ivf, infertility, mother, mom, parent, pregnant, birth, child, in vitro fertilization, baby","Jan Diehm, Michelle Pera-McGhee, Lam Thuy Vo"
+2026_02_happy-map,Happy Map,,"happy, map, emotion, loneliness",Alvin Chang
+2026_02_womens-sizing,Sizing Chaos,,"women, size, sizing, clothes, clothing, fashion","Jan Diehm, Amanda Sakuma"
+2025_12_motifs,Common Threads,,"music, motifs, themes, storytelling, musicals, broadway, les miserables, hamilton, wicked, music theory",Michelle Pera-McGhee
 2025_11_democracy,In pursuit of democracy,,"democracy,politics,congress,trump,elections,speeches",Alvin Chang
 2025_10_walk,What it’s like to walk across Massachusetts,,"walk,massaschusetts,achilles,injury,longform,writing,words,illustration,map",Russell Samora
 2025_08_onions,"Dicing an Onion, the Mathematically Optimal Way",,"cut,math,stats,standard deviation,onion,kenji,cook","Russell Samora, Jan Diehm, Andrew Aquino"
@@ -19,7 +32,7 @@ slug,hed,dek,keyword,author
 2024_10_nba-uniforms,Colors of the Court,"Traditions, trends, and who's wearing what in today's NBA","basketball, nba, jersey, uniform, court, style, color, design","Jan Diehm, Tyler Machado"
 2024_10_abortion-mazes,The United States of Abortion Mazes,We built a maze for each state where the difficulty is calculated by the state’s abortion policies.,"abortion, maze, health, health care, reproductive rights, womens rights, bodily autonomy, roe v. wade, dobbs, supreme court, pregnancy","Jan Diehm, Michelle Pera-McGhee"
 2024_10_crokinole,The Greatest Game You’ve Never Heard of,"This isn’t just a flicking game, but a century-old test of skill and strategy.","game, disc, sport, crokinole, flick, simulation, physics",Russell Samora
-2024_10_kpop-survey,Defining Generations in K-pop,We want fans to have the opportunity to vote and determine the answers.,"music,kpop,survey","Caitlyn Ralph, Jared Whalen, Eunice Lee, Minji Kim"
+2024_10_kpop-survey,Defining Generations in K-pop,We want fans to have the opportunity to vote and determine the answers.,"music,kpop,survey","Jared Whalen, Caitlyn Ralph, Eunice Lee, Minji Kim"
 2024_10_fanfic,Who Gets Shipped?,An analysis of the top fanfic relationship pairings on Archive of Our Own from 2013–2024.,"fanfic, fanfiction, fan, fic, fiction, ao3, relationship, ship, slash, femslash, canon, non-canon, rpf, real person fiction, data, analysis, couple, pair, friendship","Jan Diehm, Caitlyn Ralph, Ashley Cai, Florina Sutanto"
 2024_09_lineup,Batting by the Numbers,The evolution of baseball's perfect lineup,"sports, baseball, lineup, hitting, mlb","Michelle Pera-McGhee, Neil Paine"
 2024_09_courts,Every Outdoor Basketball Court in the U.S.A.,"Explore Satellite Imagery of 59,507 Basketball Courts","basketball, courts",Matt Daniels
@@ -128,7 +141,7 @@ projects_music-history,Best Year in Music,A journey through every Billboard top 
 2019_05_names-in-songs,How Often Names are in Songs,"Every song seems to be written about ""Baby"". Where does your name stack up?","music, name,song,lyric",Amber Thomas
 2019_05_science_etc_1,How Much Data Lies Behind the Paper You’re Reading?,Want to access the raw data behind an academic paper? Good luck.,"science, research, data, study",Ilia Blinderman
 2019_05_hyphens,The Rise of Hyphenated Last Names in Pro Sports,Since the 1990s names that arch over jerseys have become more common.,"sports, name, hyphen, language, basketball, baseball, football, hockey, soccer, diversity, representation",Jan Diehm
-2019_05_three-seconds,The NBA Has a Defensive Three Seconds Problem, NBA refs: stay in your lane. NBA players: don’t mind if we do.,"basketball, nba, sports, ref, defensive, three seconds, defense, video","Russell Samora, Owen Phillips"
+2019_05_three-seconds,The NBA Has a Defensive Three Seconds Problem, NBA refs: stay in your lane. NBA players: don’t mind if we do.,"basketball, nba, sports, ref, defensive, three seconds, defense, video","Russell Samora, Owen Phillips, Owen Lacey"
 2019_04_vogue,Colorism in High Fashion,We looked at 19 years of covers to see if Vogue represents women of all shades.,"diversity, equality, fashion, colorism, vogue, skin, color, cover, model, women, magazine, shade, tone, representation","Jan Diehm, Amber Thomas, Malaika Handa"
 2019_04_eu-regions,"Why Budapest, Warsaw, and Lithuania split themselves in two",Explaining how the European Union calculates wealth distribution,"politics, europe, map, countries, country, eu, european union, economy, economics, region, border, district, boundary, budapest, warsaw, lithuania",Maarten Lambrechts 
 2019_04_text-prediction,How Algorithms Know What You’ll Type Next,Exploring how text prediction really works,"language, explainer, algorithms, tech, type, word, text, predictive text","Antal van den Bosch, Wessel Stoop"
