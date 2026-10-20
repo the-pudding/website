@@ -5,6 +5,8 @@
   const { sections } = copy;
 </script>
 
+<div class="announcement"><p>{copy.announcement}</p></div>
+
 <section id="intro" class="column-wide">
   <HeroText>
     <h1>{copy.title}</h1>
@@ -45,5 +47,13 @@
 
   li {
     padding: 0.25rem 0;
+  }
+
+  .announcement {
+    background-color: var(--color-gray-200);
+    font-family: var(--sans);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    text-align: center;
   }
 </style>
